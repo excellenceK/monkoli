@@ -15,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/poster-annonce', 'AnnoncesController@create')->name('createAnnonce');
+Route::get('/search-annonce', 'AnnoncesController@search')->name('searchAnnonce');
+
 
 Route::prefix('coli')->namespace('Coli')->group(function(){
     Route::post('creationAnnonce','coliController@creationAnnonceColi');
