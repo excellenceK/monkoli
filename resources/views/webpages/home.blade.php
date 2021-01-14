@@ -1,167 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/index.css">
 
-    <title>monkoli</title>
-</head>
-<body>
-    <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
-        <nav class="navbar navbar-expand-lg navbar-ligth">
-            <a class="navbar-brand indexlogo" href="#">
-                <img src="images/logo.png"  class="d-inline-block align-top img img-responsive" alt="logo"/>
-            </a>
-            <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav" id="itm">
-                <a id="1" class="nav-item nav-link active ah " href="#">
-                    <div class="menu">
-                         <p>Colis</p>
-                        <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                        <hr/>
-                    </div> 
-               </a>
-               <a  id="2"  class="nav-item nav-link  ah" href="#">
-                <div class="menu">
-                     <p>Mes annonces</p>
-                    <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-               </a>
-               <a id="3"  class="nav-item nav-link ah " href="#">
-                <div class="menu">
-                     <p>Messages</p>
-                    <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
-                <div class="menu poste">
-                     <p>Poster une annonce</p>
-                    <i class="fa fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="5"  class="nav-item nav-link ah " href="#">
-                <div class="menu">
-                     <p>Mon espace</p>
-                    <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="6"  class="nav-item nav-link ah" href="#">
-                <div class="menu">
-                     <p>Résidence</p>
-                    <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="7"  class="nav-item nav-link ah" href="#">
-                <div class="menu">
-                     <p>Véhicules</p>
-                    <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <div class="menu">
-                <button type="button" class="btn gris pure-material-button-contained">Inscription</button>
-                <button type="button" class="btn vert pure-material-button-contained">Connexion</button>
-              </div> 
-            </div>
-        </div>
-        </nav>
-        <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height:0.5px;color:#C6C2C2;background-color:#C6C2C2; margin-left:150px; margin-right:10px; margin-top: -26px;">
-    </header>
-    <!--mobile header-->
-    <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
-        <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
-        <div id="mobileMenu" style="display: none;">
-            <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
-            <ul class="menuList">
-                <li>
-                    <a class="nav-item nav-link am active " href="#">
-                        <div class="menu">
-                             <p>Colis</p>
-                            <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                   </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link am" href="#">
-                        <div class="menu">
-                             <p>Mes annonces</p>
-                            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                       </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Messages</p>
-                            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu poste">
-                             <p>Ajouter annonce</p>
-                            <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Mon espace</p>
-                            <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Résidence</p>
-                            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Véhicules</p>
-                            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <button type="button" class="btn gris pure-material-button-contained">Inscription</button>
-
-                </li>
-                <li>
-                    <button type="button" class="btn vert pure-material-button-contained">Connexion</button>
-
-                </li>
-
-            </ul>
-        </div>
-    </header>
     <!--pub brand section-->
     <section class="container pub-brand ">
         <div class="row col-md-12 col-lg-12 col-sm-12 col-12 brand">
@@ -172,15 +9,15 @@
     <!--two button section-->
     <section class="container-fluid" >
         <div class="row"  >
-               
+
                       <div class="post-btn col-12 col-lg-12 col-md-12">
-                        <a href="page/recherche.html"><button type="button" class="offset-lg-4 btn gris pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></a> 
-                        <a style="text-decoration: none;" href="page/posterAnnonce1.html"><button  type="button" class="btn  vert  pure-material-button-contained d-none d-sm-none d-lg-inline d-md-none"> <i class="fa fa-plus"></i> Publier une annonce en moins de 30 s</button></a> 
+                        <a href="{{ route('searchAnnonce') }}"><button type="button" class="offset-lg-4 btn gris pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></a>
+                        <a style="text-decoration: none;" href="{{ route('createAnnonce') }}"><button  type="button" class="btn  vert  pure-material-button-contained d-none d-sm-none d-lg-inline d-md-none"> <i class="fa fa-plus"></i> Publier une annonce en moins de 30 s</button></a>
                         <br class="d-block d-sm-block d-lg-none d-md-block">
                         <br class="d-block d-sm-block d-lg-none d-md-block">
-                        <a style="text-decoration: none;" href="page/posterAnnonce1.html"><div class=" d-block d-sm-block d-lg-none d-md-block" ><button type="button" class="btn  vert  pure-material-button-contained"> <i class="fa fa-plus"></i> Publier Annonce </button></div></a>
+                        <a style="text-decoration: none;" href="{{ route('createAnnonce') }}"><div class=" d-block d-sm-block d-lg-none d-md-block" ><button type="button" class="btn  vert  pure-material-button-contained"> <i class="fa fa-plus"></i> Publier Annonce </button></div></a>
                        </div>
-                
+
 
         </div>
 
@@ -241,7 +78,7 @@
                     </div>
             </div>
 
-        </div> 
+        </div>
     </section>
     <!--End Categories section-->
    <br/>
@@ -262,13 +99,13 @@
                 <div class="row">
                   <div class="col-12 col-md-4 col-lg-4 col-sm-12">
                          <input type="text" class="form-control col-12" id="inputEmail3" placeholder="D'où part le colis?">
-                         <span class="fa fa-sort-down fa-lg icon"></span>                    
+                         <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-none">
                    <br class="d-block d-sm-block d-lg-none d-md-none">
                    <div class="col-12 col-md-3 col-lg-3 col-sm-12">
                      <input type="text" class="form-control col-12" id="inputPassword3" placeholder="Où voulez vous l'expédier?">
-                     <span class="fa fa-sort-down fa-lg icon"></span>                    
+                     <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-none">
                    <br class="d-block d-sm-block d-lg-none d-md-none">
@@ -286,10 +123,10 @@
         <h7>Gagnez de l'argent en transportant des colis.<span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></h7>
     </section>
    </section>
-   
+
    <!-- End search section-->
    <!-- Annonse-->
-   
+
    <section class="container-fluid annonce">
        <div class="row">
            <h1 class="col-12">
@@ -638,7 +475,7 @@
              </div>
             </div>
         </div>
-        
+
        </div>
         <div class="col-1 prev navnext d-none d-sm-none d-md-block d-lg-block ">
             <br class="d-none d-sm-none d-md-inline d-lg-block">
@@ -656,25 +493,8 @@
   </div>
   <!-- .container -->
 
-  
-    <footer class="container-fluid">
-       <div class="row">
-           <div class="col-4">
-            <img class="logo" style="overflow: hidden;" src="images/logo.png" alt="logo">
-           </div>
-       </div>
-       
-    </footer>
-<!-- jspart-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-    <script src="owlcarousel/owl.carousel.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/mobileMenu.js"></script>
-    
-</body>
-</html>
+
+
 
 <!--
     <div class="card carsel " style="width:25rem;">
@@ -720,5 +540,5 @@
 
             </div>
           </div>
-        </div>     
+        </div>
 -->
