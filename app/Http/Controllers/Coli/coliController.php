@@ -21,11 +21,11 @@ class coliController extends Controller
         $idAnnonce = $status = $typeTransport = $moyenTransport = $compagnieTransport = $villeDepart =
         $villeArriver = $dateDepart = $dateArriver = $verificationBillet = $lieuDepot =  $unite =
         $quantiteDisponible = $minimunReservation = $dateLimiteReservation = $lieuDepot = $lieuLivraison =
-        $devise = $prixUnitaire = "";
+        $devise = $prixUnitaire = $typeAnnonce = $slug = "";
 
         //Récupération des donnees pour la création de l annonce
         $typeAnnonce = ControlSaisieNiveau1::checkInput1($request->typeAnnonce);
-        $slug = "visible";
+        $slug = ControlSaisieNiveau1::checkInput1($request->slug);
         $niveauPriorite = ControlSaisieNiveau1::checkInput1($request->niveauPriorite);
         $dateCreation =  Carbon::now()->format('Y-m-d H:i');
         $dateExpiration = ControlSaisieNiveau1::checkInput1($request->dateArriver);
@@ -50,7 +50,7 @@ class coliController extends Controller
         $dateArriver = ControlSaisieNiveau1::checkInput1($request->dateArriver);
 
         $unite = ControlSaisieNiveau1::checkInput1($request->unite);
-        //$quantiteDisponible =  ControlSaisieNiveau1::checkInput1($request->quantiteDisponible); //
+        $quantiteDisponible =  $unite; //
 
         $minimunReservation =  ControlSaisieNiveau1::checkInput1($request->minimunReservation);
         $dateLimiteReservation =  ControlSaisieNiveau1::checkInput1($request->dateLimiteReservation);
@@ -110,7 +110,22 @@ class coliController extends Controller
 
         //Enregistrement du trajet
         //$transportColis->save();
-        var_dump($transportColis);
+        //var_dump($transportColis);
+        DB::insert('insert into transport_colis (typeTransport, moyenTransport, compagnieTransport,
+        verificationBillet, villeDepart, villeArriver, lieuDepot, lieuLivraison, dateDepart, dateArriver,
+        unite, quantiteDisponible, minimunReservation, dateLimiteReservation, devise, prixUnitaire, annonce_id)
+        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$typeTransport, $moyenTransport,
+        $compagnieTransport, $verificationBillet, $villeDepart, $villeArriver, $lieuDepot, $lieuLivraison,
+        $dateDepart, $dateArriver, $unite, $quantiteDisponible, $minimunReservation, $dateLimiteReservation, $devise, $prixUnitaire,
+        $idAnnonce]);
+
+       /* DB::insert('insert into transport_colis (typeTransport, moyenTransport, compagnieTransport,
+        verificationBillet, villeDepart, villeArriver, lieuDepot, lieuLivraison, dateDepart, dateArriver,
+        unite, minimunReservation, dateLimiteReservation, devise, prixUnitaire, annonce_id)
+        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$typeTransport, $moyenTransport,
+        $compagnieTransport, $verificationBillet, $villeDepart, $villeArriver, $lieuDepot, $lieuLivraison,
+        $dateDepart, $dateArriver, $unite, $minimunReservation, $dateLimiteReservation, $devise, $prixUnitaire,
+        $idAnnonce]);*/
 
     }
     //Controller insertion info bagage et capaciter a transporter
@@ -122,9 +137,82 @@ class coliController extends Controller
         ]);
     }
     //Controller insertion info Tarification
-    public function infoTarification(Request $request){
+    public function getInfoAnnonce(Request $request){
 
+        $typeAnnonce = "";
+        $typeAnnonce = ControlSaisieNiveau1::checkInput1($request->typeAnnonce);
+
+        $resultQueryGetInfoAnnonce = DB::select('select annonces.id as idAnnonce, annonces.slug as slugAnnonce,
+        annonces.niveauPriorite as niveauPrioriteAnnonce, annonces.dateCreation as dateCreationAnnonce,
+         annonces.dateExpiration as dateExpirationAnnonce, annonces.status as statusAnnonce,
+          annonces.typeAnnonce as typeAnnonce, annonces.condAge as condAgeAnnonce,
+           annonces.condAnneePermis as condAnneePermisAnnonce, annonces.garCaution as garCautionAnnonce,
+            annonces.garMontantCaution as garMontantCautionAnnonce,
+             annonces.garPieceIdentite as garPieceIdentiteAnnonce, annonces.user_id as user_idAnnonce,
+              annonces.created_at as created_atAnnonce, annonces.updated_at as updated_atAnnonce,
+               transport_colis.id as idTransportColis, transport_colis.typeTransport,
+                transport_colis.moyenTransport, transport_colis.compagnieTransport,
+                 transport_colis.villeDepart, transport_colis.villeArriver, transport_colis.dateDepart,
+                  transport_colis.dateArriver, transport_colis.verificationBillet,transport_colis.unite,
+                   transport_colis.quantiteDisponible, transport_colis.minimunReservation,
+                   transport_colis.dateLimiteReservation,transport_colis.lieuDepot, transport_colis.lieuLivraison,
+                    transport_colis.devise, transport_colis.prixUnitaire
+        from annonces, transport_colis
+        where annonces.typeAnnonce = ? and transport_colis.annonce_id = annonces.id
+    ORDER BY annonces.niveauPriorite DESC', [$typeAnnonce]);
+    $getInfoAnnonce = array_map(function($value){
+        return (array)$value;
+    },$resultQueryGetInfoAnnonce);
+
+    return $getInfoAnnonce;
     }
 
+    public function updateAnnonce(Request $request){
+        $idAnnonce = "";
+        $idAnnonce = ControlSaisieNiveau1::checkInput1($request->idAnnonce);
+
+        $slug = ControlSaisieNiveau1::checkInput1($request->slug);
+        $niveauPriorite = ControlSaisieNiveau1::checkInput1($request->niveauPriorite);
+
+        $update = DB::update('update annonces set slug = ? ,niveauPriorite = ?, where id = ?', [$slug,$niveauPriorite,$idAnnonce]);
+
+    }
+    public function updateTrajet(Request $request){
+        $idTransportColis = "";
+        $idTransportColis = ControlSaisieNiveau1::checkInput1($request->idTransportColis);
+
+        $typeTransport = ControlSaisieNiveau1::checkInput1($request->typeTransport);
+        $moyenTransport = ControlSaisieNiveau1::checkInput1($request->moyenTransport);
+        $compagnieTransport = ControlSaisieNiveau1::checkInput1($request->compagnieTransport);
+        $verificationBillet = ControlSaisieNiveau1::checkInput1($request->verificationBillet);
+
+        $villeDepart = ControlSaisieNiveau1::checkInput1($request->villeDepart);
+        $villeArriver = ControlSaisieNiveau1::checkInput1($request->villeArriver);
+
+        $lieuDepot = ControlSaisieNiveau1::checkInput1($request->lieuDepot);
+        $lieuLivraison = ControlSaisieNiveau1::checkInput1($request->lieuLivraison);
+
+        $dateDepart = ControlSaisieNiveau1::checkInput1($request->dateDepart);
+        $dateArriver = ControlSaisieNiveau1::checkInput1($request->dateArriver);
+
+        $unite = ControlSaisieNiveau1::checkInput1($request->unite);
+        $quantiteDisponible =   ControlSaisieNiveau1::checkInput1($request->quantiteDisponible); //
+
+        $minimunReservation =  ControlSaisieNiveau1::checkInput1($request->minimunReservation);
+        $dateLimiteReservation =  ControlSaisieNiveau1::checkInput1($request->dateLimiteReservation);
+
+        $devise =  ControlSaisieNiveau1::checkInput1($request->devise);
+        $prixUnitaire = ControlSaisieNiveau1::checkInput1($request->prixUnitaire);
+
+        $update = DB::update('update transport_colis set typeTransport = ?, moyenTransport = ?,
+        compagnieTransport = ?, verificationBillet = ?, villeDepart = ?, villeArriver = ?, lieuDepot = ?,
+         lieuLivraison = ?, dateDepart = ?, dateArriver = ?, unite = ?, quantiteDisponible = ?,
+          minimunReservation = ?, dateLimiteReservation = ?, devise = ?, prixUnitaire = ?
+         where id = ?', [$typeTransport, $moyenTransport, $compagnieTransport, $verificationBillet,
+         $villeDepart, $villeArriver, $lieuDepot, $lieuLivraison, $dateDepart, $dateArriver,
+         $unite, $quantiteDisponible, $minimunReservation, $dateLimiteReservation, $devise,
+         $prixUnitaire,$idTransportColis]);
+
+    }
 
 }

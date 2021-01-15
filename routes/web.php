@@ -24,5 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('coli')->namespace('Coli')->group(function(){
     Route::post('creationAnnonce','coliController@creationAnnonceColi');
+    Route::post('getInfoAnnonce','coliController@getInfoAnnonce');
     Route::get('testGet','coliController@infoTest');
 });
