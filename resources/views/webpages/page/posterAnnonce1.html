@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/annonce.css">
+
+
+        <title>monkoli-poster-annonce</title>
+    </head>
+<body>
+     <!--desktop header-->
+     <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
+        <nav class="navbar navbar-expand-lg navbar-ligth">
+            <a class="navbar-brand indexlogo" href="../index.html">
+                <img src="../images/logo.png"  class="d-inline-block align-top img img-responsive" alt="logo"/>
+            </a>
+            <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav" id="itm">
+                <a id="1" class="nav-item nav-link  ah " href="#">
+                    <div class="menu">
+                         <p>Colis</p>
+                        <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div> 
+               </a>
+               <a  id="2"  class="nav-item nav-link  ah" href="#">
+                <div class="menu">
+                     <p>Mes annonces</p>
+                    <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+                    <hr/>
+                </div> 
+               </a>
+               <a id="3"  class="nav-item nav-link ah " href="#">
+                <div class="menu">
+                     <p>Messages</p>
+                    <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                    <hr/>
+                </div> 
+              </a>
+              <a  id="4"  class="nav-item nav-link active ah " href="#">
+                <div class="menu poste">
+                     <p>Poster une annonce</p>
+                    <i class="fa fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+                    <hr/>
+                </div> 
+              </a>
+              <a id="5"  class="nav-item nav-link ah " href="#">
+                <div class="menu">
+                     <p>Mon espace</p>
+                    <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
+                    <hr/>
+                </div> 
+              </a>
+              <a id="6"  class="nav-item nav-link ah" href="#">
+                <div class="menu">
+                     <p>Résidence</p>
+                    <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                    <hr/>
+                </div> 
+              </a>
+              <a id="7"  class="nav-item nav-link ah" href="#">
+                <div class="menu">
+                     <p>Véhicules</p>
+                    <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                    <hr/>
+                </div> 
+              </a>
+              <div class="menu">
+                  <a href="inscription.html"><button type="button" class="btn gris pure-material-button-contained">Inscription</button></a>
+                 <a href="connexion.html">  <button type="button" class="btn vert pure-material-button-contained">Connexion</button></a>
+              </div> 
+            </div>
+        </div>
+        </nav>
+        <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height:0.5px;color:#C6C2C2;background-color:#C6C2C2; margin-left:150px; margin-right:10px; margin-top: -26px;">
+    </header>
+    <!--mobile header-->
+    <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
+        <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
+        <div id="mobileMenu" style="display: none;">
+            <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
+            <ul class="menuList">
+                <li>
+                    <a class="nav-item nav-link am active " href="#">
+                        <div class="menu">
+                             <p>Colis</p>
+                            <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                   </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link am" href="#">
+                        <div class="menu">
+                             <p>Mes annonces</p>
+                            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                       </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Messages</p>
+                            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu poste">
+                             <p>Ajouter annonce</p>
+                            <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Mon espace</p>
+                            <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Résidence</p>
+                            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Véhicules</p>
+                            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <button type="button" class="btn gris pure-material-button-contained">Inscription</button>
+
+                </li>
+                <li>
+                    <button type="button" class="btn vert pure-material-button-contained">Connexion</button>
+
+                </li>
+
+            </ul>
+        </div>
+    </header>
+    <br><br><br class="d-sm-none d-none d-lg-block d-md-none"><br class="d-sm-none d-none d-lg-block d-md-none"><br class="d-sm-none d-none d-lg-block d-md-none">
+    <section class="container-fluid titre">
+        <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                <h1 class="h1" style="font-weight: bold;">Poster une annonce</h1>
+            </div>
+        </div>
+    </section>
+    <!-- Modal  type d'annonce -->
+    <div id="typeannonce" class="container typeannonce box-shadow--16dp ">
+        <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                    <h5 style="font-weight: bold;">Choisissez le type d'annonce que vous voulez créer</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio active" id="customRadio1">
+             <input type="radio"   name="textEditor" id="dreamweaver" checked> <label for="dreamweaver">Expédition de colis</label> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio" id="customRadio2">
+                <input type="radio"  name="textEditor" id="dreamweaver1" > <label for="dreamweaver1">Vente / Location d'appartement</label> 
+               </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio" id="customRadio3">
+                <input type="radio"  name="textEditor" id="dreamweaver2" > <label for="dreamweaver2">Vente / Location de voiture</label> 
+               </div>
+        </div>
+
+        <div class="row btnfooter">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                <button id="vbtn" type="button" class="btn vert pure-material-button-contained" style="float: right;" > <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>Créer</button>
+                <button type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</button>
+
+            </div>
+        </div>
+    </div>
+    <!-- Modal  type d'annonce -->  
+
+     <!-- formulaire d'expédition de colis -->
+     <form  id="expColis" style="display: none;"  >
+        <section class="container typeannonce box-shadow--16dp">
+            <div class="row">
+                <div class="col">
+                    <h1>Information sur l'expédition</h1>
+                                    <!--Select with pure css-->
+                                    <div class="select">
+                                        <select class="select-text" required>
+                                            <option value="" disabled selected></option>
+                                            <option value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                            <option value="3">Option 3</option>
+                                        </select>
+                                        <span class="select-highlight"></span>
+                                        <span class="select-bar"></span>
+                                        <label class="select-label">Mode de transport</label>
+                                    </div>
+                                    <br>
+                                    <!--Select with pure css-->
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="text" name="depart" placeholder="Lieu de départ">
+                                        <span class="focus-input100"></span>
+                                    </div>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="text" name="destination" placeholder="Lieu de destination">
+                                        <span class="focus-input100"></span>
+                                    </div>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="text" name="destination" placeholder="Lieu de dépôt du colis à expédier">
+                                        <span class="focus-input100"></span>
+                                    </div>
+                                    <div class="wrap-input100 validate-input">
+                                        <input class="input100" type="text" name="destination" placeholder="Lieu de retrait du colis à expédier">
+                                        <span class="focus-input100"></span>
+                                    </div>
+                </div>
+                <div class="col offset-lg-1" style="margin-right: 70px;" >
+                    <br>
+                    <div class="select">
+                        <select class="select-text" required>
+                            <option value="" disabled selected></option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <span class="select-highlight"></span>
+                        <span class="select-bar"></span>
+                        <label class="select-label">Type de véhicule</label>
+                    </div>
+                    <br>
+                    <div class="wrap-input100 validate-input">
+                        <label  for="heureDepart" style="font-size: small;color: #C6C2C2;" >Heure de départ</label>
+                        <input class="input100" type="time" name="heureDepart" placeholder="Heure de départ">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <br>
+                    <div class="wrap-input100 validate-input">
+                        <label for="heureDepart" style="font-size: small;color: #C6C2C2;">Heure de d'arrivée</label>
+                        <input class="input100" type="time" name="heureDarrivee" placeholder="Heure de départ">
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3>Mes informations personnelles</h3>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="nom" placeholder="Nom">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="prenom" placeholder="Prenm">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="email" name="email" placeholder="Email">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="tel" name="email" placeholder="Téléphone">
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-12 col-sm-12 col-md-12">
+                     <!--Select with pure css-->
+                     <h1>Informations sur le Colis</h1>
+                <div class="select">
+                    <select class="select-text" required>
+                        <option value="" disabled selected></option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <span class="select-highlight"></span>
+                    <span class="select-bar"></span>
+                    <label class="select-label">Type de colis supportés</label>
+                </div>
+                <!--Select with pure css-->
+                </div>
+                <div class="col-lg-3 col-12 col-sm-12 col-md-12 offset-lg-1">
+                    <br>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="quantiteRecevable" placeholder="Quantite recevable">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="quantiteRecevable" placeholder="Prix unitaire">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="date" name="quantiteRecevable" placeholder="Date limite de réservation">
+                        <span class="focus-input100"></span>
+                    </div>
+               </div>
+            </div>
+           
+           <div class="row btnfooter">
+               <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                   <button id="vbtn" type="button" class="btn vert pure-material-button-contained" style="float: right;" > <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>Créer</button>
+                   <button type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</button>
+               </div>
+           </div>
+   
+       
+       </section>
+      </form>
+
+
+
+
+      <!-- formulaire de location d'appartement -->
+
+
+       <!-- formulaire de location de voiture -->
+
+
+
+
+
+     <!--js part-->
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+     <script type="text/javascript" src="../js/mobileMenu.js"></script>
+     <script type="text/javascript" src="../js/pannonce.js"></script>
+     <script type="text/javascript" src="../js/posterAnnonce.js"></script>
+
+
+     
+    
+</body>
+</html>
+
+
+<!-- 
+    
+-->
