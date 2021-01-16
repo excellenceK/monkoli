@@ -27,7 +27,7 @@ Route::get('/search-annonce', 'AnnoncesController@search')->name('searchAnnonce'
 
 
 Route::prefix('coli')->namespace('Coli')->group(function(){
-    Route::post('creationAnnonce','coliController@creationAnnonceColi');
-    Route::post('getInfoAnnonce','coliController@getInfoAnnonce');
+    Route::post('creationAnnonce','coliController@creationAnnonceColi')->name('createAnnonceValidated');
+    Route::get('getInfoAnnonce','coliController@getInfoAnnonce');
     Route::get('testGet','coliController@infoTest');
 });

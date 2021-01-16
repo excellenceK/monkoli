@@ -1,3 +1,39 @@
+@php
+    $resultQueryGetInfoAnnonce = DB::select('select annonces.id as idAnnonce, annonces.slug as slugAnnonce,
+        annonces.niveauPriorite as niveauPrioriteAnnonce, annonces.dateCreation as dateCreationAnnonce,
+         annonces.dateExpiration as dateExpirationAnnonce, annonces.status as statusAnnonce,
+          annonces.typeAnnonce as typeAnnonce, annonces.condAge as condAgeAnnonce,
+           annonces.condAnneePermis as condAnneePermisAnnonce, annonces.garCaution as garCautionAnnonce,
+            annonces.garMontantCaution as garMontantCautionAnnonce,
+             annonces.garPieceIdentite as garPieceIdentiteAnnonce, annonces.user_id as user_idAnnonce,
+              annonces.created_at as created_atAnnonce, annonces.updated_at as updated_atAnnonce,
+               transport_colis.id as idTransportColis, transport_colis.typeTransport,
+                transport_colis.moyenTransport, transport_colis.compagnieTransport,
+                 transport_colis.villeDepart, transport_colis.villeArriver, transport_colis.dateDepart,
+                  transport_colis.dateArriver, transport_colis.verificationBillet,transport_colis.unite,
+                   transport_colis.quantiteDisponible, transport_colis.minimunReservation,
+                   transport_colis.dateLimiteReservation,transport_colis.lieuDepot, transport_colis.lieuLivraison,
+                    transport_colis.devise, transport_colis.prixUnitaire
+        from annonces, transport_colis
+        where transport_colis.annonce_id = annonces.id
+    ORDER BY annonces.niveauPriorite DESC');
+
+    $getInfoAnnonce = array_map(function($value){
+        return (array)$value;
+    },$resultQueryGetInfoAnnonce);
+    //dd($getInfoAnnonce);
+    $check = true;
+    if(empty($getInfoAnnonce)){
+        $check = true;
+    }
+    else{
+        $check = false;
+    }
+
+    //$check = $getInfoAnnonce->isEmpty();
+
+    //return $getInfoAnnonce;
+@endphp
 
     <!--pub brand section-->
     <section class="container pub-brand ">
@@ -175,6 +211,68 @@
         <i style="font-weight: bold;" class="fa fa-5x fa-angle-left " aria-hidden="true"></i>
     </div>
        <div class="col-12 col-lg-10 col-md-10 col-sm-12  owl-carousel owl-theme">
+
+        @if ($check == false)
+            @foreach ($getInfoAnnonce as $trajet)
+            <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork" style="width:35rem;">
+                <img class="card-img-top img img-responsive"  src="images/Bg-MonKoli.jpg" alt="Card image cap">
+                <div class="card-body row">
+                  <div class="col-4">
+                    <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
+                    <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
+                    <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
+                    <i class="fa fa-star valide"  aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star novalide" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-4">
+                     <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Fcfa</sup><br>
+                        <span style="color:black; font-size: x-small;">Par Kg</span>
+                    </p>
+                     <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                    </p>
+                    <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                    </p>
+                  </div>
+                  <div class="col-4">
+                    <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Kg</sup><br>
+                       <span style="color:black; font-size: x-small;">Disponible(e)</span>
+                   </p>
+                    <p style="color:black;font-size:x-small;">Date limite de réservation <br>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                   </p>
+                 </div>
+                 <div class="row">
+                        <div class="col-8">
+                            <br class="d-block d-sm-block d-lg-none d-md-none">
+                            <p style="font-size: x-small;">Mode de transport :</p>
+                        </div>
+                        <div class="col-4">
+                            <span> <img class="img img-responsive"  style="height:40px;width: 40px;" src="images/Avion.png" alt="avion"></span>
+                        </div>
+                 </div>
+                 <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn pure-material-button-contained offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: black;" class="fa fa-share-alt " aria-hidden="true"></i> Partager l'annonce</button>
+                    </div>
+                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                    <div class="col">
+                        <button type="button" class="btn vert pure-material-button-contained"> <i style="color: black;" class="fa fa-calendar " aria-hidden="true"></i> Réserver</button>
+                    </div>
+                 </div>
+                </div>
+            </div>
+            @endforeach
+
+        @endif
+        @if ($check == true)
+          <p>
+              Aucun trajet enregistrer pour le moment
+          </p>
+        @endif
+
         <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork" style="width:35rem;">
             <img class="card-img-top img img-responsive"  src="images/Bg-MonKoli.jpg" alt="Card image cap">
             <div class="card-body row">
@@ -425,56 +523,7 @@
              </div>
             </div>
         </div>
-        <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork" style="width:35rem;">
-            <img class="card-img-top img img-responsive"  src="images/Bg-MonKoli.jpg" alt="Card image cap">
-            <div class="card-body row">
-              <div class="col-4">
-                <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
-                <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
-                <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
-                <i class="fa fa-star valide"  aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star novalide" aria-hidden="true"></i>
-              </div>
-              <div class="col-4">
-                 <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Fcfa</sup><br>
-                    <span style="color:black; font-size: x-small;">Par Kg</span>
-                </p>
-                 <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
-                    <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
-                </p>
-                <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
-                    <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
-                </p>
-              </div>
-              <div class="col-4">
-                <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Kg</sup><br>
-                   <span style="color:black; font-size: x-small;">Disponible(e)</span>
-               </p>
-                <p style="color:black;font-size:x-small;">Date limite de réservation <br>
-                   <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
-                   <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
-               </p>
-             </div>
-             <div class="row">
-                    <div class="col-8">
-                        <br class="d-block d-sm-block d-lg-none d-md-none">
-                        <p style="font-size: x-small;">Mode de transport :</p>
-                    </div>
-                    <div class="col-4">
-                        <span> <img class="img img-responsive"  style="height:40px;width: 40px;" src="images/Avion.png" alt="avion"></span>
-                    </div>
-             </div>
-             <div class="row">
-                <div class="col">
-                    <button type="button" class="btn pure-material-button-contained offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: black;" class="fa fa-share-alt " aria-hidden="true"></i> Partager l'annonce</button>
-                </div>
-                <br class="d-block d-sm-block d-lg-none d-md-none">
-                <br class="d-block d-sm-block d-lg-none d-md-none">
-                <div class="col">
-                    <button type="button" class="btn vert pure-material-button-contained"> <i style="color: black;" class="fa fa-calendar " aria-hidden="true"></i> Réserver</button>
-                </div>
-             </div>
-            </div>
-        </div>
+
 
        </div>
         <div class="col-1 prev navnext d-none d-sm-none d-md-block d-lg-block ">
