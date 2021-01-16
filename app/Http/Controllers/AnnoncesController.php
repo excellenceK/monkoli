@@ -24,9 +24,9 @@ class AnnoncesController extends Controller
     public function create()
     {
         //
-        return view('webpages.annonces.create');
+        return view('webpages.annonces.choose-type-annonce');
     }
-        /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -48,6 +48,76 @@ class AnnoncesController extends Controller
         //
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function typeAnnonce(Request $request)
+    {
+        //
+        return redirect('/type-annonce/'.$request->choix);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function vueTypeAnnonce($type)
+    {
+        //
+        return view('webpages.annonces.choose-category-annonce')->with(['type'=>$type]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function categoryAnnonce(Request $request)
+    {
+        //
+        $type = $request->type;
+        $category = $request->choix;
+
+        switch ($type) {
+            case 'expédition colis':
+                # code...
+                return redirect('/coli/create/'.$type.'/'.$category);
+
+                /*switch ($category) {
+                    case 'libre':
+                        # code...
+                        return redirect('/coli/create')->with(['type' =>$type, 'category' =>$category]);
+                        break;
+                    case 'certifiee':
+                        return redirect('/coli/create/'.$type.'/'.$category);
+                        break;
+                    case 'certifiee urgente':
+                        # code...
+                        return redirect('/coli/create/'.$type.'/'.$category);
+                        break;
+                    default:
+                        # code...
+                        break;
+                }*/
+                break;
+            case 'location véhicule':
+                # code...
+                break;
+
+            case 'location appartement':
+                # code...
+                break;
+
+            default:
+                # code...
+                break;
+        }
+    }
     /**
      * Display the specified resource.
      *
