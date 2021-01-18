@@ -58,18 +58,18 @@ radio3.click(function(){
 //gestion de l'affiche du formulaire en fonction du choix utilisateur
 var validebtn=$('#vbtn');
 validebtn.click(function(){
-  
+
   switch (choix) {
       case 1:
           //formulaire d'expédition de colis
            $('#typeannonce').css({
                'display':'none'
            });
-           $('#expColis').css({
-            'display':'inline'
+           $('#catégorie').css({
+            'display':'block'
         })
 
-          
+
           break;
       case 2:
           //formulaire de vente/location d'appartement
@@ -77,8 +77,8 @@ validebtn.click(function(){
       case 3:
         //formulaire de vente/location de voiture
 
-          break;        
-  
+          break;
+
       default:
         alert("Merci de choisir une option");
           break;
