@@ -215,4 +215,24 @@ class coliController extends Controller
 
     }
 
+    public function create($type, $category)
+    {
+        switch ($category) {
+                    case 'libre':
+                        # code...
+                        return view('webpages.annonces.colis.createLibre')->with(['type' =>$type, 'category' =>$category]);
+                        break;
+                    case 'certifiee':
+                        return view('webpages.annonces.colis.createCertifiee')->with(['type' =>$type, 'category' =>$category]);
+                        break;
+                    case 'certifiee urgente':
+                        # code...
+                        return view('webpages.annonces.colis.createCertifiee')->with(['type' =>$type, 'category' =>$category]);
+                        break;
+                    default:
+                        # code...
+                        break;
+        }
+    }
+
 }
