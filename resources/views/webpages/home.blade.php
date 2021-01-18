@@ -68,56 +68,58 @@
             </div>
             <div class="col-12 col-sm-12 col-md-3 col-md-3">
                     <h2>Catégories</h2>
-                    <span>Monkoli vous aide à expédier votre colis selon le canal de distribution souhaité:</span>
+                    <span style="font-size: 0.9rem; color: #A7A7A7">Monkoli vous aide à expédier votre colis selon le canal de distribution souhaité:</span>
                     <div class="row">
-                        <div class="col">
+                        <div class="col"><img src="images/Avion.png"><br/>
                                 Avion
                         </div>
-                        <div class="col">
+                        <div class="col"><img src="images/Bateau.png"><br/>
                             Bateau
                         </div>
-                        <div class="col">
+                        <div class="col"><img src="images/Train.png"><br/>
                             Train
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                                Avion
+                        <div class="col"><img src="images/Camion.png"><br/>
+                                Camion
                         </div>
-                        <div class="col">
-                            Bateau
+                        <div class="col"><img src="images/Poids-lourd.png"><br/>
+                            Poids lourd
                         </div>
-                        <div class="col">
-                            Train
+                        <div class="col"><img src="images/Camionette.png"><br/>
+                            Camionette
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                                Avion
+                        <div class="col"><img src="images/Voiture.png"><br/>
+                                Voiture
                         </div>
-                        <div class="col">
-                            Bateau
+                        <div class="col"><img src="images/Moto.png"><br/>
+                            Moto
                         </div>
-                        <div class="col">
-                            Train
+                        <div class="col"><img src="images/Velo.png"><br/>
+                            Velo
                         </div>
                     </div>
+                    <br/>
                     <div class="row" style="padding: 2px; margin: 0;">
-                        <h3 class="col-12">Location de résidence</h3>
-                        <p class="col-12" style="font-size: small;">Besoin d'un appartement selon vos besoin?</p>
-                        <span class="col-12" ><button type="button" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></span>
+                        <h3 class="col-12">Location de résidences</h3>
+                        <p class="col-12" style="font-size: small; font-size: 0.9rem; color: #A7A7A7">Besoin d'un appartement selon votre besoin?</p>
+                        <span class="col-12" ><button type="button" class="btn vert pure-material-button-contained new"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></span>
                     </div>
+                    <br/>
                     <div class="row" style="padding: 2px; margin: 0;">
                         <h3 class="col-12">Location de voiture</h3>
-                        <p class="col-12" style="font-size: small;">Besoins d'un véhicule pour vos course?</p>
-                        <span class="col-12" ><button type="button" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></span>
+                        <p class="col-12" style="font-size: small; font-size: 0.9rem; color: #A7A7A7">Besoin d'un véhicule pour vos courses?</p>
+                        <span class="col-12" ><button type="button" class="btn vert pure-material-button-contained new"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></span>
                     </div>
             </div>
 
         </div>
     </section>
     <!--End Categories section-->
-   <br/>
+   <br/> <br> <br><br> <br> <br>
    <section style="height:auto">
     <section class="container-fluid search">
         <div class="row ">
@@ -156,7 +158,7 @@
          </span>
         </div>
         <br/>
-        <h7>Gagnez de l'argent en transportant des colis.<span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></h7>
+        <h6>Gagnez de l'argent en transportant des colis.<span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></h6>
     </section>
    </section>
 
@@ -170,50 +172,62 @@
            </h1>
        </div>
        <div class="row">
-           <div class="col-6 col-sm-6 col-lg-1 col-md-4 ">
-            <button type="button" class="btn vert pure-material-button-contained">Tout(170)</button>
-           </div>
-           <div class="col-6 col-sm-6 col-lg-1 col-md-4" >
-            <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
-           </div>
-           <br class="d-block d-sm-block d-lg-none d-md-block">
-           <br class="d-block d-sm-block d-lg-none d-md-block">
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4 ">
+         <button type="button" class="btn vert pure-material-button-contained">Tout(170)</button>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 10px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-plane" aria-hidden="true"></i> Avion(13)</button>
+        </div>
+        <br class="d-block d-sm-block d-lg-none d-md-block">
+        <br class="d-block d-sm-block d-lg-none d-md-block">
 
-           <div class="col-6 col-sm-6 col-lg-1 col-md-4">
-            <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
-           </div>
-           <div class="col-6 col-sm-6 col-lg-1 col-md-4">
-            <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
-           </div>
-           <br class="d-block d-sm-block d-lg-none d-md-block">
-           <br class="d-block d-sm-block d-lg-none d-md-block">
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 30px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-ship" aria-hidden="true"></i> Bateau(13)</button>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 70px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-train" aria-hidden="true"></i> Train(13)</button>
+        </div>
+        <br class="d-block d-sm-block d-lg-none d-md-block">
+        <br class="d-block d-sm-block d-lg-none d-md-block">
 
-           <div class="col-6 col-sm-6 col-lg-1 col-md-4">
-            <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
-           </div>
-           <div class="col-6 col-sm-6 col-lg-1 col-md-4">
-            <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
-           </div>
-       </div>
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 85px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck" aria-hidden="true"></i> Camion(13)</button>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 130px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck-moving" aria-hidden="true"></i> Poids lourd(13)</button>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 200px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-shipping-fast" aria-hidden="true"></i> Camionette(13)</button>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 210px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-car-side" aria-hidden="true"></i> Voiture(13)</button>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 180px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-motorcycle" aria-hidden="true"></i> Moto(13)</button>
+        </div>
+       <!--  <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 80px;">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fas fa-biking" aria-hidden="true"></i> Velo(13)</button>
+        </div> -->
+    </div>
        <br>
    </section>
    <div class="container-fluid">
     @if ($check == false)
     <div id="owl-demo-2" class="row">
         <div class="col-1 prev navprev d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <br class="d-none d-sm-none d-md-inline d-lg-block">
-         <i style="font-weight: bold;" class="fa fa-5x fa-angle-left " aria-hidden="true"></i>
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <i style="font-weight: bold;" class="fa fa-5x fa-angle-left " aria-hidden="true"></i>
         </div>
         <div class="col-12 col-lg-10 col-md-10 col-sm-12  owl-carousel owl-theme">
             @foreach ($getInfoAnnonce as $trajet)
-            <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork" style="width:35rem;">
+            <!--<div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork" style="width:35rem;">
                 <img class="card-img-top img img-responsive"  src="images/Bg-MonKoli.jpg" alt="Card image cap">
                 <div class="card-body row">
                   <div class="col-4">
@@ -259,6 +273,66 @@
                     <br class="d-block d-sm-block d-lg-none d-md-none">
                     <div class="col">
                         <button type="button" class="btn vert pure-material-button-contained"> <i style="color: black;" class="fa fa-calendar " aria-hidden="true"></i> Réserver</button>
+                    </div>
+                 </div>
+                </div>
+            </div>-->
+            <!--  -->
+            <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
+                <img class="card-img-top img img-responsive"  src="images/bg_card.png" alt="Card image cap">
+                <div class="card-body row">
+                  <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
+                  <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 50px; margin-left: 20px;">
+                  <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 50px; margin-left: 290px;">
+                  <img src="images/circle.png" style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block;">
+                  <img src="images/circle.png" style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block;">
+                  <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
+               </div>
+                <div class="card-body row">
+                  <div class="col-4">
+                    <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
+                    <h5 style="font-size: x-small;font-weight: bold; margin-top: 20px;">Transporteur</h5>
+                    <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{$trajet['nomUser'].' '.$trajet['prenomUser']}}</h6>
+                    <i class="fa fa-star valide"  aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star novalide" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-4">
+                     <p class="" style="color: #00E38C;font-weight: bold;">{{$trajet['prixUnitaire']}}<sup style="color:black">Fcfa</sup><br>
+                        <span style="color:black; font-size: x-small;">Par Kg</span>
+                    </p>
+                     <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                    </p>
+                    <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                    </p>
+                  </div>
+                  <div class="col-4">
+                    <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Kg</sup><br>
+                       <span style="color:black; font-size: x-small;">Disponible(e)</span>
+                   </p>
+                    <p style="color:black;font-size:x-small;">Date limite de réservation <br>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">{{$trajet['dateLimiteReservation']}}</span>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                   </p>
+                 </div>
+                 <div class="row" style="width: 100%; margin-left: 108px;">
+                        <div class="col-8">
+                            <br class="d-block d-sm-block d-lg-none d-md-none">
+                            <p style="font-size: x-small; margin-left: 42px;">Mode de transport :</p>
+                        </div>
+                        <div class="col-4">
+                            <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Avion.png" alt="avion"></span>
+                        </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="col" style="margin-top: 45px; margin-left: 20px;">
+                        <button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
+                    </div>
+                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                    <div class="col" style="margin-top: 45px; margin-left: 200px;">
+                        <button type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</button>
                     </div>
                  </div>
                 </div>

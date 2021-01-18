@@ -24,14 +24,30 @@ body{
     margin: 0;
     font-family: Arial !important;
     position: relative;
-    
+}
+
+.background{
+    background-image: url('../images/bg1.jpg');
+    background-repeat: repeat-y;
+    background-size: 100%;
+    I
 }
  .ah{
     font-size: small;
     font-weight: 40;
-    color:#3C3C3C ;
+    color: #C6C2C2;
     margin-right: 30px;
 }
+a:hover{
+    color: #A7A7A7;
+    font-weight: 500;
+}
+
+.menu a:hover{
+    color: #A7A7A7;
+    font-weight: 500;
+}
+
 
 .menu{
     display: inline-block;
@@ -46,11 +62,29 @@ body{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
+.btn .vert .pure-material-button-contained .waves-effect .waves-light i{
+    font-size: medium;
+    font-weight: 100;
+    color: #FFF;
+    opacity: 0.7;
+    font-size: 18px; 
+
+}
+.new i{
+    font-size: medium;
+    font-weight: 100;
+    color: #FFF;
+    opacity: 0.7;
+    font-size: 18px; 
+}
+
 i{
     font-size: medium;
     font-weight: 100;
     color: #C6C2C2;
 }
+
 header{
     height: 60px;
 }
@@ -61,17 +95,18 @@ header{
 
 .active{
     color: #00E38C;   
+    font-weight: bolder;
 }
 .active:hover{
-    color: #00E38C;   
+    color: #A7A7A7;   
 }
 .active hr {
     color: #00E38C;
     background-color: #00E38C;
     font-size: large;
-    width: 100px;
+    width: 95px;
     font-weight: 200;
-    height: 2px;
+    height: 3px;
 }
 .active i{
     color: #00E38C;
@@ -91,8 +126,8 @@ hr{
     display: inline-block;
     box-sizing: border-box;
     border: none;
-    border-radius: 4px;
-    padding: 0 16px;
+    border-radius: 5px;
+    padding: 2px 25px 40px 29px;
     min-width: 64px;
     height: 36px;
     vertical-align: middle;
@@ -100,15 +135,44 @@ hr{
     text-overflow: ellipsis;
     color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
     background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 20px 0px #c3c3c3;
     font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: normal;
     line-height: 36px;
     overflow: hidden;
     outline: none;
     cursor: pointer;
     transition: box-shadow 0.2s;
+}
+
+.pure2{
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 25px 40px 29px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    box-shadow: 0 0 10px 0px #C6C2C2;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.fa-3x {
+    font-size: 4em;
 }
 
 .pure-material-button-contained::-moz-focus-inner {
@@ -224,13 +288,44 @@ GENERAL STYLE END
   font-weight: 400;
 }
 .post-btn button i{
-        color: #C6C2C2;
+    color: #ffffff;
+    padding-right: 8px;
+    font-size: 20px;
+    opacity: 0.7;
+    padding-top: 11px;
 }
 .gris{
     background-color:#3C3C3C
 }
 .vert{
     background-color: #00E38C;
+}
+.col{
+    text-align: center;
+    width: 21px;
+    color: #A7A7A7;
+    margin-right: 14px;
+
+}
+.col img{
+    position: relative;
+    padding-top: 11px;
+    width: 81px;
+}
+
+h2{
+        font-weight: bolder;
+}
+h3{
+        font-weight: bolder;
+}
+h1{
+    font-weight: bolder;
+    margin: 21px;
+    font-size: 2.9rem;
+}
+.new h2,h3{
+    padding-left: 21px; 
 }
 .side1{
     height: 600px;
@@ -240,22 +335,35 @@ GENERAL STYLE END
     display: inline-block;
 }
 .side1 img{
-    height: 100%;
-    width: 100%;
-    border-radius:0 40px 40px 0;
+    height: 115%;
+    width: 101%;
+    border-radius: 0 40px 40px 0;
+    margin-left: -28px;
 }
 .categorie div{
     display: inline;
 }
 .search{
-    background-color:#3C3C3C;
-    border-top-left-radius:50px;
-    border-bottom-right-radius: 50px;
+    background-color:#0b4a2d;
+    border-top-left-radius:70px;
+    border-bottom-right-radius: 70px;
     padding: 20px;
     color: white;
     height: auto;
     z-index: 0;
 
+
+}
+
+.fa-2x{
+    font-size: 2.2em !important
+}
+.fas{
+    padding: 6px ;
+}
+.col4{
+    max-height: 85px;
+    min-height: 80px;
 
 }
 
@@ -267,33 +375,71 @@ GENERAL STYLE END
 }
 
 .form button{
-    width: 100%
+    width: 80%;
+    height: 56px;
+    margin-top: -1px;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .icon {
     position: relative;
     float: right;
-    margin-right: 2px;
+    margin-right: 12px;
     margin-left: 8px;
-    margin-top: -30px;
+    margin-top: -45px;
     z-index: 2;
     color: #222222;
   }
+
+.bg-search{
+   margin-top: -25px;
+    position: absolute;
+    width: 380px;
+}
+.logon{
+    margin-top: 20px; 
+    margin-left: 100px;
+}
+.logon1{
+    margin-top: 20px; 
+    margin-left: 6px
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.85rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
 .annonce{
     overflow: auto;
 }
   
+
+  
+.col4 p{
+    font-size: 5rem !important;
+}
 
   .annonce button{
       border-radius: 20px;
 
   }
   .searchlogo{
-    height: 100px;
+    height: 287px;
     position: relative;
-    margin-left: 80%;
-    margin-top: -150px;
-    
+    margin-left: 77%;
+    margin-top: -231px;
 
 }
 
@@ -309,6 +455,7 @@ GENERAL STYLE END
     -webkit-box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.74);
     -moz-box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.74);
     box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.74);
+    width:75rem;
 
 }
 
