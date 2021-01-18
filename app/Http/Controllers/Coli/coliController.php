@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Coli;
 
+use App\User;
 use App\Annonce;
 use Carbon\Carbon;
 use App\TransportColis;
@@ -16,16 +17,42 @@ class coliController extends Controller
     public function creationAnnonceColi(Request $request){
         //Initialisation
 
-        $idUser = 1;$numerotelUser = '';
+        //$idUser = 1;
+        $telephone = '';
+        $defaultPassword = 'aaaaaa';
 
-        $idAnnonce = $status = $typeTransport = $moyenTransport = $compagnieTransport = $villeDepart =
-        $villeArriver = $dateDepart = $dateArriver = $verificationBillet = $lieuDepot =  $unite =
-        $quantiteDisponible = $minimunReservation = $dateLimiteReservation = $lieuDepot = $lieuLivraison =
-        $devise = $prixUnitaire = $typeAnnonce = $slug = "";
+
+         $compagnieTransport = $verificationBillet = $lieuDepot = "null";
+
+        //Controlle de User
+        $telephone = ControlSaisieNiveau1::checkInput1($request->telephone);
+
+        $userExist = DB::table('users')
+            ->where('telephone',$telephone)
+            ->first();
+
+        if(empty($userExist)){
+            $user = new User();
+            $user->telephone = $telephone;
+            $user->password = $defaultPassword;
+            $user->name = ucwords(ControlSaisieNiveau1::checkInput1($request->nom));
+            $user->prenom = ucwords(ControlSaisieNiveau1::checkInput1($request->prenom));
+            $user->email = ucwords(ControlSaisieNiveau1::checkInput1($request->email));
+            $user->typeCompte = ucwords(ControlSaisieNiveau1::checkInput1($request->typeCompte));
+
+            $user->save();
+
+            $userExist = DB::table('users')
+            ->where('telephone',$telephone)
+            ->first();
+
+
+        }
+        $idUser = $userExist->id;
 
         //Récupération des donnees pour la création de l annonce
-        $typeAnnonce = ControlSaisieNiveau1::checkInput1($request->typeAnnonce);
-        $slug = ControlSaisieNiveau1::checkInput1($request->slug);
+        $typeAnnonce = ucwords(ControlSaisieNiveau1::checkInput1($request->typeAnnonce));
+        $slug = ControlSaisieNiveau1::checkInput1('visible');
         $niveauPriorite = ControlSaisieNiveau1::checkInput1($request->niveauPriorite);
         $dateCreation =  Carbon::now()->format('Y-m-d H:i');
         $dateExpiration = ControlSaisieNiveau1::checkInput1($request->dateArriver);
@@ -35,16 +62,16 @@ class coliController extends Controller
         //$idUser = ControlSaisieNiveau1::checkInput1($request->idUser);
 
 
-        $typeTransport = ControlSaisieNiveau1::checkInput1($request->typeTransport);
-        $moyenTransport = ControlSaisieNiveau1::checkInput1($request->moyenTransport);
-        $compagnieTransport = ControlSaisieNiveau1::checkInput1($request->compagnieTransport);
+        $typeTransport = ucwords(ControlSaisieNiveau1::checkInput1($request->typeTransport));
+        $moyenTransport = ucwords(ControlSaisieNiveau1::checkInput1($request->moyenTransport));
+        $compagnieTransport = ucwords(ControlSaisieNiveau1::checkInput1($request->compagnieTransport));
         $verificationBillet = ControlSaisieNiveau1::checkInput1($request->verificationBillet);
 
-        $villeDepart = ControlSaisieNiveau1::checkInput1($request->villeDepart);
-        $villeArriver = ControlSaisieNiveau1::checkInput1($request->villeArriver);
+        $villeDepart = ucwords(ControlSaisieNiveau1::checkInput1($request->villeDepart)) ;
+        $villeArriver = ucwords(ControlSaisieNiveau1::checkInput1($request->villeArriver)) ;
 
-        $lieuDepot = ControlSaisieNiveau1::checkInput1($request->lieuDepot);
-        $lieuLivraison = ControlSaisieNiveau1::checkInput1($request->lieuLivraison);
+        $lieuDepot = ucwords(ControlSaisieNiveau1::checkInput1($request->lieuDepot));
+        $lieuLivraison = ucwords(ControlSaisieNiveau1::checkInput1($request->lieuLivraison));
 
         $dateDepart = ControlSaisieNiveau1::checkInput1($request->dateDepart);
         $dateArriver = ControlSaisieNiveau1::checkInput1($request->dateArriver);
@@ -52,11 +79,12 @@ class coliController extends Controller
         $unite = ControlSaisieNiveau1::checkInput1($request->unite);
         $quantiteDisponible =  $unite; //
 
-        $minimunReservation =  ControlSaisieNiveau1::checkInput1($request->minimunReservation);
-        $dateLimiteReservation =  ControlSaisieNiveau1::checkInput1($request->dateLimiteReservation);
+        //$minimunReservation =  ControlSaisieNiveau1::checkInput1($request->minimunReservation);
+        $dateLimiteReservation = str_replace("T"," ",ControlSaisieNiveau1::checkInput1($request->dateLimiteReservation)) ;
 
-        $devise =  ControlSaisieNiveau1::checkInput1($request->devise);
-        $prixUnitaire = ControlSaisieNiveau1::checkInput1($request->prixUnitaire);
+        $devise =  ucwords(ControlSaisieNiveau1::checkInput1($request->devise));
+        $prixUnitaire = ucwords(ControlSaisieNiveau1::checkInput1($request->prixUnitaire));
+
 
 
         //Instantiation du model Annonce
@@ -102,7 +130,7 @@ class coliController extends Controller
         $transportColis->dateArriver = $dateArriver;
         $transportColis->unite = $unite;
         //$transportColis->quantiteDisponible = $quantiteDisponible;
-        $transportColis->minimunReservation = $minimunReservation;
+        //$transportColis->minimunReservation = $minimunReservation;
         $transportColis->dateLimiteReservation = $dateLimiteReservation;
         $transportColis->devise = $devise;
         $transportColis->prixUnitaire = $prixUnitaire;
@@ -110,13 +138,13 @@ class coliController extends Controller
 
         //Enregistrement du trajet
         //$transportColis->save();
-        //var_dump($transportColis);
+        //dd($transportColis);
         DB::insert('insert into transport_colis (typeTransport, moyenTransport, compagnieTransport,
         verificationBillet, villeDepart, villeArriver, lieuDepot, lieuLivraison, dateDepart, dateArriver,
-        unite, quantiteDisponible, minimunReservation, dateLimiteReservation, devise, prixUnitaire, annonce_id)
-        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$typeTransport, $moyenTransport,
+        unite, quantiteDisponible,  dateLimiteReservation, devise, prixUnitaire, annonce_id)
+        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$typeTransport, $moyenTransport,
         $compagnieTransport, $verificationBillet, $villeDepart, $villeArriver, $lieuDepot, $lieuLivraison,
-        $dateDepart, $dateArriver, $unite, $quantiteDisponible, $minimunReservation, $dateLimiteReservation, $devise, $prixUnitaire,
+        $dateDepart, $dateArriver, $unite, $quantiteDisponible, $dateLimiteReservation, $devise, $prixUnitaire,
         $idAnnonce]);
 
        /* DB::insert('insert into transport_colis (typeTransport, moyenTransport, compagnieTransport,
@@ -127,6 +155,7 @@ class coliController extends Controller
         $dateDepart, $dateArriver, $unite, $minimunReservation, $dateLimiteReservation, $devise, $prixUnitaire,
         $idAnnonce]);*/
 
+        return redirect('/')->with('Message','Annonce enregistrée avec succès');
     }
     //Controller insertion info bagage et capaciter a transporter
     public function infoTest(Request $request){
@@ -137,10 +166,10 @@ class coliController extends Controller
         ]);
     }
     //Controller insertion info Tarification
-    public function getInfoAnnonce(Request $request){
+    public function getInfoAnnonce(){
 
         $typeAnnonce = "";
-        $typeAnnonce = ControlSaisieNiveau1::checkInput1($request->typeAnnonce);
+        //$typeAnnonce = ControlSaisieNiveau1::checkInput1($request->typeAnnonce);
 
         $resultQueryGetInfoAnnonce = DB::select('select annonces.id as idAnnonce, annonces.slug as slugAnnonce,
         annonces.niveauPriorite as niveauPrioriteAnnonce, annonces.dateCreation as dateCreationAnnonce,
@@ -158,8 +187,8 @@ class coliController extends Controller
                    transport_colis.dateLimiteReservation,transport_colis.lieuDepot, transport_colis.lieuLivraison,
                     transport_colis.devise, transport_colis.prixUnitaire
         from annonces, transport_colis
-        where annonces.typeAnnonce = ? and transport_colis.annonce_id = annonces.id
-    ORDER BY annonces.niveauPriorite DESC', [$typeAnnonce]);
+        where transport_colis.annonce_id = annonces.id
+    ORDER BY annonces.niveauPriorite DESC');
     $getInfoAnnonce = array_map(function($value){
         return (array)$value;
     },$resultQueryGetInfoAnnonce);
