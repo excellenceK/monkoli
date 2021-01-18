@@ -119,7 +119,7 @@
             <div class="col">
                 <h3>Mes informations personnelles</h3>
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="name" placeholder="Nom">
+                    <input class="input100" type="text" name="nom" placeholder="Nom">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input">
