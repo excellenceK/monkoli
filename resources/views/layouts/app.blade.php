@@ -81,7 +81,7 @@
                     <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
                     <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
                     <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('register') }}">Dashboard</a>
-                    <a type="button" class="btn vert pure-material-button-contained logon1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
+                    <a type="button" class="btn vert pure-material-button-contained logon1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i>Deconnexion</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
