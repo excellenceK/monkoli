@@ -54,7 +54,7 @@
                     <hr/>
                 </div>
               </a>
-              <a id="5"  class="nav-item nav-link ah " href="#">
+              <a id="5"  class="nav-item nav-link ah " href="{{ route('users.monEspace') }}">
                 <div class="menu">
                      <p>Mon espace</p>
                     <i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
@@ -80,8 +80,8 @@
                     <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
                     <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
                     <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
-                    <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('register') }}">Dashboard</a>
-                    <a type="button" class="btn vert pure-material-button-contained logon1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i>Deconnexion</a>
+                    <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('users.monEspace') }}">Dashboard</a>
+                    <a type="button" class="btn vert pure-material-button-contained logon1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>

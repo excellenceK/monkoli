@@ -29,6 +29,14 @@
     else{
         $check = false;
     }
+    $quantiteReservee = 0;
+    foreach ($resultQueryGetInfoAnnonce as $value) {
+        # code...idAnnonce
+        $quantiteReservee = DB::table('reservations')->where('annonce_id', $value->idAnnonce)->sum('quantiteReserve');
+        //dd($quantiteReservee);
+    }
+    //$disponible = $resultQueryGetInfoAnnonce - $quantiteReservee;
+    //dd($resultQueryGetInfoAnnonce);
     //$check = true;
     //$check = $getInfoAnnonce->isEmpty();
 
@@ -292,10 +300,10 @@
                 <img class="card-img-top img img-responsive"  src="images/bg_card.png" alt="Card image cap">
                 <div class="card-body row">
                   <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
-                  <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 50px; margin-left: 20px;">
-                  <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 50px; margin-left: 290px;">
-                  <img src="images/circle.png" style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block;">
-                  <img src="images/circle.png" style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block;">
+                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 20px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
+                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 290px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
+                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
+                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
                   <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
                </div>
                 <div class="card-body row">
@@ -310,19 +318,19 @@
                         <span style="color:black; font-size: x-small;">Par Kg</span>
                     </p>
                      <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
-                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $trajet['lieuDepot'] }}</span>
                     </p>
                     <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
-                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $trajet['lieuLivraison'] }}</span>
                     </p>
                   </div>
                   <div class="col-4">
-                    <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Kg</sup><br>
-                       <span style="color:black; font-size: x-small;">Disponible(e)</span>
+                    <p style="color: #00E38C;font-weight: bold;">{{ $trajet['quantiteDisponible']- $quantiteReservee }}<sup style="color:black">Kg</sup><br>
+                       <span style="color:black; font-size: x-small;">Disponible(s)</span>
                    </p>
                     <p style="color:black;font-size:x-small;">Date limite de réservation <br>
-                       <span style="font-size: xx-small;font-weight: bold;color:red;">{{$trajet['dateLimiteReservation']}}</span>
-                       <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">{{\Carbon\Carbon::parse($trajet['dateLimiteReservation'])->format('d-M-Y H:i:s')}}</span>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">GMT</span>
                    </p>
                  </div>
                  <div class="row" style="width: 100%; margin-left: 108px;">
@@ -330,9 +338,18 @@
                             <br class="d-block d-sm-block d-lg-none d-md-none">
                             <p style="font-size: x-small; margin-left: 42px;">Mode de transport :</p>
                         </div>
-                        <div class="col-4">
-                            <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Avion.png" alt="avion"></span>
-                        </div>
+                        <!--mode de transport-->
+                            <div class="col-4">
+                                @if($trajet['typeTransport'] == 'Aérien')
+                                    <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Avion.png" alt="avion"></span>
+                                @endif
+                                @if($trajet['typeTransport'] == 'Férroviaire')
+                                    <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Train.png" alt="train"></span>
+                                @endif
+
+
+                            </div>
+
                  </div>
 
                  <div class="row">
