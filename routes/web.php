@@ -31,9 +31,9 @@ Route::post('/categorie-annonce', 'AnnoncesController@categoryAnnonce')->name('c
 Route::get('/search-annonce', 'AnnoncesController@search')->name('searchAnnonce');
 
 
-Route::prefix('coli')->namespace('Coli')->group(function(){
+Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
 
-    Route::post('creationAnnonce','coliController@creationAnnonceColi')->name('createAnnonceValidated');
+    Route::post('/creationAnnonceLibre','coliController@creationAnnonceColi')->name('createAnnonceValidated');
     Route::get('getInfoAnnonce','coliController@getInfoAnnonce');
     Route::get('/create/{type}/{category}', 'coliController@create')->name('createAnnonceColi');
     //Route::get('/poster-annonce-certifiee', 'coliController@createAnnonceCertifiee')->name('createAnnonceCertifiee');

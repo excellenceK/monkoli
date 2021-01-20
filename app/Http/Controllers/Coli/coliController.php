@@ -9,6 +9,7 @@ use App\TransportColis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ControlSaisie\ControlSaisieNiveau1;
 use Illuminate\Support\Facades\Auth;
 
@@ -78,6 +79,7 @@ class coliController extends Controller
         $dateArriver = ControlSaisieNiveau1::checkInput1($request->dateArriver);
 
         $unite = ControlSaisieNiveau1::checkInput1($request->unite);
+        $minimunReservation = ControlSaisieNiveau1::checkInput1($request->minimunReservation);
         $quantiteDisponible =  $unite; //
 
         //$minimunReservation =  ControlSaisieNiveau1::checkInput1($request->minimunReservation);
@@ -142,10 +144,10 @@ class coliController extends Controller
         //dd($transportColis);
         DB::insert('insert into transport_colis (typeTransport, moyenTransport, compagnieTransport,
         verificationBillet, villeDepart, villeArriver, lieuDepot, lieuLivraison, dateDepart, dateArriver,
-        unite, quantiteDisponible,  dateLimiteReservation, devise, prixUnitaire, annonce_id)
-        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$typeTransport, $moyenTransport,
+        unite,minimunReservation, quantiteDisponible, dateLimiteReservation, devise, prixUnitaire, annonce_id)
+        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$typeTransport, $moyenTransport,
         $compagnieTransport, $verificationBillet, $villeDepart, $villeArriver, $lieuDepot, $lieuLivraison,
-        $dateDepart, $dateArriver, $unite, $quantiteDisponible, $dateLimiteReservation, $devise, $prixUnitaire,
+        $dateDepart, $dateArriver, $unite,$minimunReservation, $quantiteDisponible, $dateLimiteReservation, $devise, $prixUnitaire,
         $idAnnonce]);
 
        /* DB::insert('insert into transport_colis (typeTransport, moyenTransport, compagnieTransport,
@@ -253,11 +255,21 @@ class coliController extends Controller
                         return view('webpages.annonces.colis.createLibre')->with(['type' =>$type, 'category' =>$category]);
                         break;
                     case 'certifiee':
-                        return view('webpages.annonces.colis.createCertifiee')->with(['type' =>$type, 'category' =>$category]);
+                        if (Auth::check()){
+                            return view('webpages.annonces.colis.createCertifiee')->with(['type' =>$type, 'category' =>$category]);
+                        }
+                        else{
+                            return redirect('login');
+                        }
                         break;
                     case 'certifiee urgente':
                         # code...
-                        return view('webpages.annonces.colis.createCertifiee')->with(['type' =>$type, 'category' =>$category]);
+                        if (Auth::check()){
+                            return view('webpages.annonces.colis.createCertifiee')->with(['type' =>$type, 'category' =>$category]);
+                        }
+                        else{
+                            return redirect('login');
+                        }
                         break;
                     default:
                         # code...

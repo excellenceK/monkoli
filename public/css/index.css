@@ -30,7 +30,7 @@ body{
     background-image: url('../images/bg1.jpg');
     background-repeat: repeat-y;
     background-size: 100%;
-    I
+    
 }
  .ah{
     font-size: small;
@@ -260,8 +260,6 @@ GENERAL STYLE END
 */
 
 .indexlogo{
-    padding-left: 30px;
-    padding-right: 100px;
 }
 .indexlogo img{
     height: 90px;
@@ -334,11 +332,14 @@ h1{
     padding: 0;
     display: inline-block;
 }
+.side2{
+    
+    display: block;
+}
 .side1 img{
     height: 115%;
     width: 101%;
     border-radius: 0 40px 40px 0;
-    margin-left: -28px;
 }
 .categorie div{
     display: inline;
@@ -399,11 +400,9 @@ h1{
 }
 .logon{
     margin-top: 20px; 
-    margin-left: 100px;
 }
 .logon1{
     margin-top: 20px; 
-    margin-left: 6px
 }
 
 .form-control {
@@ -528,6 +527,13 @@ section{
         
     
     }
+    .annonce-cat-second{
+        padding-top:10px;
+    }
+    .side2{
+    
+        display: block;
+    }
  }
  @media (max-width: 991.98px) { 
     .searchlogo{
@@ -538,6 +544,14 @@ section{
         
     
     }
+    .annonce-cat-second{
+        padding-top: 0px;
+    }
+    .side2{
+        display: block;
+        margin-top: 100px;
+
+    }
  }
 
 @media (max-width: 767.98px) { 
@@ -546,11 +560,16 @@ section{
         position: relative;
         margin-left: 80%;
         margin-top: -200px;
-        
-    
     }
     .carsel{
         font-size: xx-small;
+    }
+    .annonce-cat-second{
+        padding-top: 0px;
+    }
+    .side2{
+        margin-top: 10px;
+        display: block;
     }
  }
  @media (max-width: 575.98px) { 
@@ -558,7 +577,7 @@ section{
         height: 80px;
         position: relative;
         margin-left: 80%;
-        margin-top: -360px;
+        margin-top: -610px;
         
     
     }
@@ -571,6 +590,13 @@ section{
       .carsel{
           font-size: xx-small;
       }
+      .annonce-cat-second{
+        padding-top: 0px;
+    }
+    .side2{
+        margin-top: 100px;
+        display: block;
+    }
  }
 
  @media (max-width: 300.98px) { 
@@ -595,6 +621,13 @@ section{
       footer img{
           height: 50px;
       }
+       .annonce-cat-second{
+        padding-top: 0px;
+    }
+    .side2{
+        margin-top: 10px;
+        display: block;
+    }
  }
 
 

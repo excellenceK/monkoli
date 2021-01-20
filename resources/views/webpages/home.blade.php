@@ -63,10 +63,10 @@
     <!--Categories section-->
     <section class="container-fluid " style="padding-left: 0;">
         <div class="row" >
-            <div class="col-12 col-sm-12 col-md-9 col-lg-9 side1">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-9 side1">
                 <img class="img img-responsive" src="images/Bg-MonKoli.jpg" alt="side1" srcset="">
             </div>
-            <div class="col-12 col-sm-12 col-md-3 col-md-3">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 side2">
                     <h2>Catégories</h2>
                     <span style="font-size: 0.9rem; color: #A7A7A7">Monkoli vous aide à expédier votre colis selon le canal de distribution souhaité:</span>
                     <div class="row">
@@ -123,7 +123,7 @@
    <section style="height:auto">
     <section class="container-fluid search">
         <div class="row ">
-            <div class="col-12 col-md-12 col-sm-12 col-lg-12" style="padding:5;">
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12" style="padding:2px;">
                <h1 id="searhHeading">Expédier votre colis n'a jamais été aussi  simple!<img src="images/logo.png"  class="searchlogo  img img-responsive" alt="logo"/></h1>
                <h5>Recherchez et trouver le transporteur <span style="color:#079860;">idéal</span> au moment <span style="color:#079860;">opportun.</span></h5>
                <h3 style="color: #079860;">Facile<span style="color:white;">,</span> Rapide<span style="color:white;"> et</span> Fiable</h3>
@@ -139,19 +139,22 @@
                          <input type="text" class="form-control col-12" id="inputEmail3" placeholder="D'où part le colis?">
                          <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
-                   <br class="d-block d-sm-block d-lg-none d-md-none">
-                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
                    <div class="col-12 col-md-3 col-lg-3 col-sm-12">
                      <input type="text" class="form-control col-12" id="inputPassword3" placeholder="Où voulez vous l'expédier?">
                      <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
-                   <br class="d-block d-sm-block d-lg-none d-md-none">
-                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
                    <div class="col-12 col-md-3 col-lg-3 col-sm-12">
                      <input type="date" class="form-control col-12" id="inputPassword3" placeholder="Quand voulez vous l'envoyer?">
                    </div>
-                   <br class="d-block d-sm-block d-lg-none d-md-none">
-                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
+                   <br class="d-block d-sm-block d-lg-none d-md-block">
                    <span class="col-12 col-md-2 col-lg-2 col-sm-12" ><button type="button" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
                 </div>
              </form>
@@ -172,38 +175,45 @@
            </h1>
        </div>
        <div class="row">
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4 ">
+        <div class="col-lg-2 col-6 col-sm-6 col-md-6 ">
          <button type="button" class="btn vert pure-material-button-contained">Tout(170)</button>
         </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 10px;">
+        <div class="col-lg-2 col-6 col-sm-6 col-md-6 " >
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-plane" aria-hidden="true"></i> Avion(13)</button>
         </div>
         <br class="d-block d-sm-block d-lg-none d-md-block">
         <br class="d-block d-sm-block d-lg-none d-md-block">
 
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 30px;">
+        <div class="col-lg-2 col-6 col-sm-6 col-md-6 " >
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-ship" aria-hidden="true"></i> Bateau(13)</button>
         </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 70px;">
+        <div class="col-lg-2 col-6 col-sm-6 col-md-6 ">
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-train" aria-hidden="true"></i> Train(13)</button>
         </div>
         <br class="d-block d-sm-block d-lg-none d-md-block">
         <br class="d-block d-sm-block d-lg-none d-md-block">
 
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 85px;">
+        <div class="col-lg-2 col-6 col-sm-6 col-md-6 ">
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck" aria-hidden="true"></i> Camion(13)</button>
         </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 130px;">
+        <div class="col-lg-2 col-6 col-sm-6 col-md-6">
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck-moving" aria-hidden="true"></i> Poids lourd(13)</button>
         </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 200px;">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-shipping-fast" aria-hidden="true"></i> Camionette(13)</button>
-        </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 210px;">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-car-side" aria-hidden="true"></i> Voiture(13)</button>
-        </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 180px;">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-motorcycle" aria-hidden="true"></i> Moto(13)</button>
+        <br class="d-block d-sm-block d-lg-none d-md-block">
+        <br class="d-block d-sm-block d-lg-none d-md-block">
+        <div class="row" style="padding-top:5px">
+            <div class="col-lg-4 col-6 col-sm-6 col-md-6">
+                <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-car-side" aria-hidden="true"></i> Voiture(13)</button>
+               </div>
+               <div class="col-lg-4 col-6 col-sm-6 col-md-6">
+                <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-motorcycle" aria-hidden="true"></i> Moto(13)</button>
+               </div>
+               <br class="d-block d-sm-block d-lg-none d-md-block">
+               <br class="d-block d-sm-block d-lg-none d-md-block">
+               <div class="col-lg-4 col-12 col-sm-12 col-md-12">
+                   <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-shipping-fast" aria-hidden="true"></i> Camionette(13)</button>
+                </div>
+
         </div>
        <!--  <div class="col-6 col-sm-6 col-lg-1 col-md-4" style="padding-left: 80px;">
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fas fa-biking" aria-hidden="true"></i> Velo(13)</button>
