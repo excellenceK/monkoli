@@ -155,8 +155,6 @@
         </div>
         <input type="hidden" name="status" value="post">
         <input type="hidden" name="typeAnnonce" value="{{$category}}">
-        <input type="hidden" name="niveauPriorite" value="niveau 0">
-        <input type="hidden" name="typeCompte" value="particulier">
 
        <div class="row btnfooter">
            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
@@ -170,7 +168,6 @@
 
            </div>
        </div>
-
 
    </section>
 
