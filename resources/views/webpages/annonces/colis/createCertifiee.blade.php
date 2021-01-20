@@ -146,8 +146,7 @@
                     <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>
                     Créer
                 </button>
-               <button type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</button>
-
+               <a href="{{ url('type-annonce/'.$type) }}" type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</a>
            </div>
        </div>
 

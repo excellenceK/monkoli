@@ -18,24 +18,28 @@
             <span class="col-12">
                 <form class="form col-12 col-md-12 col-lg-12 col-sm-12">
                    <div class="row">
-                     <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                     <div class="col-12 col-md-3 col-lg-3 col-sm-12">
                             <input type="text" class="form-control col-12" id="inputEmail3" placeholder="D'où part le colis?">
                             <span class="fa fa-sort-down fa-lg icon"></span>
                       </div>
-                      <br class="d-block d-sm-block d-lg-none d-md-none">
-                      <br class="d-block d-sm-block d-lg-none d-md-none">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+
                       <div class="col-12 col-md-3 col-lg-3 col-sm-12">
                         <input type="text" class="form-control col-12" id="inputPassword3" placeholder="Où voulez vous l'expédier?">
                         <span class="fa fa-sort-down fa-lg icon"></span>
                       </div>
-                      <br class="d-block d-sm-block d-lg-none d-md-none">
-                      <br class="d-block d-sm-block d-lg-none d-md-none">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
                       <div class="col-12 col-md-3 col-lg-3 col-sm-12">
                         <input type="date" class="form-control col-12" id="inputPassword3" placeholder="Quand voulez vous l'envoyer?">
                       </div>
-                      <br class="d-block d-sm-block d-lg-none d-md-none">
-                      <br class="d-block d-sm-block d-lg-none d-md-none">
-                      <span class="col-12 col-md-2 col-lg-2 col-sm-12" ><button type="button" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+                      <br class="d-block d-sm-block d-lg-none d-md-block">
+                      <span class="col-12 col-md-3 col-lg-3 col-sm-12" ><button type="button" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
                    </div>
                 </form>
             </span>
@@ -52,28 +56,31 @@
         </h1>
     </div>
     <div class="row">
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4 ">
+        <div class="col-6 col-sm-6 col-lg-2 col-md-4 ">
          <button type="button" class="btn vert pure-material-button-contained">Tout(170)</button>
         </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4" >
+        <div class="col-6 col-sm-6 col-lg-2 col-md-4" >
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
         </div>
+        <br class="d-block d-sm-block d-lg-none d-md-block">
+        <br class="d-block d-sm-block d-lg-none d-md-block">
+        <br class="d-block d-sm-block d-lg-none d-md-block">
+       
+
+        <div class="col-6 col-sm-6 col-lg-2 col-md-4">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-2 col-md-4">
+         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
+        </div>
+        <br class="d-block d-sm-block d-lg-none d-md-block">
         <br class="d-block d-sm-block d-lg-none d-md-block">
         <br class="d-block d-sm-block d-lg-none d-md-block">
 
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4">
+        <div class="col-6 col-sm-6 col-lg-2 col-md-4">
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
         </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
-        </div>
-        <br class="d-block d-sm-block d-lg-none d-md-block">
-        <br class="d-block d-sm-block d-lg-none d-md-block">
-
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
-        </div>
-        <div class="col-6 col-sm-6 col-lg-1 col-md-4">
+        <div class="col-6 col-sm-6 col-lg-2 col-md-4">
          <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: black;" class="fa fa-plane" aria-hidden="true"></i> Avion(13)</button>
         </div>
     </div>
@@ -121,12 +128,12 @@
             </div>
      </div>
      <div class="row">
-        <div class="col">
-            <button type="button" class="btn pure-material-button-contained offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: black;" class="fa fa-share-alt " aria-hidden="true"></i> Partager l'annonce</button>
+        <div class="col-12">
+            <button type="button" class="btn pure-material-button-contained" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: black;" class="fa fa-share-alt " aria-hidden="true"></i> Partager l'annonce</button>
         </div>
-        <br class="d-block d-sm-block d-lg-none d-md-none">
-        <br class="d-block d-sm-block d-lg-none d-md-none">
-        <div class="col">
+        <br class="d-block d-sm-block d-lg-block d-md-none">
+        <br class="d-block d-sm-block d-lg-block d-md-none">
+        <div class="col-12">
             <button type="button" class="btn vert pure-material-button-contained"> <i style="color: black;" class="fa fa-calendar " aria-hidden="true"></i> Réserver</button>
         </div>
      </div>
@@ -171,17 +178,18 @@
             </div>
      </div>
      <div class="row">
-        <div class="col">
-            <button type="button" class="btn pure-material-button-contained offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: black;" class="fa fa-share-alt " aria-hidden="true"></i> Partager l'annonce</button>
+        <div class="col-12">
+            <button type="button" class="btn pure-material-button-contained" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: black;" class="fa fa-share-alt " aria-hidden="true"></i> Partager l'annonce</button>
         </div>
-        <br class="d-block d-sm-block d-lg-none d-md-none">
-        <br class="d-block d-sm-block d-lg-none d-md-none">
-        <div class="col">
+        <br class="d-block d-sm-block d-lg-block d-md-none">
+        <br class="d-block d-sm-block d-lg-block d-md-none">
+        <div class="col-12">
             <button type="button" class="btn vert pure-material-button-contained"> <i style="color: black;" class="fa fa-calendar " aria-hidden="true"></i> Réserver</button>
         </div>
      </div>
     </div>
 </div>
+
 
 </div>
 </section>
