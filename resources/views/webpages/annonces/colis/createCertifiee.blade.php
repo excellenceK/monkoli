@@ -19,7 +19,7 @@
 
 <!-- Modal type d'annonce -->
  <!-- formulaire d'expédition de colis -->
- <form  id="expColis" style="display: none;" method="POST" action="{{ route('createAnnonceValidated') }}">
+ <form  method="POST" action="{{ route('coli.createAnnonceValidated') }}">
     @csrf
     <section class="container typeannonce box-shadow--16dp">
         <div class="row">
@@ -85,25 +85,6 @@
                     <span class="focus-input100"></span>
                 </div>
             </div>
-            <div class="col">
-                <h3>Mes informations personnelles</h3>
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="nom" placeholder="Nom">
-                    <span class="focus-input100"></span>
-                </div>
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="prenom" placeholder="Prenm">
-                    <span class="focus-input100"></span>
-                </div>
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="email" name="email" placeholder="Email">
-                    <span class="focus-input100"></span>
-                </div>
-                <div class="wrap-input100 validate-input">
-                    <input class="input100" type="tel" name="telephone" placeholder="Téléphone" required>
-                    <span class="focus-input100"></span>
-                </div>
-            </div>
         </div>
         <div class="row">
             <div class="col-lg-3 col-12 col-sm-12 col-md-12">
@@ -129,6 +110,10 @@
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input">
+                    <input class="input100" type="number" name="minimunReservation" placeholder="Qte mini a transporter (en Kg)" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input">
                 <select class="select-text" name = 'devise' required>
                     <option value="" disabled selected></option>
                     <option value="euro">Euro</option>
@@ -150,23 +135,20 @@
            </div>
         </div>
         <input type="hidden" name="status" value="post">
-        <input type="hidden" name="typeAnnonce" value="libre">
-        <input type="hidden" name="niveauPriorite" value="niveau 0">
+        <input type="hidden" name="typeAnnonce" value="{{$category}}">
+        <input type="hidden" name="niveauPriorite" value="niveau 1">
         <input type="hidden" name="typeCompte" value="particulier">
 
        <div class="row btnfooter">
            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
-<<<<<<< HEAD:resources/views/webpages/annonces/create.blade.php
+
                <button id="vbtn" type="submit" name = 'annonceSubmited'
                class="btn vert pure-material-button-contained"style="float: right;" >
                     <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>
                     Créer
                 </button>
                <button type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</button>
-=======
-               <button  type="submit" class="btn vert pure-material-button-contained" style="float: right;" > <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>Créer</button>
-               <a href="{{ url('type-annonce/'.$type) }}" type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</a>
->>>>>>> master:resources/views/webpages/annonces/colis/createCertifiee.blade.php
+
            </div>
        </div>
 
