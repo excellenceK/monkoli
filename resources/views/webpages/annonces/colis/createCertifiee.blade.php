@@ -110,7 +110,7 @@
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="number" name="minimunReservation" placeholder="Qte mini a transporter (en Kg)" required>
+                    <input class="input100" type="number" name="minimunReservation" placeholder="Qte mini a réserver (en Kg)" required>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input">
@@ -136,8 +136,7 @@
         </div>
         <input type="hidden" name="status" value="post">
         <input type="hidden" name="typeAnnonce" value="{{$category}}">
-        <input type="hidden" name="niveauPriorite" value="niveau 1">
-        <input type="hidden" name="typeCompte" value="particulier">
+
 
        <div class="row btnfooter">
            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
