@@ -43,3 +43,8 @@ Route::prefix('coli')->namespace('Coli')->group(function(){
 
     Route::get('testGet','coliController@infoTest');
 });
+Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
+
+    Route::get('mon-espace','ComptesController@index')->name('monEspace');
+
+});

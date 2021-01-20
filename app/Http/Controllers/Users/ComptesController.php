@@ -16,6 +16,7 @@ class ComptesController extends Controller
     public function index()
     {
         //
+        return view('webpages.annonces.user.dash');
     }
 
     /**

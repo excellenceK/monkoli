@@ -21,7 +21,7 @@
  <!-- formulaire d'expédition de colis -->
  <form   method="POST" action="">
     @csrf
-    <section class="container typeannonce box-shadow--16dp">
+    <section class="container typeannonce box-shadow--16dp" style="background-color: white">
         <div class="row">
             <div class="col">
                 <h1>Information sur l'expédition</h1>
