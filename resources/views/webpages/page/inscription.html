@@ -1,92 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MonKoli - Inscription </title>
+    <link href="../css-dash/bootstrap.min.css" rel="stylesheet">
+    <link href="../css-dash/font-awesome.min.css" rel="stylesheet">
+    <link href="../css-dash/datepicker3.css" rel="stylesheet">
+    <link href="../css-dash/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/inscription.css">
+      <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+      <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/inscription.css">
-    <title>monkoli-inscription</title>
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     <!--desktop header-->
-    <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
-        <nav class="navbar navbar-expand-lg navbar-ligth">
-            <a class="navbar-brand indexlogo" href="../index.html">
+   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span></button>
+                <a class="navbar-brand indexlogo" href="#">
                 <img src="../images/logo.png"  class="d-inline-block align-top img img-responsive" alt="logo"/>
-            </a>
-            <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav" id="itm">
-                <a id="1" class="nav-item nav-link active ah " href="#">
-                    <div class="menu">
-                         <p>Colis</p>
-                        <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                        <hr/>
-                    </div> 
-               </a>
-               <a  id="2"  class="nav-item nav-link  ah" href="#">
-                <div class="menu">
-                     <p>Mes annonces</p>
-                    <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-               </a>
-               <a id="3"  class="nav-item nav-link ah " href="#">
-                <div class="menu">
-                     <p>Messages</p>
-                    <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a  id="4"  class="nav-item nav-link ah " href="#">
-                <div class="menu poste">
-                     <p>Poster une annonce</p>
-                    <i class="fa fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="5"  class="nav-item nav-link ah " href="#">
-                <div class="menu">
-                     <p>Mon espace</p>
-                    <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="6"  class="nav-item nav-link ah" href="#">
-                <div class="menu">
-                     <p>Résidence</p>
-                    <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="7"  class="nav-item nav-link ah" href="#">
-                <div class="menu">
-                     <p>Véhicules</p>
-                    <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <div class="menu">
-                <a href="inscription.html"><button type="button" class="btn gris pure-material-button-contained">Inscription</button></a>
-               <a href="connexion.html">  <button type="button" class="btn vert pure-material-button-contained">Connexion</button></a>
-            </div> 
-        </div>
-        </nav>
-        <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height:0.5px;color:#C6C2C2;background-color:#C6C2C2; margin-left:150px; margin-right:10px; margin-top: -26px;">
-    </header>
+                </a>
+                <ul class="nav navbar-top-links navbar-left">
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px;" id="itm">
+                        <a id="1" class="nav-item nav-link ah" href="#">
+                            <div class="menu">
+                                 <p>Colis</p>
+                                <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                                <hr/>
+                            </div> 
+                       </a>
+                       <a  id="2"  class="nav-item nav-link  ah" href="#">
+                        <div class="menu">
+                             <p>Mes annonces</p>
+                            <i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                       </a>
+                       <a id="3"  class="nav-item nav-link ah " href="#">
+                        <div class="menu">
+                             <p>Messages</p>
+                            <i class="fas fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                      <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
+                        <div class="menu poste">
+                             <p>Poster une annonce</p>
+                            <i class="fas fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                      <a id="5"  class="nav-item nav-link ah" href="#">
+                        <div class="menu">
+                             <p>Mon espace</p>
+                            <i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                      <a id="6"  class="nav-item nav-link ah" href="#">
+                        <div class="menu">
+                             <p>Résidence</p>
+                            <i class="fas fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                      <a id="7"  class="nav-item nav-link ah" href="#">
+                        <div class="menu">
+                             <p>Véhicules</p>
+                            <i class="fas fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                      <div class="menu">
+                        <button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
+                        <button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
+                      </div> 
+                    </div>
+                </div>
+            </ul>
+                        
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    
     <!--mobile header-->
-    <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
-        <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
+    <header id="hmobile" class="container-fluid d-block d-sm-block d-lg-none d-md-block" >
         <div id="mobileMenu" style="display: none;">
             <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
             <ul class="menuList">
                 <li>
-                    <a class="nav-item nav-link am active " href="#">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
                              <p>Colis</p>
                             <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
@@ -160,6 +182,7 @@
             </ul>
         </div>
     </header>
+
     <!--inscription main content-->
     <section class="container">
         <form action="">
@@ -168,45 +191,50 @@
                     <div class="col-lg-5 sidepartleft">
                         <img src="../images/logo.png" class="sidelogo" alt="logo">
                          <h2 style="color: #00E38C;" >MonKoli</h2>
-                         <h6 style="color: white;">Expédier un colis n'a jamains été si <span style="color: #00E38C;">facile</span></h6>
+                         <h5 style="color: white; font-family: unset; font-size: small;">Expédier un colis<br> n'a jamais été si <span style="color: #00E38C;">facile.</span></h5>
                     </div> 
                     <div class="col-lg-7 sidepartrigth" >
-                        <h1 style="font-size: large; font-weight: bold;">Inscrivez-vous</h1>
+                        <h1 style="font-size: xx-large; font-weight: bolder; margin-top: -7px;">Inscrivez-vous</h1>
                         <div class="wrap-input100 validate-input">
                             <input class="input100" type="text" name="nom" placeholder="Nom">
                             <span class="focus-input100"></span>
                         </div>
+                        <br/>
                         <div class="wrap-input100 validate-input">
-                            <input class="input100" type="text" name="prenom" placeholder="Prenm">
+                            <input class="input100" type="text" name="prenom" placeholder="Prenom">
                             <span class="focus-input100"></span>
                         </div>
+                        <br/>
                         <div class="wrap-input100 validate-input">
                             <input class="input100" type="email" name="email" placeholder="Email">
                             <span class="focus-input100"></span>
                         </div>
+                        <br/>
                         <div class="wrap-input100 validate-input">
                             <input class="input100" type="password" name="password" placeholder="Mot de passe">
                             <span class="focus-input100"></span>
                         </div>
+                        <br/>
                         <div class="wrap-input100 validate-input">
                             <input class="input100" type="password" name="cpassword" placeholder="Confirmation du mot de passe">
                             <span class="focus-input100"></span>
                         </div>
                         <br/>
-                        <button style="width: 100%;" type="button" class="btn vert pure-material-button-contained">S'INSCRIRE</button>
                         <br/>
                         <br/>
-                        <span style="font-size: small;color: #C6C2C2;">------------ OU -----------</span>
+                        <button style="width: 100%; padding-top: 6px; font-size: 13px;" type="button" class="btn vert pure-material-button-contained">S'INSCRIRE</button>
                         <br/>
                         <br/>
-                        <button style="width: 100%;" type="button" class="btn bl  pure-material-button-contained"><i style="color:white;" class="fa fa-facebook-square" aria-hidden="true"></i>  CONTINUER AVEC FACEBOOK</button>
+                        <span style="font-size: small;color: #C6C2C2;">------------------ OU ------------------</span>
                         <br/>
                         <br/>
-                        <button style="width: 100%;" type="button" class="btn  bl1 pure-material-button-contained"> CONTINUER AVEC GOOGLE</button>
+                        <button style="width: 100%; padding-top: 6px; font-size: 13px;" type="button" class="btn bl  pure-material-button-contained"><i style="color:white;" class="fab fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;   CONTINUER AVEC FACEBOOK</button>
                         <br/>
                         <br/>
+                        <button style="width: 100%;  padding-top: 6px; font-size: 13px;" type="button" class="btn  bl1 pure-material-button-contained"><i class="fab fa-google" aria-hidden="true"></i>&nbsp;&nbsp; CONTINUER AVEC GOOGLE</button>
                         <br/>
-                         <span style="font-size: xx-small; color:#C6C2C2;font-weight: bolder;">Vous avez déjà un compte?  <span style="color: #00E38C;" > connectez-vous</span> </span>
+                        <br/>
+                         <span style="font-size: smaller; color:#C6C2C2;font-weight: lighter;">Vous avez déjà un compte?  <a href="#"><span style="color: #00E38C; font-weight: 550; text-decoration-color: #00E38C" > connectez-vous</span></a> </span>
                          <br/>
                         <br/>
                         <br/>
