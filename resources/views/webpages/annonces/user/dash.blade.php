@@ -27,7 +27,7 @@
 </head>
 <body>
 
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 main" style="margin-left: 120px;">
+	<div class="container main">
 
 		<div class="row">
 			<div class="col-lg-12">
@@ -35,50 +35,54 @@
 			</div>
 		</div><!--/.row-->
 
-		<div class="panel panel-container" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top: 7px; padding-left: 50px">
-			<div class="row">
-				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
-					<div class="panel panel-teal panel-widget"><a href="#">
-						<div class="row no-padding"><i class="fas fa-chart-pie" style="font-size: 35px;"></i>
-							<div class="text-muted" style="font-size: 10px;"><br/>Tableau de bord</div>
+		<section class="container-fluid" >
+           <div class="row ">
+			<div class="panel panel-container" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top: 7px;">
+				<div class="row center-block">
+					<div class="col-6  col-md-6 col-lg-3 col-sm-6 no-padding" style="">
+						<div class="panel panel-teal panel-widget"><a href="#">
+							<div class="row no-padding"><i class="fas fa-chart-pie" style="font-size: 35px;"></i>
+								<div class="text-muted" style="font-size: 10px;"><br/>Tableau de bord</div>
+							</div>
+						</a>
 						</div>
-					</a>
 					</div>
-				</div>
-				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
-					<div class="panel panel-teal panel-widget"><a href="#">
-						<div class="row no-padding"><i class="fas fa-shopping-bag" style="font-size: 35px;"></i>
-							<div class="text-muted" style="font-size: 10px;"><br/>Colis</div>
+					<div class="col-6  col-md-6 col-lg-2 col-sm-6 no-padding">
+						<div class="panel panel-teal panel-widget"><a href="#">
+							<div class="row no-padding"><i class="fas fa-shopping-bag" style="font-size: 35px;"></i>
+								<div class="text-muted" style="font-size: 10px;"><br/>Colis</div>
+							</div>
+						</a>
 						</div>
-					</a>
 					</div>
-				</div>
-				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
-					<div class="panel panel-teal panel-widget"><a href="#">
-						<div class="row no-padding"><i class="fas fa-home" style="font-size: 35px;"></i>
-							<div class="text-muted" style="font-size: 10px;"><br/>Résidences</div>
+					<div class="col-6  col-md-6 col-lg-2 col-sm-6 no-padding">
+						<div class="panel panel-teal panel-widget"><a href="#">
+							<div class="row no-padding"><i class="fas fa-home" style="font-size: 35px;"></i>
+								<div class="text-muted" style="font-size: 10px;"><br/>Résidences</div>
+							</div>
+						</a>
 						</div>
-					</a>
 					</div>
-				</div>
-				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
-					<div class="panel panel-teal panel-widget "><a href="#">
-						<div class="row no-padding"><i class="fas fa-car" style="font-size: 35px;"></i>
-							<div class="text-muted" style="font-size: 10px;"><br/>Véhicules</div>
+					<div class="col-6  col-md-6 col-lg-2 col-sm-6 no-padding">
+						<div class="panel panel-teal panel-widget "><a href="#">
+							<div class="row no-padding"><i class="fas fa-car" style="font-size: 35px;"></i>
+								<div class="text-muted" style="font-size: 10px;"><br/>Véhicules</div>
+							</div>
+						</a>
 						</div>
-					</a>
 					</div>
-				</div>
-				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
-					<div class="panel panel-teal panel-widget"><a href="#">
-						<div class="row no-padding"><i class="fas fa-user" style="font-size: 35px;"></i>
-							<div class="text-muted" style="font-size: 10px;"><br/>Mes infos personnelles</div>
+					<div class="col-6  col-md-6 col-lg-3 col-sm-6 no-padding">
+						<div class="panel panel-teal panel-widget"><a href="#">
+							<div class="row no-padding"><i class="fas fa-user" style="font-size: 35px;"></i>
+								<div class="text-muted" style="font-size: 10px;"><br/>Mes infos personnelles</div>
+							</div>
+						</a>
 						</div>
-					</a>
 					</div>
-				</div>
-			</div><!--/.row-->
-		</div>
+				</div><!--/.row-->
+			</div>
+		   </div>
+		</section>
         <br><br>
         @php
             $annonceColi = DB::table('annonces')
@@ -123,45 +127,48 @@
             //dd($reservations);
 
         @endphp
-		<div class="panel panel-container" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top: 20px">
-			<div class="row">
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Annonce(s) en cours<br/></div>
-							<div class="large" style="color: #00E38C;">{{ $annonceEnCours }}</div>
-							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 160px; height: 40px"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+		<section class="container">
+			<div class="panel panel-container" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top: 20px">
+				<div class="row">
+					<div class="col-6 col-md-3 col-lg-3 col-sm-6 no-padding" style="background-color: none;">
+						<div class="panel panel-teal panel-widget border-right">
+							<div class="row no-padding">
+								<div class="text-muted" style="font-size: 15px;">Annonce(s) en cours<br/></div>
+								<div class="large" style="color: #00E38C;">{{ $annonceEnCours }}</div>
+								<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style=" font-size:small;background-color: #00E38C; color: white; width: 160px; height: 40px"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Reservation(s) en attente<br/></div>
-							<div class="large" style="color: #00E38C;">{{ $reservationsColi }}</div>
-							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 160px; height: 40px";> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+					<div class="col-6 col-md-3 col-lg-3 col-sm-6 no-padding" style="background-color: none;">
+						<div class="panel panel-teal panel-widget border-right">
+							<div class="row no-padding">
+								<div class="text-muted" style="font-size: 15px;">Reservation(s) en attente<br/></div>
+								<div class="large" style="color: #00E38C;">{{ $reservationsColi }}</div>
+								<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style=" font-size:small;background-color: #00E38C; color: white; width: 160px; height: 40px";> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Total Annonces<br/></div>
-							<div class="large" style="color: #00E38C;">{{ $totalColis }}</div>
-							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 160px; height: 40px";><i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+					<div class="col-6 col-md-3 col-lg-3 col-sm-6 no-padding" style="background-color: none;">
+						<div class="panel panel-teal panel-widget border-right">
+							<div class="row no-padding">
+								<div class="text-muted" style="font-size: 15px;">Total Annonces<br/></div>
+								<div class="large" style="color: #00E38C;">{{ $totalColis }}</div>
+								<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="font-size:small; background-color: #00E38C; color: white; width: 160px; height: 40px";><i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-					<div class="panel panel-teal panel-widget">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Notes Globale<br/><br/></div>
-							<i class="fa fa-star valide"  aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star novalide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i>
+					<div class="col-6 col-md-3 col-lg-3 col-sm-6 no-padding" style="background-color: none;">
+						<div class="panel panel-teal panel-widget">
+							<div class="row no-padding">
+								<div class="text-muted " style="font-size: 15px;">Notes Globale<br/><br/></div>
+								<i class="fa fa-star valide"  aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star novalide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div><!--/.row-->
-		</div>
+				</div><!--/.row-->
+			</div>
+
+		</section>
 
 		<div class="row">
 			<div class="col-sm-6">
@@ -224,7 +231,7 @@
 				<h3 class="page-header" style="font-weight: bold;">Total Gain</h3>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 					<div class="panel-body">
-						<div class="large" style="color: #00E38C; font-weight: bolder; font-size: 50px;">{{ $totalGain }} <span style="color: #C6C2C2; font-weight: 500;">FCFA</span>
+						<div class="large" style="color: #00E38C; font-weight: bolder; font-size: 50px;">{{ $totalGain?? 00 }} <span style="color: #C6C2C2; font-weight: 500;">FCFA</span>
                             <br><br>
 
                             @foreach($annonceColiTotal as $value)
