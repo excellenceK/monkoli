@@ -12,7 +12,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\ControlSaisie\ControlSaisieNiveau1;
-use Illuminate\Support\Facades\Auth;
 
 class coliController extends Controller
 {
@@ -99,7 +98,7 @@ class coliController extends Controller
         $annonce->dateExpiration = $dateExpiration;
         $annonce->status = $status;
 
-        //dd($annonce);
+        //dd($annonce);certifiee urgente
 
         //Enregistrement de l annonce
         $annonce->save();
