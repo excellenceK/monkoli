@@ -27,9 +27,9 @@ class coliController extends Controller
             $user = new User();
             $user->telephone = $telephone;
             $user->password = Hash::make($defaultPassword);
-            $user->name = ucwords(ControlSaisieNiveau1::checkInput1($request->nom));
-            $user->prenom = ucwords(ControlSaisieNiveau1::checkInput1($request->prenom));
-            $user->email = ucwords(ControlSaisieNiveau1::checkInput1($request->email));
+            $user->name = strtolower(ControlSaisieNiveau1::checkInput1($request->nom));
+            $user->prenom = strtolower(ControlSaisieNiveau1::checkInput1($request->prenom));
+            $user->email = strtolower(ControlSaisieNiveau1::checkInput1($request->email));
             $user->typeCompte = 'particulier';
 
             $user->save();
@@ -60,19 +60,19 @@ class coliController extends Controller
             $niveauPriorite = 'niveau 2';
         }
         $dateCreation =  Carbon::now()->format('Y-m-d H:i');
-        $dateExpiration = ControlSaisieNiveau1::checkInput1($request->dateArriver);
+        $dateExpiration = ControlSaisieNiveau1::checkInput1($request->dateLimiteReservation);
         $status = ControlSaisieNiveau1::checkInput1($request->status); //post annonce ou post recherche
 
-        $typeTransport = ucwords(ControlSaisieNiveau1::checkInput1($request->typeTransport));
-        $moyenTransport = ucwords(ControlSaisieNiveau1::checkInput1($request->moyenTransport));
-        //$compagnieTransport = ucwords(ControlSaisieNiveau1::checkInput1($request->compagnieTransport));
+        $typeTransport = strtolower(ControlSaisieNiveau1::checkInput1($request->typeTransport));
+        $moyenTransport = strtolower(ControlSaisieNiveau1::checkInput1($request->moyenTransport));
+        //$compagnieTransport = strtolower(ControlSaisieNiveau1::checkInput1($request->compagnieTransport));
        // $verificationBillet = ControlSaisieNiveau1::checkInput1($request->verificationBillet);
 
-        $villeDepart = ucwords(ControlSaisieNiveau1::checkInput1($request->villeDepart)) ;
-        $villeArriver = ucwords(ControlSaisieNiveau1::checkInput1($request->villeArriver)) ;
+        $villeDepart = strtolower(ControlSaisieNiveau1::checkInput1($request->villeDepart)) ;
+        $villeArriver = strtolower(ControlSaisieNiveau1::checkInput1($request->villeArriver)) ;
 
-        $lieuDepot = ucwords(ControlSaisieNiveau1::checkInput1($request->lieuDepot));
-        $lieuLivraison = ucwords(ControlSaisieNiveau1::checkInput1($request->lieuLivraison));
+        $lieuDepot = strtolower(ControlSaisieNiveau1::checkInput1($request->lieuDepot));
+        $lieuLivraison = strtolower(ControlSaisieNiveau1::checkInput1($request->lieuLivraison));
 
         $dateDepart = ControlSaisieNiveau1::checkInput1($request->dateDepart);
         $dateArriver = ControlSaisieNiveau1::checkInput1($request->dateArriver);
@@ -84,8 +84,8 @@ class coliController extends Controller
         //$minimunReservation =  ControlSaisieNiveau1::checkInput1($request->minimunReservation);
         $dateLimiteReservation = str_replace("T"," ",ControlSaisieNiveau1::checkInput1($request->dateLimiteReservation)) ;
 
-        $devise =  ucwords(ControlSaisieNiveau1::checkInput1($request->devise));
-        $prixUnitaire = ucwords(ControlSaisieNiveau1::checkInput1($request->prixUnitaire));
+        $devise =  strtolower(ControlSaisieNiveau1::checkInput1($request->devise));
+        $prixUnitaire = strtolower(ControlSaisieNiveau1::checkInput1($request->prixUnitaire));
 
         //Instantiation du model Annonce
         $annonce = new Annonce();

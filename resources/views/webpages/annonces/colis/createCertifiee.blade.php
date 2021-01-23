@@ -129,7 +129,7 @@
                 </div>
                 <div class="wrap-input100 validate-input">
                     <label  for="dateDepart" style="font-size: small;color: #C6C2C2;" >Date limite de réservation</label>
-                    <input class="input100" type="datetime-local" name="dateLimiteReservation" placeholder="Date limite de réservation" required>
+                    <input class="input100" type="date" name="dateLimiteReservation" placeholder="Date limite de réservation" required>
                     <span class="focus-input100"></span>
                 </div>
            </div>
