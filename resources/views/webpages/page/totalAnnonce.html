@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MonKoli - Mon Espace </title>
+	<link href="../css-dash/bootstrap.min.css" rel="stylesheet">
+	<link href="../css-dash/font-awesome.min.css" rel="stylesheet">
+	<link href="../css-dash/datepicker3.css" rel="stylesheet">
+	<link href="../css-dash/styles.css" rel="stylesheet">
+	  <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+      <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+				<a class="navbar-brand indexlogo" href="#">
+                <img src="../images/logo.png"  class="d-inline-block align-top img img-responsive" alt="logo"/>
+            	</a>
+            	<ul class="nav navbar-top-links navbar-left">
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		              <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px;" id="itm">
+		                <a id="1" class="nav-item nav-link " href="#">
+		                    <div class="menu">
+		                         <p>Colis</p>
+		                        <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+		                        <hr/>
+		                    </div> 
+		               </a>
+		               <a  id="2"  class="nav-item nav-link  ah" href="#">
+		                <div class="menu">
+		                     <p>Mes annonces</p>
+		                    <i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+		                    <hr/>
+		                </div> 
+		               </a>
+		               <a id="3"  class="nav-item nav-link ah " href="#">
+		                <div class="menu">
+		                     <p>Messages</p>
+		                    <i class="fas fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+		                    <hr/>
+		                </div> 
+		              </a>
+		              <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
+		                <div class="menu poste">
+		                     <p>Poster une annonce</p>
+		                    <i class="fas fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+		                    <hr/>
+		                </div> 
+		              </a>
+		              <a id="5"  class="nav-item nav-link ah active" href="#">
+		                <div class="menu">
+		                     <p>Mon espace</p>
+		                    <i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
+		                    <hr/>
+		                </div> 
+		              </a>
+		              <a id="6"  class="nav-item nav-link ah" href="#">
+		                <div class="menu">
+		                     <p>Résidence</p>
+		                    <i class="fas fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+		                    <hr/>
+		                </div> 
+		              </a>
+		              <a id="7"  class="nav-item nav-link ah" href="#">
+		                <div class="menu">
+		                     <p>Véhicules</p>
+		                    <i class="fas fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+		                    <hr/>
+		                </div> 
+		              </a>
+		              <div class="menu">
+		                <button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
+		                <button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
+		              </div> 
+		            </div>
+		        </div>
+		    </ul>
+						
+			</div>
+		</div><!-- /.container-fluid -->
+	</nav>
+	
+    <!--mobile header-->
+    <header id="hmobile" class="container-fluid d-block d-sm-block d-lg-none d-md-block" >
+        <div id="mobileMenu" style="display: none;">
+            <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
+            <ul class="menuList">
+                <li>
+                    <a class="nav-item nav-link am active " href="#">
+                        <div class="menu">
+                             <p>Colis</p>
+                            <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                   </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link am" href="#">
+                        <div class="menu">
+                             <p>Mes annonces</p>
+                            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                       </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Messages</p>
+                            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu poste">
+                             <p>Ajouter annonce</p>
+                            <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Mon espace</p>
+                            <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Résidence</p>
+                            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Véhicules</p>
+                            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <button type="button" class="btn gris pure-material-button-contained">Inscription</button>
+
+                </li>
+                <li>
+                    <button type="button" class="btn vert pure-material-button-contained">Connexion</button>
+
+                </li>
+
+            </ul>
+        </div>
+    </header>
+    <!--Header-->
+
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 main" style="margin-left: 120px;">
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header" style="font-weight: bolder;">Mon Espace</h1>
+			</div>
+		</div><!--/.row-->
+		
+		<div class="panel panel-container board" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-left: 100px;">
+			<div class="row">
+				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
+					<div class="panel panel-teal panel-widget tab"><a href="#">
+						<div class="row no-padding"><i class="fas fa-chart-pie" style="font-size: 35px;"></i>
+							<div class="text-muted" style="font-size: 10px;"><br/><span>Tableau de bord</span></div>
+						</div>
+					</a>
+					</div>
+				</div>
+				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
+					<div class="panel panel-teal panel-widget tab active"><a href="#">
+						<div class="row no-padding"><i class="fas fa-shopping-bag" style="font-size: 35px;"></i>
+							<div class="text-muted" style="font-size: 10px;"><br/><span>Colis</span></div>
+						</div>
+					</a>
+					</div>
+				</div>
+				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
+					<div class="panel panel-teal panel-widget tab"><a href="#">
+						<div class="row no-padding"><i class="fas fa-home" style="font-size: 35px;"></i>
+							<div class="text-muted" style="font-size: 10px;"><br/><span>Résidences</span></div>
+						</div>
+					</a>
+					</div>
+				</div>
+				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
+					<div class="panel panel-teal panel-widget tab"><a href="#">
+						<div class="row no-padding"><i class="fas fa-car" style="font-size: 35px;"></i>
+							<div class="text-muted" style="font-size: 10px;"><br/><span>Véhicules</span></div>
+						</div>
+					</a>
+					</div>
+				</div>
+				<div class="col-xs-5 col-md-3 col-lg-2 no-padding" style="margin-right: 20px">
+					<div class="panel panel-teal panel-widget tab"><a href="#">
+						<div class="row no-padding"><i class="fas fa-user" style="font-size: 35px;"></i>
+							<div class="text-muted" style="font-size: 10px;"><br/><span>Mes infos personnelles</span></div>
+							<!-- <button type="button" class="btn pure2 text-muted" style="background-color: #00E38C; color: white; height: 100px";><i class="fas fa-user" style="font-size: 35px;"></i><br> Mes infos personnelles</button>
+ -->
+						</div>
+					</a>
+					</div>
+				</div>
+			</div><!--/.row-->
+		</div>
+		<br><br>
+		<div class="panel panel-container" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top: 20px">
+			<div class="row">
+				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
+					<div class="panel panel-teal panel-widget border-right">
+						<div class="row no-padding">
+							<div class="text-muted" style="font-size: 15px;">Annonce(s) en cours<br/></div>
+							<div class="large" style="color: #00E38C;">2</div>
+							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
+					<div class="panel panel-teal panel-widget border-right">
+						<div class="row no-padding">
+							<div class="text-muted" style="font-size: 15px;">Reservation(s) en attente<br/></div>
+							<div class="large" style="color: #00E38C;">4</div>							
+							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
+					<div class="panel panel-teal panel-widget border-right">
+						<div class="row no-padding">
+							<div class="text-muted" style="font-size: 15px;">Total Annonces<br/></div>
+							<div class="large" style="color: #00E38C;">12</div>
+							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"><i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
+					<div class="panel panel-teal panel-widget">
+						<div class="row no-padding">
+							<div class="text-muted" style="font-size: 15px;">Notes Globale<br/><br/></div>
+							<i class="fa fa-star valide"  aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star novalide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i>						
+						</div>
+					</div>
+				</div>
+			</div><!--/.row-->
+		</div>
+
+		<div class="row" style="padding-bottom: 50px">
+			<div class="col-lg-12">
+				<h1 class="page-header" style="font-weight: bolder;">Mes Annonces</h1>
+				<h3 class="page-header" style="font-weight: bold;">Annonces en cours</h3>
+				<div class="row">
+					<div class="col-md-16">
+						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
+							<div class="card-body">
+			                  <div class="table-responsive">
+			                    <table class="table">
+			                      <thead class="text-primary">
+			                        <th>
+			                          N°
+			                        </th>
+			                        <th>
+			                          Départ
+			                        </th>
+			                        <th>
+			                          Destination
+			                        </th>
+			                        <th>
+			                          Coût
+			                        </th>
+			                        <th>
+			                          Devise
+			                        </th>
+			                        <th>
+			                          Mode de transport
+			                        </th>
+			                        <th>
+			                          Actions
+			                        </th>
+			                      </thead>
+			                      <tbody>
+			                        <tr>
+			                          <td>
+			                            1
+			                          </td>
+			                          <td>
+			                            Abidjan
+			                          </td>
+			                          <td>
+			                            Paris
+			                          </td>
+			                          <td class="text-primary">
+			                            23 000
+			                          </td>
+			                          <td>
+			                            FCFA
+			                          </td>
+			                          <td>
+			                            Avion
+			                          </td>
+			                          <td>
+			                            <button type="button" class="btn vert pure-material-button-contained"><i class="far fa-eye" style="color: white;"></i> Voir</button>
+			                            <button type="button" class="btn gris pure-material-button-contained"><i class="far fa-edit" style="color: white;"></i> Editer</button>
+			                              <button type="button" class="btn pure-material-button-contained" style="background-color: red;"><i class="fas fa-trash" style="color: white;"></i> Supprimer</button>
+			                          </td>
+			                        </tr>
+			                        <tr>
+			                          <td>
+			                            1
+			                          </td>
+			                          <td>
+			                            Abidjan
+			                          </td>
+			                          <td>
+			                            Paris
+			                          </td>
+			                          <td class="text-primary">
+			                            23 000
+			                          </td>
+			                          <td>
+			                            FCFA
+			                          </td>
+			                          <td>
+			                            Avion
+			                          </td>
+			                          <td>
+			                            <button type="button" class="btn vert pure-material-button-contained"><i class="fa fa-eye" style="color: white;"></i> Voir</button>
+			                            <button type="button" class="btn gris pure-material-button-contained"><i class="far fa-edit" style="color: white;"></i> Editer</button>
+			                              <button type="button" class="btn pure-material-button-contained" style="background-color: red;"><i class="fas fa-trash" style="color: white;"></i> Supprimer</button>
+
+			                          </td>
+			                        </tr>
+			                        <tr>
+			                          <td>
+			                            1
+			                          </td>
+			                          <td>
+			                            Abidjan
+			                          </td>
+			                          <td>
+			                            Paris
+			                          </td>
+			                          <td class="text-primary">
+			                            23 000
+			                          </td>
+			                          <td>
+			                            FCFA
+			                          </td>
+			                          <td>
+			                            Avion
+			                          </td>
+			                          <td>
+			                            <button type="button" class="btn vert pure-material-button-contained"><i class="fa fa-eye" style="color: white;"></i> Voir</button>
+			                            <button type="button" class="btn gris pure-material-button-contained"><i class="far fa-edit" style="color: white;"></i> Editer</button>			                     
+			                            <button type="button" class="btn pure-material-button-contained" style="background-color: red;"><i class="fas fa-trash" style="color: white;"></i> Supprimer</button>
+			                          </td>
+			                        </tr>
+			                      </tbody>
+			                    </table>
+			                  </div>
+			                </div>
+			              </div>
+			            </div>
+            
+						</div>
+					</div>
+				</div><!--/.row-->
+		<div class="row" style="padding-bottom: 50px">
+			<div class="col-lg-12">
+				<h3 class="page-header" style="font-weight: bold;">Annonce(s) terminée(s)</h3>
+				<div class="row">
+					<div class="col-md-16">
+						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
+							<div class="card-body">
+			                  <div class="table-responsive">
+			                    <table class="table">
+			                      <thead class="text-primary">
+			                        <th>
+			                          N°
+			                        </th>
+			                        <th>
+			                          Départ
+			                        </th>
+			                        <th>
+			                          Destination
+			                        </th>
+			                        <th>
+			                          Coût
+			                        </th>
+			                        <th>
+			                          Devise
+			                        </th>
+			                        <th>
+			                          Mode de transport
+			                        </th>
+			                        <th>
+			                          Actions
+			                        </th>
+			                      </thead>
+			                      <tbody>
+			                        <tr>
+			                          <td>
+			                            1
+			                          </td>
+			                          <td>
+			                            Abidjan
+			                          </td>
+			                          <td>
+			                            Paris
+			                          </td>
+			                          <td class="text-primary">
+			                            23 000
+			                          </td>
+			                          <td>
+			                            FCFA
+			                          </td>
+			                          <td>
+			                            Avion
+			                          </td>
+			                          <td>
+			                            <button type="button" class="btn vert pure-material-button-contained"><i class="far fa-eye" style="color: white;"></i> Voir</button>
+			                              <button type="button" class="btn pure-material-button-contained" style="background-color: red;"><i class="fas fa-trash" style="color: white;"></i> Supprimer</button>
+			                          </td>
+			                        </tr>
+			                        <tr>
+			                          <td>
+			                            1
+			                          </td>
+			                          <td>
+			                            Abidjan
+			                          </td>
+			                          <td>
+			                            Paris
+			                          </td>
+			                          <td class="text-primary">
+			                            23 000
+			                          </td>
+			                          <td>
+			                            FCFA
+			                          </td>
+			                          <td>
+			                            Avion
+			                          </td>
+			                          <td>
+			                            <button type="button" class="btn vert pure-material-button-contained"><i class="fa fa-eye" style="color: white;"></i> Voir</button>
+			                              <button type="button" class="btn pure-material-button-contained" style="background-color: red;"><i class="fas fa-trash" style="color: white;"></i> Supprimer</button>
+
+			                          </td>
+			                        </tr>
+			                        <tr>
+			                          <td>
+			                            1
+			                          </td>
+			                          <td>
+			                            Abidjan
+			                          </td>
+			                          <td>
+			                            Paris
+			                          </td>
+			                          <td class="text-primary">
+			                            23 000
+			                          </td>
+			                          <td>
+			                            FCFA
+			                          </td>
+			                          <td>
+			                            Avion
+			                          </td>
+			                          <td>
+			                            <button type="button" class="btn vert pure-material-button-contained"><i class="fa fa-eye" style="color: white;"></i> Voir</button>		                     
+			                            <button type="button" class="btn pure-material-button-contained" style="background-color: red;"><i class="fas fa-trash" style="color: white;"></i> Supprimer</button>
+			                          </td>
+			                        </tr>
+			                      </tbody>
+			                    </table>
+			                  </div>
+			                </div>
+			              </div>
+			            </div>
+            
+						</div>
+					</div>
+				</div><!--/.row-->
+
+		<br><br>
+
+	</div>
+
+
+	<script src="../js-dash/jquery-1.11.1.min.js"></script>
+	<script src="../js-dash/bootstrap.min.js"></script>
+	<script src="../js-dash/chart.min.js"></script>
+	<script src="../js-dash/chart-data.js"></script>
+	<script src="../js-dash/easypiechart.js"></script>
+	<script src="../js-dash/easypiechart-data.js"></script>
+	<script src="../js-dash/bootstrap-datepicker.js"></script>
+	<script src="../js-dash/custom.js"></script>
+
+	
+</body>
+</html>
