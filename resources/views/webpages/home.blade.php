@@ -363,7 +363,7 @@
                     <br class="d-block d-sm-block d-lg-none d-md-none">
                     <br class="d-block d-sm-block d-lg-none d-md-none">
                     <div class="col" style="margin-top: 45px; margin-left: 200px;">
-                        <button type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</button>
+                        <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</a>
                     </div>
                  </div>
                 </div>

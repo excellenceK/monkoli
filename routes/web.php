@@ -38,7 +38,8 @@ Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
     Route::get('/create/{type}/{category}', 'coliController@create')->name('createAnnonceColi');
     //Route::get('/poster-annonce-certifiee', 'coliController@createAnnonceCertifiee')->name('createAnnonceCertifiee');
     Route::post('/rechercheAnnonce','coliRechercheController@rechercheColi')->name('rechercheAnnonceColi');
-
+    Route::get('reserver/{id}','coliController@reservationColi')->name('reservationColi');
+    Route::post('reservation-post','coliController@reservationColiPost')->name('reservationColiPost');
     Route::post('creationAnnonce','coliController@creationAnnonceColi');
     Route::post('getInfoAnnonce','coliController@getInfoAnnonce');
 
@@ -47,5 +48,11 @@ Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
 Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
 
     Route::get('mon-espace','ComptesController@index')->name('monEspace');
+    Route::get('consulter-annonce','ComptesController@consulterAnnonce')->name('consulterAnnonce');
+    Route::get('consulter-reservation/{id}','ComptesController@consulterReservations')->name('consulterReservations');
+    Route::get('accepter-reservation/{id}','ComptesController@accepterReservation')->name('accepteReservation');
+    Route::get('refuser-reservation/{id}','ComptesController@refuserReservation')->name('refuserReservation');
+
+
 
 });

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Http\Controllers\Controller;
 use App\User;
+use App\Reservations;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ComptesController extends Controller
 {
@@ -16,7 +18,13 @@ class ComptesController extends Controller
     public function index()
     {
         //
-        return view('webpages.annonces.user.dash');
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.monespace');
+
+        }else{
+            return redirect('login');
+        }
     }
 
     /**
@@ -102,4 +110,44 @@ class ComptesController extends Controller
     {
         //
     }
+
+
+    public function consulterAnnonce()
+    {
+
+        return view('webpages.annonces/user/annonceEnCours');
+    }
+    public function consulterReservations($id)
+    {
+        return view('webpages.annonces/user/liste-reservation')->with(['annonce_id'=>$id]);
+    }
+
+    public function accepterReservation($id)
+    {
+        $reservation=Reservations::findOrFail($id);
+
+        if ( $reservation->update([
+            'accepter' =>true
+        ])) {
+            # code...
+            return back()->with('success', 'Votre avis a été enrégistré avec succès. Le demandeur sera notifié !');
+        }
+
+        //dd($category);
+        //$data= true;
+        // return $data;
+    }
+
+    public function refuserReservation($id)
+    {
+        $reservation=Reservations::findOrFail($id);
+
+        if ( $reservation->update([
+            'accepter' =>false
+        ])) {
+            # code...
+            return back()->with('success', 'Votre avis a été enrégistré avec succès. Le demandeur sera notifié !');
+        }
+    }
+
 }

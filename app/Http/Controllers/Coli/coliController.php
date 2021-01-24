@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\ControlSaisie\ControlSaisieNiveau1;
+use App\Reservations;
 
 class coliController extends Controller
 {
@@ -276,5 +277,39 @@ class coliController extends Controller
                         break;
         }
     }
+
+    public function reservationColi($id)
+    {
+        $info = DB::table('annonces')
+                ->where('annonces.id',$id)
+                ->join('transport_colis', 'transport_colis.annonce_id', 'annonces.id')
+                ->first();
+
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.colis.reservations')->with(['annonce' =>$info]);
+        }else {
+            return redirect('login');
+        }
+    }
+
+
+    public function reservationColiPost(Request $request)
+    {
+        $reservation  = new Reservations();
+        $reservation->quantiteReserve = $request->quantite;
+        $reservation->montantReservation = $request->total;
+        $reservation->annonce_id = $request->annonce_id;
+        $reservation->user_id  = Auth::user()->id;
+        $reservation->save();
+        return redirect('/');
+        //dd($request);
+       /* $info = DB::table('annonces')
+                ->where('annonces.id',$id)
+                ->join('transport_colis', 'transport_colis.annonce_id', 'annonces.id')
+                ->first();
+        return view('webpages.annonces.colis.reservations')->with(['annonce' =>$info]);*/
+    }
+
 
 }
