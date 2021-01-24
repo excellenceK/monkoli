@@ -37,9 +37,9 @@ Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
     Route::get('getInfoAnnonce','coliController@getInfoAnnonce');
     Route::get('/create/{type}/{category}', 'coliController@create')->name('createAnnonceColi');
     //Route::get('/poster-annonce-certifiee', 'coliController@createAnnonceCertifiee')->name('createAnnonceCertifiee');
+    Route::post('/rechercheAnnonce','coliRechercheController@rechercheColi')->name('rechercheAnnonceColi');
     Route::get('reserver/{id}','coliController@reservationColi')->name('reservationColi');
     Route::post('reservation-post','coliController@reservationColiPost')->name('reservationColiPost');
-
     Route::post('creationAnnonce','coliController@creationAnnonceColi');
     Route::post('getInfoAnnonce','coliController@getInfoAnnonce');
 

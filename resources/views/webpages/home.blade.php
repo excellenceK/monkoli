@@ -1,4 +1,7 @@
 @php
+    //$today = \Carbon\Carbon::now()->format('Y-m-d');
+    //$today =  $today.' 00:00:00';
+    //dd($today);
     $resultQueryGetInfoAnnonce = DB::select('select users.id as idUser, users.name as nomUser, users.prenom as prenomUser, annonces.id as idAnnonce, annonces.slug as slugAnnonce,
         annonces.niveauPriorite as niveauPrioriteAnnonce, annonces.dateCreation as dateCreationAnnonce,
          annonces.dateExpiration as dateExpirationAnnonce, annonces.status as statusAnnonce,
@@ -15,7 +18,7 @@
                    transport_colis.dateLimiteReservation,transport_colis.lieuDepot, transport_colis.lieuLivraison,
                     transport_colis.devise, transport_colis.prixUnitaire
         from annonces, transport_colis, users
-        where transport_colis.annonce_id = annonces.id and annonces.user_id = users.id
+        where transport_colis.annonce_id = annonces.id and annonces.user_id = users.id and annonces.dateExpiration >= (select NOW())
     ORDER BY annonces.niveauPriorite DESC');
 
     $getInfoAnnonce = array_map(function($value){
@@ -141,29 +144,30 @@
         <br/>
         <div class="row">
          <span class="col-12">
-             <form class="form col-12 col-md-12 col-lg-12 col-sm-12">
+             <form class="form col-12 col-md-12 col-lg-12 col-sm-12" method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+               @csrf
                 <div class="row">
                   <div class="col-12 col-md-4 col-lg-4 col-sm-12">
-                         <input type="text" class="form-control col-12" id="inputEmail3" placeholder="D'où part le colis?">
+                         <input type="text" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
                          <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <div class="col-12 col-md-3 col-lg-3 col-sm-12">
-                     <input type="text" class="form-control col-12" id="inputPassword3" placeholder="Où voulez vous l'expédier?">
+                     <input type="text" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
                      <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <div class="col-12 col-md-3 col-lg-3 col-sm-12">
-                     <input type="date" class="form-control col-12" id="inputPassword3" placeholder="Quand voulez vous l'envoyer?">
+                     <input type="date" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
-                   <span class="col-12 col-md-2 col-lg-2 col-sm-12" ><button type="button" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
+                   <span class="col-12 col-md-2 col-lg-2 col-sm-12" ><button type="submit" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
                 </div>
              </form>
          </span>
