@@ -36,7 +36,7 @@
                 $reservationsColi = 0;
                 foreach ($annonceColi as  $value) {
                     # code...
-                    $reservationsColi += DB::table('reservations')->where('annonce_id', $value->idAnnonce)->count();
+                    $reservationsColi += DB::table('reservations')->where('annonce_id', $value->idAnnonce)->where('accepter', null)->count();
 
                 }
                 $annonceEnCours = $annonceColi->count();

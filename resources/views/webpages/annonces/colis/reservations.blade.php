@@ -213,6 +213,7 @@
 
                     <div class="card wizard-card" data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
                         <form action="{{ route('coli.reservationColiPost') }}" method="post">
+                            @csrf
                             <div class="wizard-navigation" style="margin-top: -49px;">
                                 <div class="progress-with-circle">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
@@ -307,6 +308,7 @@
                             <br><br>
                          </div>
                          <div class="col-4">
+                            <input type="hidden" name="annonce_id" value="{{ $annonce->id }}" >
 
                          </div>
 
