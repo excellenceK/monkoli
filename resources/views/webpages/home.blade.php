@@ -173,7 +173,7 @@
          </span>
         </div>
         <br/>
-        <h6>Gagnez de l'argent en transportant des colis.<span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></h6>
+        <h6>Gagnez de l'argent en transportant des colis.<a href="{{ route('createAnnonce') }}"><span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></a></h6>
     </section>
    </section>
 

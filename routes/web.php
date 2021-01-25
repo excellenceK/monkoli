@@ -28,7 +28,7 @@ Route::get('/type-annonce/{type}', 'AnnoncesController@vueTypeAnnonce')->name('v
 Route::post('/categorie-annonce', 'AnnoncesController@categoryAnnonce')->name('categoryAnnonce');
 
 
-Route::get('/search-annonce', 'AnnoncesController@search')->name('searchAnnonce');
+Route::get('/search-annonce', 'AnnoncesController@search')->name('searchAnnonce'); // recherche utilise la vue de se controller
 
 
 Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
