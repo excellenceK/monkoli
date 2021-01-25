@@ -300,15 +300,23 @@
                 </div>
             </div>-->
             <!--  -->
-            <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
+            <div class="card  carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
                 <img class="card-img-top img img-responsive"  src="images/bg_card.png" alt="Card image cap">
                 <div class="card-body row">
-                  <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
-                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 20px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
-                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 290px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
-                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
-                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
-                  <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
+                  <div class="col-5">
+                    <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
+                    <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px;color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
+                    <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
+                  </div>
+                  <div class="col-2">
+                      <p style="margin-top: -100px;"><i class="fas fa-arrow-right" aria-hidden="true" style="color:white;position: absolute; font-size: large;"></i></p>
+                  </div>
+                  <div class="col-5">
+                    <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">  
+                    <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
+                    <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
+                  </div>
+
                </div>
                 <div class="card-body row">
                   <div class="col-4">
@@ -350,10 +358,7 @@
                                 @if($trajet['typeTransport'] == 'Férroviaire')
                                     <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Train.png" alt="train"></span>
                                 @endif
-
-
                             </div>
-
                  </div>
 
                  <div class="row">
