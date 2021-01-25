@@ -93,12 +93,12 @@
                             @php
                                 $reservations = DB::table('reservations')->where('annonce_id', $value->idAnnonce)->get();
                                 $quantiteReserve = 0;
-                                $totalGain = 0;
+                                $totalGain ?? '' = 0;
                                 $pourcentageReservation = 0;
                                 foreach ($reservations as $data) {
                                     # code...
                                     $quantiteReserve += $data->quantiteReserve;
-                                    $totalGain += $data->montantReservation;
+                                    $totalGain ?? '' += $data->montantReservation;
                                 }
                                 $pourcentageReservation = ($quantiteReserve * 100)/$value->quantiteDisponible;
                                 //dd($reservation);
@@ -120,7 +120,7 @@
 				<h3 class="page-header" style="font-weight: bold;">Total Gain</h3>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 					<div class="panel-body">
-						<div class="large" style="color: #00E38C; font-weight: bolder; font-size: 50px;">{{ $totalGain }} <span style="color: #C6C2C2; font-weight: 500;">FCFA</span>
+						<div class="large" style="color: #00E38C; font-weight: bolder; font-size: 50px;">{{ $totalGain ?? '' }} <span style="color: #C6C2C2; font-weight: 500;">FCFA</span>
 							<br><br>
                             @foreach($annonceColiTotal as $value)
                             @php
