@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->  
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index-header.css">
+    <link href="../js-css-reservation/css/paper-bootstrap-wizard.css" rel="stylesheet"/>
+
+
+
+    <title>monkoli</title>
+</head>
+<body style="padding-top: 0px;">
+  <div class="background">
+
+    <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
+        <nav class="navbar navbar-expand-lg navbar-ligth fixed-top" style="background-color: white; ">
+            <a class="navbar-brand indexlogo" href="#">
+                <img src="../images/logo.png"  class="d-inline-block align-top img img-responsive" alt="logo"/>
+            </a>
+            <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars fa-2x" aria-hidden="true"></i>
+            </button>
+         <ul class="nav navbar-top-links navbar-left">
+            <a id="1" class="nav-item nav-link ah" href="#">
+              <div class="menu">
+                <p>Colis</p>
+                <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                <hr/>
+              </div> 
+           </a>
+          <a  id="2"  class="nav-item nav-link  ah" href="#">
+            <div class="menu">
+              <p>Mes annonces</p>
+              <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+           </a>
+          <a id="3"  class="nav-item nav-link ah " href="#">
+            <div class="menu">
+              <p>Messages</p>
+              <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
+            <div class="menu poste">
+              <p>Poster une annonce</p>
+              <i class="fa fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a id="5"  class="nav-item nav-link ah" href="#">
+            <div class="menu">
+              <p>Mon espace</p>
+              <i class="fa fa-user fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a id="6"  class="nav-item nav-link ah" href="#">
+            <div class="menu">
+              <p>Résidence</p>
+              <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a id="7"  class="nav-item nav-link ah" href="#">
+            <div class="menu">
+              <p>Véhicules</p>
+              <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+        </ul>
+         <ul class="nav navbar-top-links navbar-right">
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+          <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px">
+              <i class="fa fa-bell" style="font-size: xx-large;"></i><span class="label label-info">5</span></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li><a href="#">
+                  <div><em class="fa fa-envelope"></em> 1 New Message
+                    <span class="pull-right text-muted small">3 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-heart"></em> 12 New Likes
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-user"></em> 5 New Followers
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#">
+              <i class="fas fa-user-circle" style="font-size: 45px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></i></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-user"></em> Connexion</div>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-pen"></em> Inscription</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-top-links navbar-right">
+
+          </ul>
+        </li>
+
+        </ul>
+        </nav>
+        <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height: 0.5px; color: #C6C2C2; background-color: #C6C2C2; margin-left: 260px; margin-right: 10px; margin-top: -27px; width: 1011px;">
+    </header>
+    <!--mobile header-->
+    <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
+        <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
+        <div id="mobileMenu" style="display: none;">
+            <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
+            <ul class="menuList">
+                <li>
+                    <a class="nav-item nav-link am active " href="#">
+                        <div class="menu">
+                             <p>Colis</p>
+                            <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                   </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link am" href="#">
+                        <div class="menu">
+                             <p>Mes annonces</p>
+                            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                       </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Messages</p>
+                            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu poste">
+                             <p>Ajouter annonce</p>
+                            <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Mon espace</p>
+                            <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Résidence</p>
+                            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <a class="nav-item nav-link " href="#">
+                        <div class="menu">
+                             <p>Véhicules</p>
+                            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div> 
+                      </a>
+                </li>
+                <li>
+                    <button type="button" class="btn gris pure-material-button-contained">Inscription</button>
+
+                </li>
+                <li>
+                    <button type="button" class="btn vert pure-material-button-contained">Connexion</button>
+
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+
+    <!--pub brand section-->
+    <section class="container pub-brand ">
+        <div class="row col-md-12 col-lg-12 col-sm-12 col-12 brand">
+        </div>
+    </section>
+    <!--pub brand section-->
+    <br/>
+    <!--two button section-->
+    <section class="container-fluid" >
+        <div class="row"  >
+          <div class="post-btn col-12 col-lg-12 col-md-12">
+            <a href="page/recherche.html"><button type="button" class="offset-lg-4 btn gris pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></a> 
+            <a style="text-decoration: none;" href="page/posterAnnonce1.html"><button  type="button" class="btn  vert  pure-material-button-contained d-none d-sm-none d-lg-inline d-md-none"> <i class="fa fa-plus"></i> Publier une annonce en moins de 30 s</button></a> 
+            <br class="d-block d-sm-block d-lg-none d-md-block">
+            <br class="d-block d-sm-block d-lg-none d-md-block">
+            <a style="text-decoration: none;" href="page/posterAnnonce1.html"><div class=" d-block d-sm-block d-lg-none d-md-block" ><button type="button" class="btn  vert  pure-material-button-contained"> <i class="fa fa-plus"></i> Publier Annonce </button></div></a>
+           </div>
+        </div>
+
+    </section>
+    <!--End two button-->
+    <br/>
+    <!--Categories section-->
+    <section class="container-fluid " style="padding-left: 0;">
+        <div class="row" >
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9 side1">
+                <img class="img img-responsive" src="../images/Bg-MonKoli.jpg" alt="side1" srcset="">
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-md-3">
+                    <h2>Catégories</h2>
+                    <span style="font-size: 0.9rem; color: #A7A7A7">Monkoli vous aide à expédier votre colis selon le canal de distribution souhaité:</span>
+                    <div class="row">
+                        <div class="col"><img src="../images/Avion.png"><br/>
+                                Avion
+                        </div>
+                        <div class="col"><img src="../images/Bateau.png"><br/>
+                            Bateau
+                        </div>
+                        <div class="col"><img src="../images/Train.png"><br/>
+                            Train
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="../images/Camion.png"><br/>
+                                Camion
+                        </div>
+                        <div class="col"><img src="../images/Camionette.png"><br/>
+                            Camionette
+                        </div>
+                        <div class="col"><img src="../images/Poids-lourd.png"><br/>
+                            <span>Poids&nbsp;lourd</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="../images/Voiture.png"><br/>
+                                Voiture
+                        </div>
+                        <div class="col"><img src="../images/Moto.png"><br/>
+                            Moto
+                        </div>
+                        <div class="col"><img src="../images/Velo.png"><br/>
+                            Velo
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row" style="padding: 2px; margin: 0;">
+                        <h4 class="col-12" style="font-weight: bolder;">Location de résidences</h4>
+                        <p class="col-12" style="font-size: small; font-size: 0.9rem; color: #A7A7A7">Besoin d'un appartement selon votre besoin?</p>
+                        <span class="col-12" ><button type="button" class="btn vert pure-material-button-contained new"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></span>
+                    </div>
+                    <br/>
+                    <div class="row" style="padding: 2px; margin: 0;">
+                        <h4 class="col-12" style="font-weight: bolder;">Location de voiture</h4>
+                        <p class="col-12" style="font-size: small; font-size: 0.9rem; color: #A7A7A7">Besoin d'un véhicule pour vos courses?</p>
+                        <span class="col-12" ><button type="button" class="btn vert pure-material-button-contained new"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></span>
+                    </div>
+            </div>
+
+        </div> 
+    </section>
+    <!--End Categories section-->
+   <br/>
+   <section style="height:auto; margin-top: 60px;">
+    <section class="container-fluid search">
+        <img class="bg-search" src="../images/searchSec.png">
+        <div class="row ">
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12 new" style="padding:5;">
+               <h1 id="searhHeading">Expédier votre colis n'a jamais été aussi  simple!</h1>
+               <h3>Recherchez et trouver le transporteur <span style="color:#00e38c;">idéal</span> au moment <span style="color:#00e38c;">opportun.</span></h3>
+               <h2 style="color: #00e38c;">Facile<span style="color:white;">,</span> Rapide<span style="color:white;"> et</span> Fiable.</h2>
+               <img src="../images/logo.png"  class="searchlogo  img img-responsive" alt="logo"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+         <span class="col-12">
+             <form class="form col-12 col-md-12 col-lg-12 col-sm-12">
+                <div class="row">
+                  <div class="col-12 col-md-4 col-lg-4 col-sm-12">
+                         <input type="text" class="form-control col-12" id="inputEmail3" placeholder="D'où part le colis?">
+                         <span class="fa fa-sort-down fa-lg icon"></span>                    
+                   </div>
+                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                     <input type="text" class="form-control col-12" id="inputPassword3" placeholder="Où voulez vous l'expédier?">
+                     <span class="fa fa-sort-down fa-lg icon"></span>                    
+                   </div>
+                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <div class="col-12 col-md-3 col-lg-3 col-sm-12">
+                     <input type="date" class="form-control col-12" id="inputPassword3" placeholder="Quand voulez vous l'envoyer?">
+                   </div>
+                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <br class="d-block d-sm-block d-lg-none d-md-none">
+                   <span class="col-12 col-md-2 col-lg-2 col-sm-12" ><button type="button" class="btn vert pure-material-button-contained new" style="box-shadow: none;"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
+                </div>
+             </form>
+         </span>
+        </div>
+        <br/>
+        <h7>Gagnez de l'argent en transportant des colis. <span style="color:#00E38C; text-decoration: underline;">Poster une annonce</span></h7>
+    </section>
+   </section>
+   
+   <!-- End search section-->
+   <!-- Annonse-->
+   
+   <section class="container-fluid annonce">
+       <div class="row">
+           <h1 class="col-12">
+               Annonces
+           </h1>
+       </div>
+       <div class="row">
+          <div class="col-1 col-md-1 col-lg-1" style="padding-left: 37px">
+            <button type="button" class="btn vert pure3">Tout (170)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" style="padding-right: 114px">
+            <button type="button" class="btn pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-plane" aria-hidden="true"></i> Avion (13)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" style="padding-right: 125px">
+              <button type="button" class="btn pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-ship" aria-hidden="true"></i> Bateau (13)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" style="padding-right: 100px">
+              <button type="button" class="btn  pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-train" aria-hidden="true"></i> Train (13)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" style="padding-right: 128px">
+              <button type="button" class="btn pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck" aria-hidden="true"></i> Camion (13)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" style="padding-right: 150px">
+              <button type="button" class="btn pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck-moving" aria-hidden="true"></i> Poids lourd (13)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" style="padding-right: 150px">
+              <button type="button" class="btn  pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-shipping-fast" aria-hidden="true"></i> Camionette (13)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" style="padding-right: 125px">
+              <button type="button" class="btn  pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-car-side" aria-hidden="true"></i> Voiture (13)</button>
+          </div>
+          <div class="col-xs-2 col-md-1" style="padding-right: 115px">
+              <button type="button" class="btn  pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-motorcycle" aria-hidden="true"></i> Moto (13)</button>
+          </div>
+          <div class="col-1 col-md-1 col-lg-1" >
+              <button type="button" class="btn  pure3" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-biking" aria-hidden="true"></i> Velo (13)</button>
+          </div>
+       </div>
+       <br>
+   </section>
+   <br/>
+   <div class="container-fluid">
+    <div id="owl-demo-2" class="row">
+       <div class="col-1 prev navprev d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <br class="d-none d-sm-none d-md-inline d-lg-block">
+        <i style="font-weight: bold;" class="fa fa-5x fa-angle-left " aria-hidden="true"></i>
+    </div>
+       <div class="col-12 col-lg-10 col-md-10 col-sm-12  owl-carousel owl-theme">
+       <div class="row">
+          <div class="col-lg-5 ">
+            <div class="col-xs-8 col-lg-11 no-padding">
+              <div class="card col-12 col-lg-12 col-sm-10 thumbnail item "itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
+                  
+                 <div class="col-xs-2 col-lg-3 no-padding" style="float : right; position: absolute; margin-top: 50px; margin-left: 10px; height: 60px; border-bottom: solid 1px #FFF; height: 40px;">
+                  <h2 style="text-align: left; font-weight: bolder; color: #FFF;">CI</h2>
+                  <h6 style="text-align: left; font-weight: bold; color: #FFF;">Abidjan</h6>
+                </div>
+                <div class="col-xs-2 col-lg-3 no-padding" style="float: right; position: absolute; margin-top: 50px; margin-left: 285px; height: 40px; border-bottom: solid 1px #FFF; text-align: right;">
+                  <h2 style="text-align: right; font-weight: bolder; color: #FFF;">FRA</h2>
+                  <h6 style="text-align: right; font-weight: bold; color: #FFF;">Paris</h6>
+                </div>
+                <div class="col-xs-2 col-lg-4 no-padding" style="float: left; position: absolute; background-color: white; border-radius: 50px; margin-top: 130px; margin-left: 10px; height: 28px; padding: 4px; width: 118px;"><i class="fa fa-clock"></i>
+                  <span style="color: #00E38C; font-size: 12px; text-align : center; font-weight: bold;">07:00 GMT(+00)</span>
+                </div>
+                <div class="col-xs-2 col-lg-4 no-padding" style="float : right; position: absolute; background-color: white; border-radius:50px; margin-top: 130px; margin-left: 265px; height: 28px; padding: 4px; width: 118px;"><i class="fa fa-clock"></i>
+                  <span style="color: #00E38C; text-align : center; font-size: 12px; font-weight: bold; ">07:00 GMT(+00)</span>
+                </div>
+                <span>
+                  <span class="dot" style="float: right; margin-left: 370px; margin-top: -4px; color: white; ">
+                  <br>
+                  <p style="text-align: right; margin-left: -20px; color: white; font-size: 11px;">Arrivée</p>
+                </span>
+                <hr style="width : 85%; height: 0.5px; position: relative; border-style: dashed; color: white;">
+                <span class="dot" style="margin-top: -10px; margin-left: 14px;">
+                  <br>
+                  <p style="text-align: left; margin-left: 0px; color: white; font-size: 11px; width: 100%; width: max-content;">Départ</p>
+                </span>
+              </span>
+                <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap" style="margin-top: -19px;">
+                <i class="fas fa-arrow-right" style="text-align: center; position: relative; margin-top: -40px; font-size: 20px; color: white;"></i>
+                <div class="card-body row">
+                  <br>
+                  <div class="col-sm-3" style="margin-left: 20px;">
+                    <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2; font-size: 50px;" aria-hidden="true"></i>
+                    <br><br>
+                    <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
+                    <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
+                    <i class="fa fa-star valide"  aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star novalide" aria-hidden="true" style="font-size: x-small;"></i>
+                  </div>
+                  <div class="col-sm-4">
+                     <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Fcfa</sup><br>
+                        <span style="color:black; font-size: x-small;">Par Kg</span>
+                    </p>
+                     <p style="color:black;font-size:x-small; font-weight: bold;">Lieu du dépot du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                    </p>
+                    <p style="color:black;font-size:x-small; font-weight: bold;">Lieu de récupération du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                    </p>
+                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                    <p style="font-size: x-small; font-weight: bold;">Mode de transport :</p>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Kg</sup><br>
+                       <span style="color:black; font-size: x-small;">Disponible(e)</span>
+                   </p>
+                    <p style="color:black;font-size:x-small; font-weight: bold;">Date limite de réservation <br>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                       <br><br><br><br><br><br>
+                       <span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span>
+                   </p>
+                 </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="col-lg-6" style="float: left; display: inline-block;">
+                        <button type="button" class="btn pure2 " style="background-color:#3C3C3C;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
+                    </div>
+                    <div class="col-lg-5" style="float: right; display: inline-block;">
+                        <button type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i>&nbsp;&nbsp;Réserver</button>
+                    </div>
+                </div>
+                <br>
+                
+
+
+              </div>
+            </div>
+
+          </div>
+          
+          <div class="col-lg-5 ">
+            <div class="col-xs-8 col-lg-11 no-padding">
+              <div class="card col-12 col-lg-12 col-sm-10 thumbnail item "itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
+                  
+                 <div class="col-xs-2 col-lg-3 no-padding" style="float : right; position: absolute; margin-top: 50px; margin-left: 10px; height: 60px; border-bottom: solid 1px #FFF; height: 40px;">
+                  <h2 style="text-align: left; font-weight: bolder; color: #FFF;">CI</h2>
+                  <h6 style="text-align: left; font-weight: bold; color: #FFF;">Abidjan</h6>
+                </div>
+                <div class="col-xs-2 col-lg-3 no-padding" style="float: right; position: absolute; margin-top: 50px; margin-left: 285px; height: 40px; border-bottom: solid 1px #FFF; text-align: right;">
+                  <h2 style="text-align: right; font-weight: bolder; color: #FFF;">FRA</h2>
+                  <h6 style="text-align: right; font-weight: bold; color: #FFF;">Paris</h6>
+                </div>
+                <div class="col-xs-2 col-lg-4 no-padding" style="float: left; position: absolute; background-color: white; border-radius: 50px; margin-top: 130px; margin-left: 10px; height: 28px; padding: 4px; width: 118px;"><i class="fa fa-clock"></i>
+                  <span style="color: #00E38C; font-size: 11px; text-align : center; font-weight: bold;">07:00 GMT(+00)</span>
+                </div>
+                <div class="col-xs-2 col-lg-4 no-padding" style="float : right; position: absolute; background-color: white; border-radius:50px; margin-top: 130px; margin-left: 265px; height: 28px; padding: 4px; width: 118px;"><i class="fa fa-clock"></i>
+                  <span style="color: #00E38C; text-align : center; font-size: 11px; font-weight: bold;">07:00 GMT(+00)</span>
+                </div>
+                <span>
+                  <span class="dot" style="float: right; margin-left: 370px; margin-top: -4px; color: white; ">
+                  <br>
+                  <p style="text-align: right; margin-left: -20px; color: white; font-size: 11px;">Arrivée</p>
+                </span>
+                <hr style="width : 85%; height: 0.5px; position: relative; border-style: dashed; color: white;">
+                <span class="dot" style="margin-top: -10px; margin-left: 14px;">
+                  <br>
+                  <p style="text-align: left; margin-left: 0px; color: white; font-size: 11px; width: 100%; width: max-content;">Départ</p>
+                </span>
+              </span>
+                <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap" style="margin-top: -19px;">
+                <i class="fas fa-arrow-right" style="text-align: center; position: relative; margin-top: -40px; font-size: 20px; color: white;"></i>                
+                <div class="card-body row">
+                  <div class="col-sm-3" style="margin-left: 20px;">
+                    <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2; font-size: 50px;" aria-hidden="true"></i>
+                    <br><br>
+                    <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
+                    <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
+                    <i class="fa fa-star valide"  aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star novalide" aria-hidden="true" style="font-size: x-small;"></i>
+                  </div>
+                  <div class="col-sm-4">
+                     <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Fcfa</sup><br>
+                        <span style="color:black; font-size: x-small;">Par Kg</span>
+                    </p>
+                     <p style="color:black;font-size:x-small; font-weight: bold;">Lieu du dépot du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                    </p>
+                    <p style="color:black;font-size:x-small; font-weight: bold;">Lieu de récupération du colis à expédier <br>
+                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                    </p>
+                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                    <p style="font-size: x-small; font-weight: bold;">Mode de transport :</p>
+                  </div>
+                  <div class="col-sm-4">
+                    <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Kg</sup><br>
+                       <span style="color:black; font-size: x-small;">Disponible(e)</span>
+                   </p>
+                    <p style="color:black;font-size:x-small; font-weight: bold;">Date limite de réservation <br>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
+                       <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                       <br><br><br><br><br><br>
+                       <span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span>
+                   </p>
+                 </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="col-lg-6" style="float: left; display: inline-block;">
+                        <button type="button" class="btn pure2 " style="background-color:#3C3C3C;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
+                    </div>
+                    <div class="col-lg-5" style="float: right; display: inline-block;">
+                        <button type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i>&nbsp;&nbsp;Réserver</button>
+                    </div>
+                </div>
+                <br>
+
+
+              </div>
+            </div>
+            
+          </div>
+
+
+          </div>
+        </div>
+        
+        <div class="col-1 prev navnext d-none d-sm-none d-md-block d-lg-block ">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <br class="d-none d-sm-none d-md-inline d-lg-block">
+            <i style="font-weight: bold;" class="fa fa-5x fa-angle-right fa-align-center" aria-hidden="true"></i>
+        </div>
+    </div>
+    <!-- #owl-demo-2 -->
+  </div>
+  <!-- .container -->
+  <br>
+</div>
+  <!-- .background -->
+
+  
+    <footer class="container-fluid">
+       <div class="row col-lg-12">
+           <div class="col-lg-3">
+            <img class="logo" style="overflow: hidden;" src="../images/logo.png" alt="logo">
+           </div>
+       </div>
+       <div class="col-lg-8">
+         <div class="container-fluid container-fluid-pad col-lg-8">
+        <div class="footer-content">
+          <div class="col-lg-3 col-sm-6 col-12">
+            <h6 class="footer-title">MonKoli</h6>
+            <ul class="list-items">
+              <li><a class="link" href="/about">A propos</a></li>
+              <li><a class="link" href="/contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+          <div class="col-lg-6 col-sm-6 col-4">
+            <h6 class="footer-title">Infos Utiles </h6>
+            <ul class="list-items">
+              <li><a class="link" href="/work">Comment ça marche?</a></li>
+              <li><a class="link" href="/trust">Gages de Confiance</a></li>
+              <li><a class="link" href="/opinions">Les avis</a></li>
+              <li><a class="link" href="/rules">Charte de bonne conduite</a></li>
+              <li><a class="link" href="/tips">Conseils prévention</a></li>
+              <li><a class="link" href="/price">Prix du cobagage</a></li>
+            </ul>
+          </div>
+          
+          <div class="col-lg-6 col-sm-6 col-4">
+            <h6 class="footer-title">Informations légales</h6>
+            <ul class="list-items">
+              <li><a class="link" href="/legales">Mentions légales</a></li>
+              <li><a class="link" href="/terms">Conditions générales</a></li>
+              <li><a class="link" href="/privacy">Charte de Confidentialité</a></li>
+              <li><a class="link" href="/cookies">Utilisation des cookies</a></li>
+              <li><a class="link" href="/prohibited">Produits interdits</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6 col-sm-6 col-4">
+            <div class="touchus">
+              <h6 class="footer-title">Contacter nous</h6>
+              <ul class="touchus-items">
+                <li><i class="fa fa-1x fa-phone"></i> +33 7 55 38 40 49</li>
+                <li><i class="fa fa-1x fa-phone"></i> +225 97 09 65 78</li>
+                <li><i class="fa fa-1x fa-phone"></i> +33 7 53 70 34 55</li>
+                <br>
+                <li><i class="fa fa-1x fa-envelope"></i> monkoli@monkoli.com</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="align-center mar-top20 mar-bot20 reso col-lg-12">
+            <p>MonKoli offre un service de transport de kolis aussi bien au plan national qu'international.<br>Nous vous aidons à trouver des transporteurs et des expéditeurs qui veulent envoyer ou recevoir un colis de partout dans le monde.<br>Grâce à notre plateforme, le kolis de l'expéditeur arrive rapidement et en toute sureté tandis que le transporteur rentabilise son voyage et fait de belles rencontres. Tout le monde y gagne : les uns payent moins cher leur envoi et les autres remboursent une partie de leurs frais de transport ou augmentent leurs revenus, tout en rendant service.</p>
+          </div>
+        </div>
+        <div class="logo"><p>© 2020 | MonKoli</p>
+        </div>
+      </div>
+       
+    </footer>
+<!-- jspart-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script src="../owlcarousel/owl.carousel.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/mobileMenu.js"></script>
+    
+</body>
+ <script src="../js-css-reservation/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+  <!--  Plugin for the Wizard -->
+  <script src="../js-css-reservation/js/demo.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/reservation.js" type="text/javascript"></script>
+
+  <!--  More information about jquery.validate here: https://jqueryvalidation.org/   -->
+  <script src="../js-css-reservation/js/jquery.validate.min.js" type="text/javascript"></script>
+</html>

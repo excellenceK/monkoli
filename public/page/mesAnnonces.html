@@ -16,7 +16,8 @@
     />
       <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/indexDash.css">
+        <link rel="stylesheet" href="../css/reservation.css">
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -39,14 +40,14 @@
             	<ul class="nav navbar-top-links navbar-left">
 					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		              <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px " id="itm">
-		                <a id="1" class="nav-item nav-link ah" href="#">
+		                <a id="1" class="nav-item nav-link active" href="#">
 		                    <div class="menu">
 		                         <p>Colis</p>
 		                        <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
 		                        <hr/>
 		                    </div> 
 		               </a>
-		               <a  id="2"  class="nav-item nav-link ah active" href="#">
+		               <a  id="2"  class="nav-item nav-link  ah" href="#">
 		                <div class="menu">
 		                     <p>Mes annonces</p>
 		                    <i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
@@ -88,13 +89,54 @@
 		                    <hr/>
 		                </div> 
 		              </a>
-		              <div class="menu">
-		                <button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
-		                <button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
-		              </div> 
-		            </div>
+		              
 		        </div>
 		    </ul>
+		             <ul class="nav navbar-top-links navbar-right">
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+          <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px">
+              <i class="fa fa-bell" style="font-size: xx-large;"></i><span class="label label-info">5</span></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li><a href="#">
+                  <div><em class="fa fa-envelope"></em> 1 New Message
+                    <span class="pull-right text-muted small">3 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-heart"></em> 12 New Likes
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-user"></em> 5 New Followers
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#">
+              <i class="fas fa-user-circle" style="font-size: 45px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></i></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-user"></em> Connexion</div>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-pen"></em> Inscription</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-top-links navbar-right">
+
+          </ul>
+        </li>
+
+        </ul>
 						
 			</div>
 		</div><!-- /.container-fluid -->
@@ -220,51 +262,79 @@
 				</div>
 					
 				<div class="col-lg-5 ">
-	                <div class="col-xs-5 col-lg-12 no-padding">
-	                  <div class="card  thumbnail col-12 col-md-12 col-sm-8 col-lg-4" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
-	                    <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap">
-	                    <div class="card-body row">
-	                      <br>
-	                      <div class="col-sm-3" style="margin-left: 20px;">
-	                        <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
-	                        <br>
-	                        <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
-	                        <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
-	                        <i class="fa fa-star valide"  aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star novalide" aria-hidden="true"></i>
-	                      </div>
-	                      <div class="col-sm-4">
-	                         <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Fcfa</sup><br>
-	                            <span style="color:black; font-size: x-small;">Par Kg</span>
-	                        </p>
-	                        <br>
-	                         <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
-	                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
-	                        </p>
-	                        <br>
-	                        <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
-	                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
-	                        </p>
-	                        <br class="d-block d-sm-block d-lg-none d-md-none">
-	                        <p style="font-size: x-small;">Mode de transport :</p>
-	                      </div>
-	                      <div class="col-sm-4">
-	                        <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Kg</sup><br>
-	                           <span style="color:black; font-size: x-small;">Disponible(e)</span>
-	                       </p>
-	                       <br>
-	                        <p style="color:black;font-size:x-small;">Date limite de réservation <br>
-	                           <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
-	                           <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
-	                           <br><br><br><br><br><br><br><br>
-	                           <span> <img class="img img-responsive"  style="height:40px;width: 40px;" src="../images/Avion.png" alt="avion"></span>
-	                       </p>
-	                     </div>
-
-	                    </div>
-	                  </div>
-	                </div>
-
-			</div>
+	                <div class="col-xs-6 col-lg-12 no-padding">
+                              <div class="card  thumbnail col-12 col-md-12 col-sm-8 col-lg-12" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
+                                  
+                                 <div class="col-xs-2 col-lg-3 no-padding" style="float : right; position: absolute; margin-top: 20px; margin-left: 15px; height: 60px; border-bottom: solid 1px #FFF; ">
+                                  <h2 style="text-align: left; font-weight: bolder; color: #FFF;">CI</h2>
+                                  <h6 style="text-align: left; font-weight: bold; color: #FFF;">Abidjan</h6>
+                                </div>
+                                <div class="col-xs-2 col-lg-3 no-padding" style="float : right; position: absolute; margin-top: 20px; margin-left: 295px; height: 60px; border-bottom: solid 1px #FFF; ">
+                                  <h2 style="text-align: right; font-weight: bolder; color: #FFF;">FRA</h2>
+                                  <h6 style="text-align: right; font-weight: bold; color: #FFF;">Paris</h6>
+                                </div>
+                                <div class="col-xs-2 col-lg-4 no-padding" style="float : left; position: absolute; background-color: white; border-radius:50px; margin-top: 130px; margin-left: 15px; height: 30px;"><i class="fas fa-clock"></i>
+                                  <span style="color: #00E38C; font-size: 12px; text-align : center;">07:00 GMT(+00)</span>
+                                </div>
+                                <div class="col-xs-2 col-lg-4 no-padding" style="float : right; position: absolute; background-color: white; border-radius:50px; margin-top: 130px; margin-left: 265px; height: 30px; "><i class="fas fa-clock"></i>
+                                  <span style="color: #00E38C; text-align : center; font-size: 12px;">07:00 GMT(+00)</span>
+                                </div>
+                                <span>
+                                  <span class="dot" style="float: right; margin-left: 387px; margin-top: -4px; color: white; ">
+                                  <br>
+                                  <p style="text-align: right; margin-left: -20px; color: white; font-size: 11px;">Arrivée</p>
+                                </span>
+                                <hr style="width : 85%; height: 0.5px; position: relative; border-style: dashed; color: white;">
+                                <span class="dot" style="margin-top: -10px; margin-left: 14px;">
+                                  <br>
+                                  <p style="text-align: left; margin-left: 0px; color: white; font-size: 11px; width: max-content">Départ</p>
+                                </span>
+                              </span>
+                                <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap" style="margin-top: -19px;">
+                                <i class="fas fa-arrow-right" style="text-align: center; position: relative; margin-top: -50px; font-size: 25px; color: white;"></i>
+                                <br>
+                                
+                                <div class="card-body row">
+                                  <br>
+                                  <div class="col-sm-3" style="margin-left: 20px;">
+                                    <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
+                                    <br>
+                                    <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
+                                    <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
+                                    <i class="fa fa-star valide"  aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star novalide" aria-hidden="true" style="font-size: x-small;"></i>
+                                  </div>
+                                  <div class="col-sm-4">
+                                     <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Fcfa</sup><br>
+                                        <span style="color:black; font-size: x-small;">Par Kg</span>
+                                    </p>
+                                    <br>
+                                     <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
+                                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                                    </p>
+                                    <br>
+                                    <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
+                                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                                    </p>
+                                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                                    <p style="font-size: x-small;">Mode de transport :</p>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Kg</sup><br>
+                                       <span style="color:black; font-size: x-small;">Disponible(e)</span>
+                                   </p>
+                                   <br>
+                                    <p style="color:black;font-size:x-small;">Date limite de réservation <br>
+                                       <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
+                                       <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                                       <br><br><br><br><br><br><br><br>
+                                       <span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span>
+                                   </p>
+                                 </div>
+  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
 			
 			<div class="col-lg-4" style="padding-top: 150px;">
 				<button type="button" class="btn pure-material-button-contained" style="color: #A7A7A7; background-color: white; padding-right: 55px; "><i class="fas fa-edit"></i>&nbsp;&nbsp; Editer l'annonce</button>
@@ -295,49 +365,77 @@
 
 				<div class="col-lg-5 ">
 	                <div class="col-xs-6 col-lg-12 no-padding">
-	                  <div class="card  thumbnail col-12 col-md-12 col-sm-8 col-lg-4" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
-	                    <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap">
-	                    <div class="card-body row">
-	                      <br>
-	                      <div class="col-sm-3" style="margin-left: 20px;">
-	                        <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
-	                        <br>
-	                        <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
-	                        <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
-	                        <i class="fa fa-star valide"  aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star novalide" aria-hidden="true"></i>
-	                      </div>
-	                      <div class="col-sm-4">
-	                         <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Fcfa</sup><br>
-	                            <span style="color:black; font-size: x-small;">Par Kg</span>
-	                        </p>
-	                        <br>
-	                         <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
-	                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
-	                        </p>
-	                        <br>
-	                        <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
-	                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
-	                        </p>
-	                        <br class="d-block d-sm-block d-lg-none d-md-none">
-	                        <p style="font-size: x-small;">Mode de transport :</p>
-	                      </div>
-	                      <div class="col-sm-4">
-	                        <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black">Kg</sup><br>
-	                           <span style="color:black; font-size: x-small;">Disponible(e)</span>
-	                       </p>
-	                       <br>
-	                        <p style="color:black;font-size:x-small;">Date limite de réservation <br>
-	                           <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
-	                           <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
-	                           <br><br><br><br><br><br><br><br>
-	                           <span> <img class="img img-responsive"  style="height:40px;width: 40px;" src="../images/Avion.png" alt="avion"></span>
-	                       </p>
-	                     </div>
-
-	                    </div>
-	                  </div>
-	                </div>
-
+                              <div class="card  thumbnail col-12 col-md-12 col-sm-8 col-lg-12" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
+                                  
+                                 <div class="col-xs-2 col-lg-3 no-padding" style="float : right; position: absolute; margin-top: 20px; margin-left: 15px; height: 60px; border-bottom: solid 1px #FFF; ">
+                                  <h2 style="text-align: left; font-weight: bolder; color: #FFF;">CI</h2>
+                                  <h6 style="text-align: left; font-weight: bold; color: #FFF;">Abidjan</h6>
+                                </div>
+                                <div class="col-xs-2 col-lg-3 no-padding" style="float : right; position: absolute; margin-top: 20px; margin-left: 295px; height: 60px; border-bottom: solid 1px #FFF; ">
+                                  <h2 style="text-align: right; font-weight: bolder; color: #FFF;">FRA</h2>
+                                  <h6 style="text-align: right; font-weight: bold; color: #FFF;">Paris</h6>
+                                </div>
+                                <div class="col-xs-2 col-lg-4 no-padding" style="float : left; position: absolute; background-color: white; border-radius:50px; margin-top: 130px; margin-left: 15px; height: 30px;"><i class="fas fa-clock"></i>
+                                  <span style="color: #00E38C; font-size: 12px; text-align : center;">07:00 GMT(+00)</span>
+                                </div>
+                                <div class="col-xs-2 col-lg-4 no-padding" style="float : right; position: absolute; background-color: white; border-radius:50px; margin-top: 130px; margin-left: 265px; height: 30px; "><i class="fas fa-clock"></i>
+                                  <span style="color: #00E38C; text-align : center; font-size: 12px;">07:00 GMT(+00)</span>
+                                </div>
+                                <span>
+                                  <span class="dot" style="float: right; margin-left: 387px; margin-top: -4px; color: white; ">
+                                  <br>
+                                  <p style="text-align: right; margin-left: -20px; color: white; font-size: 11px;">Arrivée</p>
+                                </span>
+                                <hr style="width : 85%; height: 0.5px; position: relative; border-style: dashed; color: white;">
+                                <span class="dot" style="margin-top: -10px; margin-left: 14px;">
+                                  <br>
+                                  <p style="text-align: left; margin-left: 0px; color: white; font-size: 11px; width: max-content">Départ</p>
+                                </span>
+                              </span>
+                                <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap" style="margin-top: -19px;">
+                                <i class="fas fa-arrow-right" style="text-align: center; position: relative; margin-top: -50px; font-size: 25px; color: white;"></i>
+                                <br>
+                                
+                                <div class="card-body row">
+                                  <br>
+                                  <div class="col-sm-3" style="margin-left: 20px;">
+                                    <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
+                                    <br>
+                                    <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
+                                    <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
+                                    <i class="fa fa-star valide"  aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star novalide" aria-hidden="true" style="font-size: x-small;"></i>
+                                  </div>
+                                  <div class="col-sm-4">
+                                     <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Fcfa</sup><br>
+                                        <span style="color:black; font-size: x-small;">Par Kg</span>
+                                    </p>
+                                    <br>
+                                     <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
+                                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                                    </p>
+                                    <br>
+                                    <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
+                                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                                    </p>
+                                    <br class="d-block d-sm-block d-lg-none d-md-none">
+                                    <p style="font-size: x-small;">Mode de transport :</p>
+                                  </div>
+                                  <div class="col-sm-4">
+                                    <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Kg</sup><br>
+                                       <span style="color:black; font-size: x-small;">Disponible(e)</span>
+                                   </p>
+                                   <br>
+                                    <p style="color:black;font-size:x-small;">Date limite de réservation <br>
+                                       <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
+                                       <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                                       <br><br><br><br><br><br><br><br>
+                                       <span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span>
+                                   </p>
+                                 </div>
+  
+                                </div>
+                              </div>
+                          </div>
 			</div>
 			<div class="col-lg-4" style="padding-top: 200px;">
 

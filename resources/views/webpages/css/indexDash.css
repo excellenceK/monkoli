@@ -27,7 +27,8 @@ body{
 }
 
 .navbar-left{
-    margin-left: 143px;
+       margin-left: 20px;
+
 }
 
 .background{
@@ -403,7 +404,7 @@ h1{
 }
 
 .navbar-brand{
-    padding: 0px !important; 
+    padding: 13px !important; 
 }
 .table th{
     color: #00E38C;
