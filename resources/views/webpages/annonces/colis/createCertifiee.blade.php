@@ -23,11 +23,11 @@
     @csrf
     <section class="container typeannonce box-shadow--16dp" style="background-color: white">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-md-4 col-lg-4">
                 <h1>Information sur l'expédition</h1>
                                 <!--Select with pure css-->
-                                <div class="select">
-                                    <select class="select-text" required name = 'typeTransport'>
+                                <div class="select" style="width: 100%">
+                                    <select class="select-text" style="width: 100%" required name = 'typeTransport'>
                                         <option value="" disabled selected></option>
                                         <option value="Aérien"> Véhicule Aérien</option>
                                         <option value="Férroviaire"> Véhicule Ferroviaire</option>
@@ -57,16 +57,21 @@
                                     <span class="focus-input100"></span>
                                 </div>
             </div>
-            <div class="col offset-lg-1" style="margin-right: 70px;" >
-                <br>
-                <div class="select">
-                    <select class="select-text" required name = 'moyenTransport' required>
+            <div class="col-12 col-md-4 col-lg-4 offset-lg-1" style="margin-right: 70px;" >
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <div class="select" style="width: 100%">
+                    <select class="select-text" style="width: 100%" required name = 'moyenTransport' required>
                         <option value="" disabled selected></option>
                         <option value="Avion">Avion</option>
                         <option value="Bateau">Bateau</option>
                         <option value="Voiture personnelle">Voiture personnelle</option>
                         <option value="TGV">Train à grande vitesse</option>
-
                     </select>
                     <span class="select-highlight"></span>
                     <span class="select-bar"></span>
@@ -90,17 +95,18 @@
             <div class="col-lg-3 col-12 col-sm-12 col-md-12">
                  <!--Select with pure css-->
                  <h1>Informations sur le Colis</h1>
-            <div class="select">
-                <select class="select-text" >
-                    <option value="" disabled selected></option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <span class="select-highlight"></span>
-                <span class="select-bar"></span>
-                <label class="select-label">Type de colis supportés</label>
-            </div>
+                 <div class="select" style="width: 100%">
+                    <select class="select-text" style="width: 100%" required name = 'moyenTransport' required>
+                        <option value="" disabled selected></option>
+                        <option value="option">option 1</option>
+                        <option value="option">option 2</option>
+                        <option value="option">option 2</option>
+                        <option value="option">option 3</option>
+                    </select>
+                    <span class="select-highlight"></span>
+                    <span class="select-bar"></span>
+                    <label class="select-label">Type de supporté</label>
+                </div>
             <!--Select with pure css-->
             </div>
             <div class="col-lg-3 col-12 col-sm-12 col-md-12 offset-lg-1">
@@ -113,7 +119,7 @@
                     <input class="input100" type="number" name="minimunReservation" placeholder="Qte mini a réserver (en Kg)" required>
                     <span class="focus-input100"></span>
                 </div>
-                <div class="wrap-input100 validate-input">
+                <div class="select" style="width: 100%;">
                 <select class="select-text" name = 'devise' required>
                     <option value="" disabled selected></option>
                     <option value="euro">Euro</option>

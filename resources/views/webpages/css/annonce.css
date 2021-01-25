@@ -325,14 +325,14 @@ html,
     font-family:
       'Roboto','Helvetica','Arial',sans-serif;
       position: relative;
-      width: 280px;
+      width: 100%;
   }
   
   .select-text {
       position: relative;
       font-family: inherit;
       background-color: transparent;
-      width: 280px;
+      width: 100%;
       padding: 10px 10px 10px 0;
       font-size: 18px;
       border-radius: 0;
