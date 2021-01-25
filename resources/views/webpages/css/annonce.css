@@ -325,14 +325,22 @@ html,
     font-family:
       'Roboto','Helvetica','Arial',sans-serif;
       position: relative;
+<<<<<<< HEAD
       width: 200px;
+=======
+      width: 100%;
+>>>>>>> 03d3056b164969b44c9c62aef8f157f262af6003
   }
   
   .select-text {
       position: relative;
       font-family: inherit;
       background-color: transparent;
+<<<<<<< HEAD
       width: 200px;
+=======
+      width: 100%;
+>>>>>>> 03d3056b164969b44c9c62aef8f157f262af6003
       padding: 10px 10px 10px 0;
       font-size: 18px;
       border-radius: 0;

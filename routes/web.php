@@ -28,7 +28,7 @@ Route::get('/type-annonce/{type}', 'AnnoncesController@vueTypeAnnonce')->name('v
 Route::post('/categorie-annonce', 'AnnoncesController@categoryAnnonce')->name('categoryAnnonce');
 
 
-Route::get('/search-annonce', 'AnnoncesController@search')->name('searchAnnonce');
+Route::get('/search-annonce', 'AnnoncesController@search')->name('searchAnnonce'); // recherche utilise la vue de se controller
 
 
 Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
@@ -37,7 +37,9 @@ Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
     Route::get('getInfoAnnonce','coliController@getInfoAnnonce');
     Route::get('/create/{type}/{category}', 'coliController@create')->name('createAnnonceColi');
     //Route::get('/poster-annonce-certifiee', 'coliController@createAnnonceCertifiee')->name('createAnnonceCertifiee');
-
+    Route::post('/rechercheAnnonce','coliRechercheController@rechercheColi')->name('rechercheAnnonceColi');
+    Route::get('reserver/{id}','coliController@reservationColi')->name('reservationColi');
+    Route::post('reservation-post','coliController@reservationColiPost')->name('reservationColiPost');
     Route::post('creationAnnonce','coliController@creationAnnonceColi');
     Route::post('getInfoAnnonce','coliController@getInfoAnnonce');
 
@@ -46,5 +48,11 @@ Route::prefix('coli')->namespace('Coli')->name('coli.')->group(function(){
 Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
 
     Route::get('mon-espace','ComptesController@index')->name('monEspace');
+    Route::get('consulter-annonce','ComptesController@consulterAnnonce')->name('consulterAnnonce');
+    Route::get('consulter-reservation/{id}','ComptesController@consulterReservations')->name('consulterReservations');
+    Route::get('accepter-reservation/{id}','ComptesController@accepterReservation')->name('accepteReservation');
+    Route::get('refuser-reservation/{id}','ComptesController@refuserReservation')->name('refuserReservation');
+
+
 
 });

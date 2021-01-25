@@ -1,4 +1,7 @@
 @php
+    //$today = \Carbon\Carbon::now()->format('Y-m-d');
+    //$today =  $today.' 00:00:00';
+    //dd($today);
     $resultQueryGetInfoAnnonce = DB::select('select users.id as idUser, users.name as nomUser, users.prenom as prenomUser, annonces.id as idAnnonce, annonces.slug as slugAnnonce,
         annonces.niveauPriorite as niveauPrioriteAnnonce, annonces.dateCreation as dateCreationAnnonce,
          annonces.dateExpiration as dateExpirationAnnonce, annonces.status as statusAnnonce,
@@ -15,7 +18,7 @@
                    transport_colis.dateLimiteReservation,transport_colis.lieuDepot, transport_colis.lieuLivraison,
                     transport_colis.devise, transport_colis.prixUnitaire
         from annonces, transport_colis, users
-        where transport_colis.annonce_id = annonces.id and annonces.user_id = users.id
+        where transport_colis.annonce_id = annonces.id and annonces.user_id = users.id and annonces.dateExpiration >= (select NOW())
     ORDER BY annonces.niveauPriorite DESC');
 
     $getInfoAnnonce = array_map(function($value){
@@ -141,35 +144,36 @@
         <br/>
         <div class="row">
          <span class="col-12">
-             <form class="form col-12 col-md-12 col-lg-12 col-sm-12">
+             <form class="form col-12 col-md-12 col-lg-12 col-sm-12" method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+               @csrf
                 <div class="row">
                   <div class="col-12 col-md-4 col-lg-4 col-sm-12">
-                         <input type="text" class="form-control col-12" id="inputEmail3" placeholder="D'où part le colis?">
+                         <input type="text" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
                          <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <div class="col-12 col-md-3 col-lg-3 col-sm-12">
-                     <input type="text" class="form-control col-12" id="inputPassword3" placeholder="Où voulez vous l'expédier?">
+                     <input type="text" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
                      <span class="fa fa-sort-down fa-lg icon"></span>
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <div class="col-12 col-md-3 col-lg-3 col-sm-12">
-                     <input type="date" class="form-control col-12" id="inputPassword3" placeholder="Quand voulez vous l'envoyer?">
+                     <input type="date" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
                    </div>
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
                    <br class="d-block d-sm-block d-lg-none d-md-block">
-                   <span class="col-12 col-md-2 col-lg-2 col-sm-12" ><button type="button" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
+                   <span class="col-12 col-md-2 col-lg-2 col-sm-12" ><button type="submit" class="btn vert pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Trouver</button></span>
                 </div>
              </form>
          </span>
         </div>
         <br/>
-        <h6>Gagnez de l'argent en transportant des colis.<span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></h6>
+        <h6>Gagnez de l'argent en transportant des colis.<a href="{{ route('createAnnonce') }}"><span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></a></h6>
     </section>
    </section>
 
@@ -296,15 +300,23 @@
                 </div>
             </div>-->
             <!--  -->
-            <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
+            <div class="card  carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
                 <img class="card-img-top img img-responsive"  src="images/bg_card.png" alt="Card image cap">
                 <div class="card-body row">
-                  <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
-                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 20px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
-                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 290px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
-                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
-                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
-                  <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
+                  <div class="col-5">
+                    <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
+                    <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px;color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
+                    <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
+                  </div>
+                  <div class="col-2">
+                      <p style="margin-top: -100px;"><i class="fas fa-arrow-right" aria-hidden="true" style="color:white;position: absolute; font-size: large;"></i></p>
+                  </div>
+                  <div class="col-5">
+                    <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">  
+                    <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
+                    <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
+                  </div>
+
                </div>
                 <div class="card-body row">
                   <div class="col-4">
@@ -346,20 +358,15 @@
                                 @if($trajet['typeTransport'] == 'Férroviaire')
                                     <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Train.png" alt="train"></span>
                                 @endif
-
-
                             </div>
-
                  </div>
 
                  <div class="row">
-                    <div class="col" style="margin-top: 45px; margin-left: 20px;">
-                        <button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
+                    <div class="col-12 col-md-12 col-lg-3 " style="margin-top: 10px;">
+                        <a href="#" type="button" class="btn  pure2" style="background-color:#3C3C3C"><i style="color: white; opacity: 0.7;" class="fa fa-share-alt" aria-hidden="true"></i> Partager</a>
                     </div>
-                    <br class="d-block d-sm-block d-lg-none d-md-none">
-                    <br class="d-block d-sm-block d-lg-none d-md-none">
-                    <div class="col" style="margin-top: 45px; margin-left: 200px;">
-                        <button type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</button>
+                    <div class="col-12 offset-lg-3 col-lg-6 " style="margin-top:10px;">
+                        <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</a>
                     </div>
                  </div>
                 </div>
