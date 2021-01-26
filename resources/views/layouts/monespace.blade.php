@@ -8,10 +8,8 @@
 	<link href="{{ asset('css-dash/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css-dash/datepicker3.css') }}" rel="stylesheet">
 	<link href="{{ asset('css-dash/styles.css') }}" rel="stylesheet">
-	  <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
       <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
@@ -24,82 +22,86 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	
 </head>
+
 <body>
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span></button>
-				<a class="navbar-brand indexlogo" href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.png') }}"  class="d-inline-block align-top img img-responsive" alt="logo"/>
-            	</a>
-            	<ul class="nav navbar-top-links navbar-left">
-					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		              <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px " id="itm">
-		                <a id="1" class="nav-item nav-link active" href="#">
-		                    <div class="menu">
-		                         <p>Colis</p>
-		                        <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-		                        <hr/>
-		                    </div>
-		               </a>
-		               <a  id="2"  class="nav-item nav-link  ah" href="#">
-		                <div class="menu">
-		                     <p>Mes annonces</p>
-		                    <i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-		                    <hr/>
-		                </div>
-		               </a>
-		               <a id="3"  class="nav-item nav-link ah " href="#">
-		                <div class="menu">
-		                     <p>Messages</p>
-		                    <i class="fas fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-		                    <hr/>
-		                </div>
-		              </a>
-		              <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
-		                <div class="menu poste">
-		                     <p>Poster une annonce</p>
-		                    <i class="fas fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
-		                    <hr/>
-		                </div>
-		              </a>
-		              <a id="5"  class="nav-item nav-link ah " href="#">
-		                <div class="menu">
-		                     <p>Mon espace</p>
-		                    <i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
-		                    <hr/>
-		                </div>
-		              </a>
-		              <a id="6"  class="nav-item nav-link ah" href="#">
-		                <div class="menu">
-		                     <p>Résidence</p>
-		                    <i class="fas fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-		                    <hr/>
-		                </div>
-		              </a>
-		              <a id="7"  class="nav-item nav-link ah" href="#">
-		                <div class="menu">
-		                     <p>Véhicules</p>
-		                    <i class="fas fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-		                    <hr/>
-		                </div>
-		              </a>
-		              <div class="menu">
-		                <button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
-		                <button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
-		              </div>
-		            </div>
-		        </div>
-		    </ul>
-
-			</div>
-		</div><!-- /.container-fluid -->
-	</nav>
-
+	<div class="background">
+    <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span></button>
+					<a class="navbar-brand indexlogo" href="{{ url('/') }}">
+					<img src="{{ asset('images/logo.png') }}"  class="d-inline-block align-top img img-responsive" alt="logo"/>
+					</a>
+					<ul class="nav navbar-top-links navbar-left">
+						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						  <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px " id="itm">
+							<a id="1" class="nav-item nav-link active" href="#">
+								<div class="menu">
+									 <p>Colis</p>
+									<i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+									<hr/>
+								</div>
+						   </a>
+						   <a  id="2"  class="nav-item nav-link  ah" href="#">
+							<div class="menu">
+								 <p>Mes annonces</p>
+								<i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+								<hr/>
+							</div>
+						   </a>
+						   <a id="3"  class="nav-item nav-link ah " href="#">
+							<div class="menu">
+								 <p>Messages</p>
+								<i class="fas fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+								<hr/>
+							</div>
+						  </a>
+						  <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
+							<div class="menu poste">
+								 <p>Poster une annonce</p>
+								<i class="fas fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+								<hr/>
+							</div>
+						  </a>
+						  <a id="5"  class="nav-item nav-link ah " href="#">
+							<div class="menu">
+								 <p>Mon espace</p>
+								<i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
+								<hr/>
+							</div>
+						  </a>
+						  <a id="6"  class="nav-item nav-link ah" href="#">
+							<div class="menu">
+								 <p>Résidence</p>
+								<i class="fas fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+								<hr/>
+							</div>
+						  </a>
+						  <a id="7"  class="nav-item nav-link ah" href="#">
+							<div class="menu">
+								 <p>Véhicules</p>
+								<i class="fas fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+								<hr/>
+							</div>
+						  </a>
+						  <div class="menu">
+							<button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
+							<button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
+						  </div>
+						</div>
+					</div>
+				</ul>
+	
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+	</header>	
     <!--mobile header-->
     <header id="hmobile" class="container-fluid d-block d-sm-block d-lg-none d-md-block" >
         <div id="mobileMenu" style="display: none;">
@@ -237,7 +239,8 @@
 			</div><!--/.row-->
 		</div>
         <br><br>
-        @yield('main')
+		@yield('main')
+	</div>
         <script src="{{ asset('js-dash/jquery-1.11.1.min.js') }}"></script>
         <script src="{{ asset('js-dash/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js-dash/chart.min.js') }}"></script>
@@ -245,7 +248,8 @@
         <script src="{{ asset('js-dash/easypiechart.js') }}"></script>
         <script src="{{ asset('js-dash/easypiechart-data.js') }}"></script>
         <script src="{{ asset('js-dash/bootstrap-datepicker.js') }}"></script>
-        <script src="{{ asset('js-dash/custom.js') }}"></script>
+		<script src="{{ asset('js-dash/custom.js') }}"></script>
+		<script src="{{ asset('js/mobileMenu.js') }}"></script>
 
         <script>
         window.onload = function () {

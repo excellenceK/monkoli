@@ -1,114 +1,166 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MonKoli - Inscription </title>
-    <link href="../css-dash/bootstrap.min.css" rel="stylesheet">
-    <link href="../css-dash/font-awesome.min.css" rel="stylesheet">
-    <link href="../css-dash/datepicker3.css" rel="stylesheet">
-    <link href="../css-dash/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/login.css">
-      <link
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->  
+    <link rel="stylesheet" href="../css/login.css">
+    <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
-      <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
-    <!--Custom Font-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+
+  <!-- Fonts and Icons -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+  <link href="../js-css-reservation/css/themify-icons.css" rel="stylesheet">
+  <link href="../css-dash/bootstrap.min.css" rel="stylesheet">
+  <link href="../css-dash/font-awesome.min.css" rel="stylesheet">
+  <link href="../css-dash/datepicker3.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+      <link rel="stylesheet" href="../owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/reservation.css">
+    <link href="../js-css-reservation/css/paper-bootstrap-wizard.css" rel="stylesheet"/>
+
+
+
+    <title>monkoli</title>
 </head>
-<body>
-    <!--desktop header-->
-   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span></button>
-                <a class="navbar-brand indexlogo" href="#">
+<body style="padding-top: 0px;">
+  <div class="background">
+
+    <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
+        <nav class="navbar navbar-expand-lg navbar-ligth fixed-top" style="background-color: white; ">
+            <a class="navbar-brand indexlogo" href="#">
                 <img src="../images/logo.png"  class="d-inline-block align-top img img-responsive" alt="logo"/>
-                </a>
-                <ul class="nav navbar-top-links navbar-left">
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                      <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px;" id="itm">
-                        <a id="1" class="nav-item nav-link ah" href="#">
-                            <div class="menu">
-                                 <p>Colis</p>
-                                <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                                <hr/>
-                            </div> 
-                       </a>
-                       <a  id="2"  class="nav-item nav-link  ah" href="#">
-                        <div class="menu">
-                             <p>Mes annonces</p>
-                            <i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                       </a>
-                       <a id="3"  class="nav-item nav-link ah " href="#">
-                        <div class="menu">
-                             <p>Messages</p>
-                            <i class="fas fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                      <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
-                        <div class="menu poste">
-                             <p>Poster une annonce</p>
-                            <i class="fas fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                      <a id="5"  class="nav-item nav-link ah" href="#">
-                        <div class="menu">
-                             <p>Mon espace</p>
-                            <i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                      <a id="6"  class="nav-item nav-link ah" href="#">
-                        <div class="menu">
-                             <p>Résidence</p>
-                            <i class="fas fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                      <a id="7"  class="nav-item nav-link ah" href="#">
-                        <div class="menu">
-                             <p>Véhicules</p>
-                            <i class="fas fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                      <div class="menu">
-                        <button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
-                        <button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
-                      </div> 
-                    </div>
-                </div>
-            </ul>
-                        
-            </div>
-        </div><!-- /.container-fluid -->
-    </nav>
-    
+            </a>
+            <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <i class="fas fa-bars fa-2x" aria-hidden="true"></i>
+            </button>
+         <ul class="nav navbar-top-links navbar-left">
+            <a id="1" class="nav-item nav-link ah" href="#">
+              <div class="menu">
+                <p>Colis</p>
+                <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                <hr/>
+              </div> 
+           </a>
+          <a  id="2"  class="nav-item nav-link  ah" href="#">
+            <div class="menu">
+              <p>Mes annonces</p>
+              <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+           </a>
+          <a id="3"  class="nav-item nav-link ah " href="#">
+            <div class="menu">
+              <p>Messages</p>
+              <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
+            <div class="menu poste">
+              <p>Poster une annonce</p>
+              <i class="fa fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a id="5"  class="nav-item nav-link ah" href="#">
+            <div class="menu">
+              <p>Mon espace</p>
+              <i class="fa fa-user fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a id="6"  class="nav-item nav-link ah" href="#">
+            <div class="menu">
+              <p>Résidence</p>
+              <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+          <a id="7"  class="nav-item nav-link ah" href="#">
+            <div class="menu">
+              <p>Véhicules</p>
+              <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+          </a>
+        </ul>
+         <ul class="nav navbar-top-links navbar-right">
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+          <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px">
+              <i class="fa fa-bell" style="font-size: xx-large;"></i><span class="label label-info">5</span></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li><a href="#">
+                  <div><em class="fa fa-envelope"></em> 1 New Message
+                    <span class="pull-right text-muted small">3 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-heart"></em> 12 New Likes
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-user"></em> 5 New Followers
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#">
+              <i class="fas fa-user-circle" style="font-size: 45px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></i></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-user"></em> Connexion</div>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-pen"></em> Inscription</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-top-links navbar-right">
+
+          </ul>
+        </li>
+
+        </ul>
+        </nav>
+        <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height: 0.5px; color: #C6C2C2; background-color: #C6C2C2; margin-left: 260px; margin-right: 10px; margin-top: -27px; width: 1011px;">
+    </header>
     <!--mobile header-->
-    <header id="hmobile" class="container-fluid d-block d-sm-block d-lg-none d-md-block" >
+    <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
+        <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
         <div id="mobileMenu" style="display: none;">
             <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
             <ul class="menuList">
                 <li>
-                    <a class="nav-item nav-link am" href="#">
+                    <a class="nav-item nav-link am active " href="#">
                         <div class="menu">
                              <p>Colis</p>
                             <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
@@ -182,7 +234,7 @@
             </ul>
         </div>
     </header>
-
+    <br><br>
     <!--inscription main content-->
     <section class="container">
         <form action="">
@@ -225,7 +277,7 @@
                         <button style="width: 100%;  padding-top: 6px; font-size: 13px;" type="button" class="btn  bl1 pure-material-button-contained"><i class="fab fa-google" aria-hidden="true"></i>&nbsp;&nbsp; CONTINUER AVEC GOOGLE</button>
                         <br/>
                         <br/>
-                         <span style="font-size: smaller; color:#C6C2C2;font-weight: lighter;">Vous avez déjà un compte?<a href="#" style="text-decoration-color: #00E38C"><span style="color: #00E38C; " > connectez-vous</span></a></span>
+                         <span style="font-size: smaller; color:#C6C2C2;font-weight: lighter;">Vous n'avez pas encore de compte?<a href="#" style="text-decoration-color: #00E38C"><span style="color: #00E38C; " > Inscrivez-vous</span></a></span>
                          <br/>
 
                     </div>                
@@ -238,10 +290,22 @@
 
 
 
-    <!--js part-->
+   <!-- jspart-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-    <script type="text/javascript" src="../js/mobileMenu.js"></script>
+    <script src="../owlcarousel/owl.carousel.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/mobileMenu.js"></script>
+    
 </body>
+ <script src="../js-css-reservation/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+  <!--  Plugin for the Wizard -->
+  <script src="../js-css-reservation/js/demo.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/reservation.js" type="text/javascript"></script>
+
+  <!--  More information about jquery.validate here: https://jqueryvalidation.org/   -->
 </html>

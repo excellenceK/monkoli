@@ -16,7 +16,8 @@
     />
       <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/indexDash.css">
+        <link rel="stylesheet" href="../css/reservation.css">
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -39,7 +40,7 @@
             	<ul class="nav navbar-top-links navbar-left">
 					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		              <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px " id="itm">
-		                <a id="1" class="nav-item nav-link active" href="#">
+		                <a id="1" class="nav-item nav-link active ah" href="#">
 		                    <div class="menu">
 		                         <p>Colis</p>
 		                        <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
@@ -88,13 +89,54 @@
 		                    <hr/>
 		                </div> 
 		              </a>
-		              <div class="menu">
-		                <button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
-		                <button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
-		              </div> 
-		            </div>
+		              
 		        </div>
 		    </ul>
+		             <ul class="nav navbar-top-links navbar-right">
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+           <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></a></li>
+          <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px">
+              <i class="fa fa-bell" style="font-size: xx-large;"></i><span class="label label-info">5</span></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li><a href="#">
+                  <div><em class="fa fa-envelope"></em> 1 New Message
+                    <span class="pull-right text-muted small">3 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-heart"></em> 12 New Likes
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+                <li class="divider"></li>
+                <li><a href="#">
+                  <div><em class="fa fa-user"></em> 5 New Followers
+                    <span class="pull-right text-muted small">4 mins ago</span></div>
+                </a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#">
+              <i class="fas fa-user-circle" style="font-size: 45px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></i></a>
+              <ul class="dropdown-menu dropdown-alerts">
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-user"></em> Connexion</div>
+                  </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#">
+                    <div><em class="fas fa-pen"></em> Inscription</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-top-links navbar-right">
+
+          </ul>
+        </li>
+
+        </ul>
 						
 			</div>
 		</div><!-- /.container-fluid -->
@@ -269,18 +311,23 @@
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
 					<div class="panel panel-teal panel-widget">
 						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Notes Globale<br/><br/></div>
+							<!-- <div class="text-muted" style="font-size: 15px;">Notes Globale<br/><br/></div>
 							<i class="fa fa-star valide"  aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star novalide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i>						
+						</div> -->
+						<div class="text-muted" style="font-size: 15px;">Mes reservations<br/></div>
+							<div class="large" style="color: #00E38C;">4</div>							
+							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
 						</div>
 					</div>
-				</div>
+				</div>			
 			</div><!--/.row-->
 		</div>
+		<h4 class="page-header" style="font-weight: bold; text-align: center">Note globale <br><br>&nbsp;&nbsp;<i class="fa fa-star valide"  aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star novalide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i></h4>
 
 		<div class="row">
 			<div class="col-sm-6">
 				<h1 class="page-header" style="font-weight: bolder;">Colis</h1>
-				<h3 class="page-header" style="font-weight: bold;">Réservations / trajet</h3>
+				<h4 class="page-header" style="font-weight: bold;">Réservations / trajet</h4>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 					<div class="panel-body">
 						<div class="row progress-labels">
@@ -317,7 +364,7 @@
 			</div>
 			<div class="col-sm-6">
 				<h1 class="page-header" style="font-weight: bold; opacity: 0">Nothing</h1>
-				<h3 class="page-header" style="font-weight: bold;">Total Gain</h3>
+				<h4 class="page-header" style="font-weight: bold;">Total Gain</h4>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 					<div class="panel-body">
 						<div class="large" style="color: #00E38C; font-weight: bolder; font-size: 50px;">80 000 <span style="color: #C6C2C2; font-weight: 500;">FCFA</span>
@@ -363,7 +410,7 @@
 		</div><!--/.row-->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3 class="page-header" style="font-weight: bold;">Histogramme</h3>
+				<h4 class="page-header" style="font-weight: bold;">Histogramme</h4>
 				<div class="row">
 					<div class="col-md-16">
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
@@ -387,7 +434,7 @@
 		<div class="row">
 			<div class="col-sm-6">
 				<h1 class="page-header" style="font-weight: bolder;">Résidences</h1>
-				<h3 class="page-header" style="font-weight: bold;">Chiffres</h3>
+				<h4 class="page-header" style="font-weight: bold;">Chiffres</h4>
 				<div class="row">
 					<div class="col-md-16">
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
@@ -407,7 +454,7 @@
 			</div>
 			<div class="col-sm-6">
 				<h1 class="page-header" style="font-weight: bold; opacity: 0">Nothing</h1>
-				<h3 class="page-header" style="font-weight: bold;">Total Gain</h3>
+				<h4 class="page-header" style="font-weight: bold;">Total Gain</h4>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 					<div class="panel-body">
 						<div class="large" style="color: #00E38C; font-weight: bolder; font-size: 50px;">300 000 <span style="color: #C6C2C2; font-weight: 500;">FCFA</span>
@@ -452,7 +499,7 @@
 
 	<div class="row" style="padding-bottom: 50px">
 			<div class="col-lg-12">
-				<h3 class="page-header" style="font-weight: bold;">Historique</h3>
+				<h4 class="page-header" style="font-weight: bold;">Historique</h4>
 				<div class="row">
 					<div class="col-md-16">
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">

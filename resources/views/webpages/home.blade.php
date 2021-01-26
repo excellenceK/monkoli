@@ -467,7 +467,7 @@
                 </div>
             </div>-->
             <!--  -->
-            <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
+            <div class="card  carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
                 <img class="card-img-top img img-responsive"  src="images/bg_card.png" alt="Card image cap">
                 <div class="card-body row">
                     <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
@@ -477,6 +477,7 @@
                     <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
                     <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
                 </div>
+
                 <div class="card-body row">
                   <div class="col-4">
                         <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
@@ -513,15 +514,14 @@
                         <div class="col-4">
                             <p style="font-size: x-small; ">{{ $trajet['typeTransport'] }}</p>
                         </div>
+
                  </div>
 
                  <div class="row">
-                    <div class="col" style="margin-top: 45px; margin-left: 20px;">
-                        <button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
+                    <div class="col-12 col-md-12 col-lg-3 " style="margin-top: 10px;">
+                        <a href="#" type="button" class="btn  pure2" style="background-color:#3C3C3C"><i style="color: white; opacity: 0.7;" class="fa fa-share-alt" aria-hidden="true"></i> Partager</a>
                     </div>
-                    <br class="d-block d-sm-block d-lg-none d-md-none">
-                    <br class="d-block d-sm-block d-lg-none d-md-none">
-                    <div class="col" style="margin-top: 45px; margin-left: 200px;">
+                    <div class="col-12 offset-lg-3 col-lg-6 " style="margin-top:10px;">
                         <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</a>
                     </div>
                  </div>

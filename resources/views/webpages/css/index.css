@@ -22,8 +22,12 @@ html{
 body{
     padding: 0 auto;
     margin: 0;
-    font-family: Arial !important;
+    font-family: Roboto !important;
     position: relative;
+}
+
+.navbar-left{
+    margin-left: 143px;
 }
 
 .background{
@@ -34,7 +38,7 @@ body{
 }
  .ah{
     font-size: small;
-    font-weight: 40;
+    font-weight:normal;
     color: #C6C2C2;
     margin-right: 30px;
 }
@@ -71,9 +75,19 @@ a:hover{
     font-size: 18px; 
 
 }
+
+table{
+    text-align : center;
+}
+
+th{
+    text-align : center;
+    color: #A7A7A7!important;
+    font-weight: lighter;
+}
+
 .new i{
     font-size: medium;
-    font-weight: 100;
     color: #FFF;
     opacity: 0.7;
     font-size: 18px; 
@@ -102,7 +116,6 @@ header{
 }
 .active hr {
     color: #00E38C;
-    background-color: #00E38C;
     font-size: large;
     width: 95px;
     font-weight: 200;
@@ -114,6 +127,16 @@ header{
 .poste i{
     color: #00E38C;
 }
+
+.dot {
+    height: 16px;
+    width: 16px;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+}
+
 hr{
     margin-top: 4px;
     margin-bottom: 0px;
@@ -127,19 +150,43 @@ hr{
     box-sizing: border-box;
     border: none;
     border-radius: 5px;
-    padding: 2px 25px 40px 29px;
+    padding: 2px 25px 30px 29px;
     min-width: 64px;
-    height: 36px;
+    height: 40px;
     vertical-align: middle;
     text-align: center;
     text-overflow: ellipsis;
     color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
     background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
-    box-shadow: 0 0 20px 0px #c3c3c3;
+    box-shadow: 0 0 13px 0px lightgrey;
     font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
     font-size: 16px;
     font-weight: normal;
     line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+.pure3{
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    padding: 1px 11px 36px 8px;
+    min-width: 34px;
+    height: 6px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    box-shadow: 0 0 13px 0px lightgrey;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 35px;
     overflow: hidden;
     outline: none;
     cursor: pointer;
@@ -152,19 +199,19 @@ hr{
     box-sizing: border-box;
     border: none;
     border-radius: 5px;
-    padding: 2px 25px 40px 29px;
+    padding: 0px 20px 35px 24px;
     min-width: 64px;
-    height: 36px;
+    height: 31px;
     vertical-align: middle;
     text-align: center;
     text-overflow: ellipsis;
     color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
     background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
-    box-shadow: 0 0 10px 0px #C6C2C2;
+    box-shadow: 0 0 13px 0px lightgrey;
     font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: normal;
-    line-height: 36px;
+    line-height: 35px;
     overflow: hidden;
     outline: none;
     cursor: pointer;
@@ -261,8 +308,8 @@ GENERAL STYLE END
 
 
 .indexlogo img{
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 }
 
 .pub-brand{
@@ -306,8 +353,8 @@ GENERAL STYLE END
 }
 .col img{
     position: relative;
-    padding-top: 11px;
-    width: 81px;
+    padding-top: 5px;
+    width: 70px;
 }
 
 h2{
@@ -336,8 +383,8 @@ h1{
     display: block;
 }
 .side1 img{
-    height: 115%;
-    width: 101%;
+    height: 111%;
+    width: 100%;
     border-radius: 0 40px 40px 0;
 }
 .categorie div{
@@ -355,6 +402,9 @@ h1{
 
 }
 
+.navbar-brand{
+    padding: 0px !important; 
+}
 .table th{
     color: #00E38C;
 }
@@ -365,7 +415,7 @@ h1{
 }
 
 .fa-2x{
-    font-size: 2.2em !important
+    font-size: 2.3em !important
 }
 .fas{
     padding: 6px ;
@@ -384,11 +434,11 @@ h1{
 }
 
 .form button{
-    width: 80%;
-    height: 56px;
+    width: 82%;
+    height: 47px;
     margin-top: -1px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 6px;
 }
 
 .icon {
@@ -396,7 +446,7 @@ h1{
     float: right;
     margin-right: 12px;
     margin-left: 8px;
-    margin-top: -45px;
+    margin-top: -38px;
     z-index: 2;
     color: #222222;
   }
@@ -404,16 +454,16 @@ h1{
 .bg-search{
    margin-top: -25px;
     position: absolute;
-    width: 380px;
+    width: 23%;
 }
 .logon{
-    margin-top: -50px; 
+    margin-top: 15px; 
     position: absolute !important;
     margin-left: -120px;
 
 }
 .logon1{
-    margin-top: -50px; 
+    margin-top: 15px; 
     float: right;
     margin-left: 180px;
     position: relative !important;
@@ -453,7 +503,7 @@ h1{
     height: 287px;
     position: relative;
     margin-left: 77%;
-    margin-top: -231px;
+    margin-top: -277px;
 
 }
 
@@ -535,10 +585,10 @@ section{
 
  @media (max-width: 1199.98px) { 
     .searchlogo{
-        height: 100px;
-        position: relative;
-        margin-left: 90%;
-        overflow: hidden;
+        height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 73%;
         
     
     }

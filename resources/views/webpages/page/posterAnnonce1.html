@@ -1,169 +1,183 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="../css/annonce.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->  
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+<!--     <link rel="stylesheet" href="../css/annonce.css">
+ -->    <!-- Fonts and Icons -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="../js-css-reservation/css/themify-icons.css" rel="stylesheet">
+    <link href="../css-dash/bootstrap.min.css" rel="stylesheet">
+    <link href="../css-dash/font-awesome.min.css" rel="stylesheet">
+    <link href="../css-dash/datepicker3.css" rel="stylesheet">
+      <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/reservation.css">
+    <link href="../js-css-reservation/css/paper-bootstrap-wizard.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/annonce.css">
 
 
-        <title>monkoli-poster-annonce</title>
-    </head>
+
+    <title>monkoli</title>
+</head>
 <body>
-     <!--desktop header-->
-     <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
-        <nav class="navbar navbar-expand-lg navbar-ligth">
-            <a class="navbar-brand indexlogo" href="../index.html">
-                <img src="../images/logo.png"  class="d-inline-block align-top img img-responsive" alt="logo"/>
-            </a>
-            <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav" id="itm">
-                <a id="1" class="nav-item nav-link  ah " href="#">
-                    <div class="menu">
-                         <p>Colis</p>
-                        <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                        <hr/>
-                    </div> 
-               </a>
-               <a  id="2"  class="nav-item nav-link  ah" href="#">
-                <div class="menu">
-                     <p>Mes annonces</p>
-                    <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-               </a>
-               <a id="3"  class="nav-item nav-link ah " href="#">
-                <div class="menu">
-                     <p>Messages</p>
-                    <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a  id="4"  class="nav-item nav-link active ah " href="#">
-                <div class="menu poste">
-                     <p>Poster une annonce</p>
-                    <i class="fa fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="5"  class="nav-item nav-link ah " href="#">
-                <div class="menu">
-                     <p>Mon espace</p>
-                    <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="6"  class="nav-item nav-link ah" href="#">
-                <div class="menu">
-                     <p>Résidence</p>
-                    <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <a id="7"  class="nav-item nav-link ah" href="#">
-                <div class="menu">
-                     <p>Véhicules</p>
-                    <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                    <hr/>
-                </div> 
-              </a>
-              <div class="menu">
-                  <a href="inscription.html"><button type="button" class="btn gris pure-material-button-contained">Inscription</button></a>
-                 <a href="connexion.html">  <button type="button" class="btn vert pure-material-button-contained">Connexion</button></a>
-              </div> 
-            </div>
-        </div>
-        </nav>
-        <hr class="d-none d-sm-none d-md-inline d-lg-block" style="height:0.5px;color:#C6C2C2;background-color:#C6C2C2; margin-left:150px; margin-right:10px; margin-top: -26px;">
-    </header>
-    <!--mobile header-->
-    <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
-        <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
-        <div id="mobileMenu" style="display: none;">
-            <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
-            <ul class="menuList">
-                <li>
-                    <a class="nav-item nav-link am active " href="#">
-                        <div class="menu">
-                             <p>Colis</p>
-                            <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                   </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link am" href="#">
-                        <div class="menu">
-                             <p>Mes annonces</p>
-                            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                       </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Messages</p>
-                            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu poste">
-                             <p>Ajouter annonce</p>
-                            <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Mon espace</p>
-                            <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Résidence</p>
-                            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Véhicules</p>
-                            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div> 
-                      </a>
-                </li>
-                <li>
-                    <button type="button" class="btn gris pure-material-button-contained">Inscription</button>
+  <div class="background">
 
-                </li>
-                <li>
-                    <button type="button" class="btn vert pure-material-button-contained">Connexion</button>
-
-                </li>
-
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation"> 
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileMenu"><span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span></button>
+        <a class="navbar-brand" href="#"><span><img src="../images/logo.png" class="d-inline-block align-top img img-responsive" alt="logo" style="width: 60px; margin-top: -10px;" /></span></a>
+        
+      <!-- 
+        <ul class="nav navbar-top-links navbar-right">
+          
+          <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" style="background-color: black;">
+            <em class="fa fa-bell"></em><span class="label label-info">5</span>
+          </a>
+            <ul class="dropdown-menu dropdown-alerts">
+              <li><a href="#">
+                <div><em class="fa fa-envelope"></em> 1 New Message
+                  <span class="pull-right text-muted small">3 mins ago</span></div>
+              </a></li>
+              <li class="divider"></li>
+              <li><a href="#">
+                <div><em class="fa fa-heart"></em> 12 New Likes
+                  <span class="pull-right text-muted small">4 mins ago</span></div>
+              </a></li>
+              <li class="divider"></li>
+              <li><a href="#">
+                <div><em class="fa fa-user"></em> 5 New Followers
+                  <span class="pull-right text-muted small">4 mins ago</span></div>
+              </a></li>
+              
             </ul>
-        </div>
-    </header>
-    <br><br><br class="d-sm-none d-none d-lg-block d-md-none"><br class="d-sm-none d-none d-lg-block d-md-none"><br class="d-sm-none d-none d-lg-block d-md-none">
+          </li>
+          <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" style="background-color: black;">
+            <em class="fa fa-user"></em><span class="label label-danger">15</span></a>
+          </li>
+        </ul>
+      -->
+
+        <ul class="nav navbar-top-links navbar-left">
+          <a id="1" class="nav-item nav-link ah" href="#">
+            <div class="menu">
+              <p>Colis</p>
+              <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+              <hr/>
+            </div> 
+         </a>
+        <a  id="2"  class="nav-item nav-link  ah" href="#">
+          <div class="menu">
+            <p>Mes annonces</p>
+            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+            <hr/>
+          </div> 
+         </a>
+        <a id="3"  class="nav-item nav-link ah " href="#">
+          <div class="menu">
+            <p>Messages</p>
+            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+            <hr/>
+          </div> 
+        </a>
+        <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
+          <div class="menu poste">
+            <p>Poster une annonce</p>
+            <i class="fa fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+            <hr/>
+          </div> 
+        </a>
+        <a id="5"  class="nav-item nav-link ah" href="#">
+          <div class="menu">
+            <p>Mon espace</p>
+            <i class="fa fa-user fa-align-center fa-2x" aria-hidden="true"></i>
+            <hr/>
+          </div> 
+        </a>
+        <a id="6"  class="nav-item nav-link ah" href="#">
+          <div class="menu">
+            <p>Résidence</p>
+            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+            <hr/>
+          </div> 
+        </a>
+        <a id="7"  class="nav-item nav-link ah" href="#">
+          <div class="menu">
+            <p>Véhicules</p>
+            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+            <hr/>
+          </div> 
+        </a>
+        </ul>
+
+        <ul class="nav navbar-top-links navbar-right">
+          <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#" style=" color: #FFF; margin-top: 13px; box-shadow: 0 2px 20px lightgray; border-radius: 50px">
+            <i class="fa fa-bell" style="font-size: xx-large;"></i><span class="label label-info">5</span></a>
+            <ul class="dropdown-menu dropdown-alerts">
+              <li><a href="#">
+                <div><em class="fa fa-envelope"></em> 1 New Message
+                  <span class="pull-right text-muted small">3 mins ago</span></div>
+              </a></li>
+              <li class="divider"></li>
+              <li><a href="#">
+                <div><em class="fa fa-heart"></em> 12 New Likes
+                  <span class="pull-right text-muted small">4 mins ago</span></div>
+              </a></li>
+              <li class="divider"></li>
+              <li><a href="#">
+                <div><em class="fa fa-user"></em> 5 New Followers
+                  <span class="pull-right text-muted small">4 mins ago</span></div>
+              </a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="count-info" data-toggle="dropdown" href="#">
+            <i class="fas fa-user-circle" style="font-size: 45px; box-shadow: 0 2px 20px lightgray; border-radius: 50px"></i></a>
+            <ul class="dropdown-menu dropdown-alerts">
+              <li>
+                <a href="#">
+                  <div><em class="fa fa-user"></em> Connexion</div>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">
+                  <div><em class="ti-pencil"></em> Inscription</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-top-links navbar-right">
+
+        </ul>
+      </li>
+
+        </ul>
+        
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+    <br><br><br><br>
     <section class="container-fluid titre">
         <div class="row">
             <div class="col-12 col-lg-12 col-md-12 col-sm-12">
@@ -172,167 +186,243 @@
         </div>
     </section>
     <!-- Modal  type d'annonce -->
-    <div id="typeannonce" class="container typeannonce box-shadow--16dp ">
-        <div class="row">
-            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
-                    <h5 style="font-weight: bold;">Choisissez le type d'annonce que vous voulez créer</h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio active" id="customRadio1">
-             <input type="radio"   name="textEditor" id="dreamweaver" checked> <label for="dreamweaver">Expédition de colis</label> 
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio" id="customRadio2">
-                <input type="radio"  name="textEditor" id="dreamweaver1" > <label for="dreamweaver1">Vente / Location d'appartement</label> 
-               </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio" id="customRadio3">
-                <input type="radio"  name="textEditor" id="dreamweaver2" > <label for="dreamweaver2">Vente / Location de voiture</label> 
-               </div>
-        </div>
+    
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <!--      Wizard container        -->
+              <div class="wizard-container">
+                <div class="card wizard-card" data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
+                  <form action="" method="">
+                    <div class="wizard-navigation" style="margin-top: -49px;">
+                      <div class="progress-with-circle">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+                      </div>
+                      <ul>
+                        <li>
+                          <a href="#info" data-toggle="tab">
+                            <div class="icon-circle">
+                              <i class="ti-check-box"></i>
+                            </div>
+                             Type d'annonce
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#waitConfirm" data-toggle="tab">
+                            <div class="icon-circle">
+                              <i class="ti-pencil-alt"></i>
+                            </div>
+                             Remplir le formulaire
+                          </a>
+                        </li>
+                        <li style=" width: 20.3333% !important;"> 
+                          <a href="#end" data-toggle="tab">
+                            <div class="icon-circle">
+                              <i class="ti-check"></i>
+                            </div>
+                            Terminer
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="info">
+                          <div class="row">
+                              <h6 class="info-text" style="color: #A7A7A7;"> Entrez la quantité souhaitée que vous voulez reserver et cliquer sur "Reserver" pour continuer.</h6>
+                            <br>
+                            <div class="col-sm-10 ">
+                              <div class="row">
+                                <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                        <h5 style="font-weight: bold;">Choisissez le type d'annonce que vous voulez créer</h5>
+                                </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio active" id="customRadio1">
+                                   <input type="radio"   name="textEditor" id="dreamweaver" checked> <label for="dreamweaver">Expédition de colis</label> 
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio" id="customRadio2">
+                                      <input type="radio"  name="textEditor" id="dreamweaver1" > <label for="dreamweaver1">Location de residence meublée</label> 
+                                     </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12 col-lg-12 col-md-12 col-sm-12 customRadio" id="customRadio3">
+                                      <input type="radio"  name="textEditor" id="dreamweaver2" > <label for="dreamweaver2">Location de voiture</label> 
+                                     </div>
+                              </div>
 
-        <div class="row btnfooter">
-            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
-                <button id="vbtn" type="button" class="btn vert pure-material-button-contained" style="float: right;" > <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>Créer</button>
-                <button type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</button>
+                           <!--  <div class="row btnfooter">
+                                <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                                    <button id="vbtn" type="button" class="btn vert pure-material-button-contained" style="float: right;" > <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>&nbsp;Créer</button>
+                                    <button type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</button>
 
-            </div>
+                                </div>
+                             -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane" id="waitConfirm">
+                            <h5 class="info-text" style="color: #3C3C3C;"><span><i class="ti-info-alt" style="font-size: 14px;"></i> Votre réservation sera mise en attente de confirmation par le transporteur.</span></h5>
+                            <div class="row">
+                              <div class="col-4">
+                                
+                             </div>
+                                         
+                          </div>
+                           <div class="row">
+                              <div class="col-lg-4">
+                                <h2 style="font-weight: bolder; font-size: 15px;">Information sur l'expédition</h2>
+                                <!--Select with pure css-->
+                                <div class="select">
+                                    <select class="select-text" required>
+                                        <option value="" disabled selected></option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                    <span class="select-highlight"></span>
+                                    <span class="select-bar"></span>
+                                    <label class="select-label">Mode de transport</label>
+                                </div>
+                                <br>
+                                <!--Select with pure css-->
+                                <div class="wrap-input100 validate-input">
+                                    <input class="input100" type="text" name="depart" placeholder="Lieu de départ">
+                                    <span class="focus-input100"></span>
+                                </div>
+                                <div class="wrap-input100 validate-input">
+                                    <input class="input100" type="text" name="destination" placeholder="Lieu de destination">
+                                    <span class="focus-input100"></span>
+                                </div>
+                                <div class="wrap-input100 validate-input">
+                                    <input class="input100" type="text" name="destination" placeholder="Lieu de dépôt du colis à expédier">
+                                    <span class="focus-input100"></span>
+                                </div>
+                                <div class="wrap-input100 validate-input">
+                                    <input class="input100" type="text" name="destination" placeholder="Lieu de retrait du colis à expédier">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 offset-lg-1" style="margin-right: 70px;" >
+                              <br>
+                              <div class="select">
+                                  <select class="select-text" required>
+                                      <option value="" disabled selected></option>
+                                      <option value="1">Option 1</option>
+                                      <option value="2">Option 2</option>
+                                      <option value="3">Option 3</option>
+                                  </select>
+                                  <span class="select-highlight"></span>
+                                  <span class="select-bar"></span>
+                                  <label class="select-label">Type de véhicule</label>
+                              </div>
+                              <br>
+                              <div class="wrap-input100 validate-input">
+                                  <label  for="heureDepart" style="font-size: small;color: #C6C2C2;" >Heure de départ</label>
+                                  <input class="input100" type="time" name="heureDepart" placeholder="Heure de départ">
+                                  <span class="focus-input100"></span>
+                              </div>
+                              <br>
+                              <div class="wrap-input100 validate-input">
+                                  <label for="heureDepart" style="font-size: small;color: #C6C2C2;">Heure de d'arrivée</label>
+                                  <input class="input100" type="time" name="heureDarrivee" placeholder="Heure de départ">
+                                  <span class="focus-input100"></span>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <h2 style="font-weight: bolder; font-size: 15px;">Informations&nbsp;personnelles</h2>
+                              <div class="wrap-input100 validate-input">
+                                  <input class="input100" type="text" name="nom" placeholder="Nom">
+                                  <span class="focus-input100"></span>
+                              </div>
+                              <div class="wrap-input100 validate-input">
+                                  <input class="input100" type="text" name="prenom" placeholder="Prenom">
+                                  <span class="focus-input100"></span>
+                              </div>
+                              <div class="wrap-input100 validate-input">
+                                  <input class="input100" type="email" name="email" placeholder="Email">
+                                  <span class="focus-input100"></span>
+                              </div>
+                              <div class="wrap-input100 validate-input">
+                                  <input class="input100" type="tel" name="email" placeholder="Téléphone">
+                                  <span class="focus-input100"></span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="col-lg-12 col-12 col-sm-12 col-md-12">
+                             <!--Select with pure css-->
+                            <h2 style="font-weight: bolder; font-size: 15px;">Informations sur le Colis</h2>
+                            <div class="select">
+                              <select class="select-text" required>
+                                  <option value="" disabled selected></option>
+                                  <option value="1">Option 1</option>
+                                  <option value="2">Option 2</option>
+                                  <option value="3">Option 3</option>
+                              </select>
+                              <span class="select-highlight"></span>
+                              <span class="select-bar"></span>
+                              <label class="select-label">Type de colis supportés</label>
+                            </div>
+                          <!--Select with pure css-->
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="col-lg-12 col-12 col-sm-12 col-md-12 offset-lg-1" style="margin-top: -13px; ">
+                            <br>
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="quantiteRecevable" placeholder="Quantite recevable">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="text" name="quantiteRecevable" placeholder="Prix unitaire">
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input">
+                                <input class="input100" type="date" name="quantiteRecevable" placeholder="Date limite de réservation">
+                                <span class="focus-input100"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                          
+                      <div class="tab-pane" id="end">
+                        <div class="row">
+                          <div class="col-sm-12" style="height: 300px;">
+      
+                            <h2 class="info-text"><i class="fas fa-check-circle" style="text-align: center; font-size: xxx-large;"></i><br> Annonce créée avec succès.</h2>
+                          </div>        
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="wizard-footer">
+                          <div class="pull-right">
+                            <br><br>
+                            <a href="#"><input type='button' class='btn btn-cancel btn-fill btn-warning btn-wd' name='previous' value='Annuler' style="background-color: red; border-color: red"/></a>
+                            <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' id="vbtn" name='finish' value='Terminer' />
+                            <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' id="vbtn" name='next' value='Créer' />
+                          </div>
+
+                          <div class="pull-left">
+                            <br>
+                            <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Retour' />
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </form>
         </div>
+    </div> <!-- wizard container -->
+</div>
+</div><!-- end row -->
+    </div> <!--  big container -->
     </div>
     <!-- Modal  type d'annonce -->  
-
-     <!-- formulaire d'expédition de colis -->
-     <form  id="expColis" style="display: none;"  >
-        <section class="container typeannonce box-shadow--16dp">
-            <div class="row">
-                <div class="col">
-                    <h1>Information sur l'expédition</h1>
-                                    <!--Select with pure css-->
-                                    <div class="select">
-                                        <select class="select-text" required>
-                                            <option value="" disabled selected></option>
-                                            <option value="1">Option 1</option>
-                                            <option value="2">Option 2</option>
-                                            <option value="3">Option 3</option>
-                                        </select>
-                                        <span class="select-highlight"></span>
-                                        <span class="select-bar"></span>
-                                        <label class="select-label">Mode de transport</label>
-                                    </div>
-                                    <br>
-                                    <!--Select with pure css-->
-                                    <div class="wrap-input100 validate-input">
-                                        <input class="input100" type="text" name="depart" placeholder="Lieu de départ">
-                                        <span class="focus-input100"></span>
-                                    </div>
-                                    <div class="wrap-input100 validate-input">
-                                        <input class="input100" type="text" name="destination" placeholder="Lieu de destination">
-                                        <span class="focus-input100"></span>
-                                    </div>
-                                    <div class="wrap-input100 validate-input">
-                                        <input class="input100" type="text" name="destination" placeholder="Lieu de dépôt du colis à expédier">
-                                        <span class="focus-input100"></span>
-                                    </div>
-                                    <div class="wrap-input100 validate-input">
-                                        <input class="input100" type="text" name="destination" placeholder="Lieu de retrait du colis à expédier">
-                                        <span class="focus-input100"></span>
-                                    </div>
-                </div>
-                <div class="col offset-lg-1" style="margin-right: 70px;" >
-                    <br>
-                    <div class="select">
-                        <select class="select-text" required>
-                            <option value="" disabled selected></option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                        <span class="select-highlight"></span>
-                        <span class="select-bar"></span>
-                        <label class="select-label">Type de véhicule</label>
-                    </div>
-                    <br>
-                    <div class="wrap-input100 validate-input">
-                        <label  for="heureDepart" style="font-size: small;color: #C6C2C2;" >Heure de départ</label>
-                        <input class="input100" type="time" name="heureDepart" placeholder="Heure de départ">
-                        <span class="focus-input100"></span>
-                    </div>
-                    <br>
-                    <div class="wrap-input100 validate-input">
-                        <label for="heureDepart" style="font-size: small;color: #C6C2C2;">Heure de d'arrivée</label>
-                        <input class="input100" type="time" name="heureDarrivee" placeholder="Heure de départ">
-                        <span class="focus-input100"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <h3>Mes informations personnelles</h3>
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="nom" placeholder="Nom">
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="prenom" placeholder="Prenm">
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="email" name="email" placeholder="Email">
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="tel" name="email" placeholder="Téléphone">
-                        <span class="focus-input100"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-12 col-sm-12 col-md-12">
-                     <!--Select with pure css-->
-                     <h1>Informations sur le Colis</h1>
-                <div class="select">
-                    <select class="select-text" required>
-                        <option value="" disabled selected></option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                    <span class="select-highlight"></span>
-                    <span class="select-bar"></span>
-                    <label class="select-label">Type de colis supportés</label>
-                </div>
-                <!--Select with pure css-->
-                </div>
-                <div class="col-lg-3 col-12 col-sm-12 col-md-12 offset-lg-1">
-                    <br>
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="quantiteRecevable" placeholder="Quantite recevable">
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="quantiteRecevable" placeholder="Prix unitaire">
-                        <span class="focus-input100"></span>
-                    </div>
-                    <div class="wrap-input100 validate-input">
-                        <input class="input100" type="date" name="quantiteRecevable" placeholder="Date limite de réservation">
-                        <span class="focus-input100"></span>
-                    </div>
-               </div>
-            </div>
-           
-           <div class="row btnfooter">
-               <div class="col-12 col-lg-12 col-md-12 col-sm-12">
-                   <button id="vbtn" type="button" class="btn vert pure-material-button-contained" style="float: right;" > <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>Créer</button>
-                   <button type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</button>
-               </div>
-           </div>
-   
-       
-       </section>
-      </form>
-
-
 
 
       <!-- formulaire de location d'appartement -->
@@ -356,6 +446,16 @@
      
     
 </body>
+ <script src="../js-css-reservation/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+  <!--  Plugin for the Wizard -->
+  <script src="../js-css-reservation/js/demo.js" type="text/javascript"></script>
+  <script src="../js-css-reservation/js/reservation.js" type="text/javascript"></script>
+
+  <!--  More information about jquery.validate here: https://jqueryvalidation.org/   -->
+  <script src="../js-css-reservation/js/jquery.validate.min.js" type="text/javascript"></script>
 </html>
 
 

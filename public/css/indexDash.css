@@ -27,13 +27,14 @@ body{
 }
 
 .navbar-left{
-    margin-left: 143px;
+       margin-left: 20px;
+
 }
 
 .background{
     background-image: url('../images/bg1.jpg');
     background-repeat: repeat-y;
-    background-size: auto;
+    background-size: 100%;
     
 }
  .ah{
@@ -403,7 +404,7 @@ h1{
 }
 
 .navbar-brand{
-    padding: 0px !important; 
+    padding: 13px !important; 
 }
 .table th{
     color: #00E38C;
@@ -465,7 +466,8 @@ h1{
 .logon1{
     margin-top: 15px; 
     float: right;
-    margin-left: 200px;
+    margin-left: 180px;
+    position: relative !important;
 
 }
 
