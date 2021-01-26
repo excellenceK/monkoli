@@ -68,11 +68,19 @@
    <div class="card  thumbnail col-12 col-md-12 col-sm-12 col-lg-4" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
        <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap">
        <div class="card-body row">
-           <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 20px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
-           <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 290px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
-           <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
-           <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
-           <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
+        <div class="col-5">
+            <img src="../images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
+            <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px;color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
+            <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
+          </div>
+          <div class="col-2">
+              <p style="margin-top: -100px;"><i class="fas fa-arrow-right" aria-hidden="true" style="color:white;position: absolute; font-size: large;"></i></p>
+          </div>
+          <div class="col-5">
+            <img src="../images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">  
+            <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
+            <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
+          </div>
        </div>
        <div class="card-body row">
            <div class="col-4">
@@ -105,27 +113,23 @@
                </p>
            </div>
            <div class="row" style="width: 100%; margin-left: 108px;">
-               <div class="col-8">
+               <div class="col-12 col-md-12 col-lg-12">
                    <br class="d-block d-sm-block d-lg-none d-md-none">
-                   <p style="font-size: x-small; margin-left: 42px;">Mode de transport : </p>
+                   <p style="font-size: x-small; margin-left: 42px;">Mode de transport :{{ $trajet['typeTransport'] }} </p>
                </div>
                <!--mode de transport-->
-               <div class="col-4">
-                   <p style="font-size: x-small; ">{{ $trajet['typeTransport'] }}</p>
-               </div>
+              
 
            </div>
 
            <div class="row">
-           <div class="col" style="margin-top: 45px; margin-left: 20px;">
-               <button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color:#3C3C3C; margin-right:6px;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
-           </div>
-           <br class="d-block d-sm-block d-lg-none d-md-none">
-           <br class="d-block d-sm-block d-lg-none d-md-none">
-           <div class="col" style="margin-top: 45px; margin-left: 200px;">
-               <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</a>
-           </div>
-           </div>
+            <div class="col-12 col-md-12 col-lg-3 " style="margin-top: 10px;">
+                <a href="#" type="button" class="btn  pure2" style="background-color:#3C3C3C"><i style="color: white; opacity: 0.7;" class="fa fa-share-alt" aria-hidden="true"></i> Partager</a>
+            </div>
+            <div class="col-12 offset-lg-3 col-lg-6 " style="margin-top:10px;">
+                <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</a>
+            </div>
+         </div>
        </div>
    </div>
   @endforeach
