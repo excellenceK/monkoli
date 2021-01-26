@@ -11,8 +11,6 @@
                                 ->get();
                                 //dd($annonceColi);
                 @endphp
-				<div class="row">
-					<div class="col-md-16">
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 							<div class="card-body">
 			                  <div class="table-responsive">
@@ -50,8 +48,6 @@
 			            </div>
 
 						</div>
-					</div>
-				</div><!--/.row-->
 		<br><br>
 
 @endsection

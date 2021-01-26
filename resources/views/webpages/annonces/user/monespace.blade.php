@@ -43,40 +43,40 @@
                 //dd($reservations);
 
             @endphp
-		<div class="panel panel-container" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top: 20px">
+		<div class="container panel panel-container" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top: 20px">
 			<div class="row">
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
+				<div class="col-12 col-md-12 col-lg-3" style="background-color: none;">
 					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Annonce(s) en cours<br/></div>
-							<div class="large" style="color: #00E38C;">{{ $annonceEnCours }}</div>
+						<div class="no-padding justify-content-center">
+							<p class="text-muted" style="font-size: 15px;">Annonce(s) en cours</p>
+							<p class="large" style="color: #00E38C; text-align:center">{{ $annonceEnCours }}</p>
+							<a href="{{ route('users.consulterAnnonce') }}" type="button" class="btn pure2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-12 col-lg-3" style="background-color: none;">
+					<div class="panel panel-teal panel-widget border-right">
+						<div class="no-padding justify-content-center">
+							<p class="text-muted" style="font-size: 15px;">Reservation(s) en attente</p>
+							<p class="large" style="color: #00E38C;">{{ $reservationsColi }}</p>
 							<a href="{{ route('users.consulterAnnonce') }}" type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
+				<div class="col-12 col-md-12 col-lg-3" style="background-color: none;">
 					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Reservation(s) en attente<br/></div>
-							<div class="large" style="color: #00E38C;">{{ $reservationsColi }}</div>
-							<a href="{{ route('users.consulterAnnonce') }}" type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"> <i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</a>
+						<div class="no-padding justify-content-center">
+							<p class="text-muted" style="font-size: 15px;">Total Annonces</p>
+							<p class="large" style="color: #00E38C;">{{ $totalColis }}</p>
+							<button type="button" class="btn pure2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"><i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-					<div class="panel panel-teal panel-widget border-right">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Total Annonces<br/></div>
-							<div class="large" style="color: #00E38C;">{{ $totalColis }}</div>
-							<button type="button" class="btn pure2 offset-lg-2 offset-md-2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"><i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
+				<div class="col-12 col-md-12 col-lg-3" style="background-color: none;">
 					<div class="panel panel-teal panel-widget">
-						<div class="row no-padding">
-							<div class="text-muted" style="font-size: 15px;">Notes Globale<br/><br/></div>
-							<i class="fa fa-star valide"  aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star novalide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i>
+						<div class="no-padding justify-content-center">
+							<p class="text-muted" style="font-size: 15px;">Notes Globale</p><br><br>
+							<p><i class="fa fa-star valide"  aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star valide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i><i class="fa fa-star novalide" aria-hidden="true" style="color: #00E38C; margin-right: 7px"></i></p>
 						</div>
 					</div>
 				</div>
@@ -84,7 +84,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-12 col-lg-6 col-md-12">
 				<h1 class="page-header" style="font-weight: bolder;">Colis</h1>
 				<h3 class="page-header" style="font-weight: bold;">Réservations / trajet</h3>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
@@ -103,9 +103,9 @@
                                 $pourcentageReservation = ($quantiteReserve * 100)/$value->quantiteDisponible;
                                 //dd($reservation);
                             @endphp
-                            <div class="row progress-labels">
-                                <div class="col-sm-6"><span>{{ $value->villeDepart }} </span><i class="fas fa-arrow-right"></i><span> {{ $value->villeArriver }}</span><br><br></div>
-                                <div class="col-sm-6" style="text-align: right;">{{ $pourcentageReservation }}%</div>
+                            <div class="progress-labels">
+                                <div class=""><span>{{ $value->villeDepart }} </span><i class="fas fa-arrow-right"></i><span> {{ $value->villeArriver }}</span><br><br></div>
+                                <div class="" style="text-align: right;">{{ $pourcentageReservation }}%</div>
                             </div>
                             <div class="progress">
                                 <div data-percentage="0%" style="width: {{ $pourcentageReservation }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -115,7 +115,7 @@
 
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-12 col-lg-6 col-md-12">
 				<h1 class="page-header" style="font-weight: bold; opacity: 0">Nothing</h1>
 				<h3 class="page-header" style="font-weight: bold;">Total Gain</h3>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
@@ -152,12 +152,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h3 class="page-header" style="font-weight: bold;">Histogramme</h3>
-				<div class="row">
-					<div class="col-md-16">
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 							<div class="panel-heading">
 								<ul class="pull-right">
-
 								</ul>
 								<span class="pull-right"></em></span></div>
 							<div class="panel-body">
@@ -167,17 +164,15 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
+					
 			</div>
 		</div>
-
+<br>
+<br>
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-12 col-lg-6 col-md-6">
 				<h1 class="page-header" style="font-weight: bolder;">Résidences</h1>
 				<h3 class="page-header" style="font-weight: bold;">Chiffres</h3>
-				<div class="row">
-					<div class="col-md-16">
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 							<div class="panel-heading">
 								<ul class="pull-right">
@@ -189,49 +184,41 @@
 									<canvas class="chart" id="pie-chart"></canvas>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
+						</div>				
 			</div>
-			<div class="col-sm-6">
+			<div class="col-12 col-lg-6 col-md-6">
 				<h1 class="page-header" style="font-weight: bold; opacity: 0">Nothing</h1>
 				<h3 class="page-header" style="font-weight: bold;">Total Gain</h3>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 					<div class="panel-body">
 						<div class="large" style="color: #00E38C; font-weight: bolder; font-size: 50px;">300 000 <span style="color: #C6C2C2; font-weight: 500;">FCFA</span>
 							<br><br>
-							<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-								<div class="panel panel-teal panel-widget border-right">
-									<div class="row no-padding">
-										<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Riviera 3 </span><br/><br></div>
-										<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
+								<div class="row">
+									<div class="col panel panel-teal panel-widget border-right">
+										<div class="no-padding">
+											<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Riviera 3 </span><br/><br></div>
+											<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
+										</div>
+									</div>
+									<div class="col panel panel-teal panel-widget border-right">
+										<div class="no-padding">
+											<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Marcory  </span><br/><br></div>
+											<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
+										</div>
+									</div>
+									<div class="col panel panel-teal panel-widget border-right">
+										<div class="no-padding">
+											<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Plateau </span><br/><br></div>
+											<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
+										</div>
+									</div>
+									<div class="col panel panel-teal panel-widget border-right">
+										<div class="no-padding">
+											<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Angré </span><br/><br></div>
+											<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-								<div class="panel panel-teal panel-widget border-right">
-									<div class="row no-padding">
-										<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Marcory  </span><br/><br></div>
-										<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-								<div class="panel panel-teal panel-widget border-right">
-									<div class="row no-padding">
-										<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Plateau </span><br/><br></div>
-										<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-6 col-md-3 col-lg-3 no-padding" style="background-color: none;">
-								<div class="panel panel-teal panel-widget border-right">
-									<div class="row no-padding">
-										<div class="text-muted" style="font-size: 11px; color: #3C3C3C"><span>Angré </span><br/><br></div>
-										<div class="text-muted" style="font-size: 15px; color: #00E38C">20 000<br/></div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -241,8 +228,6 @@
 	<div class="row" style="padding-bottom: 50px">
 			<div class="col-lg-12">
 				<h3 class="page-header" style="font-weight: bold;">Historique</h3>
-				<div class="row">
-					<div class="col-md-16">
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 							<div class="card-body">
 			                  <div class="table-responsive">
@@ -370,9 +355,7 @@
 			              </div>
 			            </div>
 
-						</div>
-					</div>
-				</div><!--/.row-->
+			</div><!--/.row-->
 
 	</div>
 

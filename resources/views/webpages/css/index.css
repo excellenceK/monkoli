@@ -301,6 +301,15 @@ hr{
 }
 
 
+ul.no-bullets{
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }
+
+  a{
+      text-decoration: none;
+  }
 
 /*
 GENERAL STYLE END
@@ -568,6 +577,10 @@ footer{
     width: 100%;
     z-index: 10;
     background-color: #222222;
+    color: #222222;
+}
+.menuList{
+    color: #222222;
 }
 
 section{

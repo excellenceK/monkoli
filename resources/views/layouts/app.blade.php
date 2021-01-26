@@ -25,7 +25,7 @@
                 <i class="fas fa-bars fa-2x" aria-hidden="true"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav" style="margin-left: 100px;" id="itm">
+              <div class="navbar-nav" id="itm">
                 <a id="1" class="nav-item nav-link active ah " href="#">
                     <div class="menu">
                          <p>Colis</p>
@@ -105,74 +105,76 @@
         <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
         <div id="mobileMenu" style="display: none;">
             <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
-            <ul class="menuList">
-                <li>
+            <ul class="menuList row" style="list-style-type: none;">
+                <li class="col-12" >
                     <a class="nav-item nav-link am active " href="#">
                         <div class="menu">
-                             <p>Colis</p>
-                            <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+							<i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
+							<p>Colis</p>
                             <hr/>
                         </div>
                    </a>
                 </li>
-                <li>
+                <li class="col-12">
                     <a class="nav-item nav-link am" href="#">
                         <div class="menu">
+							<i class="fa fa-bullhorn  fa-2x" aria-hidden="true"></i>
                              <p>Mes annonces</p>
-                            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
                             <hr/>
                         </div>
                        </a>
                 </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
+                <li class="col-12">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
+							<i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Messages</p>
-                            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
                             <hr/>
                         </div>
                       </a>
                 </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu poste">
-                             <p>Ajouter annonce</p>
-                            <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
+                <li class="col-12">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
+							<i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Mon espace</p>
-                            <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
                             <hr/>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
+                <li class="col-12">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
+							<i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Résidence</p>
-                            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
                             <hr/>
                         </div>
                       </a>
                 </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
+                <li class="col-12">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
+							<i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Véhicules</p>
-                            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                            <hr/>
+                        </div>
+                      </a>
+				</li>
+				<li class="col-12">
+                    <a class="nav-item nav-link am" href="#">
+                        <div class="menu poste">
+							<i class="fa fa-plus-circle fa-align-center  fa-2x" aria-hidden="true"></i>
+                             <p>Ajouter <br> annonce</p>
                             <hr/>
                         </div>
                       </a>
                 </li>
+				<br>
                 <li>
                     <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>
 
-                </li>
+				</li>
+				<br>
                 <li>
                     <a type="button" class="btn vert pure-material-button-contained" style="color: white" href="{{ route('login') }}">Connexion</a>
 

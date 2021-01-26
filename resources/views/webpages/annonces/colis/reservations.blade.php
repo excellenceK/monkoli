@@ -6,11 +6,9 @@
 		<title>MonKoli - Reservation </title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-
-
+  <meta name="viewport" content="width=device-width" />
 	<!-- Fonts and Icons -->
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 	<link href="{{ asset('js-css-reservation/css/themify-icons.css') }}" rel="stylesheet">
 	<link href="{{ asset('css-dash/bootstrap.min.css') }}" rel="stylesheet">
@@ -22,7 +20,7 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
-      <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('owlcarousel/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reservation.css') }}">
@@ -110,10 +108,10 @@
 
             </div>
         </div><!-- /.container-fluid -->
-    </nav>
+   </nav>
 
     <!--mobile header-->
-    <header id="hmobile" class="container-fluid d-block d-sm-block d-lg-none d-md-block" >
+<header id="hmobile" class="container-fluid d-block d-sm-block d-lg-none d-md-block" >
         <div id="mobileMenu" style="display: none;">
             <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
             <ul class="menuList">
@@ -191,7 +189,7 @@
 
             </ul>
         </div>
-    </header>
+ </header>
 
   <div class="container">
     <div class="row">
