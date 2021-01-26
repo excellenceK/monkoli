@@ -91,14 +91,14 @@
 					<div class="panel-body">
 						@foreach($annonceColiTotal as $value)
                             @php
-                                $reservations = DB::table('reservations')->where('annonce_id', $value->idAnnonce)->get();
-                                $quantiteReserve = 0;
-                                $totalGain ?? '' = 0;
+                               	$reservations = DB::table('reservations')->where('annonce_id', $value->idAnnonce)->get();
+                                $quantiteReserve  = 0;
+                                $totalGain  = 0;
                                 $pourcentageReservation = 0;
                                 foreach ($reservations as $data) {
                                     # code...
                                     $quantiteReserve += $data->quantiteReserve;
-                                    $totalGain ?? '' += $data->montantReservation;
+                                    $totalGain += $data->montantReservation;
                                 }
                                 $pourcentageReservation = ($quantiteReserve * 100)/$value->quantiteDisponible;
                                 //dd($reservation);

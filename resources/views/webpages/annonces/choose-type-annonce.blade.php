@@ -45,16 +45,14 @@
         <div class="col-12 col-lg-12 col-md-12 col-sm-12">
             <button  type="submit" class="btn vert pure-material-button-contained" style="float: right;" > <i style="color:white;" class="fa fa-plus " aria-hidden="true"></i>Créer</button>
             <a href="{{ url('/') }}" type="button" class="btn  pure-material-button-contained" style="float: right; margin-right: 15px; background-color: red;" > <i style="color:white;" class="fa fa-close " aria-hidden="true"></i>Annuler</a>
-
         </div>
+        <br>
+        <br>
     </div>
 </div>
 </form>
 <!-- Modal  type d'annonce -->
 <!-- Modal Type d'annonce -->
-
-  <div style="height: 15px">
-  </div>
 
 
 
