@@ -6,17 +6,20 @@
 @endsection
 @section('main')
     <!--inscription main content-->
+    <br>
+    <br>
+    
     <section class="container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="center-screen">
                 <div class="row main">
-                    <div class="col-lg-5 sidepartleft">
+                    <div class=" col-12 col-md-12 col-lg-5 sidepartleft">
                         <img src="{{ asset('images/logo.png') }}" class="sidelogo" alt="logo">
                          <h2 style="color: #00E38C;" >MonKoli</h2>
                          <h6 style="color: white;">Expédier un colis n'a jamains été si <span style="color: #00E38C;">facile</span></h6>
                     </div>
-                    <div class="col-lg-7 sidepartrigth" >
+                    <div class="col-12 col-md-12 col-lg-7 sidepartrigth" >
                         <h1 style="font-size: large; font-weight: bold;">Connexion</h1>
                         <div class="wrap-input100 validate-input">
                             <input class="input100 form-control @error('email') is-invalid @enderror" id="email" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus>
