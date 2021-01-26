@@ -14,6 +14,14 @@
     
   }
 
+   .navbar-left{
+    margin-left: 220px !important;
+}
+
+.fixed-top {
+    position: fixed !important;
+  }
+
   .center-screen{
     padding-left: 100px;
     padding-bottom: 100px;
