@@ -17,6 +17,14 @@
     
   }
 
+  .navbar-left{
+    margin-left: 220px !important;
+}
+
+.fixed-top {
+    position: fixed !important;
+  }
+
   .main{
 /*      border: solid 2px #C6C2C2;*/      
       height: auto;
