@@ -10,11 +10,15 @@ use App\Http\Controllers\ControlSaisie\ControlSaisieNiveau1;
 class coliRechercheController extends Controller
 {
     //
-    public function rechercheColi(Request $request){
+    public function rechercheColi(Request $request)
+    {
 
         $dateRecherche = $request->dateRecherche;
         $villeDepart = strtolower(ControlSaisieNiveau1::checkInput1($request->villeDepart)) ;
         $villeArriver = strtolower(ControlSaisieNiveau1::checkInput1($request->villeArriver)) ;
+        $moyenTransport = strtolower(ControlSaisieNiveau1::checkInput1($request->moyenTransport)) ;
+
+
         $clause = 'transport_colis.annonce_id = annonces.id';
         $data = array();
         //$data = 1;
@@ -28,6 +32,10 @@ class coliRechercheController extends Controller
         }
         if(!empty($dateRecherche)){
             $clause = $clause.' and annonces.dateExpiration >= '.$dateRecherche;
+            $message = '';
+        }
+        if(!empty($moyenTransport)){
+            $clause = $clause.' and transport_colis.moyenTransport = "'.$moyenTransport.'"';
             $message = '';
         }
         //dd([$clause]);
@@ -54,13 +62,16 @@ class coliRechercheController extends Controller
             return (array)$value;
         },$resultRecherche);
 
-        if(!empty($getAnnonceRechercher)){
-            dd($getAnnonceRechercher);
 
+        return view('webpages.annonces.search')->with(['resultRecherche'=>$getAnnonceRechercher, 'dateRecherche'=>$dateRecherche,'villeDepart'=>$villeDepart,'villeArriver'=>$villeArriver]);
+
+        /*if(!empty($getAnnonceRechercher)){
+            //dd($getAnnonceRechercher);
         }
         else{
-            dd('vide');
-        }
+            return redirect()->back()->with('message','aucun resultat trouvé !');
+           // dd('vide');
+        }*/
     }
 
     public function rechercheColiOption($typeTransport){
@@ -96,5 +107,13 @@ class coliRechercheController extends Controller
         else{
             dd('vide');
         }
+    }
+
+    public function getAnnonceCount($typeTransport){
+        $typeTransport = strtolower(ControlSaisieNiveau1::checkInput1($typeTransport)) ;
+
+        $count =  DB::select('select count(annonces.id)
+        FROM annonces, transport_colis, users
+        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and transport_colis.moyenTransport = "voiture personnelle"', [1]);
     }
 }

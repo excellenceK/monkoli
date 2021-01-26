@@ -35,6 +35,10 @@
                         <span class="focus-input100"></span>
                     </div>
                     <div class="wrap-input100 validate-input">
+                        <input class="input100 form-control" type="text" name="telephone" placeholder="Telephone"  value="{{ old('telephone') }}" required autocomplete="telephone" autofocus>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input">
                         <input class="input100 form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
                         <span class="focus-input100"></span>
                         @error('email')

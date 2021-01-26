@@ -29,8 +29,8 @@
                                 <div class="select">
                                     <select class="select-text" required name = 'typeTransport'>
                                         <option value="" disabled selected></option>
-                                        <option value="Aérien"> Véhicule Aérien</option>
-                                        <option value="Férroviaire"> Véhicule Ferroviaire</option>
+                                        <option value="Aerien"> Véhicule Aérien</option>
+                                        <option value="Ferroviaire"> Véhicule Ferroviaire</option>
                                         <option value="Maritime"> Véhicule Maritime</option>
                                         <option value="Terrestre"> Véhicule Terrestre </option>
                                     </select>
@@ -65,7 +65,7 @@
                         <option value="Avion">Avion</option>
                         <option value="Bateau">Bateau</option>
                         <option value="Voiture personnelle">Voiture personnelle</option>
-                        <option value="TGV">Train à grande vitesse</option>
+                        <option value="Train">Train</option>
 
                     </select>
                     <span class="select-highlight"></span>
