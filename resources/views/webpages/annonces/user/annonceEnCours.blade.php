@@ -7,6 +7,7 @@
                 @php
                     $annonceColi = DB::table('annonces')
                                 ->where('dateExpiration', '>=',\Carbon\Carbon::now())
+                                ->where('user_id', Auth::user()->id)
                                 ->join('transport_colis', 'transport_colis.annonce_id', 'annonces.id')
                                 ->get();
                                 //dd($annonceColi);
