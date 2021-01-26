@@ -89,12 +89,15 @@
 				<h3 class="page-header" style="font-weight: bold;">Réservations / trajet</h3>
 				<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 					<div class="panel-body">
+                        @php
+                            $quantiteReserve = 0;
+                            $totalGain = 0;
+                            $pourcentageReservation = 0;
+                        @endphp
 						@foreach($annonceColiTotal as $value)
                             @php
                                 $reservations = DB::table('reservations')->where('annonce_id', $value->idAnnonce)->get();
-                                $quantiteReserve = 0;
-                                $totalGain = 0;
-                                $pourcentageReservation = 0;
+
                                 foreach ($reservations as $data) {
                                     # code...
                                     $quantiteReserve += $data->quantiteReserve;

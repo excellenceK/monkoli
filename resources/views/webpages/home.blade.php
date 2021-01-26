@@ -1,3 +1,4 @@
+
 @php
     //$today = \Carbon\Carbon::now()->format('Y-m-d');
     //$today =  $today.' 00:00:00';
@@ -57,14 +58,19 @@
     <section class="container-fluid" >
         <div class="row"  >
 
-                      <div class="post-btn col-12 col-lg-12 col-md-12">
-                        <a href="{{ route('searchAnnonce') }}"><button type="button" class="offset-lg-4 btn gris pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></a>
-                        <a style="text-decoration: none;" href="{{ route('createAnnonce') }}"><button  type="button" class="btn  vert  pure-material-button-contained d-none d-sm-none d-lg-inline d-md-none"> <i class="fa fa-plus"></i> Publier une annonce en moins de 30 s</button></a>
-                        <br class="d-block d-sm-block d-lg-none d-md-block">
-                        <br class="d-block d-sm-block d-lg-none d-md-block">
-                        <a style="text-decoration: none;" href="{{ route('createAnnonce') }}"><div class=" d-block d-sm-block d-lg-none d-md-block" ><button type="button" class="btn  vert  pure-material-button-contained"> <i class="fa fa-plus"></i> Publier Annonce </button></div></a>
-                       </div>
-
+            <div class="post-btn col-12 col-lg-12 col-md-12">
+                <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                    @csrf
+                    <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                    <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                    <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                    <button type="submit" class="offset-lg-4 btn gris pure-material-button-contained"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button>
+                    <a style="text-decoration: none;" href="{{ route('createAnnonce') }}"><button  type="button" class="btn  vert  pure-material-button-contained d-none d-sm-none d-lg-inline d-md-none"> <i class="fa fa-plus"></i> Publier une annonce en moins de 30 s</button></a>
+                    <br class="d-block d-sm-block d-lg-none d-md-block">
+                    <br class="d-block d-sm-block d-lg-none d-md-block">
+                    <a style="text-decoration: none;" href="{{ route('createAnnonce') }}"><div class=" d-block d-sm-block d-lg-none d-md-block" ><button type="button" class="btn  vert  pure-material-button-contained"> <i class="fa fa-plus"></i> Publier Annonce </button></div></a>
+                </form>
+            </div>
 
         </div>
 
@@ -114,6 +120,7 @@
                         </div>
                     </div>
                     <br/>
+                    <!--
                     <div class="row" style="padding: 2px; margin: 0;">
                         <h3 class="col-12">Location de résidences</h3>
                         <p class="col-12" style="font-size: small; font-size: 0.9rem; color: #A7A7A7">Besoin d'un appartement selon votre besoin?</p>
@@ -125,6 +132,7 @@
                         <p class="col-12" style="font-size: small; font-size: 0.9rem; color: #A7A7A7">Besoin d'un véhicule pour vos courses?</p>
                         <span class="col-12" ><button type="button" class="btn vert pure-material-button-contained new"> <i class="fa fa-search" aria-hidden="true"></i> Voir Annonces</button></span>
                     </div>
+                -->
             </div>
 
         </div>
@@ -188,42 +196,201 @@
        </div>
        <div class="row">
         <div class="col-lg-2 col-6 col-sm-6 col-md-6 ">
-         <button type="button" class="btn vert pure-material-button-contained">Tout(170)</button>
+         <button type="button" class="btn vert pure-material-button-contained">
+            @php
+                $moyenTransport = strtolower('voiture personnelle') ;
+                $count =  DB::select('select count(annonces.id) as nombre
+                    FROM annonces, transport_colis, users
+                    WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                    ');
+            @endphp
+            Tout({{ $count[0]->nombre }})
+
+            </button>
         </div>
         <div class="col-lg-2 col-6 col-sm-6 col-md-6 " >
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-plane" aria-hidden="true"></i> Avion(13)</button>
+            <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                @csrf
+                <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                <input type="hidden" class="form-control col-12" name = "moyenTransport" value="avion">
+
+                <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-plane" aria-hidden="true"></i>
+
+                @php
+                    $moyenTransport = strtolower('avion') ;
+                    $count =  DB::select('select count(annonces.id) as nombre
+                        FROM annonces, transport_colis, users
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                @endphp
+                Avion({{ $count[0]->nombre }})
+
+            </button>
+        </form>
         </div>
         <br class="d-block d-sm-block d-lg-none d-md-block">
         <br class="d-block d-sm-block d-lg-none d-md-block">
 
         <div class="col-lg-2 col-6 col-sm-6 col-md-6 " >
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-ship" aria-hidden="true"></i> Bateau(13)</button>
+            <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                @csrf
+                <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                <input type="hidden" class="form-control col-12" name = "moyenTransport" value="bateau">
+
+                <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-ship" aria-hidden="true"></i>
+
+                @php
+                    $moyenTransport = strtolower('bateau') ;
+                    $count =  DB::select('select count(annonces.id) as nombre
+                        FROM annonces, transport_colis, users
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                @endphp
+                Bateau({{ $count[0]->nombre }})
+
+            </button>
+        </form>
         </div>
         <div class="col-lg-2 col-6 col-sm-6 col-md-6 ">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-train" aria-hidden="true"></i> Train(13)</button>
+            <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                @csrf
+                <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                <input type="hidden" class="form-control col-12" name = "moyenTransport" value="train">
+
+                <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-train" aria-hidden="true"></i>
+
+                @php
+                    $moyenTransport = strtolower('train') ;
+                    $count =  DB::select('select count(annonces.id) as nombre
+                        FROM annonces, transport_colis, users
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                @endphp
+                Train({{ $count[0]->nombre }})
+
+            </button>
+        </form>
         </div>
         <br class="d-block d-sm-block d-lg-none d-md-block">
         <br class="d-block d-sm-block d-lg-none d-md-block">
 
         <div class="col-lg-2 col-6 col-sm-6 col-md-6 ">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck" aria-hidden="true"></i> Camion(13)</button>
+            <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                @csrf
+                <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                <input type="hidden" class="form-control col-12" name = "moyenTransport" value="camion">
+
+                <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck" aria-hidden="true"></i>
+
+                @php
+                    $moyenTransport = strtolower('camion') ;
+                    $count =  DB::select('select count(annonces.id) as nombre
+                        FROM annonces, transport_colis, users
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                @endphp
+                Camion({{ $count[0]->nombre }})
+                </button>
+            </form>
         </div>
         <div class="col-lg-2 col-6 col-sm-6 col-md-6">
-         <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-truck-moving" aria-hidden="true"></i> Poids lourd(13)</button>
-        </div>
+            <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                 @csrf
+                 <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                 <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                 <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                 <input type="hidden" class="form-control col-12" name = "moyenTransport" value="poids lourd">
+
+                 <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-ship" aria-hidden="true"></i>
+
+                 @php
+                     $moyenTransport = strtolower('Poids lourd') ;
+                     $count =  DB::select('select count(annonces.id) as nombre
+                         FROM annonces, transport_colis, users
+                         WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                         and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                 @endphp
+                 Poids lourd({{ $count[0]->nombre }})
+
+                 </button>
+             </form>
+         </div>
         <br class="d-block d-sm-block d-lg-none d-md-block">
         <br class="d-block d-sm-block d-lg-none d-md-block">
         <div class="row" style="padding-top:5px">
             <div class="col-lg-4 col-6 col-sm-6 col-md-6">
-                <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-car-side" aria-hidden="true"></i> Voiture(13)</button>
+                <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                    @csrf
+                    <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                    <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                    <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                    <input type="hidden" class="form-control col-12" name = "moyenTransport" value="voiture personnelle">
+
+                    <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-car-side" aria-hidden="true"></i>
+
+                        @php
+                            $moyenTransport = strtolower('voiture personnelle') ;
+                            $count =  DB::select('select count(annonces.id) as nombre
+                                FROM annonces, transport_colis, users
+                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                                and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                        @endphp
+                        Voiture({{ $count[0]->nombre }})
+                    </button>
+                </form>
                </div>
                <div class="col-lg-4 col-6 col-sm-6 col-md-6">
-                <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-motorcycle" aria-hidden="true"></i> Moto(13)</button>
+                <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                    @csrf
+                    <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                    <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                    <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                    <input type="hidden" class="form-control col-12" name = "moyenTransport" value="moto">
+
+                    <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-motorcycle" aria-hidden="true"></i>
+
+                        @php
+                            $moyenTransport = strtolower('Moto') ;
+                            $count =  DB::select('select count(annonces.id) as nombre
+                                FROM annonces, transport_colis, users
+                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                                and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                        @endphp
+                        Moto({{ $count[0]->nombre }})
+                    </button>
+                </form>
                </div>
                <br class="d-block d-sm-block d-lg-none d-md-block">
                <br class="d-block d-sm-block d-lg-none d-md-block">
                <div class="col-lg-4 col-12 col-sm-12 col-md-12">
-                   <button type="button" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-shipping-fast" aria-hidden="true"></i> Camionette(13)</button>
+                <form method="POST" action="{{ route('coli.rechercheAnnonceColi') }}">
+                    @csrf
+                    <input type="hidden" class="form-control col-12" name = "villeDepart" placeholder="D'où part le colis?">
+                    <input type="hidden" class="form-control col-12" name = "villeArriver" placeholder="Où voulez vous l'expédier?">
+                    <input type="hidden" class="form-control col-12" name = "dateRecherche" placeholder="Quand voulez vous l'envoyer?">
+                    <input type="hidden" class="form-control col-12" name = "moyenTransport" value="camionette">
+
+                    <button type="submit" class="btn  pure-material-button-contained" style="background-color:#C6C2C2;"> <i style="color: white; opacity: 0.7;" class="fas fa-shipping-fast" aria-hidden="true"></i>
+
+                        @php
+                            $moyenTransport = strtolower('Camionette') ;
+                            $count =  DB::select('select count(annonces.id) as nombre
+                                FROM annonces, transport_colis, users
+                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                                and transport_colis.moyenTransport = ?', [$moyenTransport]);
+                            @endphp
+                            Camionette({{ $count[0]->nombre }})
+
+                        </button>
+                </form>
                 </div>
 
         </div>
@@ -303,39 +470,39 @@
             <div class="card carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
                 <img class="card-img-top img img-responsive"  src="images/bg_card.png" alt="Card image cap">
                 <div class="card-body row">
-                  <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
-                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 20px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
-                  <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 290px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
-                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
-                  <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
-                  <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
-               </div>
+                    <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
+                    <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 20px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
+                    <p class="d-none d-sm-none d-md-inline d-lg-block" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; margin-left: 290px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
+                    <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 16px; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
+                    <p style="margin-top: -61px; position: absolute; width: 80px; margin-left: 345px; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
+                    <i class="fas fa-arrow-right" aria-hidden="true" style="color: white; margin-top: -69px; position: relative; margin-left: 200px; font-size: xx-large;"></i>
+                </div>
                 <div class="card-body row">
                   <div class="col-4">
-                    <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
-                    <h5 style="font-size: x-small;font-weight: bold; margin-top: 20px;">Transporteur</h5>
-                    <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{$trajet['nomUser'].' '.$trajet['prenomUser']}}</h6>
-                    <i class="fa fa-star valide"  aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star novalide" aria-hidden="true"></i>
+                        <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
+                        <h5 style="font-size: x-small;font-weight: bold; margin-top: 20px;">Transporteur</h5>
+                        <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{$trajet['nomUser'].' '.$trajet['prenomUser']}}</h6>
+                        <i class="fa fa-star valide"  aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star valide" aria-hidden="true"></i><i class="fa fa-star novalide" aria-hidden="true"></i>
                   </div>
                   <div class="col-4">
-                     <p class="" style="color: #00E38C;font-weight: bold;">{{$trajet['prixUnitaire']}}<sup style="color:black">Fcfa</sup><br>
-                        <span style="color:black; font-size: x-small;">Par Kg</span>
-                    </p>
-                     <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
-                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $trajet['lieuDepot'] }}</span>
-                    </p>
-                    <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
-                        <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $trajet['lieuLivraison'] }}</span>
-                    </p>
+                        <p class="" style="color: #00E38C;font-weight: bold;">{{$trajet['prixUnitaire']}}<sup style="color:black">Fcfa</sup><br>
+                            <span style="color:black; font-size: x-small;">Par Kg</span>
+                        </p>
+                        <p style="color:black;font-size:x-small;">Lieu du dépot du colis à expédier <br>
+                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $trajet['lieuDepot'] }}</span>
+                        </p>
+                        <p style="color:black;font-size:x-small;">Lieu de récupération du colis à expédier <br>
+                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $trajet['lieuLivraison'] }}</span>
+                        </p>
                   </div>
                   <div class="col-4">
-                    <p style="color: #00E38C;font-weight: bold;">{{ $trajet['quantiteDisponible']- $quantiteReservee }}<sup style="color:black">Kg</sup><br>
-                       <span style="color:black; font-size: x-small;">Disponible(s)</span>
-                   </p>
-                    <p style="color:black;font-size:x-small;">Date limite de réservation <br>
-                       <span style="font-size: xx-small;font-weight: bold;color:red;">{{\Carbon\Carbon::parse($trajet['dateLimiteReservation'])->format('d-M-Y H:i:s')}}</span>
-                       <span style="font-size: xx-small;font-weight: bold;color:red;">GMT</span>
-                   </p>
+                        <p style="color: #00E38C;font-weight: bold;">{{ $trajet['quantiteDisponible']- $quantiteReservee }}<sup style="color:black">Kg</sup><br>
+                            <span style="color:black; font-size: x-small;">Disponible(s)</span>
+                        </p>
+                        <p style="color:black;font-size:x-small;">Date limite de réservation <br>
+                            <span style="font-size: xx-small;font-weight: bold;color:red;">{{\Carbon\Carbon::parse($trajet['dateLimiteReservation'])->format('d-M-Y H:i:s')}}</span>
+                            <span style="font-size: xx-small;font-weight: bold;color:red;">GMT</span>
+                        </p>
                  </div>
                  <div class="row" style="width: 100%; margin-left: 108px;">
                         <div class="col-8">
@@ -343,17 +510,9 @@
                             <p style="font-size: x-small; margin-left: 42px;">Mode de transport :</p>
                         </div>
                         <!--mode de transport-->
-                            <div class="col-4">
-                                @if($trajet['typeTransport'] == 'Aérien')
-                                    <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Avion.png" alt="avion"></span>
-                                @endif
-                                @if($trajet['typeTransport'] == 'Férroviaire')
-                                    <span> <img class="img img-responsive"  style="width: 80px; margin-left: -44px; margin-top: -28px;" src="images/Train.png" alt="train"></span>
-                                @endif
-
-
-                            </div>
-
+                        <div class="col-4">
+                            <p style="font-size: x-small; ">{{ $trajet['typeTransport'] }}</p>
+                        </div>
                  </div>
 
                  <div class="row">
