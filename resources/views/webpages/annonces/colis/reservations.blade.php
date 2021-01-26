@@ -27,11 +27,6 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reservation.css') }}">
     <link href="{{ asset('js-css-reservation/css/paper-bootstrap-wizard.css') }}" rel="stylesheet" />
-
-
-
-
-
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -198,40 +193,39 @@
         </div>
     </header>
 
-  <div class="col-sm-9 col-sm-offset-3 col-lg-10 main" style="margin-left: 120px;">
+  <div class="container">
     <div class="row">
-      <div class="col-lg-10">
+      <div class="col-sm-12 col-12  col-lg-12 col-md-12">
         <h1 class="page-header" style="font-weight: bolder;">Reservation</h1>
       </div>
     </div><!--/.row-->
 
-     <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-                <!--      Wizard container        -->
+     <div class="row">
+          <div class=>
+            <div class="col-12 col-lg-12 col-md-12" style="width:100%">
+                <!--Wizard container -->
                 <div class="wizard-container">
-
-                    <div class="card wizard-card" data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
+                    <div class=" row card wizard-card" data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
                         <form action="{{ route('coli.reservationColiPost') }}" method="post">
                             @csrf
-                            <div class="wizard-navigation" style="margin-top: -49px;">
-                                <div class="progress-with-circle">
+                            <div class=" wizard-navigation">
+                                <div class=" col-12 progress-with-circle">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
                                 </div>
                                 <ul>
-                                    <li>
+                                    <li class="col-4">
                                         <a href="#info" data-toggle="tab"><div class="icon-circle"><i class="ti-pencil"></i></div>Infos de réservation</a>
                                     </li>
-                                    <li>
+                                    <li class="col-4">
                                         <a href="#waitConfirm" data-toggle="tab"><div class="icon-circle"><i class="ti-check-box"></i></div>Attente de Confirmation</a>
                                     </li>
-                                    <li style=" width: 20.3333% !important;">
+                                    <li class="col-4">
                                         <a href="#end" data-toggle="tab"><div class="icon-circle"><i class="ti-check"></i></div>Terminer</a>
                                     </li>
                                 </ul>
-                            </div>
-                            <br>
-                            <br>
+                           </div>
+                   <br>
+                   <br>
                 <div class="tab-content">
                     <div class="tab-pane" id="info">
                       <div class="row">
