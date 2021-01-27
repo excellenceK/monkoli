@@ -700,7 +700,7 @@ a:hover, a:focus {
   position: relative;
 }
 .wizard-card .wizard-navigation .progress-with-circle {
-  position: relative;
+  position: absolute;
   top: 40px;
   z-index: 50;
   height: 4px;

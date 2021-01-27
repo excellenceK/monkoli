@@ -108,13 +108,13 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
         </nav>
     </header>	
     <!--mobile header-->
-	<header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
+    <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
         <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
         <div id="mobileMenu" style="display: none;">
             <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
             <ul class="menuList row" style="list-style-type: none;">
                 <li class="col-12" >
-                    <a class="nav-item nav-link am active " href="#">
+                    <a class="nav-item nav-link am active " href="{{ url('/') }}">
                         <div class="menu">
 							<i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
 							<p>Colis</p>
@@ -132,7 +132,7 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
                        </a>
                 </li>
                 <li class="col-12">
-                    <a class="nav-item nav-link " href="#">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
 							<i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Messages</p>
@@ -141,7 +141,7 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
                       </a>
                 </li>
                 <li class="col-12">
-                    <a class="nav-item nav-link " href="#">
+                    <a class="nav-item nav-link am" href="{{ route('users.monEspace') }}">
                         <div class="menu">
 							<i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Mon espace</p>
@@ -150,7 +150,7 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
                     </a>
                 </li>
                 <li class="col-12">
-                    <a class="nav-item nav-link " href="#">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
 							<i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Résidence</p>
@@ -159,7 +159,7 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
                       </a>
                 </li>
                 <li class="col-12">
-                    <a class="nav-item nav-link " href="#">
+                    <a class="nav-item nav-link am" href="#">
                         <div class="menu">
 							<i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Véhicules</p>
@@ -168,7 +168,7 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
                       </a>
 				</li>
 				<li class="col-12">
-                    <a class="nav-item nav-link " href="#">
+                    <a class="nav-item nav-link am" href="{{ route('createAnnonce') }}">
                         <div class="menu poste">
 							<i class="fa fa-plus-circle fa-align-center  fa-2x" aria-hidden="true"></i>
                              <p>Ajouter <br> annonce</p>
@@ -176,16 +176,36 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
                         </div>
                       </a>
                 </li>
-				<br>
-                <li>
-                    <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>
-
+                <br>
+                <div class="menu">
+                    @auth
+                <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
+                <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
+                <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
+                <li class="col-12">
+                    <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a> 
+                </li>
+                <br>
+                <li class="col-12">
+                    <a  type="button" class="btn  vert pure-material-button-contained " href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
 				</li>
-				<br>
-                <li>
-                    <a type="button" class="btn vert pure-material-button-contained" style="color: white" href="{{ route('login') }}">Connexion</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                 @else
+                 <li class="col-12">
+                    <a type="button" href="{{ route('login') }}" class="btn vert pure-material-button-contained ">Connexion</a>
+                </li>
+                <br>
+                <li class="col-12">
+                    <a type="button" href="{{ route('register') }}" class="btn  gris pure-material-button-contained ">Inscription</a>
 
                 </li>
+
+                 @endauth
+                </div>
+               
+                
 
             </ul>
         </div>

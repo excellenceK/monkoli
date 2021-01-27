@@ -27,7 +27,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav" id="itm">
-                <a id="1" class="nav-item nav-link active ah " href="#">
+                <a id="1" class="nav-item nav-link active ah " href="{{ url('/') }}">
                     <div class="menu">
                          <p>Colis</p>
                         <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
@@ -108,7 +108,7 @@
             <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
             <ul class="menuList row" style="list-style-type: none;">
                 <li class="col-12" >
-                    <a class="nav-item nav-link am active " href="#">
+                    <a class="nav-item nav-link am active " href="{{ url('/') }}">
                         <div class="menu">
 							<i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
 							<p>Colis</p>
@@ -135,7 +135,7 @@
                       </a>
                 </li>
                 <li class="col-12">
-                    <a class="nav-item nav-link am" href="#">
+                    <a class="nav-item nav-link am" href="{{ route('users.monEspace') }}">
                         <div class="menu">
 							<i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
                              <p>Mon espace</p>
@@ -162,7 +162,7 @@
                       </a>
 				</li>
 				<li class="col-12">
-                    <a class="nav-item nav-link am" href="#">
+                    <a class="nav-item nav-link am" href="{{ route('createAnnonce') }}">
                         <div class="menu poste">
 							<i class="fa fa-plus-circle fa-align-center  fa-2x" aria-hidden="true"></i>
                              <p>Ajouter <br> annonce</p>
@@ -170,16 +170,36 @@
                         </div>
                       </a>
                 </li>
-				<br>
-                <li>
-                    <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>
-
+                <br>
+                <div class="menu">
+                    @auth
+                <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
+                <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
+                <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
+                <li class="col-12">
+                    <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a> 
+                </li>
+                <br>
+                <li class="col-12">
+                    <a  type="button" class="btn  vert pure-material-button-contained " href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
 				</li>
-				<br>
-                <li>
-                    <a type="button" class="btn vert pure-material-button-contained" style="color: white" href="{{ route('login') }}">Connexion</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                 @else
+                 <li class="col-12">
+                    <a type="button" href="{{ route('login') }}" class="btn vert pure-material-button-contained ">Connexion</a>
+                </li>
+                <br>
+                <li class="col-12">
+                    <a type="button" href="{{ route('register') }}" class="btn  gris pure-material-button-contained ">Inscription</a>
 
                 </li>
+
+                 @endauth
+                </div>
+               
+                
 
             </ul>
         </div>

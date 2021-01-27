@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<title>MonKoli - Reservation </title>
-
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
-	<!-- Fonts and Icons -->
+  <!-- Fonts and Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 	<link href="{{ asset('js-css-reservation/css/themify-icons.css') }}" rel="stylesheet">
@@ -20,9 +20,6 @@
       integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{ asset('owlcarousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('owlcarousel/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/reservation.css') }}">
     <link href="{{ asset('js-css-reservation/css/paper-bootstrap-wizard.css') }}" rel="stylesheet" />
 	<!--Custom Font-->
@@ -31,203 +28,234 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+  <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 
 	</head>
 
-	<body>
+	<body style="padding: 0">
+    <header class="container-fluid d-none d-sm-none d-lg-block d-md-none">
+      <nav class="navbar navbar-expand-lg navbar-ligth" style="background-color: white;">
+          <a class="navbar-brand indexlogo" href="{{ url('/') }}">
+              <img src="{{ asset('images/logo.png') }}"  class="d-inline-block align-top img img-responsive" alt="logo"/>
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav" style="margin-left: 100px;" id="itm">
+              <a id="1" class="nav-item nav-link active ah " href="#">
+                  <div class="menu">
+                       <p>Colis</p>
+                      <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                      <hr/>
+                  </div>
+             </a>
+             <a  id="2"  class="nav-item nav-link  ah" href="#">
+              <div class="menu">
+                   <p>Mes annonces</p>
+                  <i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+                  <hr/>
+              </div>
+             </a>
+             <a id="3"  class="nav-item nav-link ah " href="#">
+              <div class="menu">
+                   <p>Messages</p>
+                  <i class="fas fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                  <hr/>
+              </div>
+            </a>
+            <a  id="4"  class="nav-item nav-link ah " href="{{ route('createAnnonce') }}">
+              <div class="menu poste">
+                   <p>Poster une annonce</p>
+                  <i class="fas fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
+                  <hr/>
+              </div>
+            </a>
+            <a id="5"  class="nav-item nav-link ah " href="{{ route('users.monEspace') }}">
+              <div class="menu">
+                   <p>Mon espace</p>
+                  <i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
+                  <hr/>
+              </div>
+            </a>
+            <a id="6"  class="nav-item nav-link ah" href="#">
+              <div class="menu">
+                   <p>Résidence</p>
+                  <i class="fas fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                  <hr/>
+              </div>
+            </a>
+            <a id="7"  class="nav-item nav-link ah" href="#">
+              <div class="menu">
+                   <p>Véhicules</p>
+                  <i class="fas fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                  <hr/>
+              </div>
+            </a>
+            <div class="menu">
+                    
+              @auth
+              <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
+              <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
+              <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
+              <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('users.monEspace') }}">Dashboard</a> 
+              <a  type="button" class="btn  vert pure-material-button-contained logon1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+               @else
+               <a type="button" href="{{ route('register') }}" class="btn  gris pure-material-button-contained logon">Inscription</a>
+               <a type="button" href="{{ route('login') }}" class="btn vert pure-material-button-contained logon1">Connexion</a>
 
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span></button>
-                <a class="navbar-brand indexlogo" href="#">
-                <img src="{{ asset('images/logo.png') }}"  class="d-inline-block align-top img img-responsive" alt="logo"/>
-                </a>
-                <ul class="nav navbar-top-links navbar-left">
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                      <div class="navbar-nav" style="margin-top: 10px; margin-left: 200px;" id="itm">
-                        <a id="1" class="nav-item nav-link ah" href="#">
-                            <div class="menu">
-                                 <p>Colis</p>
-                                <i class="fas fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                                <hr/>
-                            </div>
-                       </a>
-                       <a  id="2"  class="nav-item nav-link  ah" href="#">
-                        <div class="menu">
-                             <p>Mes annonces</p>
-                            <i class="fas fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                       </a>
-                       <a id="3"  class="nav-item nav-link ah " href="#">
-                        <div class="menu">
-                             <p>Messages</p>
-                            <i class="fas fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                      <a  id="4"  class="nav-item nav-link ah " href="page/posterAnnonce1.html">
-                        <div class="menu poste">
-                             <p>Poster une annonce</p>
-                            <i class="fas fa-plus-circle fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                      <a id="5"  class="nav-item nav-link ah" href="#">
-                        <div class="menu">
-                             <p>Mon espace</p>
-                            <i class="fas fa-user fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                      <a id="6"  class="nav-item nav-link ah" href="#">
-                        <div class="menu">
-                             <p>Résidence</p>
-                            <i class="fas fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                      <a id="7"  class="nav-item nav-link ah" href="#">
-                        <div class="menu">
-                             <p>Véhicules</p>
-                            <i class="fas fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                      <div class="menu">
-                        <button type="button" class="btn gris pure-material-button-contained logon">Inscription</button>
-                        <button type="button" class="btn vert pure-material-button-contained logon1">Connexion</button>
-                      </div>
-                    </div>
-                </div>
-            </ul>
+               @endauth
+              
 
             </div>
-        </div><!-- /.container-fluid -->
-   </nav>
 
-    <!--mobile header-->
-<header id="hmobile" class="container-fluid d-block d-sm-block d-lg-none d-md-block" >
-        <div id="mobileMenu" style="display: none;">
-            <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
-            <ul class="menuList">
-                <li>
-                    <a class="nav-item nav-link am" href="#">
-                        <div class="menu">
-                             <p>Colis</p>
-                            <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                   </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link am" href="#">
-                        <div class="menu">
-                             <p>Mes annonces</p>
-                            <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                       </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Messages</p>
-                            <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu poste">
-                             <p>Ajouter annonce</p>
-                            <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Mon espace</p>
-                            <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
+          </div>
+      </div>
+      </nav>
+  </header>	
+  <!--mobile header-->
+  <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
+      <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
+      <div id="mobileMenu" style="display: none;">
+          <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
+          <ul class="menuList row" style="list-style-type: none;">
+              <li class="col-12" >
+                  <a class="nav-item nav-link am active " href="{{ url('/') }}">
+                      <div class="menu">
+                       <i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
+                           <p>Colis</p>
+                          <hr/>
+                      </div>
+                 </a>
+              </li>
+              <li class="col-12">
+                  <a class="nav-item nav-link am" href="#">
+                      <div class="menu">
+                           <i class="fa fa-bullhorn  fa-2x" aria-hidden="true"></i>
+                           <p>Mes annonces</p>
+                          <hr/>
+                      </div>
+                     </a>
+              </li>
+              <li class="col-12">
+                  <a class="nav-item nav-link am" href="#">
+                      <div class="menu">
+                         <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                           <p>Messages</p>
+                          <hr/>
+                      </div>
                     </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Résidence</p>
-                            <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                </li>
-                <li>
-                    <a class="nav-item nav-link " href="#">
-                        <div class="menu">
-                             <p>Véhicules</p>
-                            <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                            <hr/>
-                        </div>
-                      </a>
-                </li>
-                <li>
-                    <button type="button" class="btn gris pure-material-button-contained">Inscription</button>
+              </li>
+              <li class="col-12">
+                  <a class="nav-item nav-link am" href="{{ route('users.monEspace') }}">
+                      <div class="menu">
+                           <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
+                           <p>Mon espace</p>
+                          <hr/>
+                      </div>
+                  </a>
+              </li>
+              <li class="col-12">
+                  <a class="nav-item nav-link am" href="#">
+                      <div class="menu">
+                         <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                           <p>Résidence</p>
+                          <hr/>
+                      </div>
+                    </a>
+              </li>
+              <li class="col-12">
+                  <a class="nav-item nav-link am" href="#">
+                      <div class="menu">
+                         <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                           <p>Véhicules</p>
+                          <hr/>
+                      </div>
+                    </a>
+      </li>
+      <li class="col-12">
+                  <a class="nav-item nav-link am" href="{{ route('createAnnonce') }}">
+                      <div class="menu poste">
+                          <i class="fa fa-plus-circle fa-align-center  fa-2x" aria-hidden="true"></i>
+                           <p>Ajouter <br> annonce</p>
+                          <hr/>
+                      </div>
+                    </a>
+              </li>
+              <br>
+              <div class="menu">
+                  @auth
+              <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
+              <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
+              <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
+              <li class="col-12">
+                  <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a> 
+              </li>
+              <br>
+              <li class="col-12">
+                  <a  type="button" class="btn  vert pure-material-button-contained " href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
+               </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+               @else
+               <li class="col-12">
+                  <a type="button" href="{{ route('login') }}" class="btn vert pure-material-button-contained ">Connexion</a>
+              </li>
+              <br>
+              <li class="col-12">
+                  <a type="button" href="{{ route('register') }}" class="btn  gris pure-material-button-contained ">Inscription</a>
 
-                </li>
-                <li>
-                    <button type="button" class="btn vert pure-material-button-contained">Connexion</button>
+              </li>
 
-                </li>
+               @endauth
+              </div>
+             
+              
 
-            </ul>
-        </div>
- </header>
-
+          </ul>
+      </div>
+  </header>
+  <!--Header-->
+<br>
+<br>
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-12  col-lg-12 col-md-12">
         <h1 class="page-header" style="font-weight: bolder;">Reservation</h1>
       </div>
-    </div><!--/.row-->
+    </div>
+   
 
      <div class="row">
-          <div class=>
-            <div class="col-12 col-lg-12 col-md-12" style="width:100%">
+            <div class="col-12 col-lg-12 col-md-12">
                 <!--Wizard container -->
                 <div class="wizard-container">
-                    <div class=" row card wizard-card" data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
+                    <div class=" row card wizard-card " data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top:80px; padding-right:10px;padding-left:10px;">
                         <form action="{{ route('coli.reservationColiPost') }}" method="post">
                             @csrf
-                            <div class=" wizard-navigation">
-                                <div class=" col-12 progress-with-circle">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
+                            <div class="wizard-navigation">
+                                <div class="progress-with-circle">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3"></div>
                                 </div>
                                 <ul>
-                                    <li class="col-4">
+                                    <li class="">
                                         <a href="#info" data-toggle="tab"><div class="icon-circle"><i class="ti-pencil"></i></div>Infos de réservation</a>
                                     </li>
-                                    <li class="col-4">
+                                    <li class="">
                                         <a href="#waitConfirm" data-toggle="tab"><div class="icon-circle"><i class="ti-check-box"></i></div>Attente de Confirmation</a>
                                     </li>
-                                    <li class="col-4">
+                                    <li class="">
                                         <a href="#end" data-toggle="tab"><div class="icon-circle"><i class="ti-check"></i></div>Terminer</a>
                                     </li>
                                 </ul>
                            </div>
                    <br>
                    <br>
-                <div class="tab-content">
+                <div class="container tab-content">
                     <div class="tab-pane" id="info">
                       <div class="row">
-                          <h6 class="info-text" style="color: #A7A7A7;"> Entrez la quantité souhaitée que vous voulez reserver et cliquer sur "Reserver" pour continuer.</h6>
+                          <h6 class="info-text col-12 col-lg-12" style="color: #A7A7A7; text-align:center"> Entrez la quantité souhaitée que vous voulez reserver et cliquer sur "Reserver" pour continuer.</h6>
                         <br>
                         @php
                             $transporteur = DB::table('users')->where('id',$annonce->user_id)->first();
@@ -240,46 +268,31 @@
                             }
                             $disponible = $annonce->quantiteDisponible -  $quantiteReserve;
                         @endphp
-                        <div class="col-sm-10 ">
-                          <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
-                            <i class="fa fa-user-circle fa-7x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
-                            <br><br>
+                        
+                          <div class="col-12 col-md-12 col-lg-2">
+                            <i class="fa fa-user-circle fa-5x fa-align-center" style="color: #C6C2C2;" aria-hidden="true"></i>
                             <h5 style="font-weight: bold;">Transporteur</h5>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">{{ $transporteur->name.' '.$transporteur->prenom }}</h6>
-                            <br>
                             <i class="fa fa-star valide"  aria-hidden="true"></i>&nbsp;<i class="fa fa-star valide" aria-hidden="true"></i>&nbsp;<i class="fa fa-star valide" aria-hidden="true"></i>&nbsp;<i class="fa fa-star valide" aria-hidden="true"></i>&nbsp;<i class="fa fa-star novalide" aria-hidden="true"></i>
-                            <br><br>
-                           <!-- <h5 style="font-weight: bold;">Téléphone</h5>
-                            <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">+225 07 77 44 30 25</h6>
-                            <br>
-                            <h5 style="font-weight: bold;">Email</h5>
-                            <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">monkoli@monkoli.com</h6>-->
                           </div>
-                          <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+                          <div class="col-12 col-md-12 col-lg-4">
                             <h4 style="font-weight: bold;">{{ $annonce->villeDepart }}</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">Côte d'Ivoire</h6>
-                            <br>
                             <h5 style="font-weight: bold;">Depart</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">{{ \Carbon\Carbon::parse($annonce->dateDepart)->format('d-m-Y')  }}</h6>
-                            <br>
-                            <h4 style="font-weight: bold; color: #00E38C;">{{ $annonce->prixUnitaire }} <span style="color:black">Fcfa</span><br></h4>
-                            <h4 style="color:black; font-weight: bold;">Kg</h4>
+                            <h4 style="font-weight: bold; color: #00E38C;">{{ $annonce->prixUnitaire }} <span style="color:black">Fcfa/Kg</span></h4>
                             <input type="hidden" id="prix" value=" {{ $annonce->prixUnitaire }} ">
-                            <br>
                             <h5 style="font-weight: bold;">Lieu du dépot du colis</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">{{ $annonce->lieuDepot }}</h6>
-                            <br>
                             <h5 style="font-weight: bold;">Lieu de livraison </h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">{{ $annonce->lieuLivraison }}</h6>
-                            <br>
-                            <h5 style="font-weight: bold;">Mode de tansport : </h4>
-                            <br>
+                            <h5 style="font-weight: bold;">Mode de tansport : {{$annonce->typeTransport}} </h4>
                           </div>
-                          <div class="col-xs-6 col-md-3 col-lg-2 no-padding" style="height: 500px; min-height: 300px;">
-                              <br>
-                              <i class="ti-arrow-right" style="font-size: x-large;"></i>
+                          <div class="col-lg-2 d-none d-lg-block d-sm-none d-md-none no-padding">
+                            <br>
+                            <i class="ti-arrow-right" style="font-size: x-large;"></i>
                           </div>
-                          <div class="col-4">
+                          <div class="col-12 col-lg-4 col-md-12">
                             <h4 style="font-weight: bold;">{{ $annonce->villeArriver }}</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">France</h6>
                             <br>
@@ -295,17 +308,11 @@
                             <br>
                            <!-- <h5 style="font-weight: bold;">Lieu du dépot du colis</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">Immeuble, koumassi cytidia</h6>-->
-                            <br><br>
-                            <span> <img class="img img-responsive" style="height:70px;width: 70px; margin-top: -12px" src="{{ asset('images/Avion.png') }}" alt="avion"></span>
-                            <br><br>
                          </div>
-                         <div class="col-4">
+                        
                             <input type="hidden" name="annonce_id" value="{{ $annonce->id }}" >
-
-                         </div>
-
-                      </div>
-                      <div class="col-xs-6 col-md-3 col-lg-1 no-padding">
+                      
+                      <div class="col-12 col-md-12 col-lg-12 no-padding" style="padding:20">
                         <div class="form-group">
                           <div class="wrap-input100 validate-input" style="width: 190px">
                             <label style="color: #3C3C3C">Qunantité souhaitée <small style="color: red">(*)</small></label>
@@ -339,9 +346,8 @@
                     <div class="tab-pane" id="waitConfirm">
                         <h5 class="info-text" style="color: #3C3C3C;"><span><i class="ti-info-alt" style="font-size: 14px;"></i> Votre réservation sera mise en attente de confirmation par le transporteur.</span></h5>
                         <div class="row">
-                          <div class="col-lg-6 ">
-                            <div class="col-xs-6 col-lg-12 no-padding">
-                              <div class="card  thumbnail col-12 col-md-12 col-sm-8 col-lg-4" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
+                          <div class="col-lg-6 col-md-12 col-12" >
+                              <div class="card  thumbnail col-12 col-md-12 col-sm-12 col-lg-12" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
                                 <img class="card-img-top img img-responsive"  src="{{ asset('images/bg_card.png') }}" alt="Card image cap">
                                 <div class="card-body row">
                                   <br>
@@ -382,10 +388,10 @@
 
                                 </div>
                               </div>
-                            </div>
+                            
                           </div>
 
-                          <div class="col-sm-2" style="margin-top: 50px">
+                          <div class="col-lg-2 col-md-12 col-12" style="margin-top: 50px">
                             <!--<h4 style="font-weight: bold;">Téléphone</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">+225 07 77 44 30 25</h6>
                             <br>
@@ -400,53 +406,48 @@
                             <br>
 
                          </div>
-                         <div class="col-sm-1">
+                         <div class="col-lg-1 d-none d-md-none d-lg-block">
                             <hr style="width:1px; height:270px; margin-top: 50px; background-color: #C6C2C2"/>
                             <br><br>
-
                          </div>
-                         <div class="col-3" style="padding-top: 100px;">
-
+                         <div class="col-lg-3 col-md-12 col-12" style="padding-top: 100px;">
                             <h6 class="text-truncate" style="color: #A7A7A7; text-align: center; line-height: 1.5;">Votre réservation sera transmise à l'annonceur pour validation. Le Transporteur après validation de votre reservation<br> vous contactera pour confirmation et prise<br> de rendez-vous pour le dépôt du colis<br> à expédier.<br><br> Merci de faire confiance à MonKoli<br> pour expédier vos colis.</h6>
                             <br><br>
-
                          </div>
 
                         </div>
                       </div>
-
-
                     <div class="tab-pane" id="end">
                         <div class="row">
                             <div class="col-sm-12" style="height: 300px;">
                                 <h2 class="info-text"> Cliquez sur Reserver pour envoyer votre reservation à l'annonceur.</h2>
-
                             </div>
-
                         </div>
                     </div>
-                    <div class="wizard-footer">
-                        <div class="pull-right">
-                            <a href="{{ url('/') }}"><input type='button' class='btn btn-cancel btn-fill btn-warning btn-wd' name='previous' value='Annuler la réservation' style="background-color: red; border-color: red"/></a>
-                            <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Reserver' />
-                            <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Suivant' />
-
-
-                        </div>
-
-                        <div class="pull-left">
-                            <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Retour' />
-                        </div>
-                        <div class="clearfix"></div>
+                    <br>
+                    <div class="wizard-footer" style="margin-left:-30px">
+                        <div class="col">
+                          <a href="{{ url('/') }}"><input type='button' class='btn btn-cancel btn-fill btn-warning btn-wd' name='previous' value='Annuler la réservation' style="background-color: red; border-color: red"/></a><br>
+                          <input type='submit' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Reserver' /><br>
+                          <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Suivant &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' />
+                      </div>
+                      <br>
+                      <div class="col">
+                          <input type='button' class='btn btn-fill btn-previous btn-default btn-wd' name='previous' value='Retour'/>
+                      </div>
+                      <div class="clearfix"></div>
                     </div>
             </form>
-        </div>
-    </div> <!-- wizard container -->
+     </div> <!-- wizard container -->
+    <!-- Mobile design container -->
+    
+   
 </div>
 </div><!-- end row -->
-    </div> <!--  big container -->
+
+ </div> <!--  big container -->
 </div>
-  </div>
+</div>
 
   <script>
       function calculatePrice() {
@@ -483,5 +484,7 @@
 
   <!--  More information about jquery.validate here: https://jqueryvalidation.org/   -->
   <script src="{{ asset('js-css-reservation/js/jquery.validate.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('js/mobileMenu.js') }}"></script>
+
 
 </html>
