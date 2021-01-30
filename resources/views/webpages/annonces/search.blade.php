@@ -71,15 +71,15 @@
         <div class="col-5">
             <img src="../images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
             <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px;color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y') }} </p>
-            <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeDepart'] }}</p>
+            <p style=" position: absolute; display: inline-block; color:#FFF">{{ strtoupper($trajet['villeDepart']) }}</p>
           </div>
           <div class="col-2">
               <p style="margin-top: -100px;"><i class="fas fa-arrow-right" aria-hidden="true" style="color:white;position: absolute; font-size: large;"></i></p>
           </div>
           <div class="col-5">
-            <img src="../images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">  
+            <img src="../images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
             <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
-            <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
+            <p style=" position: absolute; display: inline-block; color:#FFF">{{ strtoupper($trajet['villeArriver']) }} </p>
           </div>
        </div>
        <div class="card-body row">
@@ -118,7 +118,7 @@
                    <p style="font-size: x-small; margin-left: 42px;">Mode de transport :{{ $trajet['typeTransport'] }} </p>
                </div>
                <!--mode de transport-->
-              
+
 
            </div>
 
