@@ -109,6 +109,7 @@
             <div class="col-lg-3 col-12 col-sm-12 col-md-12">
                  <!--Select with pure css-->
                  <h1>Informations sur le Colis</h1>
+             <!--
             <div class="select">
                 <select class="select-text" >
                     <option value="" disabled selected></option>
@@ -120,6 +121,7 @@
                 <span class="select-bar"></span>
                 <label class="select-label">Type de colis supportés</label>
             </div>
+        -->
             <!--Select with pure css-->
             </div>
             <div class="col-lg-3 col-12 col-sm-12 col-md-12 offset-lg-1">

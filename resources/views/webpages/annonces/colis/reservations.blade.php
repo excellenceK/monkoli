@@ -90,12 +90,12 @@
               </div>
             </a>
             <div class="menu">
-                    
+
               @auth
               <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
               <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
               <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
-              <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('users.monEspace') }}">Dashboard</a> 
+              <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('users.monEspace') }}">Dashboard</a>
               <a  type="button" class="btn  vert pure-material-button-contained logon1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
@@ -105,14 +105,14 @@
                <a type="button" href="{{ route('login') }}" class="btn vert pure-material-button-contained logon1">Connexion</a>
 
                @endauth
-              
+
 
             </div>
 
           </div>
       </div>
       </nav>
-  </header>	
+  </header>
   <!--mobile header-->
   <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
       <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
@@ -189,7 +189,7 @@
               <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
               <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
               <li class="col-12">
-                  <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a> 
+                  <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a>
               </li>
               <br>
               <li class="col-12">
@@ -210,8 +210,8 @@
 
                @endauth
               </div>
-             
-              
+
+
 
           </ul>
       </div>
@@ -225,7 +225,7 @@
         <h1 class="page-header" style="font-weight: bolder;">Reservation</h1>
       </div>
     </div>
-   
+
 
      <div class="row">
             <div class="col-12 col-lg-12 col-md-12">
@@ -268,7 +268,7 @@
                             }
                             $disponible = $annonce->quantiteDisponible -  $quantiteReserve;
                         @endphp
-                        
+
                           <div class="col-12 col-md-12 col-lg-2">
                             <i class="fa fa-user-circle fa-5x fa-align-center" style="color: #C6C2C2;" aria-hidden="true"></i>
                             <h5 style="font-weight: bold;">Transporteur</h5>
@@ -276,8 +276,8 @@
                             <i class="fa fa-star valide"  aria-hidden="true"></i>&nbsp;<i class="fa fa-star valide" aria-hidden="true"></i>&nbsp;<i class="fa fa-star valide" aria-hidden="true"></i>&nbsp;<i class="fa fa-star valide" aria-hidden="true"></i>&nbsp;<i class="fa fa-star novalide" aria-hidden="true"></i>
                           </div>
                           <div class="col-12 col-md-12 col-lg-4">
-                            <h4 style="font-weight: bold;">{{ $annonce->villeDepart }}</h4>
-                            <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">Côte d'Ivoire</h6>
+                            <h4 style="font-weight: bold;">{{ strtoupper($annonce->villeDepart) }}</h4>
+                            <!--h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">Côte d'Ivoire</h6-->
                             <h5 style="font-weight: bold;">Depart</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">{{ \Carbon\Carbon::parse($annonce->dateDepart)->format('d-m-Y')  }}</h6>
                             <h4 style="font-weight: bold; color: #00E38C;">{{ $annonce->prixUnitaire }} <span style="color:black">Fcfa/Kg</span></h4>
@@ -293,8 +293,8 @@
                             <i class="ti-arrow-right" style="font-size: x-large;"></i>
                           </div>
                           <div class="col-12 col-lg-4 col-md-12">
-                            <h4 style="font-weight: bold;">{{ $annonce->villeArriver }}</h4>
-                            <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">France</h6>
+                            <h4 style="font-weight: bold;">{{ strtoupper($annonce->villeArriver) }}</h4>
+                            <!--h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">France</h6-->
                             <br>
                             <h5 style="font-weight: bold;">Arrivée</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">{{ \Carbon\Carbon::parse($annonce->dateArriver)->format('d-m-Y') }}</h6>
@@ -309,9 +309,9 @@
                            <!-- <h5 style="font-weight: bold;">Lieu du dépot du colis</h4>
                             <h6 class="text-truncate" style="font-weight: bold;color: #C6C2C2;">Immeuble, koumassi cytidia</h6>-->
                          </div>
-                        
+
                             <input type="hidden" name="annonce_id" value="{{ $annonce->id }}" >
-                      
+
                       <div class="col-12 col-md-12 col-lg-12 no-padding" style="padding:20">
                         <div class="form-group">
                           <div class="wrap-input100 validate-input" style="width: 190px">
@@ -388,7 +388,7 @@
 
                                 </div>
                               </div>
-                            
+
                           </div>
 
                           <div class="col-lg-2 col-md-12 col-12" style="margin-top: 50px">
@@ -440,8 +440,8 @@
             </form>
      </div> <!-- wizard container -->
     <!-- Mobile design container -->
-    
-   
+
+
 </div>
 </div><!-- end row -->
 

@@ -98,6 +98,7 @@
             <div class="col-lg-3 col-12 col-sm-12 col-md-12">
                  <!--Select with pure css-->
                  <h1>Informations sur le Colis</h1>
+                 <!--
                  <div class="select" style="width: 100%">
                     <select class="select-text" style="width: 100%" required name = 'moyenTransport' required>
                         <option value="" disabled selected></option>
@@ -110,6 +111,7 @@
                     <span class="select-bar"></span>
                     <label class="select-label">Type de supporté</label>
                 </div>
+                -->
             <!--Select with pure css-->
             </div>
             <div class="col-lg-3 col-12 col-sm-12 col-md-12 offset-lg-1">
