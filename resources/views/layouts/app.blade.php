@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"/>
-
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
 
     <!----Start Section Links for page                                 -->
         @yield('css')
@@ -77,12 +80,12 @@
                 </div>
               </a>
               <div class="menu">
-                      
+
                 @auth
                 <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
                 <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
                 <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
-                <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('users.monEspace') }}">Dashboard</a> 
+                <a type="button" class="btn gris pure-material-button-contained logon" href="{{ route('users.monEspace') }}">Dashboard</a>
                 <a  type="button" class="btn  vert pure-material-button-contained logon1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -92,7 +95,7 @@
                  <a type="button" href="{{ route('login') }}" class="btn vert pure-material-button-contained logon1">Connexion</a>
 
                  @endauth
-                
+
 
               </div>
 
@@ -177,7 +180,7 @@
                 <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
                 <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
                 <li class="col-12">
-                    <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a> 
+                    <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a>
                 </li>
                 <br>
                 <li class="col-12">
@@ -198,8 +201,8 @@
 
                  @endauth
                 </div>
-               
-                
+
+
 
             </ul>
         </div>
