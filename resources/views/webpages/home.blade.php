@@ -479,7 +479,7 @@
                           <p style="margin-top: -100px;"><i class="fas fa-arrow-right" aria-hidden="true" style="color:white;position: absolute; font-size: large;"></i></p>
                       </div>
                       <div class="col-5">
-                        <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">  
+                        <img src="images/line-travel.png" style="margin-top: -195px; position: absolute; width: 87%; margin-left: 20px; display: inline-block;">
                         <p class="" style="height: 2.5px; background-color: #FFF; margin-right: 10px; margin-top: -110px; width: 100px; color:#FFF">{{ \Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y') }} </p>
                         <p style=" position: absolute; display: inline-block; color:#FFF">{{ $trajet['villeArriver'] }} </p>
                       </div>
@@ -517,14 +517,20 @@
                             <p style="font-size: x-small; margin-left: 42px;">Mode de transport :{{ $trajet['typeTransport'] }}</p>
                         </div>
                         <!--mode de transport-->
-                        
+
 
                  </div>
 
+
                  <div class="row">
-                    <div class="col-12 col-md-12 col-lg-3 " style="margin-top: 10px;">
-                        <a href="#" type="button" class="btn  pure2" style="background-color:#3C3C3C"><i style="color: white; opacity: 0.7;" class="fa fa-share-alt" aria-hidden="true"></i> Partager</a>
+                   <!-- <div class="col-12 col-md-12 col-lg-3 " style="margin-top: 10px;">
+                        <a href="#" type="button" class="btn  pure2 " data-href="https://www.your-domain.com/your-page.html" data-layout="button_count" style="background-color:#3C3C3C"><i style="color: white; opacity: 0.7;" class="fa fa-share-alt" aria-hidden="true"></i> Partager</a>
+                    </div>-->
+                    <div class="col-12 col-md-12 col-lg-3 fb-share-button"
+                            data-href="https://www.your-domain.com/your-page.html"
+                            data-layout="button_count" style="margin-top: 10px;">
                     </div>
+
                     <div class="col-12 offset-lg-3 col-lg-6 " style="margin-top:10px;">
                         <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i> Réserver</a>
                     </div>
@@ -558,7 +564,16 @@
   </div>
   <!-- .container -->
 
-
+  <div id="fb-root"></div>
+  <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+  </script>
 
 
 <!--
