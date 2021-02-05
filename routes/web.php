@@ -52,7 +52,13 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
     Route::get('consulter-reservation/{id}','ComptesController@consulterReservations')->name('consulterReservations');
     Route::get('accepter-reservation/{id}','ComptesController@accepterReservation')->name('accepteReservation');
     Route::get('refuser-reservation/{id}','ComptesController@refuserReservation')->name('refuserReservation');
-
+    Route::get('mon-profile','ComptesController@monProfile')->name('monProfile');
+    Route::get('type-colis','ComptesController@coliTransportes')->name('coliTransportes');
+    Route::get('verification-compte','ComptesController@verificationCompte')->name('verificationCompte');
+    Route::get('avis-utilisateurs','ComptesController@avisUtilisateurs')->name('avisUtilisateurs');
+    Route::get('notifications','ComptesController@notifications')->name('notifications');
+    Route::get('change-password','ComptesController@changePassword')->name('changePassword');
+    Route::get('fermeture-compte','ComptesController@fermetureCompte')->name('fermetureCompte');
 
 
 });
