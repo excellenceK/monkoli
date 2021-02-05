@@ -55,7 +55,7 @@ class coliRechercheController extends Controller
                    transport_colis.dateLimiteReservation,transport_colis.lieuDepot, transport_colis.lieuLivraison,
                     transport_colis.devise, transport_colis.prixUnitaire
         from annonces, transport_colis, users
-            where annonces.user_id = users.id and '.$clause.'
+            where annonces.user_id = users.id and annonces.dateExpiration >= (select NOW()) and '.$clause.'
         ORDER BY annonces.niveauPriorite DESC');
 
         $getAnnonceRechercher = array_map(function($value){
