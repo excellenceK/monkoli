@@ -7,7 +7,9 @@
 	<link href="{{ asset('css-dash/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css-dash/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css-dash/datepicker3.css') }}" rel="stylesheet">
-	<link href="{{ asset('css-dash/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css-dash/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/indexDash.css') }}">
+
 	  <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
@@ -16,7 +18,7 @@
     />
       <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">

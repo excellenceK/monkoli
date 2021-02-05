@@ -150,4 +150,83 @@ class ComptesController extends Controller
         }
     }
 
+    public function monProfile()
+    {
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.monprofile');
+
+        }else{
+            return redirect('login');
+        }
+    }
+
+
+    public function coliTransportes()
+    {
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.coli-transportes');
+
+        }else{
+            return redirect('login');
+        }
+    }
+
+
+    public function verificationCompte()
+    {
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.verification-compte');
+
+        }else{
+            return redirect('login');
+        }
+    }
+
+    public function avisUtilisateurs()
+    {
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.avis-utilisateurs');
+
+        }else{
+            return redirect('login');
+        }
+    }
+
+    public function notifications()
+    {
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.notifications');
+
+        }else{
+            return redirect('login');
+        }
+    }
+
+    public function changePassword()
+    {
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.change-password');
+
+        }else{
+            return redirect('login');
+        }
+    }
+
+    public function fermetureCompte()
+    {
+        if (Auth::check()) {
+            # code...
+            return view('webpages.annonces.user.fermeture-compte');
+
+        }else{
+            return redirect('login');
+        }
+    }
+
 }

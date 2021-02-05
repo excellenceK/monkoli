@@ -1,4 +1,3 @@
-
 /*
 GENERAL STYLE
 */
@@ -18,9 +17,7 @@ html{
     margin-top: 0px;
 }
 
-.navbar{
-    padding-left: 80px;
-}
+  
  
 body{
     padding: 0 auto;
@@ -30,151 +27,13 @@ body{
 }
 
 .navbar-left{
+    margin-left: 143px;
 }
-
-/* debut hamburger */
-
-#menuToggle
-{
-  display: none;
-  position: relative;
-  left: 50px;
-  z-index: 1;
-  
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle a
-{
-  text-decoration: none;
-  color: #232323;
-  
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover
-{
-  color: tomato;
-}
-
-
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  
-  cursor: pointer;
-  
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-  
-  -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-#menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  
-  background: #cdcdcd;
-  border-radius: 3px;
-  
-  z-index: 1;
-  
-  transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
-
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu {
-    position: absolute;
-    width: 300px;
-    margin: -46px 0 0px -20px;
-    padding-top: 125px;
-    background: #f1f1f1;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    min-height: 607px;
-    box-shadow: 1px 0px 25px #c6c2c2;
-}
-
-#menu li
-{
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul
-{
-  transform: none;
-}
-/* fin hamburger */
 
 .background{
     background-image: url('../images/bg1.jpg');
-    background-size: 100%;
-    height: 100%
+    background-repeat: repeat-y;
+    background-size: auto;
     
 }
  .ah{
@@ -192,6 +51,7 @@ a:hover{
     color: #A7A7A7;
     font-weight: 500;
 }
+
 
 .menu{
     display: inline-block;
@@ -215,18 +75,10 @@ a:hover{
     font-size: 18px; 
 
 }
-#annonce-item .col-1{
-    width: 10%;
-    display: -webkit-box;
-    padding-right: 120px;
-}
-#annonce-item{
-    overflow: auto;  
-}
+
 table{
     text-align : center;
 }
-
 
 th{
     text-align : center;
@@ -277,8 +129,8 @@ header{
 }
 
 .dot {
-    height: 10px;
-    width: 10px;
+    height: 16px;
+    width: 16px;
     background-color: #FFF;
     border-radius: 50%;
     display: inline-block;
@@ -306,6 +158,7 @@ hr{
     text-overflow: ellipsis;
     color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
     background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+    box-shadow: 0 0 13px 0px lightgrey;
     font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
     font-size: 16px;
     font-weight: normal;
@@ -354,7 +207,7 @@ hr{
     text-overflow: ellipsis;
     color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
     background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
-    box-shadow: 0 0 13px 0px #99999980;
+    box-shadow: 0 0 13px 0px lightgrey;
     font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
     font-size: 13px;
     font-weight: normal;
@@ -363,11 +216,10 @@ hr{
     outline: none;
     cursor: pointer;
     transition: box-shadow 0.2s;
-    width: inherit;
 }
 
 .fa-3x {
-    font-size: 1.5em;
+    font-size: 4em;
 }
 
 .pure-material-button-contained::-moz-focus-inner {
@@ -449,15 +301,6 @@ hr{
 }
 
 
-ul.no-bullets{
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
-  }
-
-  a{
-      text-decoration: none;
-  }
 
 /*
 GENERAL STYLE END
@@ -622,14 +465,13 @@ h1{
 .logon1{
     margin-top: 15px; 
     float: right;
-    margin-left: 180px;
-    position: relative !important;
+    margin-left: 200px;
 
 }
 
 .form-control {
     display: block;
-    width: 280px;
+    width: 100%;
     padding: 0.85rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -641,23 +483,11 @@ h1{
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.code {
-    display: initial;
-    width: 40px;
-    padding: 0.85rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
 
-    .board{
-        background-color: white;
-    }  
+.annonce{
+    overflow: auto;
+}
+  
 
   
 .col4 p{
@@ -737,11 +567,6 @@ footer{
     width: 100%;
     z-index: 10;
     background-color: #222222;
-    color: #222222;
-}
-.menuList{
-    color: #222222;
-    text-align: center;
 }
 
 section{
@@ -756,110 +581,16 @@ section{
     height: 80%;
 }
 
-@media (min-width: 1200px){
- .searchlogo{
-        height: 300px;
-    position: relative;
-    overflow: hidden;
-    margin-left: 73%;
-    }
-    .navbar-right{
-    margin-left: 7%;
-    }
-    .container-fluid {
-    display: block;
-    margin-top: 20px !important ;
-    }
-    .user-info{
-    padding-top: 80px;
-}
-    .space{
-        display: block !important;
-    }
-     section{
-        margin-left: 120px !important;
-    }
-    /*.board{
-       text-align: center !important;
-    }*/
-    .card {
-    border-radius: 6px;
-    box-shadow: 0 2px 2px rgb(204 197 185 / 50%);
-    background-color: #FFFFFF;
-    color: #252422;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-    width: 40%;
-    }
 
-    .annonce-cat-second{
-        padding-top:10px;
-    }
-    .side2{
-    
-        display: block;
-    }
-}
-
-@media (width: 1024px){
+ @media (max-width: 1199.98px) { 
     .searchlogo{
         height: 300px;
     position: relative;
     overflow: hidden;
     margin-left: 73%;
+        
+    
     }
-    .navbar-right{
-        margin-left: -30px !important; 
-    }
-    .container-fluid {
-    display: block;
-    margin-top: 50px;
-    }
-    .background{
-        display: inherit;
-    }
-    .navbar-left{   
-        margin-left: 2% !important;
-    }
-    .nav-item {
-    margin-right: 5px;
-    }
-    .navbar {
-    padding-left: 10px;
-}
-
-    .dashboard-menu{
-        margin-left: 50px;
-
-    }
-    #info-personnelle{
-        min-height: 500px;
-    }
-    #info-personnelle h5{
-        color: black;
-    }
-    .container-fluid{
-        display: block;
-        margin-top: 50px;
-    }
-
-    .space{
-        display: none;
-    }
-    .card {
-    border-radius: 6px;
-    box-shadow: 0 2px 2px rgb(204 197 185 / 50%);
-    background-color: #FFFFFF;
-    color: #252422;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-    width: 40%;
-    }
-
     .annonce-cat-second{
         padding-top:10px;
     }
@@ -867,58 +598,7 @@ section{
     
         display: block;
     }
-}
-
-@media (min-width: 992px){
-    .searchlogo{
-        height: 300px;
-    position: relative;
-    overflow: hidden;
-    margin-left: 73%;
-    }
-    .navbar-right{
-        margin-left: -50px; 
-    }
-
-    .dashboard-menu{
-        margin-left: 50px;
-
-    }
-    #info-personnelle{
-        min-height: 500px;
-    }
-    #info-personnelle h5{
-        color: black;
-    }
-    .container-fluid{
-        display: block;
-        margin-top: 50px;
-    }
-
-    .space{
-        display: none;
-    }
-    .card {
-    border-radius: 6px;
-    box-shadow: 0 2px 2px rgb(204 197 185 / 50%);
-    background-color: #FFFFFF;
-    color: #252422;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-    width: 40%;
-    }
-
-    .annonce-cat-second{
-        padding-top:10px;
-    }
-    .side2{
-    
-        display: block;
-    }
-}
- 
+ }
  @media (max-width: 991.98px) { 
     .searchlogo{
         height: 100px;
@@ -928,29 +608,6 @@ section{
         
     
     }
-    #hamburgerBtn{
-    color: #C6C2C2;
-    display: block;
-    background-color: rgb(20, 21, 20);
-    border-radius: 6px;
-    height: 45px;
-    padding: 9px;
-    }
-    #menuToggle
-    {
-     display: block;
-    position: relative;
-    left: 13px;
-    top: -21px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-    }
-    
-    .navbar-right{
-        margin-left: -50px !important; 
-    }
-    
     .annonce-cat-second{
         padding-top: 0px;
     }
@@ -958,15 +615,6 @@ section{
         display: block;
         margin-top: 100px;
 
-    }
-    #info-personnelle h5{
-        color: black;
-    }
-     .navbar-right{
-    margin-left: 7%;
-    }
-    .space{
-        display: none;
     }
  }
 
@@ -976,53 +624,6 @@ section{
         position: relative;
         margin-left: 80%;
         margin-top: -200px;
-    }
-    .space{
-        display: none;
-    }
-    .fa-3x {
-    font-size: 2em;
-    padding-top: 0.5em;
-    }
-    .brand {
-    height: 80px;
-    margin-left: initial;
-    }
-    #menuToggle
-    {
-      display: block;
-    position: relative;
-    left: 13px;
-    top: -21px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-    }
-    
-    .side1 {
-        height: auto;
-    }
-    #categorie{
-        padding: 30px;
-    }
-    #info-personnelle h5{
-        color: black;
-    }
-    #hamburgerBtn{
-    color: #C6C2C2;
-    display: block;
-    background-color: rgb(20, 21, 20);
-    border-radius: 6px;
-    height: 45px;
-    padding: 9px;
-    }
-    .col img {
-    position: relative;
-    padding-top: 5px;
-    width: 58px;
-    }
-    .col{
-        margin-right: 0px;
     }
     .carsel{
         font-size: xx-small;
@@ -1044,108 +645,6 @@ section{
         
     
     }
-    #menuToggle
-    {
-      display: block;
-    position: relative;
-    left: 13px;
-    top: -21px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-    }
-    
-      header{
-        height: 0px;
-    }
-    .fa-3x {
-    font-size: 2em;
-    padding-top: 0.5em;
-    }
-    .container-fluid{
-            top: 41px;
-    }
-    .brand {
-    height: 80px;
-    margin-left: initial;
-    }
-    #hamburgerBtn{
-    color: #C6C2C2;
-    display: block;
-    background-color: rgb(20, 21, 20);
-    border-radius: 6px;
-    height: 45px;
-    padding: 9px;
-    }
-    #info-personnelle h6{
-        color: black !important;
-        font-size: 10px;
-    }
-    .post-btn button {
-    height: 40px;
-    border-radius: 5px;
-    margin-right: 0px;
-    font-size: smaller;
-    font-weight: 400;
-    width: 100%;
-    }
-    .post-btn button i {
-    color: #ffffff;
-    padding-right: 8px;
-    font-size: 13px;
-    opacity: 0.7;
-    }
-    .side1 img {
-    height: auto;
-    width: 100%;
-    border-radius: 0 0 0px 0;
-    }
-    .side1 {
-    height: auto;
-    }
-    #categorie{
-        padding: 30px;
-    }
-    #search-section{
-        margin-top: 0px !important;
-    }
-    #searchHeading{
-        font-weight: bolder;
-        margin-bottom: 10px !important;
-        font-size: 1.5rem !important;
-    }
-    h3{
-        font-size: 0.8rem !important;
-        color: white !important;
-        font-weight: 500;
-    }
-    #search-section h2 {
-    font-size: 1rem;
-    }
-    .bg-search {
-     width: 93%;
-    }
-    .searchlogo {
-    display: none;
-    }
-    .col img {
-    position: relative;
-    padding-top: 5px;
-    width: 58px;
-    } 
-    .col{
-        margin-right: 0px;
-    }
-    .form button {
-    width: 100%;
-    height: 50px;
-    margin-top: 19px;
-    text-align: center;
-    padding-top: 6px;
-    }
-    h6{
-        color: white !important;
-    } 
     .owl-item {
         display: flex;
         flex: 1 0 auto;
@@ -1173,53 +672,6 @@ section{
         
     
     }
-      header{
-        height: 0px;
-    }
-    .fa-3x {
-    font-size: 2em;
-    padding-top: 0.5em;
-    }
-    .brand {
-    height: 80px;
-    margin-left: initial;
-    }
-    .post-btn button {
-    height: 40px;
-    border-radius: 5px;
-    margin-right: 0px;
-    font-size: smaller;
-    font-weight: 400;
-    width: 100%;
-    }
-    .post-btn button i {
-    color: #ffffff;
-    padding-right: 8px;
-    font-size: 13px;
-    opacity: 0.7;
-    }
-    .side1 img {
-    height: auto;
-    width: 100%;
-    border-radius: 0 0 0px 0;
-    }
-    .side1 {
-    height: auto;
-    }
-    #categorie{
-        padding: 30px;
-    }
-    #search-section{
-        margin-top: 0px !important;
-    }
-    .col img {
-    position: relative;
-    padding-top: 10px;
-    width: 58px;
-    }
-    .col{
-        margin-right: 0px;
-    }     
     .owl-item {
         display: flex;
         flex: 1 0 auto;
