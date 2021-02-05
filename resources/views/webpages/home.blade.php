@@ -201,7 +201,7 @@
                 $moyenTransport = strtolower('voiture personnelle') ;
                 $count =  DB::select('select count(annonces.id) as nombre
                     FROM annonces, transport_colis, users
-                    WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                    WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                     ');
             @endphp
             Tout({{ $count[0]->nombre }})
@@ -222,7 +222,7 @@
                     $moyenTransport = strtolower('avion') ;
                     $count =  DB::select('select count(annonces.id) as nombre
                         FROM annonces, transport_colis, users
-                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                         and transport_colis.moyenTransport = ?', [$moyenTransport]);
                 @endphp
                 Avion({{ $count[0]->nombre }})
@@ -247,7 +247,7 @@
                     $moyenTransport = strtolower('bateau') ;
                     $count =  DB::select('select count(annonces.id) as nombre
                         FROM annonces, transport_colis, users
-                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                         and transport_colis.moyenTransport = ?', [$moyenTransport]);
                 @endphp
                 Bateau({{ $count[0]->nombre }})
@@ -269,7 +269,7 @@
                     $moyenTransport = strtolower('train') ;
                     $count =  DB::select('select count(annonces.id) as nombre
                         FROM annonces, transport_colis, users
-                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                         and transport_colis.moyenTransport = ?', [$moyenTransport]);
                 @endphp
                 Train({{ $count[0]->nombre }})
@@ -294,7 +294,7 @@
                     $moyenTransport = strtolower('camion') ;
                     $count =  DB::select('select count(annonces.id) as nombre
                         FROM annonces, transport_colis, users
-                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                        WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                         and transport_colis.moyenTransport = ?', [$moyenTransport]);
                 @endphp
                 Camion({{ $count[0]->nombre }})
@@ -315,7 +315,7 @@
                      $moyenTransport = strtolower('Poids lourd') ;
                      $count =  DB::select('select count(annonces.id) as nombre
                          FROM annonces, transport_colis, users
-                         WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                         WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                          and transport_colis.moyenTransport = ?', [$moyenTransport]);
                  @endphp
                  Poids lourd({{ $count[0]->nombre }})
@@ -340,7 +340,7 @@
                             $moyenTransport = strtolower('voiture personnelle') ;
                             $count =  DB::select('select count(annonces.id) as nombre
                                 FROM annonces, transport_colis, users
-                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                                 and transport_colis.moyenTransport = ?', [$moyenTransport]);
                         @endphp
                         Voiture({{ $count[0]->nombre }})
@@ -361,7 +361,7 @@
                             $moyenTransport = strtolower('Moto') ;
                             $count =  DB::select('select count(annonces.id) as nombre
                                 FROM annonces, transport_colis, users
-                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                                 and transport_colis.moyenTransport = ?', [$moyenTransport]);
                         @endphp
                         Moto({{ $count[0]->nombre }})
@@ -384,7 +384,7 @@
                             $moyenTransport = strtolower('Camionette') ;
                             $count =  DB::select('select count(annonces.id) as nombre
                                 FROM annonces, transport_colis, users
-                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id
+                                WHERE annonces.user_id = users.id and transport_colis.annonce_id = annonces.id and annonces.dateExpiration >= (select NOW())
                                 and transport_colis.moyenTransport = ?', [$moyenTransport]);
                             @endphp
                             Camionette({{ $count[0]->nombre }})
