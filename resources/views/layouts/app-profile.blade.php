@@ -46,7 +46,7 @@
     <div class="col-lg-12">
       <br>
     </div>
-        <form action="">
+        <div >  <!--/.row action=""-->
              <div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding: 20px; background-color: white">
                 <div class="row main " id="info-personnelle" style="background-color: white; padding-top: 20px; ">
                   <div class="col-lg-3" style="box-shadow: 1px 0px 15px #C6C2C2; border-radius: 10px;">
@@ -133,7 +133,7 @@
 
                     </div>
                   </div>
-                </form>
+                </div>
   </section>
 
    </div>
