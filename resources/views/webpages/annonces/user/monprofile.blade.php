@@ -1,7 +1,29 @@
+@php
+ $idUser = Auth::user()->id ;
+ //dd($idUser);
+ $getInfoUser = DB::table('users')->where('users.id',$idUser)->first();
+ $name = $getInfoUser->name;
+ $email = $getInfoUser->email;
+ $prenom = $getInfoUser->prenom;
+ $telephone = $getInfoUser->telephone;
+ $typeCompte = $getInfoUser->typeCompte;
+ $genre = $getInfoUser->genre;
+ $dateNaissance = $getInfoUser->dateNaissance;
+ $complementAdresse = $getInfoUser->complementAdresse;
+ $ville = $getInfoUser->ville;
+ $codePostal = $getInfoUser->codePostal;
+ $pays = $getInfoUser->pays;
+ $description = $getInfoUser->description;
+
+ //dd($name);
+ //$resultQueryGetInfoProfile = DB::select('');
+@endphp
+
 @extends('layouts.app-profile')
 @section('form')
 <div class="col-lg-8">
-    <form class="panel panel-container board" action="" method="post" enctype="multipart/form-data">
+    <form class="panel panel-container board" action="{{ route('users.updateUsersInfo') }}" method="post" enctype="multipart/form-data">
+        @csrf
      <div class="row">
          <div class="col-sm-3 text-center">
              <i class="fa fa-user-circle fa-7x"></i><br><br>
@@ -18,9 +40,29 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="genre">Genre</label><br>
-                         <label><input type="radio" name="genre" checked class="active"> Homme</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                         <label><input type="radio" name="genre" > Femme</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                         <label><input type="radio" name="genre" > Autre</label>
+                         @if ($genre == 'homme')
+                             <label><input type="radio" name="genre" value='homme' checked class="active"> Homme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                             <label><input type="radio" name="genre" value='femme' > Femme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                             <label><input type="radio" name="genre" value='autre' > Autre</label>
+
+                         @elseif ($genre == 'femme')
+                            <label><input type="radio" name="genre" value='homme' > Homme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="genre" value='femme' checked class="active"> Femme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="genre" value='autre' > Autre</label>
+
+                         @elseif ($genre == 'autre')
+                            <label><input type="radio" name="genre" value='homme'> Homme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="genre" value='femme' > Femme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="genre" value='autre' checked class="active"> Autre</label>
+                        @else
+                            <label><input type="radio" name="genre" value='homme'> Homme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="genre" value='femme' > Femme</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" name="genre" value='autre' > Autre</label>
+
+                        @endif
+
+
+
                      </div>
                  </div>
              </div>
@@ -28,13 +70,13 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="name">Nom</label>
-                         <input type="text" class="form-control" name="nom" required>
+                         <input type="text" class="form-control" name="name" value="{{ $name }}"  required>
                      </div>
                  </div>
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="prenom">Prenom</label>
-                         <input type="text" class="form-control" name="lname" required>
+                         <input type="text" class="form-control" name="prenom" value="{{ $prenom }}" required>
                      </div>
                  </div>
              </div>
@@ -42,13 +84,13 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="email">Email<span class="kv-reqd">*</span></label>
-                         <input type="email" class="form-control" name="email" required>
+                         <input type="email" class="form-control" name="email" value="{{ $email }}" required>
                      </div>
                  </div>
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="telephone">Téléphone<span class="kv-reqd">*</span></label>
-                         <input type="tel" class="form-control" name="telephone" required>
+                         <input type="tel" class="form-control" name="telephone" value = "{{ $telephone }}" required>
                      </div>
                  </div>
              </div>
@@ -56,7 +98,7 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="dateNaissance">Date de naissance</label>
-                         <input type="Date" class="form-control" name="dateNaissance">
+                         <input type="Date" class="form-control" value = "{{ $dateNaissance }}" name="dateNaissance">
                      </div>
                  </div>
                  <div class="col-sm-6">
@@ -115,7 +157,7 @@
                           <option value="Congo">Congo</option>
                           <option value="Cook Islands">Cook Islands</option>
                           <option value="Costa Rica">Costa Rica</option>
-                          <option value="Cote DIvoire">Cote DIvoire</option>
+                          <option selected value="Cote DIvoire">Côte d'Ivoire</option>
                           <option value="Croatia">Croatia</option>
                           <option value="Cuba">Cuba</option>
                           <option value="Curaco">Curacao</option>
@@ -317,13 +359,13 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="dateNaissance">Ville de résidence</label>
-                         <input type="text" class="form-control" name="ville" >
+                         <input type="text" class="form-control" value = "{{ $ville }}" name="ville" >
                      </div>
                  </div>
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="pays">Code Postal</label>
-                         <input type="text" inputmode="numeric" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" class="form-control" name="pays">
+                         <input type="text" inputmode="numeric" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" class="form-control" value = "{{ $codePostal }}" name="codePostal">
                      </div>
                  </div>
              </div>
@@ -331,15 +373,21 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="infosPlus">Infos complémentaires sur l'adresse</label>
-                         <input type="text" class="form-control" name="infosPlus" >
+                         <input type="text" class="form-control" value = "{{ $complementAdresse }}" name="complementAdresse" >
                      </div>
                  </div>
                  <div class="col-sm-6">
                    <div class="form-group">
                      <label for="categorie">Catégorie du Transporteur</label>
-                     <select id="pays" name="pays" class="form-control" style="height: auto;">
-                        <option value="particulier">Particulier</option>
-                       <option value="Professionnel">Professionel</option>
+                     <select id="pays" name="typeCompte" class="form-control"  style="height: auto;">
+                        @if ($typeCompte == 'particulier')
+                            <option selected value="particulier">Particulier</option>
+                            <option value="Professionnel">Professionel</option>
+                        @else
+                            <option value="particulier">Particulier</option>
+                            <option selected value="professionnel">Professionel</option>
+                        @endif
+
                      </select>
                    </div>
                  </div>
@@ -348,7 +396,7 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="desc">Votre Description</label>
-                         <textarea class="form-control" name="desc" id="desc"> </textarea>
+                         <textarea class="form-control" value = "{{ $description }}" name="description" id="desc"> </textarea>
                      </div>
                  </div>
                </div>

@@ -59,7 +59,7 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
     Route::get('notifications','ComptesController@notifications')->name('notifications');
     Route::get('change-password','ComptesController@changePassword')->name('changePassword');
     Route::get('fermeture-compte','ComptesController@fermetureCompte')->name('fermetureCompte');
-
+    Route::post('modifier-informations-compte','info@updateUserInformation')->name('updateUsersInfo');
 
 });
 
