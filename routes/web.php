@@ -62,3 +62,13 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
     Route::post('modifier-informations-compte','info@updateUserInformation')->name('updateUsersInfo');
 
 });
+
+Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
+
+    Route::get('index','AdminController@index')->name('index');
+    Route::get('list-users','AdminController@listUsers')->name('listUsers');
+    Route::get('list-annonce','AdminController@listAnnonce')->name('listAnnonce');
+
+
+
+});
