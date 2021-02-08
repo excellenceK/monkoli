@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="col-12 col-md-12 col-lg-2" style="margin-right: 20px">
-        <div class="panel panel-teal panel-widget tab"><a href="#">
+        <div class="panel panel-teal panel-widget tab {{ (request()->is('users/mes-reservations')) ? 'active' : '' }}"><a href="{{ route('users.mesReservations') }}">
             <div class="no-padding"><i class="fas fa-home" style="font-size: 35px;"></i>
                 <div class="text-muted" style="font-size: 10px;"><br/><span>Mes Reservations</span></div>
             </div>
