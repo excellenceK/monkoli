@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -58,8 +59,15 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
     Route::get('avis-utilisateurs','ComptesController@avisUtilisateurs')->name('avisUtilisateurs');
     Route::get('notifications','ComptesController@notifications')->name('notifications');
     Route::get('change-password','ComptesController@changePassword')->name('changePassword');
+    Route::post('change-password','ComptesController@postPassword')->name('changePassword');
     Route::get('fermeture-compte','ComptesController@fermetureCompte')->name('fermetureCompte');
     Route::post('modifier-informations-compte','info@updateUserInformation')->name('updateUsersInfo');
+    Route::post('veification-email','ComptesController@verifyEmail')->name('verificationEmail');
+    Route::get('confirm-email/{email}','ComptesController@confirmEmail')->name('confirmEmail');
+    Route::get('mes-reservations','ComptesController@mesReservations')->name('mesReservations');
+
+
+
 
 });
 

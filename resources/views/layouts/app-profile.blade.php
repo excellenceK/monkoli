@@ -44,6 +44,7 @@
   <br><br><br>
   <section class="container" style="padding-bottom: 200px;">
     <div class="col-lg-12">
+        @include('layouts.notification')
       <br>
     </div>
         <div >  <!--/.row action=""-->
@@ -223,4 +224,6 @@ $("#avatar-1").fileinput({
 
   <!--  More information about jquery.validate here: https://jqueryvalidation.org/   -->
   <script src="{{ asset('js-css-reservation/js/jquery.validate.min.js') }}" type="text/javascript"></script>
+
+  @yield('script')
 </html>
