@@ -66,9 +66,6 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
     Route::get('confirm-email/{email}','ComptesController@confirmEmail')->name('confirmEmail');
     Route::get('mes-reservations','ComptesController@mesReservations')->name('mesReservations');
 
-
-
-
 });
 
 Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){

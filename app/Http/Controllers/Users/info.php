@@ -70,6 +70,7 @@ class info extends Controller
             //dd($photo);
         }
 
+
         $name = strtolower(ControlSaisieNiveau1::checkInput1($request->name));
         $email = ControlSaisieNiveau1::checkInput1($request->email);
         $prenom = strtolower(ControlSaisieNiveau1::checkInput1($request->prenom));
