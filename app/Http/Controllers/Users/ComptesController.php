@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\Users;
 
 use App\User;
+use Carbon\Carbon;
 use App\Reservations;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Notifications\ConfirmatioEmail;
+
+
 
 class ComptesController extends Controller
 {
@@ -210,7 +216,7 @@ class ComptesController extends Controller
     public function changePassword()
     {
         if (Auth::check()) {
-            # code...
+            # code...$user->notify(new ConfirmatioEmail)
             return view('webpages.annonces.user.change-password');
 
         }else{
@@ -227,6 +233,64 @@ class ComptesController extends Controller
         }else{
             return redirect('login');
         }
+    }
+
+    public function verifyEmail(Request $request)
+    {
+
+
+        $user = User::where('email', $request->email)->first();
+        if ($user->email_verified_at == null) {
+            # code...
+            $user->notify(new ConfirmatioEmail());
+            return back()->with('success', 'Vueillez consulter votre boite email');
+
+        }else {
+            # code...
+            return back()->with('error', 'Votre adresse email est déjà vérifiée !');
+        }
+    }
+
+    public function confirmEmail($email)
+    {
+        $user = User::where('email', $email)->update([
+            'email_verified_at' =>Carbon::now()
+        ]);
+
+        if ($user) {
+            # code...
+            return redirect('users/mon-espace');
+        }
+    }
+
+    public function postPassword(Request $request)
+    {
+        //Vérifier si old-password est correct
+        $user = User::where('id', Auth::user()->id)->first();
+        //dd($request);
+        $oldpassword = $request['old-password'];
+        $newpassword = $request['new-password'];
+        $checkpassword = $request['check-password'];
+        if(Hash::check($oldpassword, $user->password))
+        {
+            if ($newpassword == $checkpassword) {
+                # code...
+                $user->update([
+                    'password' => Hash::make($newpassword)
+                ]);
+                return back()->with('success', 'Mot de passe modifié avec succès !');
+            }
+
+
+        }else{
+            dd('pas correct');
+        }
+        //dd($oldpassword);
+    }
+
+    public function mesReservations()
+    {
+        return view('webpages.annonces.user.mes-reservations');
     }
 
 }

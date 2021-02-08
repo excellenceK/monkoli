@@ -1,7 +1,7 @@
 @extends('layouts.app-profile')
 @section('form')
 <div class="col-lg-8">
-    <form class="form form-vertical" enctype="multipart/form-data">
+    <div class="form form-vertical" >
      <div class="row">
          <div class="col-sm-12 text-center">
          <h4><label for="typeColis">Vérification</label></h4><br>
@@ -12,9 +12,11 @@
                      <br>
                  </div>
              </div>
+
            <div class="row">
                  <div class="col-sm-12">
-                     <form action="" method="">
+                     <form action="{{ route('users.verificationEmail') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                        <h5><span>Email </span><i class="fas fa-envelope"></i></h5>
                        <p><span>La confirmation de votre adresse email est nécéssaire pour vous assurer de recevoir les notifications et ainsi rester en contact avec les expéditeurs et transporteurs en toute sécurité.</span></p>
@@ -23,7 +25,14 @@
                            <h6><span>Email renseigné :</span></h6>
                          </div>
                          <div class="col-sm-8">
-                           <h6><span>monkoli@monkoli.ci</span></h6>
+                           <h6><span>{{ Auth::user()->email }}</span>
+                            @if(Auth::user()->email_verified_at != null)
+                                <span style="color: green"> (email vérifié)</span>
+                            @else
+                             <span style="color: red"> (email non vérifié)</span>
+                            @endif
+                        </h6>
+                           <input type="hidden" name="email" value="{{ Auth::user()->email }}">
                          </div>
                        </div>
                      </div>
@@ -40,7 +49,7 @@
 
                  <div class="col-sm-12">
                      <div class="form-group">
-                       <h5><span>Numéro de Téléphone </span><i class="fas fa-phone"></i></h5>
+                       <h5><span>Numéro de Téléphone </span><i class="fas fa-phone"></i> <span style="color: red"> (telephone non vérifié)</span></h5>
                        <p><span>En cliquant sur vérifier, vous recevrez un code par sms au numéro que vous avez enregistré sur notre plateforme pour confirmer votre numéro de téléphone.</span></p>
                      </div>
                      <div class="row">
@@ -84,7 +93,7 @@
                </div>
                   <div class="col-sm-12">
                      <div class="form-group">
-                       <h5><span>Joinger une pièce d'identité </span><i class="fas fa-id-card"></i></h5>
+                       <h5><span>Joinger une pièce d'identité </span><i class="fas fa-id-card"></i> <span style="color: red"> (pièce d'identitée non vérifiée)</span></h5>
                        <p><span>La vérification de vos informations de profil nous permettra de garantir aux expéditeurs que vous êtes un utilisateur de confiance. Ceci aura pour avantage de trouver plus aisément des expéditeurs et même d'autres tranporteurs</span></p>
                      </div>
                      <div class="form-group">
@@ -105,7 +114,7 @@
              </div>
          </div>
      </div>
-   </form>
+    </div>
    <div id="kv-avatar-errors-1" class="center-block" style="width:800px;display:none"></div>
 
    <!-- the fileinput plugin initialization -->
