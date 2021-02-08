@@ -48,6 +48,7 @@ class info extends Controller
 
         if($updated == 1){
             dd($updated);
+
         }
 
     }

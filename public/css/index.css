@@ -1,3 +1,4 @@
+
 /*
 GENERAL STYLE
 */
@@ -31,6 +32,164 @@ body{
 .navbar-left{
 }
 
+.fa-calendar-day{
+    font-size: 0.8rem;
+}
+
+#datetime {
+    float: left; 
+    position: absolute; 
+    background-color: white; 
+    border-radius: 50px; 
+    margin-top: -60px; 
+    margin-left: -15px; 
+    height: 28px; 
+    padding-left: 0px; 
+    padding-right: 0px;
+}
+
+  footer img{
+    height: 80% !important;
+}
+/* debut hamburger */
+
+#menuToggle
+{
+  display: none;
+  position: relative;
+  left: 50px;
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+    position: absolute;
+    width: 300px;
+    margin: -46px 0 0px -20px;
+    padding-top: 125px;
+    background: #f1f1f1;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    min-height: 607px;
+    box-shadow: 1px 0px 25px #c6c2c2;
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+/* fin hamburger */
+
 .background{
     background-image: url('../images/bg1.jpg');
     background-size: 100%;
@@ -52,7 +211,6 @@ a:hover{
     color: #A7A7A7;
     font-weight: 500;
 }
-
 
 .menu{
     display: inline-block;
@@ -412,7 +570,7 @@ h1{
     background-color:#0b4a2d;
     border-top-left-radius:70px;
     border-bottom-right-radius: 70px;
-    padding: 20px;
+    padding: 20px !important;
     color: white;
     height: auto;
     z-index: 0;
@@ -502,7 +660,23 @@ h1{
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-  
+.code {
+    display: initial;
+    width: 40px;
+    padding: 0.85rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+    .board{
+        background-color: white;
+    }  
 
   
 .col4 p{
@@ -603,16 +777,127 @@ section{
 
 @media (min-width: 1200px){
  .searchlogo{
-        height: 300px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     margin-left: 73%;
     }
+
+     .container-fluid{
+        display: block;
+        margin-top: 0px !important;
+    }
+    .navbar{
+        padding-left: 80px !important;
+    }
+    .navbar-left{
+        margin-left: 10% !important;
+    }
+
+    .nav-item {
+    margin-right: 20px !important;
+    }
     .navbar-right{
-    margin-left: 7%;
+    margin-left: 1% !important;
     }
     .space{
         display: block !important;
+    }
+#datetime {
+    float: left;
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    margin-top: -53px;
+    margin-left: -5px;
+    margin-right: 91px;
+    height: 24px;
+    width: max-content;
+    padding-right: 8px;
+}
+
+.dot{
+    margin-top: -45px;
+    margin-left: 0px;
+    display: block;
+}
+#trajet{
+    margin-top: -140px !important;
+}
+    
+
+   /*card*/ 
+    .card {
+    border-radius: 6px;
+    box-shadow: 0 2px 2px rgb(204 197 185 / 50%);
+    background-color: #FFFFFF;
+    color: #252422;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    width: 40%;
+    }
+    /*card*/
+    .annonce-cat-second{
+        padding-top:10px;
+    }
+    .side2{
+    
+        display: block;
+    }
+}
+
+
+@media (max-height: 700px){
+ .searchlogo{
+    display: none
+    }
+}
+
+@media (min-width: 1024px){
+
+    .navbar-right{
+        margin-left: -20 !important;
+        } 
+     .container-fluid{
+        display: block;
+        margin-top: 0px;
+    }
+    .navbar{
+        padding-left: 2px;
+    }
+    
+
+    .nav-item {
+    margin-right: 5px;
+    }
+ 
+
+    #datetime {
+    float: left;
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    margin-top: -53px;
+    margin-left: -5px;
+    margin-right: 91px;
+    height: 24px;
+    width: max-content;
+    padding-right: 8px;
+}
+
+.dot{
+    margin-top: -45px;
+    margin-left: 0px;
+    display: block;
+}
+#trajet{
+    margin-top: -140px !important;
+}
+
+    .space{
+        display: none;
     }
     .card {
     border-radius: 6px;
@@ -630,11 +915,13 @@ section{
         padding-top:10px;
     }
     .side2{
-    
         display: block;
     }
-}
 
+    footer img {
+    height: 50% !important;
+    }
+}
 
 @media (min-width: 992px){
     .searchlogo{
@@ -644,8 +931,14 @@ section{
     margin-left: 73%;
     }
     .navbar-right{
-    margin-left: 0;
+        margin-left: -50px; 
     }
+
+    .container-fluid{
+        display: block;
+        margin-top: 50px;
+    }
+
     .space{
         display: none;
     }
@@ -679,9 +972,29 @@ section{
         
     
     }
-       .navbar-right{
-    margin-left: 0;
+    #hamburgerBtn{
+    color: #C6C2C2;
+    display: block;
+    background-color: rgb(20, 21, 20);
+    border-radius: 6px;
+    height: 45px;
+    padding: 9px;
     }
+    #menuToggle
+    {
+     display: block;
+    position: relative;
+    left: 13px;
+    top: -21px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    }
+    
+    .navbar-right{
+        margin-left: -50px !important; 
+    }
+    
     .annonce-cat-second{
         padding-top: 0px;
     }
@@ -690,11 +1003,17 @@ section{
         margin-top: 100px;
 
     }
+    #info-personnelle h5{
+        color: black;
+    }
      .navbar-right{
     margin-left: 7%;
     }
     .space{
         display: none;
+    }
+    #annonce-item{
+        width: fit-content;
     }
  }
 
@@ -716,11 +1035,33 @@ section{
     height: 80px;
     margin-left: initial;
     }
+    #menuToggle
+    {
+      display: block;
+    position: relative;
+    left: 13px;
+    top: -21px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    }
+    
     .side1 {
         height: auto;
     }
     #categorie{
         padding: 30px;
+    }
+    #info-personnelle h5{
+        color: black;
+    }
+    #hamburgerBtn{
+    color: #C6C2C2;
+    display: block;
+    background-color: rgb(20, 21, 20);
+    border-radius: 6px;
+    height: 45px;
+    padding: 9px;
     }
     .col img {
     position: relative;
@@ -741,15 +1082,75 @@ section{
         display: block;
     }
  }
+
  @media (max-width: 575.98px) { 
-    .searchlogo{
-        height: 80px;
-        position: relative;
-        margin-left: 80%;
-        margin-top: -610px;
-        
+ .searchlogo{
+       display: none;
     
     }
+    .card-body{
+        padding: 0.8rem;
+    }
+    #datetime {
+    float: left;
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    margin-top: -45px;
+    margin-left: -6px;
+    margin-right: 91px;
+    height: 24px;
+    width: max-content;
+    padding-right: 15px;
+}
+
+.dot{
+    margin-top: -25px;
+    margin-left: 0px;
+    display: block;
+}
+
+
+.center-screen {
+    padding-left: 0px;
+    padding-bottom: 100px;
+    padding-right: 0px;
+}
+.sidepartleft {
+    width: 100% !important;
+    border-radius: 40px;
+    height: 100px;
+    padding: 120px;
+}
+.sidepartleft img{
+    width: 100%;
+    
+}
+.sidepartleft h5{
+    display: none   
+}
+.sidepartrigth {
+     padding-left: 15px; 
+     padding-right: 15px; 
+     width: 100%;  
+}
+
+.sidepartrigth .wrap-input100 {
+    max-width: inherit;
+    position: relative;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 1px;
+    margin-bottom: 2px;
+}
+.center-screen .main{
+        width: 95%;
+        padding: 9px;
+}
+
+#trajet{
+    margin-top: -120px !important;
+}
+    
       header{
         height: 0px;
     }
@@ -757,9 +1158,22 @@ section{
     font-size: 2em;
     padding-top: 0.5em;
     }
+  
     .brand {
     height: 80px;
     margin-left: initial;
+    }
+    #hamburgerBtn{
+    color: #C6C2C2;
+    display: block;
+    background-color: rgb(20, 21, 20);
+    border-radius: 6px;
+    height: 45px;
+    padding: 9px;
+    }
+    #info-personnelle h6{
+        color: black !important;
+        font-size: 10px;
     }
     .post-btn button {
     height: 40px;
@@ -844,7 +1258,7 @@ section{
     }
  }
 
- @media (max-width: 300.98px) { 
+ @media (max-width: 375.98px) { 
     .searchlogo{
         height: 30px;
         position: relative;
@@ -853,6 +1267,38 @@ section{
         
     
     }
+     .card-body{
+        padding: 0.8rem;
+    }
+    #datetime {
+    float: left;
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    margin-top: -45px;
+    margin-left: -10px;
+    height: 24px;
+    width: max-content;
+    padding-right: 9px;
+}
+
+.dot{
+    margin-top: -26px;
+    margin-left: 0px;
+    display: block;
+}
+#trajet{
+    margin-top: -105px !important;
+        height: 30px !important;
+}
+
+#trajet h2 {
+    font-size: 1.3rem;
+}
+#trajet h6 {
+    font-size: 0.8rem;
+}
+
       header{
         height: 0px;
     }
