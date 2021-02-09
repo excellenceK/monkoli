@@ -18,7 +18,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'prenom', 'genre', 'telephone', 'dateNaissance', 'adresse', 'complementAdresse',
         'ville', 'codePostal', 'pays', 'description', 'typeCompte', 'idEntreprise', 'nomEntreprise', 'paysDomiciliation',
-        'photo'
+        'photo','cni_verso','cni_recto', 'phone_verified_at', 'cni_verified_at','role'
     ];
 
     /**

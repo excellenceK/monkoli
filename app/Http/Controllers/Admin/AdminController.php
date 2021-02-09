@@ -23,4 +23,9 @@ class AdminController extends Controller
     {
         return view('admin.main.pages.liste-annonces');
     }
+
+    public function profileUser($id)
+    {
+        return view('admin.main.pages.profile-user')->with(['id'=>$id]);
+    }
 }

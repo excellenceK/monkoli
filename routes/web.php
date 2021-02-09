@@ -76,6 +76,7 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
     Route::get('index','AdminController@index')->name('index');
     Route::get('list-users','AdminController@listUsers')->name('listUsers');
     Route::get('list-annonce','AdminController@listAnnonce')->name('listAnnonce');
+    Route::get('profile/{id}','AdminController@profileUser')->name('profileUser');
 
 
 
