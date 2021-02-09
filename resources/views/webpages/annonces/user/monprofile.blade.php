@@ -378,6 +378,7 @@
                  <div class="col-sm-6">
                      <div class="form-group">
                          <label for="infosPlus">Infos complémentaires adresse</label>
+
                          <input type="text" class="form-control" value = "{{ $complementAdresse }}" name="complementAdresse" >
                      </div>
                  </div>
@@ -385,6 +386,7 @@
                    <div class="form-group">
                      <label for="categorie">Catégorie du Transporteur</label>
                      <select id="typeCompte" name="typeCompte" class="form-control"  style="height: auto;" onchange="changementCompte()">
+
                         @if ($typeCompte == 'particulier')
                             <option selected value="particulier">Particulier</option>
                             <option value="Professionnel">Professionel</option>
