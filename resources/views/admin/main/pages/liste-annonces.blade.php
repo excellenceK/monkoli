@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Simple Tables</h1>
+            <h1>Annonces Terminées</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Liste des annonces</li>
+              <li class="breadcrumb-item active">Liste des annonces terminées</li>
             </ol>
           </div>
         </div>
@@ -24,73 +24,92 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Bordered Table</h3>
+                  <h3 class="card-title">Liste Annonces</h3>
                 </div>
+                @php
+                    $annonces = DB::table('annonces')
+                                ->join('transport_colis', 'transport_colis.annonce_id', 'annonces.id')
+                                ->where('dateArriver', '<', \Carbon\Carbon::now())
+                                ->select('annonces.id as idAnnonce', 'annonces.typeAnnonce', 'transport_colis.*')
+                                ->get();
+                @endphp
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th style="width: 10px">#</th>
-                        <th>Task</th>
-                        <th>Progress</th>
-                        <th style="width: 40px">Label</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1.</td>
-                        <td>Update software</td>
-                        <td>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                          </div>
-                        </td>
-                        <td><span class="badge bg-danger">55%</span></td>
-                      </tr>
-                      <tr>
-                        <td>2.</td>
-                        <td>Clean database</td>
-                        <td>
-                          <div class="progress progress-xs">
-                            <div class="progress-bar bg-warning" style="width: 70%"></div>
-                          </div>
-                        </td>
-                        <td><span class="badge bg-warning">70%</span></td>
-                      </tr>
-                      <tr>
-                        <td>3.</td>
-                        <td>Cron job running</td>
-                        <td>
-                          <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar bg-primary" style="width: 30%"></div>
-                          </div>
-                        </td>
-                        <td><span class="badge bg-primary">30%</span></td>
-                      </tr>
-                      <tr>
-                        <td>4.</td>
-                        <td>Fix and squish bugs</td>
-                        <td>
-                          <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar bg-success" style="width: 90%"></div>
-                          </div>
-                        </td>
-                        <td><span class="badge bg-success">90%</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                    @if(count($annonces) >0)
+                        @foreach($annonces as $annonce)
+                            @php
+                                $reservationRefuse = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                    ->whereIn('accepter', [false, null])
+                                                    ->get();
+                                $reservationAcceptes = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                    ->where('accepter', true)
+                                                    ->get();
+
+                                $quantiteTransporte = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                    ->where('accepter', true)
+                                                    ->where('recuperer', true)
+                                                    ->sum('quantiteReserve');
+                                $coliLivre = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                    ->where('accepter', true)
+                                                    ->where('recuperer', true)
+                                                    ->where('livrer', true)
+                                                    ->get();
+                                $totalGain =  DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                    ->where('accepter', true)
+                                                    ->where('recuperer', true)
+                                                    ->where('livrer', true)
+                                                    ->sum('montantReservation');
+
+                                $etatLivraison = (count($coliLivre) * 100)/( count($reservationAcceptes));
+
+                            @endphp
+                            <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Type Annonce</th>
+                                    <th>Trajet</th>
+                                    <th>Depart</th>
+                                    <th>Arrivée</th>
+                                    <th>Quantité Disponible</th>
+                                    <th>Reservations Réfusées</th>
+                                    <th>Reservations Acceptées</th>
+                                    <th>Quantité Transporté</th>
+                                    <th>Colis Livré</th>
+                                    <th style="width: 40px">Etat</th>
+                                    <th>Total Gain</th>
+                                    <th>Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                      <td>{{ $annonce->typeAnnonce }}</td>
+                                    <td>{{ $annonce->villeDepart.'-'.$annonce->villeArriver }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($annonce->dateDepart)->format('d-M-Y') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($annonce->dateArriver)->format('d-M-Y') }}</td>
+                                    <td>{{ $annonce->quantiteDisponible }}</td>
+                                    <td>{{ count($reservationRefuse)}}</td>
+                                    <td>{{ count($reservationAcceptes) }}</td>
+                                    <td>{{ $quantiteTransporte }}</td>
+                                    <td>{{ count($coliLivre) }}</td>
+                                    <td>
+                                        <div class="progress progress-xs">
+                                            <div class="progress-bar progress-bar-danger" style="width: {{ $etatLivraison }}%"><span class="badge bg-success">{{ $etatLivraison }}%</span></div>
+                                        </div>
+
+                                    </td>
+                                    <td>{{ $totalGain }}</td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        @endforeach
+                    @else
+                        <h5>Aucune Annonces trouvée !</h5>
+                    @endif
+
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer clearfix">
-                  <ul class="pagination pagination-sm m-0 float-right">
-                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                  </ul>
-                </div>
+
               </div>
               <!-- /.card -->
               <!-- /.card -->

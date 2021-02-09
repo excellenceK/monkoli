@@ -224,7 +224,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="{{ route('admin.listAnnonce') }}" class="nav-link {{ (request()->is('admin/list-annonce')) ? 'active' : '' }}">
+            <a href="{{ route('admin.listAnnonce') }}" class="nav-link {{ (request()->is('admin/list-annonce')) ? 'active' : '' }} {{ (request()->is('admin/list-annonce-en-cours')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Annonces
@@ -234,13 +234,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.listAnnonce') }}" class="nav-link">
+                <a href="{{ route('admin.listAnnonce') }}" class="nav-link {{ (request()->is('admin/list-annonce')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Toutes les Annonces</p>
+                  <p>Annonces Terminées</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="{{ route('admin.listAnnonceEnCours') }}" class="nav-link {{ (request()->is('admin/list-annonce-en-cours')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Annonces en Cours</p>
                 </a>

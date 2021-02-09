@@ -73,8 +73,10 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
     Route::get('index','AdminController@index')->name('index');
     Route::get('list-users','AdminController@listUsers')->name('listUsers');
     Route::get('list-annonce','AdminController@listAnnonce')->name('listAnnonce');
+    Route::get('list-annonce-en-cours','AdminController@listAnnonceEnCours')->name('listAnnonceEnCours');
     Route::get('profile/{id}','AdminController@profileUser')->name('profileUser');
-
-
-
+    Route::post('edit/{id}','AdminController@editUser')->name('editUser');
+    Route::delete('delete/{id}','AdminController@deleteUser')->name('deleteUser');
 });
+
+Route::post('message','MessagesController@adminSendMessage')->name('admin.sendMessage');

@@ -60,7 +60,7 @@
                   </li>
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                <a href="#" class="btn btn-primary btn-block"><b>Bannir</b></a>
               </div>
               <!-- /.card-body -->
             </div>
@@ -137,86 +137,83 @@
                         @endphp
 
                         @if(count($annonces)>0)
-                        @foreach($annonces as $value)
-                            @php
-                                $reservations = DB::table('reservations')->where('accepter', true)->where('annonce_id', $value->idAnnonce)->get();
-                                $quantiteReserve = 0;
-                                $pourcentageReservation = 0;
-                                foreach ($reservations as $data) {
-                                    # code...
-                                    $quantiteReserve += $data->quantiteReserve;
-                                    //$totalGain += $data->montantReservation;
-                                }
-                                $pourcentageReservation = ($quantiteReserve * 100)/$value->quantiteDisponible;
-                            @endphp
-
-                        <table id="users-datatable" class="table table-bordered table-striped table-responsive-sm" style="width: 100%">
-                            <thead>
-                                <tr>
-                                    <th scope="col">N°</th>
-                                    <th scope="col">Trajet</th>
-                                    <th scope="col">Départ</th>
-                                    <th scope="col">Arrivé</th>
-                                    <th scope="col">Quantité</th>
-                                    <th scope="col">Montant</th>
-                                    <th scope="col">Reservations(%)</th>
-                                    <th scope="col">Statut</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($users as $key => $value)
+                            <table id="users-datatable" class="table table-bordered table-striped table-responsive-sm" style="width: 100%">
+                                <thead>
                                     <tr>
-                                        <td>{{ $value->id }}</td>
-                                        <td>{{ strtoupper($value->villeDepart).'-'.strtoupper($value->villeArriver) }}</td>
-                                        <td>{{ \Carbon\Carbon::parse($value->dateDepart)->format('d-M-Y') }}</td>
-                                        <td> {{ \Carbon\Carbon::parse($value->dateArriver)->format('d-M-Y') }}</td>
-                                        <td>{{ $value->quantiteDisponible }}</td>
-                                        <td>{{ $value->prixUnitaire }}</td>
-                                        <td>
-                                            <div class="progress-labels">
-                                                <div class="" style="text-align: right;">{{ $pourcentageReservation }}%</div>
-                                            </div>
-                                            <div class="progress">
-                                                <div data-percentage="0%" style="width: {{ $pourcentageReservation }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            @if($value->dateArriver > \Carbon\Carbon::now())
-                                                <span class="badge badge-success">en cours</span>
-                                            @else
-                                                <span class="badge badge-warning">expiré</span>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            <a href="{{route('admin.profileUser', $value->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Voir Profile" data-placement="bottom"><i class="fas fa-user"></i></a>
-                                            <a href="" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
-                                            <button type="button"  class="btn btn-primary btn-sm float-left mr-1"  style="height:30px; width:30px;border-radius:50%" data-toggle="modal" title="Envoyer message"  data-backdrop="static" data-target="#delModal{{$value->id}}"><i class="fas fa-envelope"></i></button>
-
-                                            <form method="POST" action="">
-                                            @csrf
-                                                @method('delete')
-                                                <button class="btn btn-danger btn-sm float-left mr-1 dltBtn" data-id={{$value->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                                            </form>
-                                        </td>
+                                        <th scope="col">N°</th>
+                                        <th scope="col">Trajet</th>
+                                        <th scope="col">Départ</th>
+                                        <th scope="col">Arrivé</th>
+                                        <th scope="col">Quantité</th>
+                                        <th scope="col">Montant</th>
+                                        <th scope="col">Reservations(%)</th>
+                                        <th scope="col">Statut</th>
+                                        <th scope="col">Action</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th scope="col">N°</th>
-                                    <th scope="col">Trajet</th>
-                                    <th scope="col">Départ</th>
-                                    <th scope="col">Arrivé</th>
-                                    <th scope="col">Quantité</th>
-                                    <th scope="col">Montant</th>
-                                    <th scope="col">Reservations(%)</th>
-                                    <th scope="col">Statut</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        @endforeach
+                                </thead>
+                                <tbody>
+                                    @foreach($annonces as $value)
+                                        @php
+                                                $reservations = DB::table('reservations')->where('accepter', true)->where('annonce_id', $value->idAnnonce)->get();
+                                                $quantiteReserve = 0;
+                                                $pourcentageReservation = 0;
+                                                foreach ($reservations as $data) {
+                                                    # code...
+                                                    $quantiteReserve += $data->quantiteReserve;
+                                                    //$totalGain += $data->montantReservation;
+                                                }
+                                                $pourcentageReservation = ($quantiteReserve * 100)/$value->quantiteDisponible;
+                                            @endphp
+                                        <tr>
+                                            <td>{{ $value->id }}</td>
+                                            <td>{{ strtoupper($value->villeDepart).'-'.strtoupper($value->villeArriver) }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($value->dateDepart)->format('d-M-Y') }}</td>
+                                            <td> {{ \Carbon\Carbon::parse($value->dateArriver)->format('d-M-Y') }}</td>
+                                            <td>{{ $value->quantiteDisponible }}</td>
+                                            <td>{{ $value->prixUnitaire }}</td>
+                                            <td>
+                                                <div class="progress-labels">
+                                                    <div class="" style="text-align: right;">{{ $pourcentageReservation }}%</div>
+                                                </div>
+                                                <div class="progress">
+                                                    <div data-percentage="0%" style="width: {{ $pourcentageReservation }}%;" class="progress-bar progress-bar-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                @if($value->dateArriver > \Carbon\Carbon::now())
+                                                    <span class="badge badge-success">en cours</span>
+                                                @else
+                                                    <span class="badge badge-warning">expiré</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{route('admin.profileUser', $value->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Voir Profile" data-placement="bottom"><i class="fas fa-user"></i></a>
+                                                <a href="" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                                                <button type="button"  class="btn btn-primary btn-sm float-left mr-1"  style="height:30px; width:30px;border-radius:50%" data-toggle="modal" title="Envoyer message"  data-backdrop="static" data-target="#delModal{{$value->id}}"><i class="fas fa-envelope"></i></button>
+
+                                                <form method="POST" action="">
+                                                @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger btn-sm float-left mr-1 dltBtn" data-id={{$value->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="col">N°</th>
+                                        <th scope="col">Trajet</th>
+                                        <th scope="col">Départ</th>
+                                        <th scope="col">Arrivé</th>
+                                        <th scope="col">Quantité</th>
+                                        <th scope="col">Montant</th>
+                                        <th scope="col">Reservations(%)</th>
+                                        <th scope="col">Statut</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
 
                         @else
                             <h5>Aucun trajet trouvé pour ce utilisateur</h5>
@@ -229,277 +226,178 @@
                   </div>
                   <!-- /.tab-pane -->
                   <div class="tab-pane" id="timeline">
-                    <!-- The timeline -->
-                    <div class="timeline timeline-inverse">
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-danger">
-                          10 Feb. 2014
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-envelope bg-primary"></i>
+                        <!-- The timeline -->
+                        <div class="post">
+                            @php
 
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 12:05</span>
+                                $reservations = DB::table('reservations')
+                                                ->where('reservations.user_id', $user->id)
+                                                ->join('annonces', 'annonces.id', 'reservations.annonce_id')
+                                                ->join('transport_colis', 'transport_colis.annonce_id', 'annonces.id')
+                                                ->join('users', 'users.id', 'annonces.user_id')
+                                                ->get();
+                            @endphp
+                            @if(count($reservations) >0)
+                            <table id="reservations-datatable" class="table table-bordered table-striped table-responsive-sm" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Trajet</th>
+                                        <th scope="col">Annonceur</th>
+                                        <th scope="col">Contact Annonceur</th>
+                                        <th scope="col">Email Annonceur</th>
+                                        <th scope="col">Quantité Reservée</th>
+                                        <th scope="col">Montant</th>
+                                        <th scope="col">Statut</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($reservations as  $value)
+                                        <tr>
+                                            <td>{{ strtoupper($value->villeDepart).'-'.strtoupper($value->villeArriver) }}</td>
+                                            <td>{{ $value->name.' '.$value->prenom }}</td>
+                                            <td>{{ $value->telephone }}</td>
+                                            <td>
+                                                {{ $value->email }}
+                                            </td>
+                                            <td>{{ $value->quantiteReserve }}</td>
+                                            <td>{{ $value->montantReservation }}</td>
+                                            <td>
+                                                @if ($value->accepter == null && $value->recuperer == null && $value->livrer == null)
+                                                    <span class="badge badge-success">En attente de validation par l'annonceur </span>
+                                                @elseif($value->accepter == true && $value->recuperer == null && $value->livrer == null )
+                                                    <span class="badge badge-success">Accepté, en attente de récupération </span>
+                                                @elseif($value->accepter == true && $value->recuperer == true && $value->livrer == null)
+                                                    <span class="badge badge-warning">Récupéré, en attente de livraison</span>
+                                                @elseif($value->accepter == true && $value->recuperer == true && $value->livrer == true)
+                                                    <span class="badge badge-success">Livré, course terminée avec succès </span>
+                                                @elseif($value->accepter == false)
+                                                    <span class="badge badge-danger">Réfusé, l'annonceur n'a pas donné son accord</span>
+                                                @else
+                                                <span class="badge badge-warning">[statut inconnu]</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{route('admin.profileUser', $value->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Voir Profile" data-placement="bottom"><i class="fas fa-user"></i></a>
+                                                <a href="" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                                                <button type="button"  class="btn btn-primary btn-sm float-left mr-1"  style="height:30px; width:30px;border-radius:50%" data-toggle="modal" title="Envoyer message"  data-backdrop="static" data-target="#delModal{{$value->id}}"><i class="fas fa-envelope"></i></button>
 
-                          <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                          <div class="timeline-body">
-                            Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                            weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                            jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                            quora plaxo ideeli hulu weebly balihoo...
-                          </div>
-                          <div class="timeline-footer">
-                            <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                          </div>
+                                                <form method="POST" action="">
+                                                @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger btn-sm float-left mr-1 dltBtn" data-id={{$value->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="col">Trajet</th>
+                                        <th scope="col">Annonceur</th>
+                                        <th scope="col">Contact Annonceur</th>
+                                        <th scope="col">Email Annonceur</th>
+                                        <th scope="col">Quantité Reservée</th>
+                                        <th scope="col">Montant</th>
+                                        <th scope="col">Statut</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            @else
+                                <h5>Aucune réservation effectuée par ce utilisateur !</h5>
+                            @endif
                         </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-user bg-info"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
-
-                          <h3 class="timeline-header border-0"><a href="#">Sarah Young</a> accepted your friend request
-                          </h3>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-comments bg-warning"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                          <div class="timeline-body">
-                            Take me to your leader!
-                            Switzerland is small and neutral!
-                            We are more like Germany, ambitious and misunderstood!
-                          </div>
-                          <div class="timeline-footer">
-                            <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-success">
-                          3 Jan. 2014
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-camera bg-purple"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                          <div class="timeline-body">
-                            <img src="http://placehold.it/150x100" alt="...">
-                            <img src="http://placehold.it/150x100" alt="...">
-                            <img src="http://placehold.it/150x100" alt="...">
-                            <img src="http://placehold.it/150x100" alt="...">
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <div>
-                        <i class="far fa-clock bg-gray"></i>
-                      </div>
-                    </div>
                   </div>
                   <!-- /.tab-pane -->
 
                   <!-- tab avis -->
                   <div class="tab-pane" id="avis">
                     <!-- Post -->
-                        <div class="post">
-                            <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                            <span class="username">
-                                <a href="#">Jonathan Burke Jr.</a>
-                                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                            </span>
-                            <span class="description">Shared publicly - 7:30 PM today</span>
-                            </div>
-                            <!-- /.user-block -->
-                            <p>
-                            Lorem ipsum represents a long-held tradition for designers,
-                            typographers and the like. Some people hate it and argue for
-                            its demise, but others ignore the hate as they create awesome
-                            tools to help create filler text for everyone from bacon lovers
-                            to Charlie Sheen fans.
-                            </p>
 
-                            <p>
-                            <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                            <span class="float-right">
-                                <a href="#" class="link-black text-sm">
-                                <i class="far fa-comments mr-1"></i> Comments (5)
-                                </a>
-                            </span>
-                            </p>
 
-                            <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                        </div>
-                    <!-- /.post -->
-                    <!-- The timeline -->
-                    <div class="timeline timeline-inverse">
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-danger">
-                          10 Feb. 2014
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-envelope bg-primary"></i>
+                    @if(count($annonces) > 0)
+                        @php
+                            $countavis = 0;
+                        @endphp
+                        @foreach($annonces as $annonce)
 
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 12:05</span>
+                            @php
+                                $avis = DB::table('avis')
+                                        ->where('annonce_id', $annonce->idAnnonce)
+                                        ->join('users', 'users.id', 'avis.user_id')
+                                        ->select('users.photo', 'users.name', 'users.prenom', 'avis.*')
+                                        ->get();
+                            @endphp
+                            @if(count($avis) >0)
+                                {{  $countavis += count($avis) }}
+                                @foreach($avis as  $value)
+                                    <div class="post">
+                                        <div class="user-block">
+                                            @if($value->photo)
+                                                <img class="img-circle img-bordered-sm"
+                                                src="{{ asset('images/'.$value->photo) }}"
+                                                alt="User profile picture">
+                                            @else
+                                                <img class="img-circle img-bordered-sm"
+                                                src="{{asset('admin/dist/img/avatar6.png')}}"
+                                                alt="User profile picture">
+                                            @endif
+                                            <span class="username">
+                                                <a href="#">{{ $value->name.' '.$value->prenom }}</a>
+                                                <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                            </span>
+                                            <span class="description">{{ \Carbon\Carbon::parse($value->created_at)->format('d-M-Y H:i:s') }}</span>
+                                        </div>
+                                        <!-- /.user-block -->
+                                        <p>
+                                            {{$value->commentaire}}
+                                        </p>
 
-                          <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                                        <p>
+                                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-down"></i> Désactiver</a>
+                                            <span class="float-right">
+                                                <a href="#" class="link-black text-sm">
+                                                <i class="far fa-comments mr-1"></i> {{ $value->note }}
+                                                </a>
+                                            </span>
+                                        </p>
 
-                          <div class="timeline-body">
-                            Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                            weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                            jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                            quora plaxo ideeli hulu weebly balihoo...
-                          </div>
-                          <div class="timeline-footer">
-                            <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-user bg-info"></i>
+                                    </div>
+                                @endforeach
+                            @endif
+                        @endforeach
 
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
+                        @if ($countavis == 0)
+                            <h5>Aucun avis trouvé pour ce utilisateur !</h5>
+                        @endif
 
-                          <h3 class="timeline-header border-0"><a href="#">Sarah Young</a> accepted your friend request
-                          </h3>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-comments bg-warning"></i>
+                    @else
+                        <h5>Aucun avis trouvé pour ce utilisateur !</h5>
+                    @endif
 
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                          <div class="timeline-body">
-                            Take me to your leader!
-                            Switzerland is small and neutral!
-                            We are more like Germany, ambitious and misunderstood!
-                          </div>
-                          <div class="timeline-footer">
-                            <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-success">
-                          3 Jan. 2014
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-camera bg-purple"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                          <div class="timeline-body">
-                            <img src="http://placehold.it/150x100" alt="...">
-                            <img src="http://placehold.it/150x100" alt="...">
-                            <img src="http://placehold.it/150x100" alt="...">
-                            <img src="http://placehold.it/150x100" alt="...">
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <div>
-                        <i class="far fa-clock bg-gray"></i>
-                      </div>
-                    </div>
-                  </div>
+                </div>
                   <!-- end tab avis-->
 
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal">
-                      <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" placeholder="Name">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="Name">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
-                        <div class="col-sm-10">
-                          <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                            </label>
+                      <!-- timeline item -->
+                      <div>
+                        <div class="timeline-item">
+                          <span class="time"><i class="far fa-user"></i> {{ $user->name.' '.$user->prenom }}</span> <br>
+                          <div class="timeline-body" style=" padding: 25px"> <br>
+                            @if($user->cni_recto != null || $user->cni_verso != null)
+                            <img src="{{ asset('images/'.$user->cni_recto) }}" style="width: 450px; height:350px" alt="Recto">
+                            <img src="{{ asset('images/'.$user->cni_verso) }}" style="width: 450px; height:350px" alt="Verso"> <br><br>
+                            <a href="#" type="button" class="btn btn-success">Certifier la pièce d'identité</a>
+
+                            @else
+                                <h5>Aucune pièce d'identité trouvée pour ce utilisateur !</h5>
+                            @endif
+
                           </div>
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-danger">Submit</button>
-                        </div>
-                      </div>
-                    </form>
+                      <!-- END timeline item -->
                   </div>
                   <!-- /.tab-pane -->
                 </div>
