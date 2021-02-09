@@ -65,7 +65,8 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
     Route::post('veification-email','ComptesController@verifyEmail')->name('verificationEmail');
     Route::get('confirm-email/{email}','ComptesController@confirmEmail')->name('confirmEmail');
     Route::get('mes-reservations','ComptesController@mesReservations')->name('mesReservations');
-
+    Route::get('mes-trajets','ComptesController@mesTrajets')->name('mesTrajets');
+    Route::get('mes-messages','ComptesController@mesMessages')->name('mesMessages');
 });
 
 Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){

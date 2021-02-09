@@ -426,8 +426,8 @@
                             <br>
                             <p style="text-align: left; margin-left: 0px; color: white; font-size: 9px; width: max-content;">Départ</p>
                           </span>
-                            <h2 style="text-align: left; font-weight: bolder; color: #FFF;">CI</h2>
-                            <h6 style="text-align: left; font-weight: bold; color: #FFF;">Abidjan</h6>
+                            <!--h2 style="text-align: left; font-weight: bolder; color: #FFF;">CI</h2-->
+                            <h6 style="text-align: left; font-weight: bold; color: #FFF;">{{ strtoupper($trajet['villeDepart']) }}</h6>
                           </div>
                           </div>
                           <div class="col-2">
@@ -439,13 +439,13 @@
                                 <br>
                                 <p style="text-align: right; margin-left: -19px; color: white; font-size: 9px;">Arrivée</p>
                               </span>
-                              <h2 style="text-align: right; font-weight: bolder; color: #FFF;">FRA</h2>
-                              <h6 style="text-align: right; font-weight: bold; color: #FFF;">Paris</h6>
+                              <!--h2 style="text-align: right; font-weight: bolder; color: #FFF;">FRA</h2-->
+                              <h6 style="text-align: right; font-weight: bold; color: #FFF;">{{ strtoupper($trajet['villeArriver']) }}</h6>
                             </div>
                           </div>
                           <div class="col-4">
                               <div class="col-xs-2 col-lg-12 no-padding" id="datetime" ><i class="fas fa-calendar-day" style="color: black;"></i>
-                              <span style=" text-align : center;">26 Jan 2021</span>
+                              <span style=" text-align : center;">{{\Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y')}}</span>
                               </div>
                           </div>
 
@@ -457,7 +457,7 @@
 
                           <div class="col-4">
                              <div class="col-xs-2 col-lg-12 no-padding" id="datetime"><i class="fas fa-calendar-day" style="color: black;"></i>
-                              <span style=" text-align : center;">26 Jan 2021</span>
+                              <span style=" text-align : center;">{{\Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y')}}</span>
                             </div>
                           </div>
                     </div>
@@ -466,31 +466,32 @@
                           <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2; font-size: 50px;" aria-hidden="true"></i>
                           <br><br>
                           <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
-                          <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">phineas kouadio</h6>
+                          <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ strtoupper($trajet['nomUser']).' '. ucwords($trajet['prenomUser']) }}</h6>
                           <i class="fa fa-star valide"  aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star valide" aria-hidden="true" style="font-size: x-small;"></i><i class="fa fa-star novalide" aria-hidden="true" style="font-size: x-small;"></i>
                       </div>
                       <div class="col-4">
-                        <p class="" style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Fcfa</sup><br>
+                        <p class="" style="color: #00E38C;font-weight: bold;">{{ strtoupper($trajet['prixUnitaire']) }}<sup style="color:black">{{ strtoupper($trajet['devise']) }}</sup><br>
                           <span style="color:black; font-size: x-small;">Par Kg</span>
                         </p>
                          <p style="color:black;font-size:x-small; font-weight: bold;">Lieu du dépot du colis à expédier <br>
-                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Imeuble, koumassi cytidia</span>
+                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ strtoupper($trajet['lieuDepot']) }}</span>
                         </p>
                         <p style="color:black;font-size:x-small; font-weight: bold;">Lieu de récupération du colis à expédier <br>
-                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">Paris, koumassi cytidia</span>
+                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ strtoupper($trajet['lieuLivraison']) }}</span>
                         </p>
                         <br class="d-block d-sm-block d-lg-none d-md-none">
                         <p style="font-size: x-small; font-weight: bold;">Mode de transport :</p>
                       </div>
                       <div class="col-4">
-                            <p style="color: #00E38C;font-weight: bold;">XXXX<sup style="color:black"> Kg</sup><br>
+                            <p style="color: #00E38C;font-weight: bold;">{{ strtoupper($trajet['quantiteDisponible']) }}<sup style="color:black"> Kg</sup><br>
                            <span style="color:black; font-size: x-small;">Disponible(e)</span>
                        </p>
                         <p style="color:black;font-size:x-small; font-weight: bold;">Date limite de réservation <br>
-                           <span style="font-size: xx-small;font-weight: bold;color:red;">30/12/2020</span>
-                           <span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span>
+                           <span style="font-size: xx-small;font-weight: bold;color:red;">{{\Carbon\Carbon::parse($trajet['dateLimiteReservation'])->format('d-M-Y')}}</span>
+                           <!--span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span-->
                            <br><br><br><br><br><br><br>
-                           <span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span>
+                           {{ strtoupper($trajet['moyenTransport']) }}
+                           <!--span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span-->
                        </p>
                      </div>
 
@@ -499,7 +500,7 @@
                             <button type="button" class="btn pure2 " style="background-color:#3C3C3C;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
                         </div>
                         <div class="col-lg-5" style="float: right; display: inline-block;">
-                            <button type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i>&nbsp;&nbsp;Réserver</button>
+                            <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i>&nbsp;&nbsp;Réserver</a>
                         </div>
                     </div>
                 </div>
