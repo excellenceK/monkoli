@@ -46,7 +46,7 @@ class coliController extends Controller
             $idUser = Auth::user()->id ;
             $typeCompteUser = Auth::user()->typeCompte;
         }
-       // dd($idUser);
+        //dd($idUser);
         //Récupération des donnees pour la création de l annonce
         $typeAnnonce = ControlSaisieNiveau1::checkInput1($request->typeAnnonce);
         $slug = ControlSaisieNiveau1::checkInput1('visible');

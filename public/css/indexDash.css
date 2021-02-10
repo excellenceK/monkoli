@@ -758,7 +758,7 @@ section{
 
 @media (min-width: 1200px){
  .searchlogo{
-        height: 300px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     margin-left: 73%;
