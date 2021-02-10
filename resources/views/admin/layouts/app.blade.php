@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>Mon Coli | Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -27,6 +27,7 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
 
   <!-- Google Font: Source Sans Pro -->
@@ -172,7 +173,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('admin/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">KOUAME THIERRY</a>
@@ -223,7 +224,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="{{ route('admin.listAnnonce') }}" class="nav-link {{ (request()->is('admin/list-annonce')) ? 'active' : '' }}">
+            <a href="{{ route('admin.listAnnonce') }}" class="nav-link {{ (request()->is('admin/list-annonce')) ? 'active' : '' }} {{ (request()->is('admin/list-annonce-en-cours')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Annonces
@@ -233,13 +234,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.listAnnonce') }}" class="nav-link">
+                <a href="{{ route('admin.listAnnonce') }}" class="nav-link {{ (request()->is('admin/list-annonce')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Toutes les Annonces</p>
+                  <p>Annonces Terminées</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="{{ route('admin.listAnnonceEnCours') }}" class="nav-link {{ (request()->is('admin/list-annonce-en-cours')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Annonces en Cours</p>
                 </a>
@@ -340,6 +341,7 @@
 <script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
 @yield('script')
 </body>

@@ -32,7 +32,13 @@ class CreateUsersTable extends Migration
             $table->string('nomEntreprise')->nullable();
             $table->string('paysDomiciliation')->nullable();
             $table->string('photo')->nullable();
+            $table->string('cni_verso')->nullable();
+            $table->string('cni_recto')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->enum('status',['active','inactive'])->default('active');
+            $table->enum('role',['admin','user'])->default('user');
+            $table->timestamp('phone_verified_at')->nullable();
+            $table->timestamp('cni_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
