@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Annonce;
 use App\User;
 use Carbon\Carbon;
 use App\Reservations;
@@ -125,7 +126,14 @@ class ComptesController extends Controller
     }
     public function consulterReservations($id)
     {
-        return view('webpages.annonces/user/liste-reservation')->with(['annonce_id'=>$id]);
+        $annonce = Annonce::findOrFail($id);
+        if ($annonce) {
+            # code...
+            return view('webpages.annonces/user/liste-reservation')->with(['annonce_id'=>$id]);
+        }else{
+            return back()->with('error', 'une erreur est survenue');
+        }
+
     }
 
     public function accepterReservation($id)
