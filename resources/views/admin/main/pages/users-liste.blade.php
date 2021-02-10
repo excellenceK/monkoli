@@ -33,7 +33,7 @@
                     <!-- /.card-header -->
                     @if(count($users)>0)
                         <div class="card-body">
-                            <table id="users-datatable" class="table table-bordered table-striped table-responsive-sm" style="width: 100%">
+                            <table id="users-datatable" class="table table-bordered table-striped dt-responsive nowrap" style="width: 100%">
                                 <thead>
                                     <tr>
                                         <th scope="col">N°</th>
