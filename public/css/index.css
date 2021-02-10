@@ -311,6 +311,18 @@ hr{
     border-top: 2px;
 
 }
+
+.centr{
+    align-items: unset;
+   align-content: center;
+   display: unset;
+   flex-direction: inherit;
+   justify-content:unset;
+   text-align: unset;
+    }
+
+
+
 .pure-material-button-contained {
     position: relative;
     display: inline-block;
@@ -1084,7 +1096,28 @@ section{
  }
 
  @media (max-width: 575.98px) { 
- .searchlogo{
+     .centr{
+         align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+     }
+ 
+    .sidepartrigth{
+        align-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    
+      }
+    .searchlogo{
        display: none;
     
     }
@@ -1111,41 +1144,7 @@ section{
 }
 
 
-.center-screen {
-    padding-left: 0px;
-    padding-bottom: 100px;
-    padding-right: 0px;
-}
-.sidepartleft {
-    width: 100% !important;
-    border-radius: 40px;
-    height: 100px;
-    padding: 120px;
-}
-.sidepartleft img{
-    width: 100%;
-    
-}
-.sidepartleft h5{
-    display: none   
-}
-.sidepartrigth {
-     padding-left: 15px; 
-     padding-right: 15px; 
-     width: 100%;  
-}
 
-.sidepartrigth .wrap-input100 {
-    max-width: inherit;
-    position: relative;
-    border-bottom: 1px solid #d9d9d9;
-    padding-bottom: 1px;
-    margin-bottom: 2px;
-}
-.center-screen .main{
-        width: 95%;
-        padding: 9px;
-}
 
 #trajet{
     margin-top: -120px !important;

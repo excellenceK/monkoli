@@ -128,7 +128,7 @@
             <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ strtoupper($trajet['lieuLivraison']) }}</span>
         </p>
         <br class="d-block d-sm-block d-lg-none d-md-none">
-        <p style="font-size: x-small; font-weight: bold;">Mode de transport :</p>
+        <p style="font-size: x-small; font-weight: bold;">Mode de transport : {{ strtoupper($trajet['moyenTransport']) }}</p>
       </div>
       <div class="col-4">
             <p style="color: #00E38C;font-weight: bold;">{{ strtoupper($trajet['quantiteDisponible']) }}<sup style="color:black"> Kg</sup><br>
@@ -138,7 +138,7 @@
            <span style="font-size: xx-small;font-weight: bold;color:red;">{{\Carbon\Carbon::parse($trajet['dateLimiteReservation'])->format('d-M-Y')}}</span>
            <!--span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span-->
            <br><br><br><br><br><br><br>
-           {{ strtoupper($trajet['moyenTransport']) }}
+           
            <!--span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span-->
        </p>
      </div>

@@ -4,7 +4,7 @@ searchVisible = 0;
 transparent = true;
 
         $(document).ready(function(){
-
+            
             /*  Activate the tooltips      */
             $('[rel="tooltip"]').tooltip();
 

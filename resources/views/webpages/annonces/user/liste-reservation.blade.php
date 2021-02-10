@@ -28,7 +28,7 @@
                 # code...
                 $quantiteReserve += $value->quantiteReserve;
             }
-            $disponible = $annonce->quantiteDisponible - $quantiteReserve;
+            $disponible = $annonce->quantiteDisponible?? 0 - $quantiteReserve;
            // dd($annonce);
 
            $reservationsEnAttente = DB::table('reservations')

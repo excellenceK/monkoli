@@ -231,7 +231,7 @@
             <div class="col-12 col-lg-12 col-md-12">
                 <!--Wizard container -->
                 <div class="wizard-container">
-                    <div class=" row card wizard-card " data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top:80px; padding-right:10px;padding-left:10px;">
+                    <div class="card wizard-card " data-color="green" id="wizardProfile" style="box-shadow: 0 0px 26px 5px #C6C2C2; padding-top:80px; padding-right:10px;padding-left:10px;width:auto">
                         <form action="{{ route('coli.reservationColiPost') }}" method="post">
                             @csrf
                             <div class="wizard-navigation">
@@ -254,7 +254,7 @@
                    <br>
                 <div class="container tab-content">
                     <div class="tab-pane" id="info">
-                      <div class="row">
+                      <div class="row centr" id="inform-reservation">
                           <h6 class="info-text col-12 col-lg-12" style="color: #A7A7A7; text-align:center"> Entrez la quantité souhaitée que vous voulez reserver et cliquer sur "Reserver" pour continuer.</h6>
                         <br>
                         @php
@@ -347,11 +347,12 @@
                         <h5 class="info-text" style="color: #3C3C3C;"><span><i class="ti-info-alt" style="font-size: 14px;"></i> Votre réservation sera mise en attente de confirmation par le transporteur.</span></h5>
                         <div class="row">
                           <div class="col-lg-6 col-md-12 col-12" >
+                            
                               <div class="card  thumbnail col-12 col-md-12 col-sm-12 col-lg-12" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
-                                <img class="card-img-top img img-responsive"  src="{{ asset('images/bg_card.png') }}" alt="Card image cap">
-                                <div class="card-body row">
+                                <img class="card-img-top img img-responsive"  src="{{ asset('images/bg_card.png') }}" alt="Card image cap" style="margin-top:-19px">
+                                <div class="card-body row" style=" align-items: center;align-content: center;display: flex;flex-direction: column;justify-content: center;text-align: center;">
                                   <br>
-                                  <div class="col-sm-3" style="margin-left: 20px;">
+                                  <div class="col-sm-3" style="">
                                     <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
                                     <br>
                                     <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>

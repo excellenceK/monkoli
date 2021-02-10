@@ -418,7 +418,8 @@
             <div class="row col-lg-11">
                 @foreach ($getInfoAnnonce as $trajet)
                 <div class="card  carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
-                    <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap" style="margin-top: -19px;">
+                    <img class="card-img-top img img-responsive d-none d-md-none d-lg-block"  src="../images/bg_card.png" alt="Card image cap" style="margin-top: -19px;">
+                    <img class="card-img-top img img-responsive d-block d-md-block d-lg-none"  src="../images/bg_card.png" alt="Card image cap">
                     <div class="card-body row" >
                         <div class="col-5">
                            <div class="col-xs-2 col-lg-11 no-padding" id="trajet" style="position: relative; margin-top: -140px; margin-left: 0px; height: 60px; border-bottom: solid 1px #FFF; height: 40px;">
@@ -448,13 +449,13 @@
                               <span style=" text-align : center;">{{\Carbon\Carbon::parse($trajet['dateDepart'])->format('d-M-Y')}}</span>
                               </div>
                           </div>
-
+                
                           <div class="col-4">
                               <div class="col-xs-2 col-lg-12 no-padding"  >
                                 <span style=" text-align : center;"></span>
                               </div>
                           </div>
-
+                
                           <div class="col-4">
                              <div class="col-xs-2 col-lg-12 no-padding" id="datetime"><i class="fas fa-calendar-day" style="color: black;"></i>
                               <span style=" text-align : center;">{{\Carbon\Carbon::parse($trajet['dateArriver'])->format('d-M-Y')}}</span>
@@ -480,7 +481,7 @@
                             <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ strtoupper($trajet['lieuLivraison']) }}</span>
                         </p>
                         <br class="d-block d-sm-block d-lg-none d-md-none">
-                        <p style="font-size: x-small; font-weight: bold;">Mode de transport :</p>
+                        <p style="font-size: x-small; font-weight: bold;">Mode de transport : {{ strtoupper($trajet['moyenTransport']) }}</p>
                       </div>
                       <div class="col-4">
                             <p style="color: #00E38C;font-weight: bold;">{{ strtoupper($trajet['quantiteDisponible']) }}<sup style="color:black"> Kg</sup><br>
@@ -490,11 +491,11 @@
                            <span style="font-size: xx-small;font-weight: bold;color:red;">{{\Carbon\Carbon::parse($trajet['dateLimiteReservation'])->format('d-M-Y')}}</span>
                            <!--span style="font-size: xx-small;font-weight: bold;color:red;">20:00 GMT</span-->
                            <br><br><br><br><br><br><br>
-                           {{ strtoupper($trajet['moyenTransport']) }}
+                           
                            <!--span> <img class="img img-responsive"  style="height:50px;width: 50px;" src="../images/Avion.png" alt="avion"></span-->
                        </p>
                      </div>
-
+                
                     <div class="col-sm-12">
                       <div class="col-lg-6" style="float: left; display: ;">
                             <button type="button" class="btn pure2 " style="background-color:#3C3C3C;"> <i style="color: white; opacity: 0.7;" class="fas fa-share" aria-hidden="true"></i> Partager l'annonce</button>
@@ -503,7 +504,7 @@
                             <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i>&nbsp;&nbsp;Réserver</a>
                         </div>
                     </div>
-                </div>
+                  </div>
             </div>
             @endforeach
             </div>
