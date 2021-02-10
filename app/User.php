@@ -21,6 +21,12 @@ class User extends Authenticatable
         'photo','cni_verso','cni_recto', 'phone_verified_at', 'cni_verified_at','role'
     ];
 
+    //Relation user to Role.
+    public function roles()
+    {
+        return $this->belongsToMany('App\Roles');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
