@@ -36,7 +36,7 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     @if(count($annonces) >0)
-                            <table class="table table-bordered">
+                            <table class="table table-bordered dt-responsive nowrap" style="width:100%" id="annonce-en-cours">
                                 <thead>
                                   <tr>
                                     <th>Type Annonce</th>
@@ -99,12 +99,63 @@
                                         <td>{{ $quantiteTransporte }}</td>
                                         <td>{{ count($coliLivre) }}</td>
                                         <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: {{ $etatLivraison }}%"><span class="badge bg-success">{{ $etatLivraison }}%</span></div>
+                                            <div class="progress progress-lg">
+                                                <div class="progress-bar progress-bar-success" style="width: {{ $etatLivraison }}%"></div>
                                             </div>
+                                            <span class="badge bg-success">{{ $etatLivraison }}%</span>
 
                                         </td>
-                                        <td></td>
+                                        <td>
+                                            <button  class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="modal" title="edit" data-backdrop="static" data-target="#editModal{{$annonce->idAnnonce}}"><i class="fas fa-edit"></i></button>
+                                            <a href="{{route('admin.reservationsAnnonce', $annonce->idAnnonce) }}" class="btn btn-primary btn-sm float-left mr-1"  style="height:30px; width:30px;border-radius:50%" data-placement="bottom" title="Voir les reservations"><i class="fas fa-plus"></i></a>
+
+                                            <form method="POST" action="{{route('admin.deleteAnnonce',$annonce->idAnnonce)}}">
+                                             @csrf
+                                                @method('get')
+                                                <button class="btn btn-danger btn-sm float-left mr-1 dltBtn2" data-pol={{$annonce->idAnnonce}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+
+                                        <!-- Edit Status User Modal-->
+                                            <div class="modal fade" id="editModal{{$annonce->idAnnonce}}" tabindex="-1" role="dialog" aria-labelledby="#editModal{{$annonce->idAnnonce}}Label" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="#editModal{{$annonce->idAnnonce}}Label">Désactiver l'annonce</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form  method="post" action="{{ route('admin.editAnnonce',$annonce->idAnnonce) }}" id="editForm" >
+                                                            @csrf
+                                                            <div class="row">
+                                                                <div class="col-lg-12 col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Statut<span>*</span></label>
+                                                                        <select name="status" id="" style="width: 100%">
+                                                                            <option value="active" selected>Active</option>
+                                                                            <option value="inactive">Inactive</option>
+                                                                        </select>
+                                                                        <!--<input name="email" type="hidden"  style="width: 100%" placeholder="Entrez votre adresse email" value="">-->
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-12">
+                                                                    <div class="form-group button">
+                                                                        <button type="submit" class="btn btn-primary ">Editer</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <!--End Edit Status User Modal-->
+
+                                        <!--Send Message Modal-->
                                     </tr>
                                 @endforeach
 
@@ -126,4 +177,56 @@
         </div><!-- /.container-fluid -->
     </section>
 </div>
+@endsection
+
+@section('script')
+
+<script>
+    $('#annonce-en-cours').DataTable( {
+          "columnDefs":[
+              {
+                  "orderable":false,
+                  "targets":[6,7]
+              }
+          ],
+          language: {
+              "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+          }
+      } );
+
+      // Sweet alert
+
+      function deleteData(id){
+
+      }
+</script>
+<script>
+    $(document).ready(function(){
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+        $('.dltBtn2').click(function(e){
+          var form=$(this).closest('form');
+            var dataID=$(this).data('pol');
+             alert(form);
+            e.preventDefault();
+            swal({
+                  title: "Êtes-vous sûr?",
+                  text: "Une fois supprimées, vous ne pourrez plus récupérer ces données!",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+              })
+              .then((willDelete) => {
+                  if (willDelete) {
+                     form.submit();
+                  } else {
+                      swal("Vos données sont en sécurité!");
+                  }
+              });
+        })
+    })
+</script>
 @endsection

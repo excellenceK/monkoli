@@ -36,33 +36,6 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     @if(count($annonces) >0)
-                        @foreach($annonces as $annonce)
-                            @php
-                                $reservationRefuse = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
-                                                    ->whereIn('accepter', [false, null])
-                                                    ->get();
-                                $reservationAcceptes = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
-                                                    ->where('accepter', true)
-                                                    ->get();
-
-                                $quantiteTransporte = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
-                                                    ->where('accepter', true)
-                                                    ->where('recuperer', true)
-                                                    ->sum('quantiteReserve');
-                                $coliLivre = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
-                                                    ->where('accepter', true)
-                                                    ->where('recuperer', true)
-                                                    ->where('livrer', true)
-                                                    ->get();
-                                $totalGain =  DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
-                                                    ->where('accepter', true)
-                                                    ->where('recuperer', true)
-                                                    ->where('livrer', true)
-                                                    ->sum('montantReservation');
-
-                                $etatLivraison = (count($coliLivre) * 100)/( count($reservationAcceptes));
-
-                            @endphp
                             <table class="table table-bordered">
                                 <thead>
                                   <tr>
@@ -81,28 +54,64 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                      <td>{{ $annonce->typeAnnonce }}</td>
-                                    <td>{{ $annonce->villeDepart.'-'.$annonce->villeArriver }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($annonce->dateDepart)->format('d-M-Y') }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($annonce->dateArriver)->format('d-M-Y') }}</td>
-                                    <td>{{ $annonce->quantiteDisponible }}</td>
-                                    <td>{{ count($reservationRefuse)}}</td>
-                                    <td>{{ count($reservationAcceptes) }}</td>
-                                    <td>{{ $quantiteTransporte }}</td>
-                                    <td>{{ count($coliLivre) }}</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" style="width: {{ $etatLivraison }}%"><span class="badge bg-success">{{ $etatLivraison }}%</span></div>
-                                        </div>
+                                    @foreach($annonces as $annonce)
+                                        @php
+                                            $reservationRefuse = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                                ->whereIn('accepter', [false, null])
+                                                                ->get();
+                                            $reservationAcceptes = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                                ->where('accepter', true)
+                                                                ->get();
 
-                                    </td>
-                                    <td>{{ $totalGain }}</td>
-                                    <td></td>
-                                  </tr>
+                                            $quantiteTransporte = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                                ->where('accepter', true)
+                                                                ->where('recuperer', true)
+                                                                ->sum('quantiteReserve');
+                                            $coliLivre = DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                                ->where('accepter', true)
+                                                                ->where('recuperer', true)
+                                                                ->where('livrer', true)
+                                                                ->get();
+                                            $totalGain =  DB::table('reservations')->where('annonce_id', $annonce->idAnnonce)
+                                                                ->where('accepter', true)
+                                                                ->where('recuperer', true)
+                                                                ->where('livrer', true)
+                                                                ->sum('montantReservation');
+
+                                            if (count($reservationAcceptes)>0) {
+                                                        # code...
+                                                $etatLivraison = (count($coliLivre) * 100)/( count($reservationAcceptes));
+
+                                            }else{
+                                                        # code...
+                                                $etatLivraison =0;
+                                            }
+
+
+                                        @endphp
+                                    <tr>
+                                        <td>{{ $annonce->typeAnnonce }}</td>
+                                        <td>{{ $annonce->villeDepart.'-'.$annonce->villeArriver }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($annonce->dateDepart)->format('d-M-Y') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($annonce->dateArriver)->format('d-M-Y') }}</td>
+                                        <td>{{ $annonce->quantiteDisponible }}</td>
+                                        <td>{{ count($reservationRefuse)}}</td>
+                                        <td>{{ count($reservationAcceptes) }}</td>
+                                        <td>{{ $quantiteTransporte }}</td>
+                                        <td>{{ count($coliLivre) }}</td>
+                                        <td>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar progress-bar-danger" style="width: {{ $etatLivraison }}%"><span class="badge bg-success">{{ $etatLivraison }}%</span></div>
+                                            </div>
+
+                                        </td>
+                                        <td>{{ $totalGain }}</td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
+
                                 </tbody>
                               </table>
-                        @endforeach
                     @else
                         <h5>Aucune Annonces trouvée !</h5>
                     @endif

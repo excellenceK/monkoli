@@ -73,5 +73,6 @@ class RegisterController extends Controller
             'typeCompte' => 'particulier',
             'telephone' => $data['telephone']
         ]);
+
     }
 }

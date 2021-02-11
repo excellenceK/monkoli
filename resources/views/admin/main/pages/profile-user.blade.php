@@ -50,7 +50,12 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Email</b> <a class="float-right"><i class="fas fa-check-square"></i></a>
+                    <b>Email</b> <a class="float-right">
+                        @if($user->email_verified_at != null)
+                            <i class="fas fa-check-square"></i></a>
+                        @else
+                            <i class="far fa-square"></i>
+                        @endif
                   </li>
                   <li class="list-group-item">
                     <b>Téléphone</b> <a class="float-right"><i class="far fa-square"></i></a>

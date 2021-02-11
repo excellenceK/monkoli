@@ -31,7 +31,7 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.listTransactionMontant') }}" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -46,7 +46,7 @@
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.listAnnonceEnCours') }}" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
          <!-- ./col -->
@@ -61,7 +61,7 @@
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('admin.listTransactionMontant') }}" class="small-box-footer">Plus d'info <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -92,15 +92,15 @@
             <div class="card-header">
               <h3 class="card-title">
                 <i class="fas fa-chart-pie mr-1"></i>
-                Sales
+                Statistiques
               </h3>
               <div class="card-tools">
                 <ul class="nav nav-pills ml-auto">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Statistique Gain</a>
+                    <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Montant Transactions</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#sales-chart" data-toggle="tab">Statistique Annonces</a>
+                    <a class="nav-link" href="#sales-chart" data-toggle="tab">Nombre Transactions</a>
                   </li>
                 </ul>
               </div>
