@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/inscription.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+
     <title>monkoli-inscription</title>
 @endsection
 
@@ -9,17 +10,17 @@
 <br>
 <br>
 <br>
+
 <section class="container">
     <form method="POST" action="{{ route('register') }}">
         @csrf
-        <div class="center-screen">
             <div class="row main">
                 <div class="col-12 col-md-12 col-lg-5 sidepartleft">
-                    <img src="../images/logo.png" class=" img img-responsive sidelogo" alt="logo">
+                    <img src="../images/logo.png" class="img img-responsive" alt="logo" style="height: 100px">
                      <h2 style="color: #00E38C;" >MonKoli</h2>
                      <h6 style="color: white;">Expédier un colis n'a jamains été si <span style="color: #00E38C;">facile</span></h6>
                 </div>
-                <div class="col-12 col-md-12  col-lg-7 sidepartrigth" >
+                <div class="col-12 col-md-12  col-lg-7 sidepartrigth align-items-center" >
                     <h1 style="font-size: large; font-weight: bold;">Inscrivez-vous</h1>
                     <div class="wrap-input100 validate-input">
                         <input id="name" class="input100 form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Nom" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -78,10 +79,10 @@
                      <br/>
                 </div>
             </div>
-
-        </div>
     </form>
 
 </section>
+<br>
+<br>
 @endsection
     <!--inscription main content-->

@@ -48,7 +48,7 @@ a, a:hover, a:focus {
 }
 .tab:hover i{
   color: #FFF;
-}
+} 
 .tab:hover span{
     color: #FFF !important;
 }
@@ -56,7 +56,7 @@ a, a:hover, a:focus {
 .tab:active{
   background-color: #00E38C;
   box-shadow: 0 0px 5px 4px #e6e6e6;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;  
 }
 .tab:active span{
     color: #FFF !important;
@@ -185,7 +185,7 @@ input.form-control {
   background: none; }
 
 .navbar-left{
-  margin-left: 7%;
+  margin-left: 7%; 
 }
 
 
@@ -262,7 +262,7 @@ a.btn:active, button:active {
 .btn-warning, .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open > .dropdown-toggle.btn-warning, .btn-warning.disabled, .btn-warning[disabled], fieldset[disabled] .btn-warning, .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover, .btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active, .btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active, .btn-warning.disabled.active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning.active {
   background-color: #00E38C;
   border-color: #00E38C; }
-
+  
 .btn-warning:hover{
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 #79767624, 0 1px 10px 0 rgba(0, 0, 0, 0.12)
   }
@@ -1081,7 +1081,7 @@ h1.page-header {
 
 .fixed-table-pagination .pagination-detail {
   margin-top: 20px; }
-
+  
 p.back-link {
   text-align: center;
   margin-bottom: 20px;

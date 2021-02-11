@@ -8,14 +8,15 @@
     <!--inscription main content-->
     <br>
     <br>
-    
+    <br>
+    <br>
     <section class="container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="center-screen">
                 <div class="row main">
-                    <div class=" col-12 col-md-12 col-lg-5 sidepartleft">
-                        <img src="{{ asset('images/logo.png') }}" class="sidelogo" alt="logo">
+                    <div class=" col-12 col-md-12 col-lg-5 sidepartleft ">
+                        <img src="{{ asset('images/logo.png') }}" alt="logo" style="heigth:100px">
                          <h2 style="color: #00E38C;" >MonKoli</h2>
                          <h6 style="color: white;">Expédier un colis n'a jamains été si <span style="color: #00E38C;">facile</span></h6>
                     </div>

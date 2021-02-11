@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="col-12 col-md-12 col-lg-2" style="margin-right: 20px">
-        <div class="panel panel-teal panel-widget tab"><a href="#">
+        <div class="panel panel-teal panel-widget tab {{ (request()->is('users/mes-trajets')) ? 'active' : '' }}"><a href="{{ route('users.mesTrajets') }}">
             <div class="no-padding"><i class="fas fa-shopping-bag" style="font-size: 35px;"></i>
             <div class="text-muted" style="font-size: 10px;"><br/><span>Mes Trajets</span></div>
             </div>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="col-12 col-md-12 col-lg-2" style="margin-right: 20px">
-        <div class="panel panel-teal panel-widget tab"><a href="#">
+        <div class="panel panel-teal panel-widget tab {{ (request()->is('users/mes-messages')) ? 'active' : '' }}"><a href="{{ route('users.mesMessages') }}">
             <div class="no-padding"><i class="fas fa-envelope" style="font-size: 35px;"></i>
                 <div class="text-muted" style="font-size: 10px;"><br/><span>Messages</span></div>
             </div>

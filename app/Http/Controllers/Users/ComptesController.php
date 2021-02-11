@@ -301,4 +301,13 @@ class ComptesController extends Controller
         return view('webpages.annonces.user.mes-reservations');
     }
 
+    public function mesTrajets()
+    {
+        return view('webpages.annonces.user.mes-trajets');
+    }
+
+    public function mesMessages(){
+        return view('webpages.annonces.user.mes-messages');
+    }
+
 }

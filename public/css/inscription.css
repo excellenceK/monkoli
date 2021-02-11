@@ -1,24 +1,10 @@
 
-body{
-  padding: 0 auto;
-  margin: 0;
-}
-
-
 .sidelogo{
     height: 200px;
     display: inline-block;
 }
 
-.center-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    
-  }
+
 
    .navbar-left{
     margin-left: 220px !important;
@@ -49,8 +35,7 @@ body{
     background-color: black;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
-    height: auto;
-    padding: 100px;
+    padding: 140px;
     align-items: center;
     align-content: center;
     display: flex;
@@ -64,11 +49,15 @@ body{
   .sidepartrigth{
     align-items: center;
     align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     padding-top: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-    height: auto;
-    width: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 55%;
+    height: 770px;
 
   }
 

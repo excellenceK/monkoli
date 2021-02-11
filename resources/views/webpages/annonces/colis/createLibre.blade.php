@@ -23,7 +23,7 @@
     @csrf
     <section class="container typeannonce box-shadow--16dp">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-lg-4">
                 <h1>Information sur l'expédition</h1>
                                 <!--Select with pure css-->
                                 <div class="select">
@@ -57,8 +57,14 @@
                                     <span class="focus-input100"></span>
                                 </div>
             </div>
-            <div class="col offset-lg-1" style="margin-right: 70px;" >
-                <br>
+            <div class="col-12 col-lg-6 offset-lg-1" style="margin-right: 50px;" >
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">                
+                <br class="d-none d-md-none d-lg-block">               
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
+                <br class="d-none d-md-none d-lg-block">
                 <div class="select">
                     <select class="select-text" required name = 'moyenTransport' required>
                         <option value="" disabled selected></option>
@@ -85,8 +91,8 @@
                     <span class="focus-input100"></span>
                 </div>
             </div>
-            <div class="col">
-                <h3>Mes informations personnelles</h3>
+            <div class="col-12 col-md-12 col-lg-5">
+                <h1>Mes informations personnelles</h1>
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="nom" placeholder="Nom">
                     <span class="focus-input100"></span>
@@ -103,10 +109,8 @@
                     <input class="input100" type="tel" name="telephone" placeholder="Téléphone" required>
                     <span class="focus-input100"></span>
                 </div>
-            </div>
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-12 col-sm-12 col-md-12">
+            <div class="col-lg-6 col-12  col-md-12 offset-lg-1">
                  <!--Select with pure css-->
                  <h1>Informations sur le Colis</h1>
              <!--
@@ -121,11 +125,8 @@
                 <span class="select-bar"></span>
                 <label class="select-label">Type de colis supportés</label>
             </div>
-        -->
+           -->
             <!--Select with pure css-->
-            </div>
-            <div class="col-lg-3 col-12 col-sm-12 col-md-12 offset-lg-1">
-                <br>
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="number" name="unite" placeholder="Quantite a transporter (en Kg)" required>
                     <span class="focus-input100"></span>
@@ -155,6 +156,8 @@
                 </div>
            </div>
         </div>
+   
+        
         <input type="hidden" name="status" value="post">
         <input type="hidden" name="typeAnnonce" value="{{$category}}">
 

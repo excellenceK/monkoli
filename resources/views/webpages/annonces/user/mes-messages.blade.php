@@ -6,54 +6,31 @@
       <br>
 
       @php
-          $trajets = DB::table('annonces')->where('annonces.user_id', Auth::user()->id)
-                        ->join('transport_colis', 'annonces.id', 'transport_colis.annonce_id')
-                        ->join('users', 'annonces.user_id', 'users.id')
+          $messages = DB::table('messages')->where('email', Auth::user()->email)
                         ->get();
-          //dd($trajets);
+          //dd($messages);
           //dd(\Carbon\Carbon::now()->format('d-m-Y'));
       @endphp
     </div>
         <div class="table-responsive" >  <!--/.row action=""-->
-            @if(count($trajets)>0)
-                <table class="table table-bordered table-responsive" id="trajet-dataTable" style="width:100%" cellspacing="0">
+            @if(count($messages)>0)
+                <table class="table table-bordered table-responsive" id="messages-dataTable" style="width:100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Trajet</th>
-                            <th>Date de départ</th>
-                            <th>Date d'arrivée</th>
-                            <th>Moyen de transport</th>
-                            <th>Quantité minimum</th>
-                            <th>Quantité totale</th>
-                            <th>Date de réservation</th>
-                            <th>lieu de dépot</th>
-                            <th>lieu de livraison</th>
-                            <th>Prix(par Kg)</th>
-                            <th>Status</th>
+                            <th>Emetteur</th>
+                            <th>Objet</th>
+                            <th>Message</th>
+                            <th>Envoyé à</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($trajets as  $value)
+                        @foreach($messages as  $value)
                             <tr>
-                                <td>{{ strtoupper($value->villeDepart).'-'.strtoupper($value->villeArriver) }}</td>
-                                <td>{{ \Carbon\Carbon::parse($value->dateDepart)->format('d-m-Y')  }}</td>
-                                <td>{{ \Carbon\Carbon::parse($value->dateArriver)->format('d-m-Y')  }}</td>
-                                <td>{{ ucwords($value->moyenTransport) }}</td>
-                                <td>{{ $value->minimunReservation }}</td>
-                                <td>{{ $value->unite }}</td>
-                                <td>{{ \Carbon\Carbon::parse($value->dateLimiteReservation)->format('d-m-Y')  }}</td>
-                                <td>{{ ucwords($value->lieuDepot) }}</td>
-                                <td>{{ ucwords($value->lieuLivraison) }}</td>
-                                <td>{{ $value->prixUnitaire.' '.$value->devise }}</td>
-                                <td>
-                                    @if(\Carbon\Carbon::now()->format('d-m-Y') == \Carbon\Carbon::parse($value->dateLimiteReservation)->format('d-m-Y'))
-                                        Terminer
-                                    @else
-                                        En cours
-
-                                    @endif
-                                </td>
+                                <td>{{ $value->emetteur }}</td>
+                                <td>{{ ucwords($value->objet)  }}</td>
+                                <td>{{ $value->corpsMessage }}</td>
+                                <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y H:i:s')  }}</td>
 
                                 <td>
                                     <a href="#" class="float-left " style="" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
@@ -71,7 +48,7 @@
                     </tbody>
                 </table>
             @else
-                <h6 class="text-center">Aucun trajet trouvé !!!</h6>
+                <h6 class="text-center">Aucun message trouvé !!!</h6>
             @endif
         </div>
   </section>
@@ -80,12 +57,12 @@
 
   <script>
 
-      $('#trajet-dataTable').DataTable( {
+      $('#messages-dataTable').DataTable( {
         "order": [[ 0, "desc" ]],
             "columnDefs":[
                 {
                     "orderable":false,
-                    "targets":[10]
+                    "targets":[8]
                 }
             ],
             language: {

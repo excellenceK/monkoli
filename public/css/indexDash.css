@@ -758,7 +758,7 @@ section{
 
 @media (min-width: 1200px){
  .searchlogo{
-        height: 300px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     margin-left: 73%;
@@ -1116,7 +1116,7 @@ section{
     }
     h3{
         font-size: 0.8rem !important;
-        color: white !important;
+        color:black;
         font-weight: 500;
     }
     #search-section h2 {
