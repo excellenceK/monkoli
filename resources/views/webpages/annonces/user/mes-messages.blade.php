@@ -6,8 +6,8 @@
       <br>
 
       @php
-          $messages = DB::table('message')->where('receveur', Auth::user()->email)
-          ->get();
+          $messages = DB::table('messages')->where('email', Auth::user()->email)
+                        ->get();
           //dd($messages);
           //dd(\Carbon\Carbon::now()->format('d-m-Y'));
       @endphp

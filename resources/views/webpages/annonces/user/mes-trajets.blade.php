@@ -6,10 +6,10 @@
       <br>
 
       @php
-          $trajets = DB::table('transport_colis')->where('annonces.user_id', Auth::user()->id)
-          ->join('annonces', 'annonces.id', 'transport_colis.annonce_id')
-          ->join('users', 'annonces.user_id', 'users.id')
-          ->get();
+          $trajets = DB::table('annonces')->where('annonces.user_id', Auth::user()->id)
+                        ->join('transport_colis', 'annonces.id', 'transport_colis.annonce_id')
+                        ->join('users', 'annonces.user_id', 'users.id')
+                        ->get();
           //dd($trajets);
           //dd(\Carbon\Carbon::now()->format('d-m-Y'));
       @endphp
@@ -85,7 +85,7 @@
             "columnDefs":[
                 {
                     "orderable":false,
-                    "targets":[8]
+                    "targets":[10]
                 }
             ],
             language: {
