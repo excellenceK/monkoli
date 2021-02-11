@@ -9,6 +9,7 @@
                                 ->where('dateExpiration', '>=',\Carbon\Carbon::now())
                                 ->where('user_id', Auth::user()->id)
                                 ->join('transport_colis', 'transport_colis.annonce_id', 'annonces.id')
+                                ->select('annonces.id as idAnnonce','annonces.*','transport_colis.*')
                                 ->get();
                                 //dd($annonceColi);
                 @endphp
@@ -28,14 +29,14 @@
 			                      <tbody>
                                     @foreach($annonceColi as $value)
                                     <tr>
-                                        <td>{{ $value->id }}</td>
+                                        <td>{{ $value->idAnnonce }}</td>
                                         <td>{{ $value->villeDepart }}</td>
                                         <td>{{ $value->villeArriver }}</td>
                                         <td class="text-primary">{{ $value->prixUnitaire }}</td>
                                         <td>{{ $value->devise }}</td>
                                         <td>{{ $value->moyenTransport }}</td>
                                         <td>
-                                          <a href="{{ route('users.consulterReservations',$value->id) }}" type="button" class="btn vert pure-material-button-contained"><i class="far fa-eye" style="color: white;"></i> Voir</a>
+                                          <a href="{{ route('users.consulterReservations',$value->idAnnonce) }}" type="button" class="btn vert pure-material-button-contained"><i class="far fa-eye" style="color: white;"></i> Voir</a>
                                           <button type="button" class="btn gris pure-material-button-contained"><i class="far fa-edit" style="color: white;"></i> Editer</button>
                                             <button type="button" class="btn pure-material-button-contained" style="background-color: red;"><i class="fas fa-trash" style="color: white;"></i> Supprimer</button>
                                         </td>

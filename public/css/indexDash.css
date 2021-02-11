@@ -1116,7 +1116,7 @@ section{
     }
     h3{
         font-size: 0.8rem !important;
-        color: white !important;
+        color:black;
         font-weight: 500;
     }
     #search-section h2 {

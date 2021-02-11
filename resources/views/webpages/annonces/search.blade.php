@@ -151,7 +151,7 @@
             <a href="{{ route('coli.reservationColi',$trajet['idAnnonce']) }}" type="button" class="btn vert pure2"><i style="color: white; opacity: 0.7;" class="far fa-calendar-check" aria-hidden="true"></i>&nbsp;&nbsp;Réserver</a>
         </div>
     </div>
-</div>
+  </div>
 </div>
   @endforeach
    @endif

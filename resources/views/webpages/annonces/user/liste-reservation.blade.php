@@ -1,7 +1,7 @@
 @extends('layouts.monespace')
 @section('main')
 
-	<div class="col-sm-9 col-sm-offset-3 col-lg-10 main" style="margin-left: 120px;">
+	<div class="col-12 col-lg-12 main">
         @if(session('success'))
             <div class="alert alert-success alert-dismissable fade show">
                 <button class="close" data-dismiss="alert" aria-label="Close">×</button>
@@ -9,9 +9,9 @@
             </div>
         @endif
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-12  col-lg-12">
 				<h2 class="page-header" style="font-weight: bolder;">Listes des reservations</h2>
-					<h4 style="font-weight: bold;">Reservation </h4>
+					<h4 style="font-weight: bold;">Reservation </h4><br> <br><br>
 			</div>
         </div><!--/.row-->
         @php
@@ -47,17 +47,14 @@
         @endphp
 
 <!-- Reservation-->
-		<div class="row" style="margin-bottom: 50px;">
-			<div class="col-sm-10 col-md-12">
-
-				<div class="col-lg-5 " style="    padding-top: 40px;">
-	                <div class="col-xs-5 col-lg-12 no-padding">
-	                  <div class="card  thumbnail col-12 col-md-12 col-sm-8 col-lg-4" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
-	                    <img class="card-img-top img img-responsive"  src="{{ asset('images/bg_card.png') }}" alt="Card image cap">
-	                    <div class="card-body row">
+    <div class="row">
+			<div class="col-12 col-md-12 col-lg-6">
+	                  <div class="card  thumbnail col-12 col-md-12 col-sm-12 col-lg-12" itemscope="" itemtype="http://schema.org/CreativeWork" style="width:auto; padding-left: 0px; padding-right: 0px;">
+	                    <img class="card-img-top img img-responsive"  src="{{ asset('images/bg_card.png') }}" alt="Card image cap" style="margin-top: -19px">
+	                    <div class="card-body row centr">
 	                      <br>
-	                      <div class="col-sm-3" style="margin-left: 20px;">
-	                        <i class="fa fa-user-circle fa-3x fa-align-center offset-1" style="color: #C6C2C2;" aria-hidden="true"></i>
+	                      <div class="col-sm-3" style="">
+	                        <i class="fa fa-user-circle fa-3x fa-align-center" style="color: #C6C2C2;" aria-hidden="true"></i>
 	                        <br>
 	                        <h5 style="font-size: x-small;font-weight: bold;">Transporteur</h5>
 	                        <h6 class="text-truncate" style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $annonce->name.' '.$annonce->prenom }}</h6>
@@ -76,7 +73,7 @@
 	                            <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $annonce->lieuLivraison }}</span>
 	                        </p>
 	                        <br class="d-block d-sm-block d-lg-none d-md-none">
-	                        <p style="font-size: x-small;">Mode de transport :</p>
+	                        <p style="font-size: x-small;">Mode de transport :{{$annonce->moyenTransport}}</p>
 	                      </div>
 	                      <div class="col-sm-4">
 	                        <p style="color: #00E38C;font-weight: bold;">{{ $disponible }}<sup style="color:black">Kg</sup><br>
@@ -87,20 +84,16 @@
 	                           <span style="font-size: xx-small;font-weight: bold;color:red;">{{ \Carbon\Carbon::parse($annonce->dateLimiteReservation)->format('d-m-Y') }}</span>
 	                           <span style="font-size: xx-small;font-weight: bold;color:red;">{{ \Carbon\Carbon::parse($annonce->dateLimiteReservation)->format('H:i') }} GMT</span>
 	                           <br><br><br><br><br><br><br><br>
-	                           <span> <img class="img img-responsive"  style="height:40px;width: 40px;" src="{{ asset('images/Avion.png') }}" alt="avion"></span>
 	                       </p>
 	                     </div>
 
 	                    </div>
 	                  </div>
-	                </div>
-
+	                
 			</div>
 
-				<div class="col-lg-7">
-				<h3 class="page-header" style="font-weight: bold;">En Attente</h3>
-				<div class="row">
-					<div class="col-md-16">
+				<div class="col-12 col-md-12 col-lg-6">
+        <h3  style="font-weight: bold; color:black">En Attente</h3>
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 							<div class="card-body">
 			                  <div class="table-responsive">
@@ -144,11 +137,11 @@
 			            </div>
 
 						</div>
-					</div>
-				<div class="col-lg-7 col-lg-offset-5">
+					
+				<div class="col-12">
 				<h3 class="page-header" style="font-weight: bold;">Acceptée(s)</h3>
-				<div class="row">
-					<div class="col-md-16">
+				<div>
+					<div>
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
 							<div class="card-body">
 			                  <div class="table-responsive">
@@ -207,6 +200,7 @@
 		</div>
 
 		</div><!--/.row-->
+  
 <!-- Reservation-->
 
 
