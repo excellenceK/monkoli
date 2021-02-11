@@ -15,8 +15,8 @@
             @csrf
             <div class="center-screen">
                 <div class="row main">
-                    <div class=" col-12 col-md-12 col-lg-5 sidepartleft ">
-                        <img src="{{ asset('images/logo.png') }}" alt="logo" style="heigth:100px">
+                    <div  class=" col-12 col-md-12 col-lg-5 sidepartleft d-none d-md-none d-lg-flex">
+                        <img  src="{{ asset('images/logo.png') }}" alt="logo" style="heigth:100px">
                          <h2 style="color: #00E38C;" >MonKoli</h2>
                          <h6 style="color: white;">Expédier un colis n'a jamains été si <span style="color: #00E38C;">facile</span></h6>
                     </div>
@@ -40,6 +40,7 @@
                                 </span>
                             @enderror
                         </div>
+                        <br>
                         <span  style="color: #00E38C; font-size: xx-small; float: right;">Mot de passe oublié?</span>
                         <br>
                          <span style="font-size: xx-small; color: #C6C2C2; float: left;" ><input type="checkbox" name="" id=""  autocomplete="off"> Garder ma session active </span>
@@ -48,6 +49,7 @@
                         <button style="width: 100%;" type="submit" class="btn vert pure-material-button-contained">SE CONNECTER</button>
                         <br/>
                         <br/>
+                        <!--
                         <span style="font-size: small;color: #C6C2C2;">------------ OU -----------</span>
                         <br/>
                         <br/>
@@ -57,6 +59,7 @@
                         <button style="width: 100%;" type="button" class="btn  bl1 pure-material-button-contained"> CONTINUER AVEC GOOGLE</button>
                         <br/>
                         <br/>
+                        -->
                         <br/>
                          <span style="font-size: xx-small; color:#C6C2C2;font-weight: bolder;">Vous n'avez pas compte?  <span style="color: #00E38C;" > Inscrivez-vous <a href="{{ route('register') }}">ici</a> </span></span>
                          <br/>

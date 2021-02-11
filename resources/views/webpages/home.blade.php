@@ -144,7 +144,7 @@
         <div class="row ">
             <div class="col-12 col-md-12 col-sm-12 col-lg-12" style="padding:2px;">
                <h1 id="searhHeading">Expédier votre colis n'a jamais été aussi  simple!<img src="images/logo.png"  class="searchlogo  img img-responsive" alt="logo"/></h1>
-               <h5>Recherchez et trouver le transporteur <span style="color:#079860;">idéal</span> au moment <span style="color:#079860;">opportun.</span></h5>
+               <h5 style="color: #FFF">  Recherchez et trouver le transporteur <span style="color:#079860;">idéal</span> au moment <span style="color:#079860;">opportun.</span></h5>
                <h3 style="color: #079860;">Facile<span style="color:white;">,</span> Rapide<span style="color:white;"> et</span> Fiable</h3>
             </div>
         </div>
@@ -181,7 +181,7 @@
          </span>
         </div>
         <br/>
-        <h6>Gagnez de l'argent en transportant des colis.<a href="{{ route('createAnnonce') }}"><span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></a></h6>
+        <h6 style="color: #FFF">Gagnez de l'argent en transportant des colis.<a href="{{ route('createAnnonce') }}"><span style="color:#079860; text-decoration: underline;"> Poster une annonce</span></a></h6>
     </section>
    </section>
 
@@ -531,7 +531,8 @@
         Aucun trajet enregistrer pour le moment
     </p>
     @endif
-
+    <br>
+    <br>
   </div>
   <!-- .container -->
 

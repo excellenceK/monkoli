@@ -15,7 +15,7 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
             <div class="row main">
-                <div class="col-12 col-md-12 col-lg-5 sidepartleft">
+                <div class="col-12 col-md-12 col-lg-5 sidepartleft  d-none d-md-none d-lg-flex">
                     <img src="../images/logo.png" class="img img-responsive" alt="logo" style="height: 100px">
                      <h2 style="color: #00E38C;" >MonKoli</h2>
                      <h6 style="color: white;">Expédier un colis n'a jamains été si <span style="color: #00E38C;">facile</span></h6>
@@ -65,6 +65,7 @@
                     <button style="width: 100%;" type="submit" class="btn vert pure-material-button-contained">S'INSCRIRE</button>
                     <br/>
                     <br/>
+                    <!--
                     <span style="font-size: small;color: #C6C2C2;">------------ OU -----------</span>
                     <br/>
                     <br/>
@@ -74,6 +75,7 @@
                     <button style="width: 100%;" type="button" class="btn  bl1 pure-material-button-contained"> CONTINUER AVEC GOOGLE</button>
                     <br/>
                     <br/>
+                    -->
                     <br/>
                      <span style="font-size: xx-small; color:#C6C2C2;font-weight: bolder;">Vous avez déjà un compte?  <span style="color: #00E38C;" > <a href="{{ route('login') }}"> connectez-vous </a></span> </span>
                      <br/>

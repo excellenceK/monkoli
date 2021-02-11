@@ -114,108 +114,102 @@
       </nav>
   </header>
   <!--mobile header-->
-  <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
-      <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
-      <div id="mobileMenu" style="display: none;">
-          <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
-          <ul class="menuList row" style="list-style-type: none;">
-              <li class="col-12" >
-                  <a class="nav-item nav-link am active " href="{{ url('/') }}">
-                      <div class="menu">
-                       <i class="fa fa-shopping-bag  fa-2x" aria-hidden="true"></i>
-                           <p>Colis</p>
-                          <hr/>
-                      </div>
-                 </a>
-              </li>
-              <li class="col-12">
-                  <a class="nav-item nav-link am" href="#">
-                      <div class="menu">
-                           <i class="fa fa-bullhorn  fa-2x" aria-hidden="true"></i>
-                           <p>Mes annonces</p>
-                          <hr/>
-                      </div>
-                     </a>
-              </li>
-              <li class="col-12">
-                  <a class="nav-item nav-link am" href="#">
-                      <div class="menu">
-                         <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
-                           <p>Messages</p>
-                          <hr/>
-                      </div>
-                    </a>
-              </li>
-              <li class="col-12">
-                  <a class="nav-item nav-link am" href="{{ route('users.monEspace') }}">
-                      <div class="menu">
-                           <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
-                           <p>Mon espace</p>
-                          <hr/>
-                      </div>
+   <!--mobile header-->
+   <header id="hmobile" class="container-fluid   d-block d-sm-block d-lg-none d-md-block" >
+    <i id="hamburgerBtn" class="fa fa-bars fa-3x " style="color:#00E38C" aria-hidden="true"></i>
+    <div id="mobileMenu" style="display: none;">
+        <i id="close" class="fa fa-3x fa-window-close" style="color: white" aria-hidden="true"></i>
+        <ul class="menuList">
+           <!-- <li>
+                <a class="nav-item nav-link am active " href="#">
+                    <div class="menu">
+                         <p>Colis</p>
+                        <i class="fa fa-shopping-bag fa-align-center fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div>
+               </a>
+            </li>
+            <li>
+                <a class="nav-item nav-link am" href="#">
+                    <div class="menu">
+                         <p>Mes annonces</p>
+                        <i class="fa fa-bullhorn fa-align-center fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div>
+                   </a>
+            </li>
+            <li>
+                <a class="nav-item nav-link " href="#">
+                    <div class="menu">
+                         <p>Messages</p>
+                        <i class="fa fa-comments fa-align-center fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div>
                   </a>
-              </li>
-              <li class="col-12">
-                  <a class="nav-item nav-link am" href="#">
-                      <div class="menu">
-                         <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
-                           <p>Résidence</p>
-                          <hr/>
-                      </div>
-                    </a>
-              </li>
-              <li class="col-12">
-                  <a class="nav-item nav-link am" href="#">
-                      <div class="menu">
-                         <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
-                           <p>Véhicules</p>
-                          <hr/>
-                      </div>
-                    </a>
-      </li>
-      <li class="col-12">
-                  <a class="nav-item nav-link am" href="{{ route('createAnnonce') }}">
-                      <div class="menu poste">
-                          <i class="fa fa-plus-circle fa-align-center  fa-2x" aria-hidden="true"></i>
-                           <p>Ajouter <br> annonce</p>
-                          <hr/>
-                      </div>
-                    </a>
-              </li>
-              <br>
-              <div class="menu">
-                  @auth
-              <!--<li><i class="ti-user"></i> <a href="#"  target="_blank">Dashboard</a></li>
-              <li><i class="ti-power-off"></i> <a href="{{route('logout')}}">Deconnexion</a></li>
-              <a type="button" class="btn gris pure-material-button-contained" style="color: white" href="{{ route('register') }}">Inscription</a>-->
-              <li class="col-12">
-                  <a type="button" class="btn gris pure-material-button-contained " href="{{ route('users.monEspace') }}">Dashboard</a>
-              </li>
-              <br>
-              <li class="col-12">
-                  <a  type="button" class="btn  vert pure-material-button-contained " href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa falist fa-power-off"></i> Deconnexion</a>
-               </li>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-              </form>
-               @else
-               <li class="col-12">
-                  <a type="button" href="{{ route('login') }}" class="btn vert pure-material-button-contained ">Connexion</a>
-              </li>
-              <br>
-              <li class="col-12">
-                  <a type="button" href="{{ route('register') }}" class="btn  gris pure-material-button-contained ">Inscription</a>
+            </li>-->
+            <li>
+                <a class="nav-item nav-link " href="{{ route('createAnnonce') }}">
+                    <div class="menu poste">
+                         <p>Poster un Trajet</p>
+                        <i class="fa fa-plus-circle  fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div>
+                  </a>
+            </li>
+            <li>
+                <a class="nav-item nav-link " href="{{ url('/') }}">
+                    <div class="menu">
+                         <p>Accueil</p>
+                        <i class="fa fa-users fa-align-center fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div>
+                </a>
+            </li>
+            <!--<li>
+                <a class="nav-item nav-link " href="#">
+                    <div class="menu">
+                         <p>Résidence</p>
+                        <i class="fa fa-home fa-align-center fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div>
+                  </a>
+            </li>
+            <li>
+                <a class="nav-item nav-link " href="#">
+                    <div class="menu">
+                         <p>Véhicules</p>
+                        <i class="fa fa-car fa-align-center fa-2x" aria-hidden="true"></i>
+                        <hr/>
+                    </div>
+                  </a>
+            </li>-->
+            @auth()
+                <li>
+                    <a href="{{ route('users.monEspace') }}" type="button" class="btn gris pure-material-button-contained">Dashboard</a>
 
-              </li>
+                </li>
+                <br>
+                <li>
+                    <a type="button"  class="btn vert pure-material-button-contained" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                <br>
+            @else
+                <li>
+                    <a href="{{ route('register') }}"  type="button" class="btn gris pure-material-button-contained">Inscription</a>
 
-               @endauth
-              </div>
-
-
-
-          </ul>
-      </div>
-  </header>
+                </li>
+                <br>
+                <li>
+                    <a href="{{ route('login') }}" type="button" class="btn vert pure-material-button-contained">Connexion</a>
+                </li>
+                <br>
+            @endauth
+        </ul>
+    </div>
+</header>
   <!--Header-->
 <br>
 <br>
@@ -372,7 +366,7 @@
                                         <span style="font-size: xx-small;font-weight: bold;color: #C6C2C2;">{{ $annonce->lieuLivraison }}</span>
                                     </p>
                                     <br class="d-block d-sm-block d-lg-none d-md-none">
-                                    <p style="font-size: x-small;">Mode de transport :</p>
+                                    <p style="font-size: x-small;">Mode de transport :{{ $annonce->moyenTransport}}</p>
                                   </div>
                                   <div class="col-sm-4">
                                     <p style="color: #00E38C;font-weight: bold;">{{ $disponible }}<sup style="color:black">Kg</sup><br>
@@ -383,8 +377,7 @@
                                        <span style="font-size: xx-small;font-weight: bold;color:red;">{{ \Carbon\Carbon::parse($annonce->dateLimiteReservation)->format('d-m-Y') }}</span>
                                        <span style="font-size: xx-small;font-weight: bold;color:red;">{{ \Carbon\Carbon::parse($annonce->dateLimiteReservation)->format('H:i') }} GMT</span>
                                        <br><br><br><br><br><br><br><br>
-                                       <span> <img class="img img-responsive"  style="height:40px;width: 40px;" src="{{ asset('images/Avion.png') }}" alt="avion"></span>
-                                   </p>
+                             </p>
                                  </div>
 
                                 </div>
