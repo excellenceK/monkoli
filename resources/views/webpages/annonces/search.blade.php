@@ -65,6 +65,8 @@
        <p> Aucun resultat trouvé</p>
    @else
    @foreach ($resultRecherche as $trajet)
+   <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
    <div class="card  carsel thumbnail   item "itemscope="" itemtype="http://schema.org/CreativeWork">
     <img class="card-img-top img img-responsive"  src="../images/bg_card.png" alt="Card image cap" style="margin-top: -19px;">
     <div class="card-body row" >
@@ -152,6 +154,24 @@
         </div>
     </div>
   </div>
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
+  <br class="d-block d-md-block d-lg-none">
 </div>
   @endforeach
    @endif
