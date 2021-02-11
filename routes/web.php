@@ -67,6 +67,8 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function(){
     Route::get('mes-reservations','ComptesController@mesReservations')->name('mesReservations');
     Route::get('mes-trajets','ComptesController@mesTrajets')->name('mesTrajets');
     Route::get('mes-messages','ComptesController@mesMessages')->name('mesMessages');
+
+
 });
 
 Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
@@ -89,3 +91,7 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
 });
 
 Route::post('message','MessagesController@adminSendMessage')->name('admin.sendMessage');
+Route::get('message/update/{id}','MessagesController@updateMessage')->name('message.update');
+Route::delete('message/delete/{id}','MessagesController@deleteMessage')->name('message.destroy');
+
+

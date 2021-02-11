@@ -16,7 +16,7 @@
     </div>
         <div class="table-responsive" >  <!--/.row action=""-->
             @if(count($trajets)>0)
-                <table class="table table-bordered table-responsive" id="trajet-dataTable" style="width:100%" cellspacing="0">
+                <table class="table table-bordered dt-responsive nowrap" style="width:100%" id="trajet-dataTable" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Trajet</th>

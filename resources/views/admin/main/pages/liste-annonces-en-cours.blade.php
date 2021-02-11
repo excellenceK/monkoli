@@ -119,40 +119,40 @@
                                         <!-- Edit Status User Modal-->
                                             <div class="modal fade" id="editModal{{$annonce->idAnnonce}}" tabindex="-1" role="dialog" aria-labelledby="#editModal{{$annonce->idAnnonce}}Label" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                    <h5 class="modal-title" id="#editModal{{$annonce->idAnnonce}}Label">Désactiver l'annonce</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title" id="#editModal{{$annonce->idAnnonce}}Label">Désactiver l'annonce</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form  method="post" action="{{ route('admin.editAnnonce',$annonce->idAnnonce) }}" id="editForm" >
+                                                                @csrf
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-12">
+                                                                        <div class="form-group">
+                                                                            <label>Statut<span>*</span></label>
+                                                                            <select name="status" id="" style="width: 100%">
+                                                                                <option value="active" selected>Active</option>
+                                                                                <option value="inactive">Inactive</option>
+                                                                            </select>
+                                                                            <!--<input name="email" type="hidden"  style="width: 100%" placeholder="Entrez votre adresse email" value="">-->
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-12">
+                                                                        <div class="form-group button">
+                                                                            <button type="submit" class="btn btn-primary ">Editer</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <form  method="post" action="{{ route('admin.editAnnonce',$annonce->idAnnonce) }}" id="editForm" >
-                                                            @csrf
-                                                            <div class="row">
-                                                                <div class="col-lg-12 col-12">
-                                                                    <div class="form-group">
-                                                                        <label>Statut<span>*</span></label>
-                                                                        <select name="status" id="" style="width: 100%">
-                                                                            <option value="active" selected>Active</option>
-                                                                            <option value="inactive">Inactive</option>
-                                                                        </select>
-                                                                        <!--<input name="email" type="hidden"  style="width: 100%" placeholder="Entrez votre adresse email" value="">-->
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <div class="form-group button">
-                                                                        <button type="submit" class="btn btn-primary ">Editer</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-
-                                                </div>
                                                 </div>
                                             </div>
-                                        </div>
                                          <!--End Edit Status User Modal-->
 
                                         <!--Send Message Modal-->

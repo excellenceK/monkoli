@@ -63,7 +63,6 @@ integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz
 
          </footer>
         <script src="{{ asset('js-dash/jquery-1.11.1.min.js') }}"></script>
-        <script src="{{ asset('js-dash/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js-dash/chart.min.js') }}"></script>
         <script src="{{ asset('js-dash/chart-data.js') }}"></script>
         <script src="{{ asset('js-dash/easypiechart.js') }}"></script>

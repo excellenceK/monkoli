@@ -68,7 +68,7 @@
 						<div class="no-padding justify-content-center">
 							<p class="text-muted" style="font-size: 15px;">Total Annonces</p>
 							<p class="large" style="color: #00E38C;">{{ $totalColis }}</p>
-							<button type="button" class="btn pure2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"><i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</button>
+							<a href="{{ route('users.mesTrajets') }}" type="button" class="btn pure2" style="background-color: #00E38C; color: white; width: 18rem; height: 20px; font-size: 1.5rem;"><i style="color: white; opacity: 0.7;" class="fas fa-eye" aria-hidden="true"></i>  Consultez les</a>
 						</div>
 					</div>
 				</div>
@@ -102,8 +102,10 @@
                                 foreach ($reservations as $data) {
                                     # code...
                                     $quantiteReserve += $data->quantiteReserve;
-                                    $totalGain += $data->montantReservation;
+                                    //$totalGain += $data->montantReservation;
                                 }
+                                $totalGain = DB::table('reservations')->where('annonce_id', $value->idAnnonce)->where('livrer',true)->sum('montantReservation');
+
                                 $pourcentageReservation = ($quantiteReserve * 100)/$value->quantiteDisponible;
                                 //dd($reservation);
                             @endphp
@@ -168,12 +170,12 @@
 								</div>
 							</div>
 						</div>
-					
+
 			</div>
 		</div>
 <br>
 <br>
-		<div class="row">
+		<!--<div class="row">
 			<div class="col-12 col-lg-6 col-md-6">
 				<h1 class="page-header" style="font-weight: bolder;">Résidences</h1>
 				<h3 class="page-header" style="font-weight: bold;">Chiffres</h3>
@@ -188,7 +190,7 @@
 									<canvas class="chart" id="pie-chart"></canvas>
 								</div>
 							</div>
-						</div>				
+						</div>
 			</div>
 			<div class="col-12 col-lg-6 col-md-6">
 				<h1 class="page-header" style="font-weight: bold; opacity: 0">Nothing</h1>
@@ -227,9 +229,9 @@
 					</div>
 				</div>
 			</div>
-		</div><!--/.row-->
+		</div>--><!--/.row-->
 
-	<div class="row" style="padding-bottom: 50px">
+	<!--<div class="row" style="padding-bottom: 50px">
 			<div class="col-lg-12">
 				<h3 class="page-header" style="font-weight: bold;">Historique</h3>
 						<div class="panel panel-default" style="box-shadow: 0 0px 26px 5px #C6C2C2;">
@@ -359,7 +361,7 @@
 			              </div>
 			            </div>
 
-			</div><!--/.row-->
+			</div>--><!--/.row-->
 
 	</div>
 

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Messages;
+use Carbon\Carbon;
+use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MessagesController extends Controller
 {
@@ -25,7 +28,7 @@ class MessagesController extends Controller
         if ($users) {
             # code...
             $data = $request->all();
-            $data['name'] = $users->name.' '.$users->prenom;
+            $data['name'] = Auth::user()->email;
             //$data['email'] = $value->email;
             $data['phone'] = $users->telephone;
             $data['for_users'] = true;
@@ -38,5 +41,34 @@ class MessagesController extends Controller
             request()->session()->flash('error','Aucun destinataire trouvé');
             return back();
         }
+    }
+
+    public function updateMessage($id)
+    {
+        $message = Messages::findOrFail($id);
+        if ($message) {
+            # code...
+            $message->update([
+                'read_at' =>Carbon::now()
+            ]);
+            return back();
+        }else {
+            # code...
+            return back()->with('error', 'Ce message n\'est plus disponible !');
+
+        }
+    }
+
+    public function deleteMessage($id)
+    {
+        $message =  Messages::findOrFail($id);
+        if ($message) {
+            # code...
+            $message->delete();
+            return back()->with('succes', 'message supprimé avec succès !');
+        }else{
+            return back()->with('error', 'message non trouvé !');
+        }
+
     }
 }
